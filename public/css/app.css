@@ -2534,17 +2534,17 @@
     height: 100%;
     width: 0%;
     border-radius: inherit;
-    background: linear-gradient(120deg, rgba(11, 92, 255, .5), rgba(11, 92, 255, .9));
+    background: rgba(11, 92, 255, 0.85);
     transition: width .3s ease;
 }
 
 .path-progress-overview__segment.is-complete .path-progress-overview__segment-fill {
     width: 100% !important;
-    background: linear-gradient(120deg, rgba(16, 212, 120, .6), rgba(9, 192, 103, .85));
+    background: rgba(11, 92, 255, 0.85);
 }
 
 .path-progress-overview__segment.is-current .path-progress-overview__segment-fill {
-    background: linear-gradient(120deg, rgba(11, 92, 255, .65), rgba(11, 92, 255, .95));
+    background: rgba(11, 92, 255, 0.85);
 }
 
 .path-progress-overview__segment.is-locked .path-progress-overview__segment-fill {

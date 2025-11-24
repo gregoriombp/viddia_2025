@@ -986,7 +986,7 @@ html.dark-mode .path-progress-overview__meter {
 }
 
 html.dark-mode .path-progress-overview__meter-fill {
-    background: linear-gradient(120deg, rgba(59, 130, 246, .45), rgba(96, 165, 250, .8));
+    background: rgba(59, 130, 246, 0.7);
 }
 
 html.dark-mode .path-progress-overview__module {
@@ -1618,6 +1618,33 @@ html.dark-mode .auth-input:focus {
     border-color: rgba(96, 165, 250, 0.65);
     background: var(--bg-theme-32);
     box-shadow: 0 0 0 4px var(--color-theme-29);
+}
+
+/* Form controls styling (matching auth-input) */
+html.dark-mode .student-profile-edit-page .form-control {
+    background: var(--bg-theme-31);
+    border: 1px solid rgba(71, 85, 105, 0.4);
+    color: #e2e8f0;
+}
+
+html.dark-mode .student-profile-edit-page .form-control::placeholder {
+    color: var(--text-theme-83);
+}
+
+html.dark-mode .student-profile-edit-page .form-control:focus {
+    border-color: rgba(96, 165, 250, 0.65);
+    background: var(--bg-theme-32);
+    box-shadow: 0 0 0 4px var(--color-theme-29);
+}
+
+html.dark-mode .student-profile-edit-page .form-label {
+    color: #e2e8f0;
+}
+
+html.dark-mode .student-profile-edit-page .input-group-text {
+    background: var(--bg-theme-31);
+    border: 1px solid rgba(71, 85, 105, 0.4);
+    color: #e2e8f0;
 }
 
 html.dark-mode .auth-form__actions {
@@ -2569,5 +2596,260 @@ html.dark-mode .action-section {
 
 /* Answer Detail - Dark Mode */
 html.dark-mode .answer-detail {
-    background: rgba(255, 255, 255, 0.05);
+    background: #1e293b;
+}
+
+/* ================================================
+   STUDENT-PATH - DARK MODE
+   ================================================ */
+
+/* ================================================
+   NAVBAR & HEADER - DARK MODE
+   ================================================ */
+
+html.dark-mode .mdk-header--bg-light {
+    background-color: #0f1218 !important;
+}
+
+html.dark-mode .navbar-light {
+    background-color: #161a26 !important;
+}
+
+html.dark-mode .navbar-light.bg-white {
+    background-color: #161a26 !important;
+    border-bottom-color: rgba(71, 85, 105, 0.3) !important;
+}
+
+html.dark-mode .navbar-light .navbar-brand img {
+    filter: brightness(0) invert(1);
+}
+
+html.dark-mode .navbar-light .nav-link {
+    color: rgba(226, 232, 240, 0.8);
+}
+
+html.dark-mode .navbar-light .nav-link:hover,
+html.dark-mode .navbar-light .nav-link:focus {
+    color: #f2f9ff;
+}
+
+html.dark-mode .navbar-light .dropdown-menu {
+    background-color: #161a26;
+    border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+html.dark-mode .navbar-light .dropdown-item {
+    color: rgba(226, 232, 240, 0.8);
+}
+
+html.dark-mode .navbar-light .dropdown-item:hover,
+html.dark-mode .navbar-light .dropdown-item:focus {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #f2f9ff;
+}
+
+html.dark-mode .navbar-light .dropdown-divider {
+    border-top-color: rgba(71, 85, 105, 0.3);
+}
+
+/* ================================================
+   PAGE SECTIONS - DARK MODE
+   ================================================ */
+
+html.dark-mode .page-section.bg-white {
+    background-color: #00050d !important;
+}
+
+html.dark-mode .bg-white {
+    background-color: #161a26;
+}
+
+html.dark-mode .bg-light {
+    background-color: #1e293b;
+}
+
+html.dark-mode .page-separator__text {
+    color: #f2f9ff;
+}
+
+/* ================================================
+   PROGRESS OVERVIEW - DARK MODE
+   ================================================ */
+
+html.dark-mode .path-progress-overview__label {
+    color: rgba(226, 232, 240, 0.7);
+}
+
+html.dark-mode .path-progress-overview__value {
+    color: #f2f9ff;
+}
+
+html.dark-mode .path-progress-overview__meter {
+    background-color: #1e293b;
+}
+
+html.dark-mode .path-progress-overview__segment {
+    background-color: #1e293b;
+}
+
+html.dark-mode .path-progress-overview__segment-fill {
+    background-color: #334155;
+}
+
+/* ================================================
+   PROFILE CARD - DARK MODE
+   ================================================ */
+
+html.dark-mode .profile-card-gradient {
+    background: linear-gradient(
+        0deg,
+        rgba(22, 26, 38, 0.95),
+        rgba(30, 41, 59, 0.98)
+    ) !important;
+}
+
+html.dark-mode .profile-card-gradient h4,
+html.dark-mode .profile-card-gradient h5 {
+    color: #f2f9ff;
+}
+
+html.dark-mode .profile-card-gradient .text-dark {
+    color: #f2f9ff !important;
+}
+
+html.dark-mode .profile-card-gradient .text-muted {
+    color: rgba(226, 232, 240, 0.7) !important;
+}
+
+html.dark-mode .chip-primary {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+html.dark-mode .avatar-gold-border {
+    border-color: #fbbf24;
+}
+
+html.dark-mode .profile-card-gradient .bg-light {
+    background-color: rgba(30, 41, 59, 0.5) !important;
+}
+
+html.dark-mode .text-golden {
+    color: #fbbf24;
+}
+
+/* ================================================
+   TIMELINE - DARK MODE
+   ================================================ */
+
+html.dark-mode .timeline-section {
+    border-left-color: rgba(71, 85, 105, 0.3);
+}
+
+html.dark-mode .module-header {
+    color: #f2f9ff;
+}
+
+html.dark-mode .module-description {
+    color: rgba(226, 232, 240, 0.8);
+}
+
+html.dark-mode .page-num {
+    background-color: #161a26;
+    border: 2px solid rgba(71, 85, 105, 0.4);
+}
+
+html.dark-mode .page-num.bg-primary {
+    background-color: #60a5fa !important;
+    border-color: #60a5fa;
+}
+
+html.dark-mode .student-page-num {
+    background-color: rgba(59, 130, 246, 0.15) !important;
+    border-color: #60a5fa !important;
+}
+
+html.dark-mode .student-page-num .text-primary {
+    color: #60a5fa !important;
+}
+
+html.dark-mode .text-muted {
+    color: rgba(148, 163, 184, 0.75) !important;
+}
+
+/* ================================================
+   COURSE CARDS - DARK MODE
+   ================================================ */
+
+html.dark-mode .card {
+    background-color: #161a26;
+    border-color: rgba(71, 85, 105, 0.3);
+}
+
+html.dark-mode .card-body {
+    background-color: #161a26;
+}
+
+html.dark-mode .card-title {
+    color: #f2f9ff;
+}
+
+html.dark-mode .card--elevated {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+html.dark-mode .card--status-current {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+}
+
+html.dark-mode .card-status-badge--current {
+    background-color: #60a5fa;
+}
+
+html.dark-mode .overlay__content {
+    background-color: rgba(0, 5, 13, 0.85);
+}
+
+html.dark-mode .overlay__state--done,
+html.dark-mode .overlay__state--review {
+    color: #f2f9ff;
+}
+
+html.dark-mode .card-status-badge {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+html.dark-mode .text-50 {
+    color: rgba(226, 232, 240, 0.5) !important;
+}
+
+html.dark-mode .text-70 {
+    color: rgba(226, 232, 240, 0.7) !important;
+}
+
+/* ================================================
+   FOOTER - DARK MODE
+   ================================================ */
+
+html.dark-mode .bg-white.border-top-2 {
+    background-color: #161a26 !important;
+    border-top-color: rgba(71, 85, 105, 0.3) !important;
+}
+
+html.dark-mode .bg-white.border-top-2 .brand img {
+    filter: brightness(0) invert(1);
+}
+
+html.dark-mode .bg-white.border-top-2 .text-70 {
+    color: rgba(226, 232, 240, 0.7) !important;
+}
+
+html.dark-mode .bg-white.border-top-2 .text-50 {
+    color: rgba(226, 232, 240, 0.5) !important;
+}
+
+html.dark-mode .bg-white.border-top-2 a.text-70:hover {
+    color: rgba(226, 232, 240, 0.9) !important;
 }
