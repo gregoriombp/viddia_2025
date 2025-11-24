@@ -9,156 +9,85 @@
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
         padding: 24px;
         max-width: 980px;
+        background-color: #f6f8fa;
       }
       h1 {
         margin-top: 0;
+        color: #24292e;
+      }
+      #links {
+        background: white;
+        padding: 20px;
+        border-radius: 6px;
+        border: 1px solid #e1e4e8;
       }
       #links p {
         color: #666;
       }
-      button {
-        margin-top: 12px;
-      }
       ul {
         padding-left: 20px;
+        margin: 0;
+      }
+      li {
+        margin: 8px 0;
       }
       a {
         color: #0366d6;
         text-decoration: none;
+        font-size: 14px;
       }
       a:hover {
         text-decoration: underline;
+        color: #0256c7;
       }
     </style>
   </head>
   <body>
-    <h1>Pages in html/html</h1>
-    <div id="links"><p>Loading...</p></div>
-
-    <!-- Use this button to pick a local directory as a fallback (Chrome/Edge). -->
-    <button id="pick">Pick directory (fallback)</button>
+    <h1>📄 Páginas em html/html</h1>
+    <div id="links"><p>Carregando...</p></div>
 
     <script>
-      // Target directory relative to this index file
-      const targetPath = "./html/html/";
+      // Lista de arquivos na pasta html/html/
+      const files = [
+        "index-not-logged.html",
+        "index.html",
+        "login.html",
+        "student-course-preview.html",
+        "student-dashboard.html",
+        "student-modify-profile.html",
+        "student-path copy.html",
+        "student-path-dark.html",
+        "student-path.html",
+        "student-ranking-dark.html",
+        "student-ranking.html",
+        "student-take-lesson.html",
+        "student-take-quiz-alert.html",
+        "student-take-quiz-exam.html",
+        "student-take-quiz-result.html",
+      ];
 
-      // Try to fetch server directory listing (works with servers that return an HTML index/autoindex)
-      async function tryFetchDirectory() {
-        try {
-          const res = await fetch(targetPath, { method: "GET" });
-          if (!res.ok) throw new Error("Fetch failed: " + res.status);
-          const ct = res.headers.get("content-type") || "";
-          if (!ct.includes("text/html")) throw new Error("Not HTML response");
-
-          const text = await res.text();
-          const doc = new DOMParser().parseFromString(text, "text/html");
-          const hrefs = Array.from(doc.querySelectorAll("a"))
-            .map((a) => a.getAttribute("href"))
-            .filter(Boolean);
-
-          // Resolve relative links against the directory URL and select .html/.htm files
-          const base = new URL(res.url);
-          const files = hrefs
-            .map((h) => {
-              try {
-                return new URL(h, base).href;
-              } catch (e) {
-                return null;
-              }
-            })
-            .filter(Boolean)
-            .filter((url) => /\.(html?|htm)(?:[#?].*)?$/.test(url));
-
-          render(Array.from(new Set(files)));
-          return;
-        } catch (err) {
-          console.warn("Directory fetch failed:", err);
-        }
-
-        // If fetch didn't work, show fallback instructions
-        document.getElementById("links").innerHTML =
-          '<p>Could not read server directory. Use the "Pick directory" button to select the folder locally (requires browser support).</p>';
-      }
-
-      // Render list of links
-      function render(list) {
+      // Renderizar lista de links
+      function render() {
         const container = document.getElementById("links");
-        if (!list || list.length === 0) {
-          container.innerHTML = "<p>No pages found.</p>";
-          return;
-        }
         const ul = document.createElement("ul");
-        list.forEach((url) => {
+
+        files.forEach((file) => {
           const li = document.createElement("li");
           const a = document.createElement("a");
-          a.href = url;
-          a.textContent = decodeURIComponent(url.replace(location.origin, ""));
+          a.href = `./html/html/${file}`;
+          a.textContent = file;
           a.target = "_blank";
+          a.rel = "noopener noreferrer";
           li.appendChild(a);
           ul.appendChild(li);
         });
+
         container.innerHTML = "";
         container.appendChild(ul);
       }
 
-      // Fallback: let user pick a local directory and list .html files (File System Access API)
-      async function pickDirectoryAndList() {
-        if (!("showDirectoryPicker" in window)) {
-          alert("Directory picker not supported in this browser.");
-          return;
-        }
-
-        try {
-          const dirHandle = await window.showDirectoryPicker();
-          // Recursively traverse the picked directory and collect HTML files
-          const files = [];
-          async function walk(handle, path = "") {
-            for await (const [name, entry] of handle.entries()) {
-              if (entry.kind === "file" && /\.(html?|htm)$/i.test(name)) {
-                files.push({
-                  path: (path ? path + "/" : "") + name,
-                  handle: entry,
-                });
-              } else if (entry.kind === "directory") {
-                await walk(entry, (path ? path + "/" : "") + name);
-              }
-            }
-          }
-          await walk(dirHandle);
-
-          if (files.length === 0) {
-            document.getElementById("links").innerHTML =
-              "<p>No HTML files found in selected directory.</p>";
-            return;
-          }
-
-          // Create blob URLs for each file so they can be opened in a new tab
-          const ul = document.createElement("ul");
-          for (const f of files) {
-            const file = await f.handle.getFile();
-            const blobUrl = URL.createObjectURL(file);
-            const li = document.createElement("li");
-            const a = document.createElement("a");
-            a.href = blobUrl;
-            a.textContent = f.path;
-            a.target = "_blank";
-            li.appendChild(a);
-            ul.appendChild(li);
-          }
-
-          document.getElementById("links").innerHTML = "";
-          document.getElementById("links").appendChild(ul);
-        } catch (err) {
-          console.error(err);
-        }
-      }
-
-      document
-        .getElementById("pick")
-        .addEventListener("click", pickDirectoryAndList);
-
-      // Start by attempting to fetch the server directory
-      tryFetchDirectory();
+      // Inicializar
+      render();
     </script>
   </body>
 </html>
