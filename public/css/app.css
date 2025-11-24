@@ -46857,59 +46857,7 @@ label {
    RESPONSIVE - MOBILE
    ================================================ */
 
-@media (max-width: 991.98px) {
-    .student-ranking-page {
-        padding: 32px 0 56px;
-    }
-
-    .student-ranking-page .ranking-card {
-        padding: 26px;
-    }
-
-    /* Remove min-width fixo da tabela */
-    .student-ranking-page table.ranking-table {
-        min-width: 0 !important;
-    }
-
-    .student-ranking-page .ranking-table thead {
-        display: none;
-    }
-
-    .student-ranking-page table.ranking-table,
-    .student-ranking-page table.ranking-table tbody,
-    .student-ranking-page table.ranking-table tr,
-    .student-ranking-page table.ranking-table td {
-        display: block;
-        width: 100%;
-    }
-
-    .student-ranking-page table.ranking-table tr {
-        border-bottom: 1px solid var(--border-theme-3);
-        padding: 18px 0;
-    }
-
-    .student-ranking-page table.ranking-table td {
-        padding: 8px 0;
-    }
-
-    .student-ranking-page table.ranking-table td[data-label]::before {
-        content: attr(data-label);
-        display: block;
-        font-size: .7rem;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-        color: var(--text-theme-54);
-        margin-bottom: 6px;
-    }
-
-    .student-ranking-page .ranking-value {
-        justify-content: flex-start;
-    }
-
-    .student-ranking-page .ranking-controls {
-        align-items: flex-start;
-    }
-}
+/* Regras responsivas movidas para responsive.css */
 
 /* ================================================
    LESSON PAGE (TAKE LESSON) - LIGHT MODE

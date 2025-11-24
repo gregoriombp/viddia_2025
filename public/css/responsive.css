@@ -49,21 +49,35 @@
 
     /* Navbar - Mobile optimizations */
     .navbar {
-        padding: 12px 16px !important;
+        padding: 8px 16px !important;
+        min-height: 56px !important;
+    }
+
+    .mdk-header {
+        height: 56px !important;
+    }
+
+    .mdk-header__content {
+        min-height: 56px !important;
     }
 
     .navbar-brand {
         margin-right: 8px !important;
     }
 
+    .navbar-brand img {
+        width: 110px !important;
+        height: auto !important;
+    }
+
     /* User dropdown - Better mobile touch target */
     .nav-item.dropdown .nav-link {
-        padding: 8px !important;
+        padding: 6px !important;
     }
 
     .avatar-sm {
-        width: 36px !important;
-        height: 36px !important;
+        width: 32px !important;
+        height: 32px !important;
     }
 
     .dropdown-menu {
@@ -275,10 +289,7 @@
         width: 100px;
     }
 
-    /* Navbar adjustments */
-    .navbar-brand img {
-        width: 120px !important;
-    }
+    /* Navbar adjustments - logo já é redimensionado automaticamente em mobile */
 
     /* Header spacing */
     .mdk-box.js-mdk-box {
@@ -300,14 +311,15 @@
 
     .student-ranking-page .ranking-container,
     .student-ranking-page .container.mt-112pt {
-        margin-top: 64px !important;
-        padding-left: 16px;
-        padding-right: 16px;
+        margin-top: 56px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     .student-ranking-page .ranking-hero {
         padding: 24px 20px 64px !important;
         border-radius: 20px;
+        margin: 0 16px;
     }
 
     .student-ranking-page .ranking-hero h1 {
@@ -320,32 +332,240 @@
 
     .student-ranking-page .ranking-card {
         margin-top: -40px;
-        padding: 20px 16px;
-        border-radius: 20px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px 0;
+        border-radius: 0;
+        box-shadow: none;
     }
 
     .student-ranking-page .ranking-controls {
         flex-direction: column;
         align-items: stretch;
         gap: 12px;
+        margin-bottom: 20px;
+        padding: 0 16px;
     }
 
     .student-ranking-page .ranking-filter-group {
         width: 100%;
-        justify-content: center;
+        justify-content: space-between;
         flex-wrap: wrap;
+        gap: 8px;
+        padding: 8px;
     }
 
     .student-ranking-page .ranking-filter {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+        flex: 1 1 calc(50% - 8px);
+        min-width: 0;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .student-ranking-page .ranking-meta {
         font-size: 0.8rem;
-        padding: 8px 14px;
+        text-align: center;
+        padding: 0 16px;
     }
 
     .student-ranking-page .ranking-table-wrapper {
         border-radius: 16px;
-        margin: 0 -16px;
-        border-left: 0;
-        border-right: 0;
+        margin: 0;
+        border: none;
+        padding: 0 16px;
+        background: transparent;
+    }
+
+    /* Transformar tabela em layout de cards para mobile */
+    .student-ranking-page table.ranking-table {
+        min-width: 0 !important;
+        background: transparent !important;
+    }
+
+    .student-ranking-page .ranking-table thead {
+        display: none;
+    }
+
+    .student-ranking-page table.ranking-table,
+    .student-ranking-page table.ranking-table tbody {
+        display: block;
+        width: 100%;
+        background: transparent;
+    }
+
+    .student-ranking-page table.ranking-table tr {
+        display: block;
+        width: 100%;
+        position: relative;
+        background: var(--bg-theme-14);
+        border: none;
+        border-radius: 16px;
+        padding: 16px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 8px var(--color-theme-10);
+    }
+
+    .student-ranking-page table.ranking-table tr:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Destaque para os 3 primeiros colocados */
+    .student-ranking-page table.ranking-table tr.ranking-row--top-1 {
+        border: 2px solid rgba(255, 214, 107, 0.3);
+        background: linear-gradient(135deg, var(--bg-theme-14) 0%, rgba(255, 214, 107, 0.05) 100%);
+    }
+
+    .student-ranking-page table.ranking-table tr.ranking-row--top-2 {
+        border: 2px solid rgba(217, 220, 232, 0.3);
+        background: linear-gradient(135deg, var(--bg-theme-14) 0%, rgba(217, 220, 232, 0.05) 100%);
+    }
+
+    .student-ranking-page table.ranking-table tr.ranking-row--top-3 {
+        border: 2px solid rgba(255, 184, 120, 0.3);
+        background: linear-gradient(135deg, var(--bg-theme-14) 0%, rgba(255, 184, 120, 0.05) 100%);
+    }
+
+    .student-ranking-page table.ranking-table td {
+        display: block;
+        padding: 0;
+        border: none;
+        text-align: left !important;
+        width: 100%;
+    }
+
+    /* Ocultar labels padrão para reposicionar */
+    .student-ranking-page table.ranking-table td[data-label]::before {
+        display: none;
+    }
+
+    /* Célula da Posição - Absoluta no canto superior direito */
+    .student-ranking-page table.ranking-table td:first-child {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: auto;
+        padding: 0;
+    }
+
+    .student-ranking-page table.ranking-table td:first-child .ranking-position {
+        margin: 0;
+    }
+
+    /* Célula do Aluno - Destaque no topo */
+    .student-ranking-page table.ranking-table td:nth-child(2) {
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        border-bottom: 1px solid var(--border-theme-4);
+        padding-right: 60px;
+    }
+
+    /* Grid para as métricas (Moedas, Nível, Aproveitamento, Medalhas) */
+    .student-ranking-page table.ranking-table td:nth-child(3),
+    .student-ranking-page table.ranking-table td:nth-child(4),
+    .student-ranking-page table.ranking-table td:nth-child(5),
+    .student-ranking-page table.ranking-table td:nth-child(6) {
+        display: inline-block;
+        width: calc(50% - 6px);
+        vertical-align: top;
+        padding: 8px 0 0 0;
+    }
+
+    .student-ranking-page table.ranking-table td:nth-child(3),
+    .student-ranking-page table.ranking-table td:nth-child(5) {
+        margin-right: 12px;
+    }
+
+    /* Estilo das métricas com labels */
+    .student-ranking-page table.ranking-table td:nth-child(3)::before,
+    .student-ranking-page table.ranking-table td:nth-child(4)::before,
+    .student-ranking-page table.ranking-table td:nth-child(5)::before,
+    .student-ranking-page table.ranking-table td:nth-child(6)::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.65rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-theme-54);
+        font-weight: 700;
+        margin-bottom: 4px;
+        opacity: 0.8;
+    }
+
+    /* Ajustar valores para alinhamento à esquerda */
+    .student-ranking-page .ranking-value {
+        justify-content: flex-start !important;
+        gap: 6px;
+    }
+
+    .student-ranking-page .ranking-value--numeric,
+    .student-ranking-page .ranking-value--center {
+        justify-content: flex-start !important;
+    }
+
+    .student-ranking-page .ranking-cell {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .student-ranking-page .ranking-cell--numeric,
+    .student-ranking-page .ranking-cell--center {
+        text-align: left !important;
+    }
+
+    /* Medalhas - ajustar para layout horizontal */
+    .student-ranking-page .ranking-medals {
+        justify-content: flex-start !important;
+        gap: 6px;
+    }
+
+    .student-ranking-page .ranking-medal-stack {
+        gap: 0;
+    }
+
+    /* Remover efeito hover em mobile */
+    .student-ranking-page .ranking-row:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* Ajustar wrapper da tabela */
+    .student-ranking-page .ranking-table-wrapper {
+        overflow-x: hidden;
+    }
+
+    /* Padding para o botão de load more */
+    .student-ranking-page .ranking-load-more {
+        padding: 0 16px;
+    }
+
+    /* Ajustar espaçamento dos ícones */
+    .student-ranking-page .ranking-value__icon {
+        font-size: 1.15rem;
+        flex-shrink: 0;
+    }
+
+    /* Ajustar info do aluno */
+    .student-ranking-page .ranking-student {
+        gap: 10px;
+    }
+
+    .student-ranking-page .ranking-avatar {
+        flex-shrink: 0;
+    }
+
+    .student-ranking-page .ranking-student__info {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .student-ranking-page .ranking-student__info strong,
+    .student-ranking-page .ranking-student__info span {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     /* Lesson Page - Mobile Adjustments */
@@ -495,8 +715,31 @@
     }
 
     /* Navbar */
+    .navbar {
+        padding: 0px 12px !important;
+        min-height: 46px !important;
+    }
+
+    .mdk-header {
+        height: 46px !important;
+    }
+
+    .mdk-header__content {
+        min-height: 46px !important;
+    }
+
     .navbar-brand img {
-        width: 100px !important;
+        width: 95px !important;
+        height: auto !important;
+    }
+
+    .avatar-sm {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .nav-item.dropdown .nav-link {
+        padding: 5px !important;
     }
 
     /* Header */
@@ -515,14 +758,15 @@
        ===================================== */
     .student-ranking-page .ranking-container,
     .student-ranking-page .container.mt-112pt {
-        margin-top: 48px !important;
-        padding-left: 12px;
-        padding-right: 12px;
+        margin-top: 52px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     .student-ranking-page .ranking-hero {
         padding: 20px 16px 56px !important;
         border-radius: 16px;
+        margin: 0 12px;
     }
 
     .student-ranking-page .ranking-hero h1 {
@@ -539,8 +783,19 @@
 
     .student-ranking-page .ranking-card {
         margin-top: -32px;
-        padding: 16px 12px;
-        border-radius: 16px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 16px 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .student-ranking-page .ranking-controls {
+        padding: 12px 12px;
+    }
+
+    .student-ranking-page .ranking-meta {
+        padding: 0 12px;
     }
 
     .student-ranking-page .ranking-filter {
@@ -573,14 +828,204 @@
         font-size: 0.9rem;
     }
 
+    /* Transformar tabela em layout de cards para small mobile */
+    .student-ranking-page table.ranking-table {
+        min-width: 0 !important;
+        background: transparent !important;
+    }
+
+    .student-ranking-page .ranking-table thead {
+        display: none;
+    }
+
+    .student-ranking-page table.ranking-table,
+    .student-ranking-page table.ranking-table tbody {
+        display: block;
+        width: 100%;
+        background: transparent;
+    }
+
     .student-ranking-page table.ranking-table tr {
-        padding: 14px 0;
+        display: block;
+        width: 100%;
+        position: relative;
+        background: var(--bg-theme-14);
+        border: none;
+        border-radius: 14px;
+        padding: 14px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 6px var(--color-theme-10);
+    }
+
+    .student-ranking-page table.ranking-table tr:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Destaque para os 3 primeiros colocados em small mobile */
+    .student-ranking-page table.ranking-table tr.ranking-row--top-1 {
+        border: 2px solid rgba(255, 214, 107, 0.3);
+        background: linear-gradient(135deg, var(--bg-theme-14) 0%, rgba(255, 214, 107, 0.05) 100%);
+    }
+
+    .student-ranking-page table.ranking-table tr.ranking-row--top-2 {
+        border: 2px solid rgba(217, 220, 232, 0.3);
+        background: linear-gradient(135deg, var(--bg-theme-14) 0%, rgba(217, 220, 232, 0.05) 100%);
+    }
+
+    .student-ranking-page table.ranking-table tr.ranking-row--top-3 {
+        border: 2px solid rgba(255, 184, 120, 0.3);
+        background: linear-gradient(135deg, var(--bg-theme-14) 0%, rgba(255, 184, 120, 0.05) 100%);
+    }
+
+    .student-ranking-page table.ranking-table td {
+        display: block;
+        padding: 0;
+        border: none;
+        text-align: left !important;
+        width: 100%;
+    }
+
+    /* Ocultar labels padrão para reposicionar */
+    .student-ranking-page table.ranking-table td[data-label]::before {
+        display: none;
+    }
+
+    /* Célula da Posição - Absoluta no canto superior direito */
+    .student-ranking-page table.ranking-table td:first-child {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: auto;
+        padding: 0;
+    }
+
+    .student-ranking-page table.ranking-table td:first-child .ranking-position {
+        margin: 0;
+        width: 40px;
+        height: 40px;
+        font-size: 0.85rem;
+    }
+
+    /* Célula do Aluno - Destaque no topo */
+    .student-ranking-page table.ranking-table td:nth-child(2) {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid var(--border-theme-4);
+        padding-right: 50px;
+    }
+
+    /* Grid para as métricas (Moedas, Nível, Aproveitamento, Medalhas) */
+    .student-ranking-page table.ranking-table td:nth-child(3),
+    .student-ranking-page table.ranking-table td:nth-child(4),
+    .student-ranking-page table.ranking-table td:nth-child(5),
+    .student-ranking-page table.ranking-table td:nth-child(6) {
+        display: inline-block;
+        width: calc(50% - 5px);
+        vertical-align: top;
+        padding: 6px 0 0 0;
+    }
+
+    .student-ranking-page table.ranking-table td:nth-child(3),
+    .student-ranking-page table.ranking-table td:nth-child(5) {
+        margin-right: 10px;
+    }
+
+    /* Estilo das métricas com labels */
+    .student-ranking-page table.ranking-table td:nth-child(3)::before,
+    .student-ranking-page table.ranking-table td:nth-child(4)::before,
+    .student-ranking-page table.ranking-table td:nth-child(5)::before,
+    .student-ranking-page table.ranking-table td:nth-child(6)::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.6rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-theme-54);
+        font-weight: 700;
+        margin-bottom: 3px;
+        opacity: 0.8;
+    }
+
+    /* Ajustar valores para alinhamento à esquerda */
+    .student-ranking-page .ranking-value {
+        justify-content: flex-start !important;
+        gap: 5px;
+    }
+
+    .student-ranking-page .ranking-value--numeric,
+    .student-ranking-page .ranking-value--center {
+        justify-content: flex-start !important;
+    }
+
+    .student-ranking-page .ranking-cell {
+        font-size: 0.95rem;
+        font-weight: 700;
+    }
+
+    .student-ranking-page .ranking-cell--numeric,
+    .student-ranking-page .ranking-cell--center {
+        text-align: left !important;
+    }
+
+    /* Medalhas - ajustar para layout horizontal */
+    .student-ranking-page .ranking-medals {
+        justify-content: flex-start !important;
+        gap: 5px;
+    }
+
+    .student-ranking-page .ranking-medal-stack {
+        gap: 0;
     }
 
     .student-ranking-page .ranking-medal {
         width: 28px;
         height: 28px;
         border-width: 2px;
+    }
+
+    /* Remover efeito hover em small mobile */
+    .student-ranking-page .ranking-row:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* Ajustar wrapper da tabela */
+    .student-ranking-page .ranking-table-wrapper {
+        overflow-x: hidden;
+        padding: 0 12px;
+    }
+
+    /* Padding para o botão de load more */
+    .student-ranking-page .ranking-load-more {
+        padding: 0 12px;
+    }
+
+    /* Ajustar espaçamento dos ícones */
+    .student-ranking-page .ranking-value__icon {
+        font-size: 1.05rem;
+        flex-shrink: 0;
+    }
+
+    /* Ajustar info do aluno para small mobile */
+    .student-ranking-page .ranking-student {
+        gap: 10px;
+    }
+
+    .student-ranking-page .ranking-avatar {
+        flex-shrink: 0;
+    }
+
+    .student-ranking-page .ranking-student__info {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .student-ranking-page .ranking-student__info strong,
+    .student-ranking-page .ranking-student__info span {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .student-ranking-page .ranking-load-more .btn {
@@ -608,12 +1053,47 @@
 
     .student-ranking-page .ranking-card {
         margin-top: -48px;
-        padding: 24px;
+        padding: 0px;
     }
 
-    /* Remove min-width fixo da tabela */
+    /* Remove min-width fixo da tabela para tablets */
     .student-ranking-page table.ranking-table {
         min-width: 0 !important;
+    }
+
+    /* Em tablets, permitir scroll horizontal se necessário */
+    .student-ranking-page .ranking-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Reduzir padding em tablets */
+    .student-ranking-page .ranking-table td {
+        padding: 16px 12px;
+    }
+
+    .student-ranking-page .ranking-table th {
+        padding: 14px 12px;
+    }
+
+    /* Ajustar tamanho dos elementos em tablets */
+    .student-ranking-page .ranking-avatar {
+        width: 42px;
+        height: 42px;
+    }
+
+    .student-ranking-page .ranking-position {
+        width: 42px;
+        height: 42px;
+        font-size: 0.95rem;
+    }
+
+    .student-ranking-page .ranking-student__info strong {
+        font-size: 0.95rem;
+    }
+
+    .student-ranking-page .ranking-student__info span {
+        font-size: 0.8rem;
     }
 
     /* Lesson Page - Stack Layout */
@@ -846,6 +1326,7 @@
    EXTRA SMALL DEVICES (max-width: 375px)
    ======================================== */
 @media (max-width: 375px) {
+
     /* Ultra compact spacing for very small devices */
     .container.page__container {
         padding-left: 12px;
@@ -923,6 +1404,7 @@
    LANDSCAPE MODE OPTIMIZATIONS
    ======================================== */
 @media (max-height: 500px) and (orientation: landscape) {
+
     /* Reduce vertical spacing in landscape */
     .mdk-box__content {
         padding-top: 16pt !important;
@@ -952,11 +1434,13 @@
    VIDEO & MEDIA RESPONSIVE
    ======================================== */
 @media (max-width: 768px) {
+
     /* Video thumbnail in welcome panel */
     .video-thumbnail {
         position: relative;
         width: 100%;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        padding-bottom: 56.25%;
+        /* 16:9 aspect ratio */
         overflow: hidden;
     }
 
@@ -981,6 +1465,7 @@
    ACCESSIBILITY & TOUCH IMPROVEMENTS
    ======================================== */
 @media (max-width: 768px) {
+
     /* Larger tap targets for better accessibility */
     .nav-link {
         min-height: 44px;
@@ -1016,6 +1501,7 @@
    PRINT STYLES (Bonus)
    ======================================== */
 @media print {
+
     .navbar,
     .dropdown-menu,
     .btn,
@@ -1038,6 +1524,7 @@
    CRITICAL MOBILE FIXES
    ======================================== */
 @media (max-width: 768px) {
+
     /* Override inline styles for hero background on mobile */
     .mdk-box__bg-primary[style] {
         background-size: cover !important;
@@ -1046,7 +1533,7 @@
     }
 
     /* Ensure overlay works on mobile */
-    .mdk-box__bg-primary + div[style*="background-color: black"] {
+    .mdk-box__bg-primary+div[style*="background-color: black"] {
         opacity: 0.5 !important;
     }
 
@@ -1078,6 +1565,7 @@
    SMOOTH TRANSITIONS
    ======================================== */
 @media (max-width: 768px) {
+
     /* Add smooth transitions for better UX */
     .course-card,
     .welcome-panel,
@@ -1106,6 +1594,7 @@
    PERFORMANCE OPTIMIZATIONS
    ======================================== */
 @media (max-width: 768px) {
+
     /* Use GPU acceleration for animations */
     .course-card,
     .welcome-panel,
