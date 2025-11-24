@@ -1,0 +1,1122 @@
+/* ========================================
+   VIDDIA - Responsive Styles
+   Mobile-first responsive design
+   ======================================== */
+
+/* ========================================
+   TABLET & BELOW (max-width: 1024px)
+   ======================================== */
+@media (max-width: 1024px) {
+
+    /* Hero Section - Reduce padding */
+    .mdk-box.js-mdk-box {
+        padding-top: 64pt !important;
+        padding-bottom: 64pt !important;
+    }
+
+    .mdk-box__content {
+        padding-top: 48pt !important;
+        padding-bottom: 48pt !important;
+    }
+
+    /* Course Grid - 2 columns for tablet */
+    .course-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    /* Welcome Panel - Adjust spacing */
+    .welcome-panel {
+        padding: 32px 24px;
+    }
+
+    .welcome-panel__title {
+        font-size: 1.75rem;
+    }
+}
+
+/* ========================================
+   MOBILE & SMALL TABLET (max-width: 768px)
+   ======================================== */
+@media (max-width: 768px) {
+
+    /* Container adjustments */
+    .container.page__container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* Navbar - Mobile optimizations */
+    .navbar {
+        padding: 12px 16px !important;
+    }
+
+    .navbar-brand {
+        margin-right: 8px !important;
+    }
+
+    /* User dropdown - Better mobile touch target */
+    .nav-item.dropdown .nav-link {
+        padding: 8px !important;
+    }
+
+    .avatar-sm {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .dropdown-menu {
+        min-width: 200px;
+        right: 0;
+        left: auto !important;
+    }
+
+    /* Hero Section - Stack vertically */
+    .hero .page-section {
+        padding: 0;
+    }
+
+    .hero .page__container {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .hero .page__container .flex {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .hero .page__container>div:first-child {
+        min-width: 100% !important;
+    }
+
+    .hero .page__container img[width="180"] {
+        margin-right: 0 !important;
+        margin-bottom: 24px;
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Hero Profile Container */
+    .hero-profile-container {
+        width: 100%;
+    }
+
+    .hero-welcome,
+    .hero-name {
+        text-align: center !important;
+    }
+
+    /* Hero Text */
+    .hero h2[style*="font-size: 3rem"] {
+        font-size: 2rem !important;
+    }
+
+    .hero h2[style*="font-size: 1.4rem"] {
+        font-size: 1.1rem !important;
+    }
+
+    /* Dashboard Pills - Stack vertically */
+    .dashboard-insights__stats {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px;
+    }
+
+    .student-dashboard-page .dashboard-pill {
+        width: 100% !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        padding: 16px 20px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__icon {
+        margin-right: 12px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__content {
+        flex-direction: row !important;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .student-dashboard-page .dashboard-pill__value {
+        font-size: 1.5rem !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__label {
+        font-size: 0.875rem !important;
+    }
+
+    /* Dashboard Medal Stack - Adjust size */
+    .dashboard-medal-stack {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .dashboard-medal img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* Hero Actions - Full width button */
+    .hero .col-auto {
+        width: 100%;
+        margin-top: 24px;
+    }
+
+    .hero .col-auto .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Welcome Panel - Vertical layout */
+    .welcome-panel {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        gap: 0;
+    }
+
+    .welcome-panel__video {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 20px 20px 0 0 !important;
+        overflow: hidden;
+    }
+
+    .welcome-panel__content {
+        padding: 24px 20px;
+        order: 2;
+    }
+
+    .welcome-panel__status {
+        padding: 20px;
+        order: 3;
+        border-top: 1px solid rgba(48, 56, 64, 0.1);
+    }
+
+    .welcome-panel__title {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+
+    .welcome-panel__subtitle {
+        font-size: 0.9rem;
+    }
+
+    .welcome-panel__actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .welcome-panel__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .welcome-panel__progress-wrapper {
+        justify-content: center;
+    }
+
+    .welcome-panel__progress-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Course Grid - 1 column for mobile */
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Course Card adjustments */
+    .course-card {
+        max-width: 100%;
+    }
+
+    .course-card__body {
+        padding: 20px 16px;
+    }
+
+    .course-card__title {
+        font-size: 1.125rem;
+    }
+
+    .course-card__description {
+        font-size: 0.875rem;
+    }
+
+    .course-card__actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .course-card__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Page separators */
+    .page-separator__text-free h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Footer adjustments */
+    .bg-white.border-top-2 .page__container {
+        padding: 32px 16px;
+    }
+
+    .bg-white.border-top-2 img[width="120"] {
+        width: 100px;
+    }
+
+    /* Navbar adjustments */
+    .navbar-brand img {
+        width: 120px !important;
+    }
+
+    /* Header spacing */
+    .mdk-box.js-mdk-box {
+        padding-top: 48pt !important;
+        padding-bottom: 48pt !important;
+    }
+
+    .mdk-box__content {
+        padding-top: 32pt !important;
+        padding-bottom: 32pt !important;
+    }
+
+    /* =====================================
+       RANKING PAGE - MOBILE (768px)
+       ===================================== */
+    .student-ranking-page {
+        padding: 24px 0 48px;
+    }
+
+    .student-ranking-page .ranking-container,
+    .student-ranking-page .container.mt-112pt {
+        margin-top: 64px !important;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .student-ranking-page .ranking-hero {
+        padding: 24px 20px 64px !important;
+        border-radius: 20px;
+    }
+
+    .student-ranking-page .ranking-hero h1 {
+        font-size: 1.75rem !important;
+    }
+
+    .student-ranking-page .ranking-hero p {
+        font-size: 0.9rem !important;
+    }
+
+    .student-ranking-page .ranking-card {
+        margin-top: -40px;
+        padding: 20px 16px;
+        border-radius: 20px;
+    }
+
+    .student-ranking-page .ranking-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .student-ranking-page .ranking-filter-group {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .student-ranking-page .ranking-filter {
+        font-size: 0.8rem;
+        padding: 8px 14px;
+    }
+
+    .student-ranking-page .ranking-table-wrapper {
+        border-radius: 16px;
+        margin: 0 -16px;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    /* Lesson Page - Mobile Adjustments */
+    .lesson-layout {
+        padding: 24px 16px !important;
+    }
+
+    .lesson-player__body {
+        padding: 20px 16px;
+    }
+
+    .lesson-title {
+        font-size: 1.25rem;
+    }
+
+    .lesson-player__actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .lesson-player__actions .btn {
+        width: 100%;
+    }
+
+    .module-stage__header {
+        padding: 16px;
+    }
+}
+
+/* ========================================
+   SMALL MOBILE (max-width: 576px)
+   ======================================== */
+@media (max-width: 576px) {
+
+    /* Reduce all padding further */
+    .page-section {
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
+    }
+
+    .container.page__container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* Hero adjustments */
+    .hero h2[style*="font-size: 3rem"],
+    .hero h2[style*="font-size: 2rem"] {
+        font-size: 1.75rem !important;
+    }
+
+    .hero h2[style*="font-size: 1.4rem"],
+    .hero h2[style*="font-size: 1.1rem"] {
+        font-size: 1rem !important;
+    }
+
+    .hero .page__container img[width="180"],
+    .hero .page__container img[width="120"] {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Dashboard Pills - Compact layout */
+    .student-dashboard-page .dashboard-pill {
+        padding: 12px 16px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__value {
+        font-size: 1.25rem !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__label {
+        font-size: 0.75rem !important;
+    }
+
+    /* Welcome Panel */
+    .welcome-panel__content {
+        padding: 20px 16px;
+    }
+
+    .welcome-panel__title {
+        font-size: 1.25rem;
+    }
+
+    .welcome-panel__eyebrow {
+        font-size: 0.75rem;
+    }
+
+    .welcome-panel__subtitle {
+        font-size: 0.85rem;
+    }
+
+    .welcome-panel__progress-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .welcome-panel__progress-percentage {
+        font-size: 1.5rem !important;
+    }
+
+    .welcome-panel__progress-modules {
+        font-size: 0.75rem !important;
+    }
+
+    /* Course Cards */
+    .course-card__body {
+        padding: 16px 12px;
+    }
+
+    .course-card__title {
+        font-size: 1rem;
+    }
+
+    .course-card__description {
+        font-size: 0.8125rem;
+        line-height: 1.4;
+    }
+
+    .course-card__meta {
+        font-size: 0.8125rem;
+    }
+
+    /* Buttons */
+    .btn {
+        font-size: 0.875rem;
+        padding: 10px 16px;
+    }
+
+    .btn-sm {
+        font-size: 0.8125rem;
+        padding: 8px 12px;
+    }
+
+    /* Page separators */
+    .page-separator__text-free h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Footer */
+    .bg-white.border-top-2 .page__container {
+        padding: 24px 12px;
+    }
+
+    .bg-white.border-top-2 .measure-lead-max {
+        font-size: 0.8125rem !important;
+    }
+
+    /* Navbar */
+    .navbar-brand img {
+        width: 100px !important;
+    }
+
+    /* Header */
+    .mdk-box.js-mdk-box {
+        padding-top: 32pt !important;
+        padding-bottom: 32pt !important;
+    }
+
+    .mdk-box__content {
+        padding-top: 24pt !important;
+        padding-bottom: 24pt !important;
+    }
+
+    /* =====================================
+       RANKING PAGE - SMALL MOBILE (576px)
+       ===================================== */
+    .student-ranking-page .ranking-container,
+    .student-ranking-page .container.mt-112pt {
+        margin-top: 48px !important;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .student-ranking-page .ranking-hero {
+        padding: 20px 16px 56px !important;
+        border-radius: 16px;
+    }
+
+    .student-ranking-page .ranking-hero h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .student-ranking-page .ranking-hero p {
+        font-size: 0.85rem !important;
+    }
+
+    .student-ranking-page .ranking-hero .ranking-meta {
+        font-size: 0.75rem !important;
+    }
+
+    .student-ranking-page .ranking-card {
+        margin-top: -32px;
+        padding: 16px 12px;
+        border-radius: 16px;
+    }
+
+    .student-ranking-page .ranking-filter {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+
+    .student-ranking-page .ranking-student {
+        gap: 12px;
+    }
+
+    .student-ranking-page .ranking-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+
+    .student-ranking-page .ranking-student__info strong {
+        font-size: 0.9rem;
+    }
+
+    .student-ranking-page .ranking-student__info span {
+        font-size: 0.75rem;
+    }
+
+    .student-ranking-page .ranking-position {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+    }
+
+    .student-ranking-page table.ranking-table tr {
+        padding: 14px 0;
+    }
+
+    .student-ranking-page .ranking-medal {
+        width: 28px;
+        height: 28px;
+        border-width: 2px;
+    }
+
+    .student-ranking-page .ranking-load-more .btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/* ========================================
+   RANKING PAGE - TABLET (max-width: 991px)
+   ======================================== */
+@media (max-width: 991px) {
+    .student-ranking-page {
+        padding: 32px 0 56px;
+    }
+
+    .student-ranking-page .ranking-container,
+    .student-ranking-page .container.mt-112pt {
+        margin-top: 80px !important;
+    }
+
+    .student-ranking-page .ranking-hero {
+        padding: 32px 24px 80px !important;
+    }
+
+    .student-ranking-page .ranking-card {
+        margin-top: -48px;
+        padding: 24px;
+    }
+
+    /* Remove min-width fixo da tabela */
+    .student-ranking-page table.ranking-table {
+        min-width: 0 !important;
+    }
+
+    /* Lesson Page - Stack Layout */
+    .lesson-layout__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .lesson-layout__content {
+        order: -1;
+        /* Video on top */
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .lesson-layout__sidebar {
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+/* ========================================
+   UTILITY CLASSES FOR RESPONSIVE
+   ======================================== */
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+/* Hide on tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hide-tablet {
+        display: none !important;
+    }
+}
+
+/* Hide on desktop */
+@media (min-width: 1025px) {
+    .hide-desktop {
+        display: none !important;
+    }
+}
+
+/* Show only on mobile */
+.show-mobile {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .show-mobile {
+        display: block !important;
+    }
+}
+
+/* Show only on tablet */
+.show-tablet {
+    display: none !important;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .show-tablet {
+        display: block !important;
+    }
+}
+
+/* Responsive text alignment */
+@media (max-width: 768px) {
+    .text-center-mobile {
+        text-align: center !important;
+    }
+}
+
+/* Responsive margins */
+@media (max-width: 768px) {
+    .mb-mobile-0 {
+        margin-bottom: 0 !important;
+    }
+
+    .mt-mobile-16 {
+        margin-top: 16px !important;
+    }
+
+    .mx-mobile-auto {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* Flexbox responsive utilities */
+@media (max-width: 768px) {
+    .flex-column-mobile {
+        flex-direction: column !important;
+    }
+
+    .align-items-center-mobile {
+        align-items: center !important;
+    }
+
+    .justify-content-center-mobile {
+        justify-content: center !important;
+    }
+}
+
+/* ========================================
+   ADDITIONAL MOBILE OPTIMIZATIONS
+   ======================================== */
+
+/* Ensure hero background is responsive */
+@media (max-width: 768px) {
+    .mdk-box__bg-primary {
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+}
+
+/* Better touch targets for mobile (minimum 44x44px) */
+@media (max-width: 768px) {
+    .btn {
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+
+    .btn-sm {
+        min-height: 40px;
+        padding: 10px 16px;
+    }
+
+    /* Course card meta items - better spacing */
+    .course-card__meta-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .course-card__meta-item .material-icons,
+    .course-card__meta-item .material-symbols-rounded {
+        font-size: 18px;
+    }
+
+    /* Video thumbnail play button - larger for mobile */
+    .video-play-button {
+        transform: scale(1.2);
+    }
+
+    /* Improve readability of small text */
+    small {
+        font-size: 0.875rem !important;
+    }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .mdk-header-layout {
+        overflow-x: hidden;
+    }
+
+    .page-content {
+        overflow-x: hidden;
+    }
+}
+
+/* Optimize images for mobile */
+@media (max-width: 768px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .course-card__thumbnail img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+/* Improve link spacing for touch */
+@media (max-width: 768px) {
+    a {
+        padding: 4px 0;
+        display: inline-block;
+    }
+
+    .dropdown-item {
+        padding: 12px 16px;
+        font-size: 0.9375rem;
+    }
+}
+
+/* Course grid footer - center button on mobile */
+@media (max-width: 768px) {
+    .course-grid__footer {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .course-grid__footer .btn {
+        min-width: 200px;
+    }
+}
+
+/* Page separator - better mobile spacing */
+@media (max-width: 768px) {
+    .page-separator {
+        margin: 32px 0 24px;
+    }
+
+    .mt-32pt {
+        margin-top: 24px !important;
+    }
+}
+
+/* Fix for hero content z-index on mobile */
+@media (max-width: 768px) {
+    .mdk-box__content {
+        position: relative;
+        z-index: 10 !important;
+    }
+}
+
+/* ========================================
+   EXTRA SMALL DEVICES (max-width: 375px)
+   ======================================== */
+@media (max-width: 375px) {
+    /* Ultra compact spacing for very small devices */
+    .container.page__container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* Hero - Extra compact */
+    .hero .page__container img[width="180"],
+    .hero .page__container img[width="120"],
+    .hero .page__container img[width="100"] {
+        width: 90px !important;
+        height: 90px !important;
+    }
+
+    .hero-welcome {
+        font-size: 0.875rem !important;
+    }
+
+    .hero-name {
+        font-size: 1.5rem !important;
+    }
+
+    /* Dashboard pills - ultra compact */
+    .student-dashboard-page .dashboard-pill {
+        padding: 10px 12px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__icon {
+        font-size: 20px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__value {
+        font-size: 1.125rem !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__label {
+        font-size: 0.7rem !important;
+    }
+
+    /* Buttons - Adjust padding */
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.8125rem;
+    }
+
+    .btn .material-icons {
+        font-size: 18px;
+    }
+
+    /* Welcome panel - Compact */
+    .welcome-panel__title {
+        font-size: 1.125rem !important;
+    }
+
+    .welcome-panel__subtitle {
+        font-size: 0.8125rem !important;
+    }
+
+    /* Course cards - Compact */
+    .course-card__title {
+        font-size: 0.9375rem !important;
+    }
+
+    .course-card__description {
+        font-size: 0.8rem !important;
+    }
+
+    /* Logo - Smaller for tiny screens */
+    .navbar-brand img {
+        width: 90px !important;
+    }
+}
+
+/* ========================================
+   LANDSCAPE MODE OPTIMIZATIONS
+   ======================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    /* Reduce vertical spacing in landscape */
+    .mdk-box__content {
+        padding-top: 16pt !important;
+        padding-bottom: 16pt !important;
+    }
+
+    .hero .page__container img[width="180"],
+    .hero .page__container img[width="120"] {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .dashboard-insights__stats {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .student-dashboard-page .dashboard-pill {
+        flex: 1 1 auto;
+        min-width: 120px;
+    }
+}
+
+/* ========================================
+   VIDEO & MEDIA RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    /* Video thumbnail in welcome panel */
+    .video-thumbnail {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        overflow: hidden;
+    }
+
+    .video-thumbnail img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .video-play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY & TOUCH IMPROVEMENTS
+   ======================================== */
+@media (max-width: 768px) {
+    /* Larger tap targets for better accessibility */
+    .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Better focus states for mobile */
+    .btn:focus,
+    .nav-link:focus,
+    a:focus {
+        outline: 2px solid #007bff;
+        outline-offset: 2px;
+    }
+
+    /* Prevent text selection issues on touch */
+    .course-card,
+    .welcome-panel,
+    .dashboard-pill {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+        user-select: none;
+    }
+
+    .course-card__title a,
+    .course-card__description,
+    .welcome-panel__title,
+    .welcome-panel__subtitle {
+        user-select: text;
+    }
+}
+
+/* ========================================
+   PRINT STYLES (Bonus)
+   ======================================== */
+@media print {
+    .navbar,
+    .dropdown-menu,
+    .btn,
+    .course-grid__footer,
+    .preloader {
+        display: none !important;
+    }
+
+    .page-content {
+        margin: 0;
+        padding: 0;
+    }
+
+    .course-card {
+        page-break-inside: avoid;
+    }
+}
+
+/* ========================================
+   CRITICAL MOBILE FIXES
+   ======================================== */
+@media (max-width: 768px) {
+    /* Override inline styles for hero background on mobile */
+    .mdk-box__bg-primary[style] {
+        background-size: cover !important;
+        background-position: center center !important;
+        height: 100% !important;
+    }
+
+    /* Ensure overlay works on mobile */
+    .mdk-box__bg-primary + div[style*="background-color: black"] {
+        opacity: 0.5 !important;
+    }
+
+    /* Fix hero content positioning */
+    .mdk-box__content[style] {
+        padding-top: 32pt !important;
+        padding-bottom: 32pt !important;
+    }
+
+    /* Fix container flex direction */
+    .page__container.d-flex.flex-md-row {
+        flex-direction: column !important;
+    }
+
+    /* Center align all text in hero on mobile */
+    .hero .page__container * {
+        text-align: center !important;
+    }
+
+    /* Fix dashboard buttons */
+    .hero .btn-primary {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* ========================================
+   SMOOTH TRANSITIONS
+   ======================================== */
+@media (max-width: 768px) {
+    /* Add smooth transitions for better UX */
+    .course-card,
+    .welcome-panel,
+    .dashboard-pill,
+    .btn {
+        transition: all 0.3s ease;
+    }
+
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Smooth dropdown animations */
+    .dropdown-menu {
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .dropdown-menu.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+@media (max-width: 768px) {
+    /* Use GPU acceleration for animations */
+    .course-card,
+    .welcome-panel,
+    .btn {
+        transform: translateZ(0);
+        will-change: transform;
+    }
+
+    /* Optimize repaints */
+    .course-card__thumbnail,
+    .video-thumbnail {
+        contain: layout style paint;
+    }
+}

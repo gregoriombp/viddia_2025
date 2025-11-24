@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light-mode">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>VIDDIA - Dashboard</title>
+    <link rel="icon" href="../../public/images/Favicon/FAVICON_VIDDIA-128.png" type="image/x-icon">
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Preloader -->
+    <link type="text/css" href="../../public/vendor/spinkit.css" rel="stylesheet">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="../../public/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="../../public/css/material-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="../../public/css/fontawesome.css" rel="stylesheet">
+
+    <!-- Preloader -->
+    <link type="text/css" href="../../public/css/preloader.css" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link type="text/css" href="../../public/css/app.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link type="text/css" href="../../public/css/responsive.css" rel="stylesheet" />
+
+    <!-- Dark Mode Styles (loaded when html has class "dark-mode") -->
+    <link type="text/css" href="../../public/css/dark.css" rel="stylesheet">
+
+</head>
+
+<body class="layout-sticky-subnav layout-default ">
+
+    <div class="preloader">
+        <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+        </div>
+
+        <!-- <div class="sk-bounce">
+    <div class="sk-bounce-dot"></div>
+    <div class="sk-bounce-dot"></div>
+  </div> -->
+
+        <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+    </div>
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+        <!-- Header -->
+        <div id="header" class="mdk-header mdk-header--bg-light js-mdk-header mb-0" data-effects="" data-fixed
+            data-condenses>
+
+            <div class="mdk-header__content justify-content-center">
+
+                <div class="navbar navbar-expand navbar-light bg-white border-bottom" id="default-navbar" data-primary>
+
+                    <!-- Navbar toggler -->
+
+                    <!-- Company Logo -->
+                    <a href="index.html" class="navbar-brand mr-16pt">
+                        <img src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png" alt="Company Logo"
+                            class="navbar-brand-icon mr-0 mr-lg-8pt" width="150">
+                    </a>
+
+                    <!-- Main Navigation -->
+
+
+                    <!-- User Profile Menu -->
+                    <ul class="nav navbar-nav ml-auto mr-0">
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link d-flex align-items-center dropdown-toggle"
+                                data-toggle="dropdown">
+                                <span class="avatar avatar-sm avatar-online mr-8pt">
+                                    <img src="../../public/images/person_image/male-1.jpg" alt="user"
+                                        class="avatar-img rounded-circle">
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="index.html" class="dropdown-item ">Início</a>
+                                <a href="student-dashboard.html" class="dropdown-item active">Dashboard</a>
+
+                                <a href="edit-account-profile.html" class="dropdown-item">Preferências</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="login.html" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- // END Header -->
+
+
+
+
+        <div class="mdk-box js-mdk-box mb-0 py-112pt" data-effects="parallax-background blend-background">
+            <div class="mdk-box__bg-dark">
+                <div class="mdk-box__bg-front"
+                    style="background-image: url(../../public/images/hero/hero-dashboard.jpg);">
+                </div>
+            </div>
+            <div class="mdk-box__content justify-content-center">
+                <div class="hero container page__container text-center w-75">
+                    <div class="page-section ">
+
+                        <div
+                            class="container page__container d-flex flex-column flex-md-row align-items-center justify-content-center text-center">
+                            <div class="flex d-flex flex-column align-items-center">
+                                <h2 class="text-white mb-0"
+                                    style="font-size: 3rem; font-family: 'Inter Tight', sans-serif; font-weight: 600;">
+                                    Editar Perfil</h2>
+                                <p class="text-white-70 mt-2 lead">Gerencie suas informações pessoais e preferências.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Layout Content -->
+
+        <div class="student-profile-edit-page pt-32pt">
+            <div class="container page__container">
+                <div class="js-mdk-header-layout__content page-content">
+
+                    <div class="page-section">
+                        <div class="page-separator">
+                            <div class="page-separator__text">Editar Perfil</div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Left Column: Profile Photo -->
+                            <div class="col-md-4 mb-24pt mb-md-0">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="avatar avatar-xxl avatar-online mb-3">
+                                            <img src="../../public/images/person_image/male-1.jpg" alt="Avatar"
+                                                class="avatar-img rounded-circle">
+                                        </div>
+                                        <h5 class="card-title mb-1">Gregório Pinheiro</h5>
+                                        <p class="text-muted small">Aluno Destaque</p>
+
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="profilePhotoInput">
+                                            <label class="btn btn-outline-primary btn-block"
+                                                for="profilePhotoInput">Alterar Foto</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Edit Form -->
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-row">
+                                                <div class="col-12 col-md-6 mb-3">
+                                                    <label class="form-label" for="firstName">Nome</label>
+                                                    <input type="text" class="form-control" id="firstName"
+                                                        placeholder="Seu nome" value="Gregório">
+                                                </div>
+                                                <div class="col-12 col-md-6 mb-3">
+                                                    <label class="form-label" for="lastName">Sobrenome</label>
+                                                    <input type="text" class="form-control" id="lastName"
+                                                        placeholder="Seu sobrenome" value="Pinheiro">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mb-3">
+                                                <label class="form-label" for="email">Email</label>
+                                                <input type="email" class="form-control" id="email"
+                                                    placeholder="seuemail@exemplo.com" value="gregorio@viddia.com.br">
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="col-12 col-md-6 mb-3">
+                                                    <label class="form-label" for="city">Cidade</label>
+                                                    <input type="text" class="form-control" id="city"
+                                                        placeholder="Sua cidade" value="Rio de Janeiro">
+                                                </div>
+                                                <div class="col-12 col-md-6 mb-3">
+                                                    <label class="form-label" for="country">País</label>
+                                                    <input type="text" class="form-control" id="country"
+                                                        placeholder="Seu país" value="Brasil">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mb-3">
+                                                <label class="form-label" for="bio">Sobre mim</label>
+                                                <textarea class="form-control" id="bio" rows="4"
+                                                    placeholder="Escreva um pouco sobre você...">Apaixonado por tecnologia e educação. Estudando Data Science para transformar dados em conhecimento.</textarea>
+                                            </div>
+
+                                            <div class="page-separator mt-4">
+                                                <div class="page-separator__text">Redes Sociais</div>
+                                            </div>
+
+                                            <div class="form-group mb-3">
+                                                <label class="form-label" for="facebook">Facebook Profile</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i
+                                                                class="fab fa-facebook"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="facebook"
+                                                        placeholder="https://facebook.com/seu.perfil">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mb-4">
+                                                <label class="form-label" for="linkedin">LinkedIn Profile</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i
+                                                                class="fab fa-linkedin"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="linkedin"
+                                                        placeholder="https://linkedin.com/in/seu-perfil">
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-end">
+                                                <a href="student-dashboard.html"
+                                                    class="btn btn-link text-secondary mr-2">Voltar</a>
+                                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- // END Header Layout -->
+
+        <!-- Drawer -->
+
+
+
+        <!-- // END Drawer -->
+
+        <!-- Footer -->
+
+        <div class="bg-white border-top-2 mt-auto">
+            <div class="container page__container page-section d-flex flex-column">
+                <p class="text-70 brand mb-24pt">
+                    <img class="brand-icon" src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png" width="120"
+                        alt="VIDDIA">
+                </p>
+                <p class="measure-lead-max text-50 small mr-8pt">Somos uma Edtech especializada em educação
+                    corporativa
+                    para os mais diversos segmentos de negócio e setores da sociedade. Somos parceiros estratégicos
+                    de
+                    organizações que desejam melhorar sua capacidade de execução e seus indicadores de negócio.</p>
+                <p class="mb-8pt d-flex">
+                    <a href="" class="text-70 text-underline mr-8pt small">Sobre a VIDDIA</a>
+                    <a href="" class="text-70 text-underline small">Termos de Uso</a>
+                </p>
+                <p class="text-50 small mt-n1 mb-0">Copyright 2025 &copy; Todos os Direitos Reservados.</p>
+            </div>
+        </div>
+
+        <!-- // END Footer -->
+        <!-- jQuery -->
+        <script src="../../public/vendor/jquery.min.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="../../public/vendor/popper.min.js"></script>
+        <script src="../../public/vendor/bootstrap.min.js"></script>
+
+        <!-- Perfect Scrollbar -->
+        <script src="../../public/vendor/perfect-scrollbar.min.js"></script>
+
+        <!-- DOM Factory -->
+        <script src="../../public/vendor/dom-factory.js"></script>
+
+        <!-- MDK -->
+        <script src="../../public/vendor/material-design-kit.js"></script>
+
+        <!-- App JS -->
+        <script src="../../public/js/app.js"></script>
+
+        <!-- Preloader -->
+        <script src="../../public/js/preloader.js"></script>
+
+        <script>
+            (function () {
+                'use strict';
+                var headerNode = document.querySelector('.mdk-header')
+                var layoutNode = document.querySelector('.mdk-header-layout')
+                var componentNode = layoutNode ? layoutNode : headerNode
+                componentNode.addEventListener('domfactory-component-upgraded', function () {
+                    headerNode.mdkHeader.eventTarget.addEventListener('scroll', function () {
+                        var progress = headerNode.mdkHeader.getScrollState().progress
+                        var navbarNode = headerNode.querySelector('#default-navbar')
+                        navbarNode.classList.toggle('bg-transparent', progress <= 0.2)
+                    })
+                })
+            })()
+        </script>
+
+        <script>
+                (function () {
+                    var sections = document.querySelectorAll('.course-grid-section');
+                    if (!sections.length) {
+                        return;
+                    }
+
+                    sections.forEach(function (section) {
+                        var button = section.querySelector('[data-show-more-target]');
+                        var targetId = button ? button.getAttribute('data-show-more-target') : null;
+                        var targetSection = targetId ? document.getElementById(targetId) : section;
+                        var grid = targetSection ? targetSection.querySelector('.course-grid') : null;
+                        if (!grid || !button) {
+                            return;
+                        }
+
+                        if (!grid) {
+                            return;
+                        }
+
+                        var extras = grid.querySelectorAll('.course-card--extra');
+                        if (!extras.length) {
+                            button.parentNode.style.display = 'none';
+                            return;
+                        }
+
+                        function isCollapsed() {
+                            return grid.getAttribute('data-collapsed') !== 'false';
+                        }
+
+                        function updateLabel() {
+                            var collapsed = isCollapsed();
+                            button.textContent = collapsed ? 'Mostrar mais' : 'Mostrar menos';
+                            button.setAttribute('aria-expanded', (!collapsed).toString());
+                            section.classList.toggle('course-grid-section--expanded', !collapsed);
+                        }
+
+                        button.addEventListener('click', function () {
+                            grid.setAttribute('data-collapsed', isCollapsed() ? 'false' : 'true');
+                            updateLabel();
+                        });
+
+                        updateLabel();
+                    });
+                })();
+        </script>
+
+</body>
+
+</html>

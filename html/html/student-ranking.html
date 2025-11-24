@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light-mode">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>VIDDIA - Ranking</title>
+      <link rel="icon" href="../../public/images/Favicon/FAVICON_VIDDIA-128.png" type="image/x-icon">
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+VIDDIA:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Preloader -->
+    <link type="text/css" href="../../public/vendor/spinkit.css" rel="stylesheet">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="../../public/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="../../public/css/material-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="../../public/css/fontawesome.css" rel="stylesheet">
+
+    <!-- Preloader -->
+    <link type="text/css" href="../../public/css/preloader.css" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link type="text/css" href="../../public/css/app.css" rel="stylesheet">
+
+  <!-- Responsive CSS -->
+  <link type="text/css" href="../../public/css/responsive.css" rel="stylesheet" />
+
+    <!-- Dark Mode Styles (loaded when html has class "dark-mode") -->
+    <link type="text/css" href="../../public/css/dark.css" rel="stylesheet">
+
+</head>
+
+<body class="layout-sticky-subnav layout-default ">
+
+    <div class="preloader">
+        <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+        </div>
+
+        <!-- <div class="sk-bounce">
+    <div class="sk-bounce-dot"></div>
+    <div class="sk-bounce-dot"></div>
+  </div> -->
+
+        <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+    </div>
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+        <!-- Header -->
+            
+        <div id="header" class="mdk-header mdk-header--bg-light js-mdk-header mb-0" data-effects="" data-fixed
+            data-condenses>
+         
+            <div class="mdk-header__content justify-content-center">
+
+                <div class="navbar navbar-expand navbar-light bg-white border-bottom" id="default-navbar" data-primary>
+
+                    <!-- Navbar toggler -->
+                 
+                    <!-- Company Logo -->
+                    <a href="index.html" class="navbar-brand mr-16pt">
+                        <img src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png" alt="Company Logo"
+                            class="navbar-brand-icon mr-0 mr-lg-8pt" width="150">
+                    </a>
+
+                    <!-- Main Navigation -->
+
+
+                    <!-- User Profile Menu -->
+                    <ul class="nav navbar-nav ml-auto mr-0">
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link d-flex align-items-center dropdown-toggle"
+                                data-toggle="dropdown">
+                                <span class="avatar avatar-sm avatar-online mr-8pt">
+                                    <img src="../../public/images/person_image/male-1.jpg" alt="user"
+                                        class="avatar-img rounded-circle">
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a href="index.html" class="dropdown-item">Início</a>
+                                <a href="student-dashboard.html" class="dropdown-item">Dashboard</a>
+
+                                <a href="edit-account-profile.html" class="dropdown-item">Preferências</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="login.html" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        
+
+
+        <!-- // END Header -->
+
+        <!-- Header Layout Content -->
+        <div class="student-ranking-page">
+            <div class="container ranking-container">
+                <section class="ranking-hero">
+                    <h1 class="text-white-100">Ranking dos Alunos</h1>
+                    <p class="text-white-70">
+                        Acompanhe quem está liderando a comunidade. Explore o ranking por nível, moedas, medalhas ou
+                        aproveitamento e descubra quais alunos estão se destacando agora.
+                    </p>
+                    <div class="ranking-meta text-secondary">Atualizado em tempo real a cada novo ganho de experiência.</div>
+                </section>
+                <div class="ranking-card">
+                    <div class="ranking-controls">
+                        <div class="ranking-filter-group">
+                            <button type="button" class="ranking-filter is-active" data-sort="level"
+                                data-order-symbol="↓">Nível</button>
+                            <button type="button" class="ranking-filter" data-sort="coins">Moedas</button>
+                            <button type="button" class="ranking-filter" data-sort="medals">Medalhas</button>
+                            <button type="button" class="ranking-filter" data-sort="performance">Aproveitamento</button>
+                        </div>
+                        <div class="ranking-meta">
+                            Clique para reorganizar o ranking pelo critério desejado.
+                        </div>
+                    </div>
+                    <div class="ranking-table-wrapper">
+                        <table class="ranking-table" aria-describedby="rankingDescription">
+                            <caption id="rankingDescription" class="sr-only">Tabela com o ranking dos alunos</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Posição</th>
+                                    <th scope="col">Aluno</th>
+                                    <th scope="col">Moedas</th>
+                                    <th scope="col">Nível</th>
+                                    <th scope="col">Aproveitamento</th>
+                                    <th scope="col">Medalhas</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rankingTableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="ranking-load-more">
+                        <button id="loadMoreRanking" class="btn btn-outline-primary btn-rounded" type="button">
+                            Mostrar mais
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- // END Header Layout -->
+
+            <!-- Drawer -->
+
+       <!-- Drawer -->
+
+   
+
+    <!-- // END Drawer -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const rankingData = [
+                        {
+                            name: 'Gregório Pinheiro',
+                            track: 'Data Science • Rio de Janeiro',
+                            avatar: '../../public/images/person_image/male-1.jpg',
+                            coins: 2150,
+                            level: 12,
+                            performance: 92.6,
+                            medals: ['gold', 'gold', 'silver', 'bronze']
+                        },
+                        {
+                            name: 'Ana Souza',
+                            track: 'UX Research • São Paulo',
+                            avatar: '../../public/images/person_image/female2.jpg',
+                            coins: 1980,
+                            level: 11,
+                            performance: 88.2,
+                            medals: ['gold', 'silver', 'silver']
+                        },
+                        {
+                            name: 'Lucas Mendes',
+                            track: 'Product Analytics • Recife',
+                            avatar: '../../public/images/person_image/male3.jpg',
+                            coins: 1760,
+                            level: 10,
+                            performance: 86.4,
+                            medals: ['gold', 'bronze', 'bronze']
+                        },
+                        {
+                            name: 'Valéria Luz',
+                            track: 'Front-end Avançado • Belo Horizonte',
+                            avatar: '../../public/images/person_image/female3.jpg',
+                            coins: 1640,
+                            level: 10,
+                            performance: 84.1,
+                            medals: ['gold', 'silver']
+                        },
+                        {
+                            name: 'Diego Ramos',
+                            track: 'Machine Learning • Curitiba',
+                            avatar: '../../public/images/person_image/male5.jpg',
+                            coins: 1520,
+                            level: 9,
+                            performance: 81.5,
+                            medals: ['gold', 'silver', 'bronze', 'platinum']
+                        },
+                        {
+                            name: 'Helena Martins',
+                            track: 'Marketing Digital • Salvador',
+                            avatar: '../../public/images/person_image/female1.jpg',
+                            coins: 1495,
+                            level: 9,
+                            performance: 79.2,
+                            medals: ['gold', 'bronze']
+                        },
+                        {
+                            name: 'Ricardo Alves',
+                            track: 'Business Intelligence • Brasília',
+                            avatar: '../../public/images/person_image/male2.jpg',
+                            coins: 1320,
+                            level: 8,
+                            performance: 75.3,
+                            medals: ['silver', 'bronze']
+                        },
+                        {
+                            name: 'Camila Rocha',
+                            track: 'Inovação & Estratégia • Porto Alegre',
+                            avatar: '../../public/images/person_image/female3.jpg',
+                            coins: 980,
+                            level: 7,
+                            performance: 68.8,
+                            medals: []
+                        },
+                        {
+                            name: 'Mariana Costa',
+                            track: 'Gestão de Projetos • Florianópolis',
+                            avatar: '../../public/images/person_image/female4.jpg',
+                            coins: 920,
+                            level: 7,
+                            performance: 66.1,
+                            medals: ['silver']
+                        },
+                        {
+                            name: 'João Victor',
+                            track: 'Business Strategy • Manaus',
+                            avatar: '../../public/images/person_image/male4.jpg',
+                            coins: 870,
+                            level: 6,
+                            performance: 64.9,
+                            medals: ['bronze']
+                        },
+                        {
+                            name: 'Fernanda Ribeiro',
+                            track: 'People Analytics • Santos',
+                            avatar: '../../public/images/person_image/female5.jpg',
+                            coins: 810,
+                            level: 6,
+                            performance: 63.0,
+                            medals: ['silver', 'bronze']
+                        },
+                        {
+                            name: 'Pedro Henrique',
+                            track: 'Economia Criativa • Vitória',
+                            avatar: '../../public/images/person_image/male6.jpg',
+                            coins: 765,
+                            level: 5,
+                            performance: 61.5,
+                            medals: []
+                        }
+                    ];
+
+                    const tableBody = document.getElementById('rankingTableBody');
+                    const filterButtons = document.querySelectorAll('.ranking-filter');
+                    const loadMoreButton = document.getElementById('loadMoreRanking');
+                    const loadMoreWrapper = document.querySelector('.ranking-load-more');
+                    const numberFormatter = new Intl.NumberFormat('pt-BR');
+                    const ITEMS_PER_LOAD = 10;
+                    let currentSort = { key: 'level', direction: 'desc' };
+                    let visibleCount = Math.min(ITEMS_PER_LOAD, rankingData.length);
+
+                    const medalClassMap = {
+                        gold: 'ranking-medal--gold',
+                        silver: 'ranking-medal--silver',
+                        bronze: 'ranking-medal--bronze',
+                        platinum: 'ranking-medal--platinum'
+                    };
+
+                    function updateControls() {
+                        filterButtons.forEach((button) => {
+                            if (button.dataset.sort === currentSort.key) {
+                                button.classList.add('is-active');
+                                button.dataset.orderSymbol = currentSort.direction === 'desc' ? '↓' : '↑';
+                            } else {
+                                button.classList.remove('is-active');
+                                button.dataset.orderSymbol = '';
+                            }
+                        });
+                    }
+
+                    function updateLoadMoreButton(totalItems) {
+                        if (!loadMoreButton || !loadMoreWrapper) {
+                            return;
+                        }
+
+                        if (totalItems === 0) {
+                            loadMoreWrapper.style.display = 'none';
+                            return;
+                        }
+
+                        if (visibleCount >= totalItems) {
+                            if (totalItems <= ITEMS_PER_LOAD) {
+                                loadMoreWrapper.style.display = 'none';
+                                return;
+                            }
+
+                            loadMoreWrapper.style.display = 'flex';
+                            loadMoreButton.disabled = true;
+                            loadMoreButton.textContent = 'Todos exibidos';
+                            return;
+                        }
+
+                        loadMoreWrapper.style.display = 'flex';
+                        loadMoreButton.disabled = false;
+                        loadMoreButton.textContent = 'Mostrar mais';
+                    }
+
+                    function renderRanking() {
+                        visibleCount = Math.min(visibleCount, rankingData.length);
+
+                        const sorted = [...rankingData].sort((a, b) => {
+                            const key = currentSort.key;
+                            const multiplier = currentSort.direction === 'desc' ? -1 : 1;
+                            const valueA = key === 'medals' ? a.medals.length : a[key];
+                            const valueB = key === 'medals' ? b.medals.length : b[key];
+
+                            if (valueA < valueB) return multiplier;
+                            if (valueA > valueB) return -multiplier;
+
+                            return a.name.localeCompare(b.name, 'pt-BR');
+                        });
+
+                        const visibleData = sorted.slice(0, visibleCount);
+
+                        const rows = visibleData.map((student, index) => {
+                            const positionClass = index < 3 ? `ranking-row--top-${index + 1}` : '';
+                            const medalsToShow = student.medals.slice(0, 3);
+                            const extraMedals = student.medals.length - medalsToShow.length;
+                            const medalStack = medalsToShow.length
+                                ? medalsToShow.map((type) => {
+                                    const modifier = medalClassMap[type] || 'ranking-medal--silver';
+                                    return `<span class="ranking-medal ${modifier}" aria-hidden="true"></span>`;
+                                }).join('')
+                                : '<span class="ranking-medal is-empty" aria-hidden="true"></span>';
+
+                            const medalsLabel = medalsToShow.length
+                                ? `Medalhas de ${student.medals.length === 1 ? 'desempenho' : 'destaque'}`
+                                : 'Sem medalhas no momento';
+
+                            return `
+                                <tr class="ranking-row ${positionClass}">
+                                    <td data-label="Posição">
+                                        <span class="ranking-position">${index + 1}º</span>
+                                    </td>
+                                    <td data-label="Aluno">
+                                        <div class="ranking-student">
+                                            <img class="ranking-avatar" src="${student.avatar}" alt="${student.name}">
+                                            <div class="ranking-student__info">
+                                                <strong>${student.name}</strong>
+                                                <span>${student.track}</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Moedas">
+                                        <div class="ranking-value ranking-value--numeric">
+                                            <span class="material-icons ranking-value__icon ranking-value__icon--coins" aria-hidden="true">monetization_on</span>
+                                            <span class="ranking-cell ranking-cell--numeric">${numberFormatter.format(student.coins)}</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="Nível">
+                                        <div class="ranking-value ranking-value--center">
+                                            <span class="material-symbols-rounded ranking-value__icon ranking-value__icon--level" aria-hidden="true">military_tech</span>
+                                            <span class="ranking-cell ranking-cell--center">Nível ${student.level}</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="Aproveitamento">
+                                        <div class="ranking-value ranking-value--center">
+                                            <span class="material-icons ranking-value__icon ranking-value__icon--performance" aria-hidden="true">trending_up</span>
+                                            <span class="ranking-cell ranking-cell--center">${student.performance.toFixed(1)}%</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="Medalhas">
+                                        <div class="ranking-medals ranking-cell--medals" aria-label="${medalsLabel}">
+                                            <div class="ranking-medal-stack">
+                                                ${medalStack}
+                                            </div>
+                                            ${extraMedals > 0 ? `<small>+${extraMedals}</small>` : student.medals.length === 0 ? '<small>0</small>' : ''}
+                                        </div>
+                                    </td>
+                                </tr>
+                            `;
+                        }).join('');
+
+                        tableBody.innerHTML = rows;
+                        updateLoadMoreButton(sorted.length);
+                    }
+
+                    filterButtons.forEach((button) => {
+                        button.addEventListener('click', () => {
+                            const sortKey = button.dataset.sort;
+                            if (currentSort.key === sortKey) {
+                                currentSort.direction = currentSort.direction === 'desc' ? 'asc' : 'desc';
+                            } else {
+                                currentSort = { key: sortKey, direction: 'desc' };
+                            }
+                            updateControls();
+                            renderRanking();
+                        });
+                    });
+
+                    if (loadMoreButton) {
+                        loadMoreButton.addEventListener('click', () => {
+                            visibleCount = Math.min(visibleCount + ITEMS_PER_LOAD, rankingData.length);
+                            renderRanking();
+                        });
+                    }
+
+                    updateControls();
+                    renderRanking();
+                });
+            </script>
+
+ <!-- Footer -->
+
+        <div class="bg-white border-top-2 mt-auto">
+            <div class="container page__container page-section d-flex flex-column">
+                <p class="text-70 brand mb-24pt">
+                    <img class="brand-icon" src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png" width="120"
+                        alt="VIDDIA">
+                </p>
+                <p class="measure-lead-max text-50 small mr-8pt">Somos uma Edtech especializada em educação corporativa
+                    para os mais diversos segmentos de negócio e setores da sociedade. Somos parceiros estratégicos de
+                    organizações que desejam melhorar sua capacidade de execução e seus indicadores de negócio.</p>
+                <p class="mb-8pt d-flex">
+                    <a href="" class="text-70 text-underline mr-8pt small">Sobre a VIDDIA</a>
+                    <a href="" class="text-70 text-underline small">Termos de Uso</a>
+                </p>
+                <p class="text-50 small mt-n1 mb-0">Copyright 2025 &copy; Todos os Direitos Reservados.</p>
+            </div>
+        </div>
+
+        <!-- // END Footer -->
+
+
+            <!-- // END Drawer -->
+
+            <!-- jQuery -->
+            <script src="../../public/vendor/jquery.min.js"></script>
+
+            <!-- Bootstrap -->
+            <script src="../../public/vendor/popper.min.js"></script>
+            <script src="../../public/vendor/bootstrap.min.js"></script>
+
+            <!-- Perfect Scrollbar -->
+            <script src="../../public/vendor/perfect-scrollbar.min.js"></script>
+
+            <!-- DOM Factory -->
+            <script src="../../public/vendor/dom-factory.js"></script>
+
+            <!-- MDK -->
+            <script src="../../public/vendor/material-design-kit.js"></script>
+
+            <!-- App JS -->
+            <script src="../../public/js/app.js"></script>
+
+            <!-- Preloader -->
+            <script src="../../public/js/preloader.js"></script>
+
+            <script>
+                (function () {
+                    'use strict';
+                    var headerNode = document.querySelector('.mdk-header')
+                    var layoutNode = document.querySelector('.mdk-header-layout')
+                    var componentNode = layoutNode ? layoutNode : headerNode
+                    componentNode.addEventListener('domfactory-component-upgraded', function () {
+                        headerNode.mdkHeader.eventTarget.addEventListener('scroll', function () {
+                            var progress = headerNode.mdkHeader.getScrollState().progress
+                            var navbarNode = headerNode.querySelector('#default-navbar')
+                            navbarNode.classList.toggle('bg-transparent', progress <= 0.2)
+                        })
+                    })
+                })()
+            </script>
+
+            <script>
+                (function () {
+                    var sections = document.querySelectorAll('.course-grid-section');
+                    if (!sections.length) {
+                        return;
+                    }
+
+                    sections.forEach(function (section) {
+                        var button = section.querySelector('[data-show-more-target]');
+                        var targetId = button ? button.getAttribute('data-show-more-target') : null;
+                        var targetSection = targetId ? document.getElementById(targetId) : section;
+                        var grid = targetSection ? targetSection.querySelector('.course-grid') : null;
+                        if (!grid || !button) {
+                            return;
+                        }
+
+                        if (!grid) {
+                            return;
+                        }
+
+                        var extras = grid.querySelectorAll('.course-card--extra');
+                        if (!extras.length) {
+                            button.parentNode.style.display = 'none';
+                            return;
+                        }
+
+                        function isCollapsed() {
+                            return grid.getAttribute('data-collapsed') !== 'false';
+                        }
+
+                        function updateLabel() {
+                            var collapsed = isCollapsed();
+                            button.textContent = collapsed ? 'Mostrar mais' : 'Mostrar menos';
+                            button.setAttribute('aria-expanded', (!collapsed).toString());
+                            section.classList.toggle('course-grid-section--expanded', !collapsed);
+                        }
+
+                        button.addEventListener('click', function () {
+                            grid.setAttribute('data-collapsed', isCollapsed() ? 'false' : 'true');
+                            updateLabel();
+                        });
+
+                        updateLabel();
+                    });
+                })();
+            </script>
+
+</body>
+
+</html>

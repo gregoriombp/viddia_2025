@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark-mode">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>VIDDIA - Dashboard</title>
+    <link rel="icon" href="../../public/images/Favicon/FAVICON_VIDDIA-128.png" type="image/x-icon">
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Preloader -->
+    <link type="text/css" href="../../public/vendor/spinkit.css" rel="stylesheet">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="../../public/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="../../public/css/material-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="../../public/css/fontawesome.css" rel="stylesheet">
+
+    <!-- Preloader -->
+    <link type="text/css" href="../../public/css/preloader.css" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link type="text/css" href="../../public/css/app.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link type="text/css" href="../../public/css/responsive.css" rel="stylesheet" />
+
+    <!-- Dark Mode Styles (loaded when html has class "dark-mode") -->
+    <link type="text/css" href="../../public/css/dark.css" rel="stylesheet">
+
+</head>
+
+<body class="layout-sticky-subnav layout-default ">
+
+    <div class="preloader">
+        <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+        </div>
+
+        <!-- <div class="sk-bounce">
+    <div class="sk-bounce-dot"></div>
+    <div class="sk-bounce-dot"></div>
+  </div> -->
+
+        <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+    </div>
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+        <!-- Header -->
+        <div id="header" class="mdk-header mdk-header--bg-light js-mdk-header mb-0" data-effects="" data-fixed
+            data-condenses>
+
+            <div class="mdk-header__content justify-content-center">
+
+                <div class="navbar navbar-expand navbar-light bg-white border-bottom" id="default-navbar" data-primary>
+
+                    <!-- Navbar toggler -->
+
+                    <!-- Company Logo -->
+                    <a href="index.html" class="navbar-brand mr-16pt">
+                        <img src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png" alt="Company Logo"
+                            class="navbar-brand-icon mr-0 mr-lg-8pt" width="150">
+                    </a>
+
+                    <!-- Main Navigation -->
+
+
+                    <!-- User Profile Menu -->
+                    <ul class="nav navbar-nav ml-auto mr-0">
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link d-flex align-items-center dropdown-toggle"
+                                data-toggle="dropdown">
+                                <span class="avatar avatar-sm avatar-online mr-8pt">
+                                    <img src="../../public/images/person_image/male-1.jpg" alt="user"
+                                        class="avatar-img rounded-circle">
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="index.html" class="dropdown-item ">Início</a>
+                                <a href="student-dashboard.html" class="dropdown-item active">Dashboard</a>
+
+                                <a href="edit-account-profile.html" class="dropdown-item">Preferências</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="login.html" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- // END Header -->
+
+
+
+
+        <div class="mdk-box js-mdk-box mb-0 py-112pt" data-effects="parallax-background blend-background">
+            <div class="mdk-box__bg-dark">
+                <div class="mdk-box__bg-front"
+                    style="background-image: url(../../public/images/hero/hero-dashboard.jpg);">
+                </div>
+            </div>
+            <div class="mdk-box__content justify-content-center">
+                <div class="hero container page__container text-center w-75">
+                    <div class="page-section ">
+
+                        <div
+                            class="container page__container d-flex flex-column flex-md-row align-items-center justify-content-between text-center text-md-left">
+                            <div class="flex d-flex align-items-center">
+                                <img src="../../public/images/person_image/male-1.jpg" width="180"
+                                    class="mr-md-32pt mb-32pt mb-md-0 rounded-circle" alt="student">
+                                <div class="mb-32pt mb-md-0" style="min-width: 500px;">
+                                    <span class="dashboard-label text-white-50">ALUNO DESTAQUE</span>
+                                    <h2 class="text-white mb-0"
+                                        style="font-size: 3rem; font-family: 'Inter Tight', sans-serif; font-weight: 600;">
+                                        Gregório Pinheiro</h2>
+                                    <small class="text-white-70 pb-16pt">Rio de Janeiro, Brasil • Trilha Data
+                                        Science</small>
+
+                                    <div class="student-dashboard-page dashboard-progress-track pt-16pt">
+                                        <div class="dashboard-progress-track__bar">
+                                            <span style="width: 72%;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-auto d-flex align-items-center">
+                                <a href="student-modify-profile.html" class="btn btn-white btn-rounded mr-3">
+                                    <span class="material-icons pr-2">settings</span>Preferências
+                                </a>
+                                <a href="student-modify-profile.html"
+                                    class="btn btn-outline btn-white-pill btn-outline-secondary btn-rounded">Suporte</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Layout Content -->
+
+        <div class="student-dashboard-page pt-112pt ">
+
+
+
+            <div class="page-section pt-0 pb-32pt">
+                <div class="container page__container">
+                    <div class="dashboard-section-grid">
+                        <div class="dashboard-main-column">
+                            <div class="dashboard-overview-cards">
+                                <article class="sd-overview-card sd-overview-card--performance">
+                                    <div class="sd-overview-card__header">
+                                        <span class="sd-overview-card__icon material-icons">data_usage</span>
+                                        <span class="sd-overview-card__label">Aproveitamento</span>
+                                    </div>
+                                    <div class="sd-performance-gauge" style="--gauge-value: 92.6;">
+                                        <svg viewBox="0 0 120 70" aria-hidden="true">
+                                            <defs>
+                                                <linearGradient id="sdGaugeGradientPerformance" x1="0%" y1="100%"
+                                                    x2="100%" y2="0%">
+                                                    <stop offset="0%" stop-color="#2bd07d"></stop>
+                                                    <stop offset="100%" stop-color="#54f0a0"></stop>
+                                                </linearGradient>
+                                            </defs>
+                                            <path class="sd-gauge-track" d="M10 60 A50 50 0 0 1 110 60"></path>
+                                            <path class="sd-gauge-fill" d="M10 60 A50 50 0 0 1 110 60" pathLength="100">
+                                            </path>
+                                        </svg>
+                                        <div class="sd-performance-gauge__value">
+                                            <strong>92,6%</strong>
+                                        </div>
+                                    </div>
+                                    <small class="sd-overview-card__note">Você está no top 12% da turma.</small>
+                                </article>
+                                <article class="sd-overview-card sd-overview-card--level">
+                                    <div class="sd-overview-card__header">
+                                        <span class="sd-overview-card__icon material-symbols-rounded">radar</span>
+                                        <span class="sd-overview-card__label">Nível</span>
+                                    </div>
+                                    <div class="sd-level-card">
+                                        <span class="sd-level-card__number">12</span>
+                                        <small class="sd-level-card__note">Faltam 328 xp para o próximo nível.</small>
+                                    </div>
+                                </article>
+                                <article
+                                    class="sd-overview-card sd-overview-card--coins sd-overview-card sd-overview-card--coins2">
+                                    <div class="sd-overview-card__header">
+                                        <span class="sd-overview-card__icon material-symbols-rounded">paid</span>
+                                        <span class="sd-overview-card__label">Moedas</span>
+                                    </div>
+                                    <div class="sd-overview-card__content">
+                                        <strong>780</strong>
+                                        <small class="text-white-50">+40 moedas hoje.</small>
+                                    </div>
+                                </article>
+
+                            </div>
+
+                            <div class="dashboard-courses mt-64pt">
+                                <section class="sd-course-section">
+                                    <div class="dashboard-section-header">
+                                        <h3 class="dashboard-section-title"
+                                            style="font-size: 1.8em !important; letter-spacing: 0em !important; font-family: 'Inter Tight', 'sans-serif' !important; font-weight: 600 !important;">
+                                            Cursos em andamento</h3>
+                                        <a href="student-my-courses.html"
+                                            class="btn btn-outline-secondary rounded rounded-xl">Ver todos</a>
+                                    </div>
+                                    <div class="dashboard-courses__grid">
+                                        <article class="sd-course-card sd-course-card--in-progress bg-white border-1">
+                                            <div class="sd-course-thumb">
+                                                <img src="../../public/images/Course thumbnails/course_16_9-thumb_38.jpg"
+                                                    alt="Thumbnail do curso Laboratório de Machine Learning">
+                                                <div class="sd-course-thumb__overlay">
+                                                    <span class="material-icons" aria-hidden="true">play_arrow</span>
+                                                    <span class="sd-course-thumb__overlay-label">Continuar curso</span>
+                                                </div>
+                                            </div>
+                                            <div class="sd-course-card__content">
+                                                <div class="sd-course-card__meta">
+
+                                                    <div class="d-flex align-items-center">
+                                                        <span
+                                                            class="material-symbols-rounded text-lightblue1">progress_activity</span>
+                                                        <strong class="ml-1 text-lightblue1">72%</strong>
+                                                        <span class="text-muted ml-2">(3 de 4 Módulos)</span>
+                                                    </div>
+                                                    <span class="sd">
+                                                        <div class="course-card__rating"
+                                                            aria-label="Avaliação 4.8 de 5">
+                                                            <i class="material-icons">star</i>
+
+                                                            <span class="course-card__rating-value">4.8</span>
+                                                        </div>
+                                                </div>
+                                                <h5>Laboratório de Machine Learning</h5>
+                                                <p>Próxima etapa: ajuste de hiperparâmetros com AutoML.</p>
+                                                <div class="sd-progress">
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-active"
+                                                        style="--segment-progress: .55;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="sd-course-stats"
+                                                style="display: flex; justify-content: space-between; align-items: center;">
+                                                <div style="display: flex; gap: 12px;">
+                                                    <div class="sd-course-stat bg-light" data-tooltip="Aproveitamento">
+                                                        <span class="material-symbols-rounded">radar</span>
+                                                        <strong>74%</strong>
+                                                    </div>
+                                                    <div class="sd-course-stat bg-light"
+                                                        data-tooltip="Moedas adquiridas">
+                                                        <span class="material-symbols-rounded">paid</span>
+                                                        <strong class="text-70">760</strong>
+                                                    </div>
+                                                </div>
+                                                <a href="student-take-lesson.html"
+                                                    class="btn btn-continue-course btn-md btn-rounded">
+                                                    <span class="material-icons pr-2"
+                                                        aria-hidden="true">play_arrow</span>
+                                                    <span>Continuar</span>
+                                                </a>
+                                            </div>
+
+                                        </article>
+                                        <article class="sd-course-card sd-course-card--in-progress bg-white border-1">
+                                            <div class="sd-course-thumb">
+                                                <img src="../../public/images/Course thumbnails/course_16_9-thumb_38.jpg"
+                                                    alt="Thumbnail do curso Laboratório de Machine Learning">
+                                                <div class="sd-course-thumb__overlay">
+                                                    <span class="material-icons" aria-hidden="true">play_arrow</span>
+                                                    <span class="sd-course-thumb__overlay-label">Continuar curso</span>
+                                                </div>
+                                            </div>
+                                            <div class="sd-course-card__content">
+                                                <div class="sd-course-card__meta">
+
+                                                    <div class="d-flex align-items-center">
+                                                        <span
+                                                            class="material-symbols-rounded text-lightblue1">progress_activity</span>
+                                                        <strong class="ml-1 text-lightblue1">72%</strong>
+                                                        <span class="text-muted ml-2">(3 de 4 Módulos)</span>
+                                                    </div>
+                                                    <span class="sd">
+                                                        <div class="course-card__rating"
+                                                            aria-label="Avaliação 4.8 de 5">
+                                                            <i class="material-icons">star</i>
+
+                                                            <span class="course-card__rating-value">4.8</span>
+                                                        </div>
+                                                </div>
+                                                <h5>Laboratório de Machine Learning</h5>
+                                                <p>Próxima etapa: ajuste de hiperparâmetros com AutoML.</p>
+                                                <div class="sd-progress">
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-active"
+                                                        style="--segment-progress: .55;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="sd-course-stats"
+                                                style="display: flex; justify-content: space-between; align-items: center;">
+                                                <div style="display: flex; gap: 12px;">
+                                                    <div class="sd-course-stat bg-light" data-tooltip="Aproveitamento">
+                                                        <span class="material-symbols-rounded">radar</span>
+                                                        <strong>74%</strong>
+                                                    </div>
+                                                    <div class="sd-course-stat bg-light"
+                                                        data-tooltip="Moedas adquiridas">
+                                                        <span class="material-symbols-rounded">paid</span>
+                                                        <strong class="text-70">760</strong>
+                                                    </div>
+                                                </div>
+                                                <a href="student-take-lesson.html"
+                                                    class="btn btn-continue-course btn-md btn-rounded">
+                                                    <span class="material-icons pr-2"
+                                                        aria-hidden="true">play_arrow</span>
+                                                    <span>Continuar</span>
+                                                </a>
+                                            </div>
+
+                                        </article>
+                                        <article class="sd-course-card sd-course-card--in-progress bg-white border-1">
+                                            <div class="sd-course-thumb">
+                                                <img src="../../public/images/Course thumbnails/course_16_9-thumb_38.jpg"
+                                                    alt="Thumbnail do curso Laboratório de Machine Learning">
+                                                <div class="sd-course-thumb__overlay">
+                                                    <span class="material-icons" aria-hidden="true">play_arrow</span>
+                                                    <span class="sd-course-thumb__overlay-label">Continuar curso</span>
+                                                </div>
+                                            </div>
+                                            <div class="sd-course-card__content">
+                                                <div class="sd-course-card__meta">
+
+                                                    <div class="d-flex align-items-center">
+                                                        <span
+                                                            class="material-symbols-rounded text-lightblue1">progress_activity</span>
+                                                        <strong class="ml-1 text-lightblue1">72%</strong>
+                                                        <span class="text-muted ml-2">(3 de 4 Módulos)</span>
+                                                    </div>
+                                                    <span class="sd">
+                                                        <div class="course-card__rating"
+                                                            aria-label="Avaliação 4.8 de 5">
+                                                            <i class="material-icons">star</i>
+
+                                                            <span class="course-card__rating-value">4.8</span>
+                                                        </div>
+                                                </div>
+                                                <h5>Laboratório de Machine Learning</h5>
+                                                <p>Próxima etapa: ajuste de hiperparâmetros com AutoML.</p>
+                                                <div class="sd-progress">
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-active"
+                                                        style="--segment-progress: .55;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="sd-course-stats"
+                                                style="display: flex; justify-content: space-between; align-items: center;">
+                                                <div style="display: flex; gap: 12px;">
+                                                    <div class="sd-course-stat bg-light" data-tooltip="Aproveitamento">
+                                                        <span class="material-symbols-rounded">radar</span>
+                                                        <strong>74%</strong>
+                                                    </div>
+                                                    <div class="sd-course-stat bg-light"
+                                                        data-tooltip="Moedas adquiridas">
+                                                        <span class="material-symbols-rounded">paid</span>
+                                                        <strong class="text-70">760</strong>
+                                                    </div>
+                                                </div>
+                                                <a href="student-take-lesson.html"
+                                                    class="btn btn-continue-course btn-md btn-rounded">
+                                                    <span class="material-icons pr-2"
+                                                        aria-hidden="true">play_arrow</span>
+                                                    <span>Continuar</span>
+                                                </a>
+                                            </div>
+
+                                        </article>
+
+
+                                    </div>
+                                </section>
+                                <section class="sd-course-section mt-64pt mb-112pt">
+                                    <div class="dashboard-section-header">
+                                        <h3 class="dashboard-section-title"
+                                            style="font-size: 1.8em !important; letter-spacing: 0em !important; font-family: 'Inter Tight', 'sans-serif' !important; font-weight: 600 !important;">
+                                            Cursos Concluídos</h3>
+                                        <a href="student-my-courses.html"
+                                            class="btn btn-outline-secondary rounded rounded-xl">Ver todos</a>
+                                    </div>
+                                    <div class="dashboard-courses__grid">
+                                        <article class="sd-course-card sd-course-card--completed bg-white">
+                                            <div class="sd-course-thumb">
+                                                <img src="../../public/images/Course thumbnails/course_16_9-thumb_36.jpg"
+                                                    alt="Thumbnail do curso Narrativas com dados reais">
+                                                <div class="sd-course-thumb__overlay">
+                                                    <span class="material-icons" aria-hidden="true">replay</span>
+                                                    <span class="sd-course-thumb__overlay-label">Rever curso</span>
+                                                </div>
+                                            </div>
+                                            <div class="sd-course-card__content">
+                                                <div class="sd-course-card__meta">
+
+                                                    <div class="d-flex align-items-center">
+                                                        <span
+                                                            class="material-symbols-rounded text-lightblue1">check_circle</span>
+                                                        <strong class="ml-1 text-lightblue1">100%</strong>
+                                                        <span class="ml-1 text-lightblue1">Concluído</span>
+                                                        <span class="text-muted ml-2">(5 de 5 Módulos)</span>
+                                                    </div>
+                                                    <span class="sd">
+                                                        <div class="course-card__rating"
+                                                            aria-label="Avaliação 4.8 de 5">
+                                                            <i class="material-icons">star</i>
+
+                                                            <span class="course-card__rating-value">4.9</span>
+                                                        </div>
+                                                </div>
+                                                <h5>Narrativas com dados reais</h5>
+                                                <p>Projeto final apresentado na última semana com feedback excelente.
+                                                </p>
+                                                <div class="sd-progress">
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                </div>
+                                            </div>
+                                            <div class="sd-course-stats"
+                                                style="display: flex; justify-content: space-between; align-items: center;">
+                                                <div style="display: flex; gap: 12px;">
+                                                    <div class="sd-course-stat bg-light" data-tooltip="Aproveitamento">
+                                                        <span class="material-symbols-rounded">radar</span>
+                                                        <strong>74%</strong>
+                                                    </div>
+                                                    <div class="sd-course-stat bg-light"
+                                                        data-tooltip="Moedas adquiridas">
+                                                        <span class="material-symbols-rounded">paid</span>
+                                                        <strong class="text-70">760</strong>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="sd-course-card__footer">
+                                                <span>Concluído em 12 Jul</span>
+                                                <strong style="display: flex; align-items: center;">
+                                                    <span class="material-symbols-rounded">check</span>
+                                                    <span>Certificado emitido</span>
+                                                </strong>
+                                            </div>
+                                        </article>
+                                        <article class="sd-course-card sd-course-card--completed bg-white">
+                                            <div class="sd-course-thumb">
+                                                <img src="../../public/images/Course thumbnails/course_16_9-thumb_36.jpg"
+                                                    alt="Thumbnail do curso Narrativas com dados reais">
+                                                <div class="sd-course-thumb__overlay">
+                                                    <span class="material-icons" aria-hidden="true">replay</span>
+                                                    <span class="sd-course-thumb__overlay-label">Rever curso</span>
+                                                </div>
+                                            </div>
+                                            <div class="sd-course-card__content">
+                                                <div class="sd-course-card__meta">
+
+                                                    <div class="d-flex align-items-center">
+                                                        <span
+                                                            class="material-symbols-rounded text-lightblue1">check_circle</span>
+                                                        <strong class="ml-1 text-lightblue1">100%</strong>
+                                                        <span class="ml-1 text-lightblue1">Concluído</span>
+                                                        <span class="text-muted ml-2">(5 de 5 Módulos)</span>
+                                                    </div>
+                                                    <span class="sd">
+                                                        <div class="course-card__rating"
+                                                            aria-label="Avaliação 4.8 de 5">
+                                                            <i class="material-icons">star</i>
+
+                                                            <span class="course-card__rating-value">4.9</span>
+                                                        </div>
+                                                </div>
+                                                <h5>Narrativas com dados reais</h5>
+                                                <p>Projeto final apresentado na última semana com feedback excelente.
+                                                </p>
+                                                <div class="sd-progress">
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                    <div class="sd-progress__segment is-complete"></div>
+                                                </div>
+                                            </div>
+                                            <div class="sd-course-stats"
+                                                style="display: flex; justify-content: space-between; align-items: center;">
+                                                <div style="display: flex; gap: 12px;">
+                                                    <div class="sd-course-stat bg-light" data-tooltip="Aproveitamento">
+                                                        <span class="material-symbols-rounded">radar</span>
+                                                        <strong>74%</strong>
+                                                    </div>
+                                                    <div class="sd-course-stat bg-light"
+                                                        data-tooltip="Moedas adquiridas">
+                                                        <span class="material-symbols-rounded">paid</span>
+                                                        <strong class="text-70">760</strong>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="sd-course-card__footer">
+                                                <span>Concluído em 12 Jul</span>
+                                                <strong style="display: flex; align-items: center;">
+                                                    <span class="material-symbols-rounded">check</span>
+                                                    <span>Certificado emitido</span>
+                                                </strong>
+                                            </div>
+                                        </article>
+
+                                    </div>
+                                </section>
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="dashboard-sidebar">
+                            <div class="dashboard-card card border-0">
+                                <div class="row d-flex align-items-center">
+                                    <span class="sd-overview-card__icon material-icons">emoji_events</span>
+                                    <h4 class="mb-0">Seu progresso Geral</h4>
+                                </div>
+                                <div class="sd-overall-card">
+                                    <strong>51,2%</strong>
+                                    <div class="sd-overall-progress" data-toggle="tooltip"
+                                        data-title="Seu progresso atual é de 51,2%, mas o ideal seria 73,4% para manter o ritmo."
+                                        data-placement="top" style="position: relative; height: 12px;">
+                                        <span
+                                            style="--segment-start:0; --segment-size:51.2; position: absolute; top: 0; z-index: 3;"></span>
+
+                                        <span
+                                            style="--segment-start:45; --segment-size:26.6; position: absolute; top: 0; z-index: 1;  background: #6e6bfb58 !important;"></span>
+                                    </div>
+                                    <div class="sd-overall-note">
+                                        <span class="material-icons">schedule</span>
+                                        <span>Mantenha o ritmo! Você concluiu 51,2% do plano anual, mas para alcançar a
+                                            meta o ideal seria 73,4% até aqui.</span>
+                                    </div>
+                                    <p class="sd-overall-card__tip">Finalize os cursos para aumentar seu progresso.</p>
+                                    <div class="sd-overall-courses">
+                                        <div class="sd-overall-course">
+                                            <div class="sd-overall-course__info">
+                                                <strong>Laboratório de Machine Learning</strong>
+                                                <span>72% completo • Próxima etapa: ajuste de hiperparâmetros</span>
+                                            </div>
+                                            <a href="student-take-lesson.html"
+                                                class="btn btn-primary btn-rounded btn-sm p-2 pl-3 pr-3"><span
+                                                    class="material-symbols-rounded pr-1 icon-20pt">play_arrow</span>
+                                                Continuar</a>
+                                        </div>
+                                        <div class="sd-overall-course">
+                                            <div class="sd-overall-course__info">
+                                                <strong>Planejamento de testes moderados</strong>
+                                                <span>58% completo • Workshop ao vivo em 3 dias</span>
+                                            </div>
+                                            <a href="student-take-lesson.html"
+                                                class="btn btn-primary btn-rounded btn-sm p-2 pl-3 pr-3"><span
+                                                    class="material-symbols-rounded pr-1 icon-20pt">play_arrow</span>
+                                                Continuar</a>
+                                        </div>
+                                        <div class="sd-overall-course">
+                                            <div class="sd-overall-course__info">
+                                                <strong>Feedback contínuo na prática</strong>
+                                                <span>41% completo • Mentoria na próxima terça-feira</span>
+                                            </div>
+                                            <a href="student-take-lesson.html"
+                                                class="btn btn-primary btn-rounded btn-sm p-2 pl-3 pr-3"><span
+                                                    class="material-symbols-rounded pr-1 icon-20pt">play_arrow</span>
+                                                Continuar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboard-card card border-0">
+                                <div class="dashboard-leaders">
+                                    <div class="dashboard-section-header">
+                                        <div class="row d-flex align-items-center">
+
+                                            <h4 class="mb-0 ml-2"
+                                                style="letter-spacing: -.02em; font-family: 'Inter Tight', sans-serif;">
+                                                Ranking da semana</h4>
+                                        </div>
+                                        <a href="student-ranking.html"
+                                            class="dashboard-link text-muted text-sm-left">Ver completo</a>
+                                    </div>
+                                    <ul class="sd-leader-list">
+                                        <li class="sd-leader-item is-active">
+                                            <span class="sd-leader-position">#12</span>
+                                            <div class="sd-leader-profile">
+                                                <img src="../../public/images/person_image/male-1.jpg"
+                                                    alt="Gregório Pinheiro">
+                                                <div>
+                                                    <strong>Gregório Pinheiro</strong>
+                                                    <small>8.540 pts • +180 esta semana</small>
+                                                </div>
+                                            </div>
+                                            <span class="sd-leader-score sd-leader-score--highlight">Você</span>
+                                        </li>
+                                        <li class="sd-leader-item">
+                                            <span class="sd-leader-position">#09</span>
+                                            <div class="sd-leader-profile">
+                                                <img src="../../public/images/person_image/female2.jpg" alt="Ana Souza">
+                                                <div>
+                                                    <strong>Ana Souza</strong>
+                                                    <small>8.920 pts • São Paulo</small>
+                                                </div>
+                                            </div>
+                                            <span class="sd-leader-score">+320</span>
+                                        </li>
+                                        <li class="sd-leader-item">
+                                            <span class="sd-leader-position">#10</span>
+                                            <div class="sd-leader-profile">
+                                                <img src="../../public/images/person_image/male-1.jpg"
+                                                    alt="Lucas Mendes">
+                                                <div>
+                                                    <strong>Lucas Mendes</strong>
+                                                    <small>8.780 pts • Recife</small>
+                                                </div>
+                                            </div>
+                                            <span class="sd-leader-score">+240</span>
+                                        </li>
+                                        <li class="sd-leader-item">
+                                            <span class="sd-leader-position">#11</span>
+                                            <div class="sd-leader-profile">
+                                                <img src="../../public/images/person_image/male3.jpg"
+                                                    alt="João Oliveira">
+                                                <div>
+                                                    <strong>João Oliveira</strong>
+                                                    <small>8.720 pts • Brasília</small>
+                                                </div>
+                                            </div>
+                                            <span class="sd-leader-score">+210</span>
+                                        </li>
+                                        <li class="sd-leader-item">
+                                            <span class="sd-leader-position">#13</span>
+                                            <div class="sd-leader-profile">
+                                                <img src="../../public/images/person_image/female3.jpg"
+                                                    alt="Valéria Luz">
+                                                <div>
+                                                    <strong>Valéria Luz</strong>
+                                                    <small>8.310 pts • Belo Horizonte</small>
+                                                </div>
+                                            </div>
+                                            <span class="sd-leader-score">+160</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dashboard-card card border-0">
+                                <div class="dashboard-medals">
+                                    <div class="dashboard-section-header">
+                                        <div class="row d-flex align-items-center">
+
+                                            <h4 class="mb-0 ml-2"
+                                                style="letter-spacing: -.02em; font-family: 'Inter Tight', sans-serif;">
+                                                Medalhas</h4>
+                                        </div>
+                                        <a href="student-ranking.html"
+                                            class="dashboard-link text-muted text-sm-left">Ver completo</a>
+                                    </div>
+                                    <div class="sd-medals-grid">
+                                        <div class="sd-medal">
+                                            <div class="sd-medal-thumb"><img
+                                                    src="../../public/images/medals/medal_11.png" width="88"></div>
+                                            <strong>Impact Maker</strong>
+                                            <small>Complete 5 desafios em grupo</small>
+                                        </div>
+                                        <div class="sd-medal">
+                                            <div class="sd-medal-thumb"><img
+                                                    src="../../public/images/medals/medal_6.png" width="88"></div>
+                                            <strong>Busy Bee</strong>
+                                            <small>Entregas consecutivas por 7 dias</small>
+                                        </div>
+                                        <div class="sd-medal">
+                                            <div class="sd-medal-thumb"><img
+                                                    src="../../public/images/medals/medal_3.png" width="88"></div>
+                                            <strong>Champion Sprint</strong>
+                                            <small>Top 3 no ranking semanal</small>
+                                        </div>
+                                        <div class="sd-medal">
+                                            <div class="sd-medal-thumb"><img
+                                                    src="../../public/images/medals/medal_2.png" width="88"></div>
+                                            <strong>Feedback Hero</strong>
+                                            <small>Avalie 10 colegas</small>
+                                        </div>
+                                        <div class="sd-medal">
+                                            <div class="sd-medal-thumb"><img
+                                                    src="../../public/images/medals/medal_1.png" width="88"></div>
+                                            <strong>Learning Streak</strong>
+                                            <small>30 dias de estudo contínuo</small>
+                                        </div>
+                                        <div class="sd-medal">
+                                            <div class="sd-medal-thumb"><img
+                                                    src="../../public/images/medals/medal_5.png" width="88"></div>
+                                            <strong>Moedas Mestre</strong>
+                                            <small>Acumule 5.000 moedas</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // END Header Layout Content -->
+
+            </div>
+            <!-- // END Header Layout -->
+
+            <!-- Drawer -->
+
+
+
+            <!-- // END Drawer -->
+
+            <!-- Footer -->
+
+            <div class="bg-white border-top-2 mt-auto">
+                <div class="container page__container page-section d-flex flex-column">
+                    <p class="text-70 brand mb-24pt">
+                        <img class="brand-icon" src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png" width="120"
+                            alt="VIDDIA">
+                    </p>
+                    <p class="measure-lead-max text-50 small mr-8pt">Somos uma Edtech especializada em educação
+                        corporativa
+                        para os mais diversos segmentos de negócio e setores da sociedade. Somos parceiros estratégicos
+                        de
+                        organizações que desejam melhorar sua capacidade de execução e seus indicadores de negócio.</p>
+                    <p class="mb-8pt d-flex">
+                        <a href="" class="text-70 text-underline mr-8pt small">Sobre a VIDDIA</a>
+                        <a href="" class="text-70 text-underline small">Termos de Uso</a>
+                    </p>
+                    <p class="text-50 small mt-n1 mb-0">Copyright 2025 &copy; Todos os Direitos Reservados.</p>
+                </div>
+            </div>
+
+            <!-- // END Footer -->
+            <!-- jQuery -->
+            <script src="../../public/vendor/jquery.min.js"></script>
+
+            <!-- Bootstrap -->
+            <script src="../../public/vendor/popper.min.js"></script>
+            <script src="../../public/vendor/bootstrap.min.js"></script>
+
+            <!-- Perfect Scrollbar -->
+            <script src="../../public/vendor/perfect-scrollbar.min.js"></script>
+
+            <!-- DOM Factory -->
+            <script src="../../public/vendor/dom-factory.js"></script>
+
+            <!-- MDK -->
+            <script src="../../public/vendor/material-design-kit.js"></script>
+
+            <!-- App JS -->
+            <script src="../../public/js/app.js"></script>
+
+            <!-- Preloader -->
+            <script src="../../public/js/preloader.js"></script>
+
+            <script>
+                (function () {
+                    'use strict';
+                    var headerNode = document.querySelector('.mdk-header')
+                    var layoutNode = document.querySelector('.mdk-header-layout')
+                    var componentNode = layoutNode ? layoutNode : headerNode
+                    componentNode.addEventListener('domfactory-component-upgraded', function () {
+                        headerNode.mdkHeader.eventTarget.addEventListener('scroll', function () {
+                            var progress = headerNode.mdkHeader.getScrollState().progress
+                            var navbarNode = headerNode.querySelector('#default-navbar')
+                            navbarNode.classList.toggle('bg-transparent', progress <= 0.2)
+                        })
+                    })
+                })()
+            </script>
+
+            <script>
+                    (function () {
+                        var sections = document.querySelectorAll('.course-grid-section');
+                        if (!sections.length) {
+                            return;
+                        }
+
+                        sections.forEach(function (section) {
+                            var button = section.querySelector('[data-show-more-target]');
+                            var targetId = button ? button.getAttribute('data-show-more-target') : null;
+                            var targetSection = targetId ? document.getElementById(targetId) : section;
+                            var grid = targetSection ? targetSection.querySelector('.course-grid') : null;
+                            if (!grid || !button) {
+                                return;
+                            }
+
+                            if (!grid) {
+                                return;
+                            }
+
+                            var extras = grid.querySelectorAll('.course-card--extra');
+                            if (!extras.length) {
+                                button.parentNode.style.display = 'none';
+                                return;
+                            }
+
+                            function isCollapsed() {
+                                return grid.getAttribute('data-collapsed') !== 'false';
+                            }
+
+                            function updateLabel() {
+                                var collapsed = isCollapsed();
+                                button.textContent = collapsed ? 'Mostrar mais' : 'Mostrar menos';
+                                button.setAttribute('aria-expanded', (!collapsed).toString());
+                                section.classList.toggle('course-grid-section--expanded', !collapsed);
+                            }
+
+                            button.addEventListener('click', function () {
+                                grid.setAttribute('data-collapsed', isCollapsed() ? 'false' : 'true');
+                                updateLabel();
+                            });
+
+                            updateLabel();
+                        });
+                    })();
+            </script>
+
+</body>
+
+</html>
