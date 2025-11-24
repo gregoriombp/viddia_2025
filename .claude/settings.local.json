@@ -5,7 +5,9 @@
       "Bash(if [ -f \"/Users/gregoriopinheiro/Desktop/Projects/Working/VIDDIA - 2025 Interface/developing/viddia_25_001/public/css/dark.css\" ])",
       "Bash(then wc -l \"/Users/gregoriopinheiro/Desktop/Projects/Working/VIDDIA - 2025 Interface/developing/viddia_25_001/public/css/dark.css\")",
       "Bash(else echo \"Arquivo não existe\")",
-      "Bash(fi)"
+      "Bash(fi)",
+      "Bash(if [ -f \"/Users/gregoriopinheiro/Desktop/Projects/Working/VIDDIA - 2025 Interface/developing/viddia_25_004/public/css/dark.css\" ])",
+      "Bash(then wc -l \"/Users/gregoriopinheiro/Desktop/Projects/Working/VIDDIA - 2025 Interface/developing/viddia_25_004/public/css/dark.css\")"
     ],
     "deny": [],
     "ask": []
