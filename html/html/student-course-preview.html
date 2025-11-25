@@ -1,330 +1,917 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-mode">
+<html lang="pt-BR" class="light-mode">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>VIDDIA - Prévia do Curso</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>VIDDIA - Home</title>
+    <link
+      rel="icon"
+      href="../../public/images/Favicon/FAVICON_VIDDIA-128.png"
+      type="image/x-icon" />
 
-  <link rel="icon" href="../../public/images/Favicon/FAVICON_VIDDIA-128.png" type="image/x-icon" />
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex" />
 
-  <!-- Prevent the demo from appearing in search engines -->
-  <meta name="robots" content="noindex" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Preloader -->
+    <link
+      type="text/css"
+      href="../../public/vendor/spinkit.css"
+      rel="stylesheet" />
 
-  <!-- Preloader -->
-  <link type="text/css" href="../../public/vendor/spinkit.css" rel="stylesheet" />
+    <!-- App CSS -->
+    <link type="text/css" href="../../public/css/app.css" rel="stylesheet" />
 
-  <!-- Perfect Scrollbar -->
-  <link type="text/css" href="../../public/vendor/perfect-scrollbar.css" rel="stylesheet" />
+    <!-- Perfect Scrollbar -->
+    <link
+      type="text/css"
+      href="../../public/vendor/perfect-scrollbar.css"
+      rel="stylesheet" />
 
-  <!-- Material Design Icons -->
-  <link type="text/css" href="../../public/css/material-icons.css" rel="stylesheet" />
+    <!-- Material Design Icons -->
+    <link
+      type="text/css"
+      href="../../public/css/material-icons.css"
+      rel="stylesheet" />
 
-  <!-- Font Awesome Icons -->
-  <link type="text/css" href="../../public/css/fontawesome.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link
+      type="text/css"
+      href="../../public/css/fontawesome.css"
+      rel="stylesheet" />
 
-  <!-- Preloader -->
-  <link type="text/css" href="../../public/css/preloader.css" rel="stylesheet" />
+    <!-- Preloader -->
+    <link
+      type="text/css"
+      href="../../public/css/preloader.css"
+      rel="stylesheet" />
 
-  <!-- App CSS -->
-  <link type="text/css" href="../../public/css/app.css" rel="stylesheet" />
+    <!-- App CSS -->
+    <link type="text/css" href="../../public/css/app.css" rel="stylesheet" />
 
-  <!-- Dark Mode Styles (loaded when html has class "dark-mode") -->
-  <link type="text/css" href="../../public/css/dark.css" rel="stylesheet" />
+    <!-- Dark Mode Styles (loaded when html has class "dark-mode") -->
+    <link type="text/css" href="../../public/css/dark.css" rel="stylesheet" />
 
-  <!-- Responsive CSS -->
-  <link type="text/css" href="../../public/css/responsive.css" rel="stylesheet" />
-</head>
+    <!-- Responsive CSS -->
+    <link
+      type="text/css"
+      href="../../public/css/responsive.css"
+      rel="stylesheet" />
+  </head>
 
-<body class="layout-sticky-subnav layout-default">
-  <div class="preloader">
-    <div class="sk-chase">
-      <div class="sk-chase-dot"></div>
-      <div class="sk-chase-dot"></div>
-      <div class="sk-chase-dot"></div>
-      <div class="sk-chase-dot"></div>
-      <div class="sk-chase-dot"></div>
-      <div class="sk-chase-dot"></div>
-    </div>
+  <body class="layout-sticky-subnav layout-default">
+    <div class="preloader">
+      <div class="sk-chase">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+      </div>
 
-    <!-- <div class="sk-bounce">
+      <!-- <div class="sk-bounce">
     <div class="sk-bounce-dot"></div>
     <div class="sk-bounce-dot"></div>
   </div> -->
 
-    <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
-  </div>
-
-  <!-- Header Layout -->
-  <div class="mdk-header-layout js-mdk-header-layout">
-    <!-- Header -->
-    <div id="header" class="mdk-header mdk-header--bg-light js-mdk-header mb-0" data-effects="" data-fixed
-      data-condenses>
-      <div class="mdk-header__content justify-content-center">
-        <div class="navbar navbar-expand navbar-light bg-white border-bottom" id="default-navbar" data-primary>
-          <!-- Navbar toggler -->
-
-          <!-- Company Logo -->
-          <a href="inde" class="navbar-brand mr-16pt">
-            <img src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png" alt="Company Logo"
-              class="navbar-brand-icon mr-0 mr-lg-8pt" width="150" />
-          </a>
-
-          <!-- Main Navigation -->
-
-          <!-- User Profile Menu -->
-          <ul class="nav navbar-nav ml-auto mr-0">
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
-                <span class="avatar avatar-sm avatar-online mr-8pt">
-                  <img src="../../public/images/person_image/male-1.jpg" alt="user" class="avatar-img rounded-circle" />
-                </span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a href="index.html" class="dropdown-item active">Início</a>
-                <a href="student-dashboard.html" class="dropdown-item">Dashboard</a>
-
-                <a href="edit-account-profile.html" class="dropdown-item">Preferências</a>
-                <div class="dropdown-divider"></div>
-                <a href="login.html" class="dropdown-item">Logout</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
     </div>
 
-    <!-- // END Header -->
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+      <!-- Header -->
+      <div
+        id="header"
+        class="mdk-header mdk-header--bg-light js-mdk-header mb-0"
+        data-effects=""
+        data-fixed
+        data-condenses>
+        <div class="mdk-header__content justify-content-center">
+          <div
+            class="navbar navbar-expand navbar-light bg-white border-bottom"
+            id="default-navbar"
+            data-primary>
+            <!-- Navbar toggler -->
 
-    <!-- Header Layout Content -->
-    <div class="mdk-header-layout__content page-content">
-      <div class="container page__container">
-        <div class="row">
-          <!-- Main Content -->
-          <div class="col-lg-8">
-            <!-- Course Header -->
-            <div class="pt-32pt pb-32pt">
-              <div class="d-flex align-items-center mb-16pt">
-                <div class="rating rating-24 mr-8pt">
-                  <div class="rating__item"><i class="material-icons">star</i></div>
-                  <div class="rating__item"><i class="material-icons">star</i></div>
-                  <div class="rating__item"><i class="material-icons">star</i></div>
-                  <div class="rating__item"><i class="material-icons">star</i></div>
-                  <div class="rating__item"><i class="material-icons">star</i></div>
-                </div>
-                <span class="text-70 mr-8pt"><strong>4.9</strong></span>
-                <span class="text-muted">based on <a href="#" class="text-accent">236 reviews</a></span>
-                <span class="ml-auto">
-                  <i class="material-icons text-muted">bookmark_border</i>
-                </span>
-              </div>
+            <!-- Company Logo -->
+            <a href="index.html" class="navbar-brand mr-16pt">
+              <img
+                src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png"
+                alt="Company Logo"
+                class="navbar-brand-icon mr-0 mr-lg-8pt"
+                width="150" />
+            </a>
 
-              <h1 class="mb-16pt">Beginner's Guide to Successful Company Management: Business and User Goals</h1>
+            <!-- Main Navigation -->
 
-              <p class="text-70 mb-24pt">
-                Hello Student! 👋 Are you ready to embark on a comprehensive journey into the realm of successful
-                company management with our Beginner's Guide course? During this course I'll help you delve deep into
-                the intricacies of business strategy, organizational dynamics, and user-centric approaches. Ready to
-                join? Send me a message and let's start! 🚀
-              </p>
-
-              <!-- Instructor Info -->
-              <div class="d-flex align-items-center mb-32pt">
-                <div class="d-flex align-items-center mr-32pt">
-                  <span class="avatar avatar-sm mr-8pt">
-                    <img src="../../public/images/person_image/female-1.jpg" alt="Jenny Wilson"
+            <!-- User Profile Menu -->
+            <ul class="nav navbar-nav ml-auto mr-0">
+              <li class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link d-flex align-items-center dropdown-toggle"
+                  data-toggle="dropdown">
+                  <span class="avatar avatar-sm avatar-online mr-8pt">
+                    <img
+                      src="../../public/images/person_image/male-1.jpg"
+                      alt="user"
                       class="avatar-img rounded-circle" />
                   </span>
-                  <span class="text-70">Jenny Wilson</span>
-                </div>
-                <div class="d-flex align-items-center mr-32pt">
-                  <i class="material-icons text-muted mr-4pt">people</i>
-                  <span class="text-muted">250+ students bought this course</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <i class="material-icons text-muted mr-4pt">thumb_up</i>
-                  <span class="text-muted">98% students recommend this course</span>
-                </div>
-              </div>
-            </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a href="index.html" class="dropdown-item active">Início</a>
+                  <a href="student-dashboard.html" class="dropdown-item"
+                    >Dashboard</a
+                  >
 
-            <!-- Course Content Section -->
-            <div class="page-separator">
-              <div class="page-separator__text">Course content</div>
-            </div>
-
-            <div class="mb-32pt">
-              <div class="d-flex align-items-center mb-16pt">
-                <div class="flex">
-                  <div class="d-flex align-items-center">
-                    <i class="material-icons text-muted mr-4pt">view_module</i>
-                    <span class="text-muted mr-16pt">24 sections</span>
-                    <i class="material-icons text-muted mr-4pt">ondemand_video</i>
-                    <span class="text-muted mr-16pt">490 lectures</span>
-                    <i class="material-icons text-muted mr-4pt">schedule</i>
-                    <span class="text-muted">72 hours total lenght</span>
-                  </div>
+                  <a href="edit-account-profile.html" class="dropdown-item"
+                    >Preferências</a
+                  >
+                  <div class="dropdown-divider"></div>
+                  <a href="login.html" class="dropdown-item">Logout</a>
                 </div>
-                <a href="#" class="text-accent">Expand all sections</a>
-              </div>
-
-              <!-- Accordion -->
-              <div class="accordion js-accordion accordion--boxed list-group-flush" id="toc">
-                <div class="accordion__item">
-                  <a href="#" class="accordion__toggle collapsed" data-toggle="collapse" data-target="#toc-1"
-                    data-parent="#toc">
-                    <span class="flex">Week 1 - Beginner - Introduction to Business Management</span>
-                    <span class="badge badge-pill badge-accent mr-16pt">22%</span>
-                    <span class="accordion__toggle-icon material-icons">keyboard_arrow_down</span>
-                  </a>
-                  <div class="accordion__menu collapse" id="toc-1">
-                    <div class="accordion__menu-link">
-                      <span class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
-                        <i class="material-icons icon-16pt">description</i>
-                      </span>
-                      <a class="flex" href="#">Read before you start</a>
-                      <span class="text-muted">4min</span>
-                    </div>
-                    <div class="accordion__menu-link">
-                      <span class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
-                        <i class="material-icons icon-16pt">play_circle_outline</i>
-                      </span>
-                      <a class="flex" href="#">Introduction to Business Foundations & Principals of Management</a>
-                      <span class="text-muted">1h 10min</span>
-                    </div>
-                    <div class="accordion__menu-link">
-                      <span class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
-                        <i class="material-icons icon-16pt">play_circle_outline</i>
-                      </span>
-                      <a class="flex" href="#">Introduction to Brand Management: Aligning Business, Brand and
-                        Behaviour</a>
-                      <span class="text-muted">1h 23min</span>
-                    </div>
-                    <div class="accordion__menu-link">
-                      <span class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
-                        <i class="material-icons icon-16pt">play_circle_outline</i>
-                      </span>
-                      <a class="flex" href="#">Business Analysis & Process Management</a>
-                      <span class="text-muted">43min</span>
-                    </div>
-                    <div class="accordion__menu-link">
-                      <span class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
-                        <i class="material-icons icon-16pt">description</i>
-                      </span>
-                      <a class="flex" href="#">Major terms from the section</a>
-                      <span class="text-muted">5 min</span>
-                    </div>
-                    <div class="accordion__menu-link">
-                      <span class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
-                        <i class="material-icons icon-16pt">help_outline</i>
-                      </span>
-                      <a class="flex" href="#">Practice analyse</a>
-                      <span class="text-muted">1 Question</span>
-                    </div>
-                    <div class="accordion__menu-link">
-                      <span class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
-                        <i class="material-icons icon-16pt">help_outline</i>
-                      </span>
-                      <a class="flex" href="#">Module 1</a>
-                      <span class="text-muted">24 Questions</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
+        </div>
+      </div>
 
-          <!-- Sidebar -->
-          <div class="col-lg-4">
-            <div class="pt-32pt pb-32pt" style="position: sticky; top: 100px;">
-              <!-- Course Image Card -->
-              <div class="card mb-24pt">
-                <div class="card-body p-0">
-                  <img src="../../public/images/course-images/course-1.jpg" alt="Course" class="card-img-top" />
+      <!-- // END Header -->
+
+      <!-- Header Layout Content -->
+      <div class="mdk-header-layout__content page-content">
+        <div class="container page__container">
+          <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+              <!-- Course Header -->
+              <div class="pt-32pt pb-32pt">
+                <div
+                  class="card border-0 shadow-lg mb-32pt text-white"
+                  style="
+                    border-radius: 28px;
+                    background-color: var(--color-static-248);
+                    background-repeat: no-repeat;
+                    background-position: right center;
+                    background-size: cover;
+                    overflow: hidden;
+                  ">
+                  <div class="card-body p-32pt">
+                    <div
+                      class="d-flex flex-column flex-lg-row align-items-start">
+                      <div class="flex mr-lg-32pt">
+                        <div
+                          class="d-flex align-items-center flex-wrap mb-16pt">
+                          <div class="rating rating-24 mr-8pt">
+                            <div class="rating__item">
+                              <i class="material-symbols-rounded">star</i>
+                            </div>
+                            <div class="rating__item">
+                              <i class="material-symbols-rounded">star</i>
+                            </div>
+                            <div class="rating__item">
+                              <i class="material-symbols-rounded">star</i>
+                            </div>
+                            <div class="rating__item">
+                              <i class="material-symbols-rounded">star</i>
+                            </div>
+                            <div class="rating__item">
+                              <i class="material-symbols-rounded">star</i>
+                            </div>
+                          </div>
+                          <span class="text-white font-weight-bold mr-8pt"
+                            >4,9</span
+                          >
+                          <span class="text-white-70 mr-16pt"
+                            >Baseado em
+                            <a href="#" class="text-white"
+                              >236 avaliações</a
+                            ></span
+                          >
+
+                          <span class="chip chip-primary mr-8pt mb-8pt"
+                            >Nova trilha</span
+                          >
+                        </div>
+
+                        <h1
+                          class="mb-16pt text-white"
+                          style="line-height: 1.2em">
+                          Imersão Liderança Digital &amp; Operações Inteligentes
+                        </h1>
+
+                        <p class="text-white-70 mb-24pt">
+                          A jornada combina aulas imersivas, painéis de dados e
+                          projetos guiados para acelerar a tomada de decisão
+                          baseada em dados nas equipes. Ideal para líderes que
+                          precisam orquestrar times híbridos e conectar metas de
+                          negócio aos indicadores que estão no dashboard do
+                          estudante VIDDIA.
+                        </p>
+
+                        <div
+                          class="d-flex flex-wrap align-items-center mb-24pt">
+                          <span class="chip chip-outline-light mr-8pt mb-8pt"
+                            >Trilha estratégica</span
+                          >
+                          <span class="chip chip-outline-light mr-8pt mb-8pt"
+                            >8 semanas de duração</span
+                          >
+                          <span class="chip chip-outline-light mr-8pt mb-8pt"
+                            >Certificação oficial VIDDIA</span
+                          >
+                        </div>
+
+                        <div
+                          class="d-flex align-items-center flex-wrap text-white-70">
+                          <div
+                            class="d-flex align-items-center mr-32pt mb-16pt">
+                            <i
+                              class="material-symbols-rounded text-white-70 mr-4pt"
+                              >people</i
+                            >
+                            <span
+                              >+250 profissionais impactados nesta trilha</span
+                            >
+                          </div>
+                          <div class="d-flex align-items-center mb-16pt">
+                            <i
+                              class="material-symbols-rounded text-white-70 mr-4pt"
+                              >thumb_up</i
+                            >
+                            <span>Taxa de recomendação 98%</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="mt-24pt mt-lg-0"
+                        style="flex: 0 0 320px; width: 100%">
+                        <div
+                          class="card border-0"
+                          style="
+                            border-radius: 24px;
+                            background: rgba(255, 255, 255, 0.08);
+                            border: 1px solid rgba(255, 255, 255, 0.15);
+                          ">
+                          <div class="card-body text-center text-white">
+                            <div
+                              class="d-flex align-items-center justify-content-center mb-16pt"
+                              style="
+                                height: 180px;
+                                border-radius: 20px;
+                                border: 1px dashed rgba(255, 255, 255, 0.3);
+                                background: rgba(0, 0, 0, 0.25);
+                              ">
+                              <span class="material-symbols-rounded mr-8pt"
+                                >play_circle</span
+                              >
+                              <strong>Prévia interativa</strong>
+                            </div>
+                            <p class="text-white-70 small mb-16pt">
+                              Explore 3 minutos da Aula 1 e visualize o painel
+                              dinâmico aplicado às decisões de squads.
+                            </p>
+                            <button class="btn btn-white btn-block">
+                              Assistir prévia
+                            </button>
+                            <div
+                              class="d-flex align-items-center justify-content-center text-white-70 mt-12pt">
+                              <i
+                                class="material-symbols-rounded icon-16pt mr-4pt"
+                                >lock_open</i
+                              >
+                              <small>Acesso liberado para convidados</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4 mb-24pt">
+                    <div
+                      class="card h-100 border-0 shadow-sm"
+                      style="
+                        border-radius: 22px;
+                        border-top: 4px solid var(--color-static-197);
+                      ">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center mb-8pt">
+                          <span
+                            class="material-symbols-rounded text-primary mr-8pt"
+                            >schedule</span
+                          >
+                          <strong>Carga horária viva</strong>
+                        </div>
+                        <p class="text-70 mb-0">
+                          36h assíncronas + 4 encontros ao vivo para consolidar
+                          planos e tirar dúvidas em tempo real.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-24pt">
+                    <div
+                      class="card h-100 border-0 shadow-sm"
+                      style="
+                        border-radius: 22px;
+                        border-top: 4px solid var(--color-static-197);
+                      ">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center mb-8pt">
+                          <span
+                            class="material-symbols-rounded text-accent mr-8pt"
+                            >monitoring</span
+                          >
+                          <strong>Dashboard integrado</strong>
+                        </div>
+                        <p class="text-70 mb-0">
+                          Atividades conectadas ao painel do estudante com
+                          notificações e metas de competência.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-24pt">
+                    <div
+                      class="card h-100 border-0 shadow-sm"
+                      style="
+                        border-radius: 22px;
+                        border-top: 4px solid var(--color-static-197);
+                      ">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center mb-8pt">
+                          <span
+                            class="material-symbols-rounded text-success mr-8pt"
+                            >verified</span
+                          >
+                          <strong>Aplicação imediata</strong>
+                        </div>
+                        <p class="text-70 mb-0">
+                          Entregáveis práticos com templates editáveis e cenário
+                          fictício para treinar decisões.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <!-- Pricing Card -->
-              <div class="card mb-24pt">
-                <div class="card-body text-center">
-                  <div class="mb-24pt">
-                    <h1 class="mb-0">
-                      <strong>$87.99</strong>
-                      <span class="text-muted h4" style="text-decoration: line-through;">$183.00</span>
-                    </h1>
-                    <span class="badge badge-accent">
-                      <i class="material-icons icon-16pt">local_fire_department</i>
-                      35% sale
-                    </span>
+              <!-- Course Content Section -->
+              <div class="page-separator">
+                <div class="page-separator__text">Conteúdo programático</div>
+              </div>
+
+              <div class="mb-32pt">
+                <div class="d-flex align-items-center mb-16pt">
+                  <div class="flex">
+                    <div class="d-flex align-items-center">
+                      <i class="material-symbols-rounded text-muted mr-4pt"
+                        >view_module</i
+                      >
+                      <span class="text-muted mr-16pt">4 módulos</span>
+                      <i class="material-symbols-rounded text-muted mr-4pt"
+                        >ondemand_video</i
+                      >
+                      <span class="text-muted mr-16pt">32 aulas</span>
+                      <i class="material-symbols-rounded text-muted mr-4pt"
+                        >schedule</i
+                      >
+                      <span class="text-muted">Carga estimada: 40h</span>
+                    </div>
+                  </div>
+                  <a href="#" class="text-accent">Expandir tudo</a>
+                </div>
+
+                <!-- Accordion -->
+                <div
+                  class="accordion js-accordion accordion--boxed list-group-flush"
+                  id="toc">
+                  <div class="accordion__item">
+                    <a
+                      href="#"
+                      class="accordion__toggle collapsed"
+                      data-toggle="collapse"
+                      data-target="#toc-1"
+                      data-parent="#toc">
+                      <span class="flex"
+                        >Módulo 01 — Fundamentos da liderança data-driven</span
+                      >
+                      <span class="badge badge-pill badge-accent mr-16pt"
+                        >Em andamento</span
+                      >
+                      <span class="accordion__toggle-icon material-icons"
+                        >keyboard_arrow_down</span
+                      >
+                    </a>
+                    <div class="accordion__menu collapse" id="toc-1">
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt"
+                            >description</i
+                          >
+                        </span>
+                        <a class="flex" href="#"
+                          >Guia rápido: navegação e objetivos do curso</a
+                        >
+                        <span class="text-muted">8 min</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded">play_circle</i>
+                        </span>
+                        <a class="flex" href="#"
+                          >Panorama do negócio e definição de KPIs vivos</a
+                        >
+                        <span class="text-muted">1h 05min</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded">play_circle</i>
+                        </span>
+                        <a class="flex" href="#"
+                          >Ferramentas digitais essenciais para líderes</a
+                        >
+                        <span class="text-muted">45min</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded">play_circle</i>
+                        </span>
+                        <a class="flex" href="#"
+                          >Laboratório: construção do radar de talentos</a
+                        >
+                        <span class="text-muted">1h 10min</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt"
+                            >description</i
+                          >
+                        </span>
+                        <a class="flex" href="#"
+                          >Glossário colaborativo VIDDIA</a
+                        >
+                        <span class="text-muted">10 min</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt"
+                            >fact_check</i
+                          >
+                        </span>
+                        <a class="flex" href="#">Plano de ação — Sprint 1</a>
+                        <span class="text-muted">2 atividades</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt"
+                            >help_outline</i
+                          >
+                        </span>
+                        <a class="flex" href="#">Simulado diagnóstico</a>
+                        <span class="text-muted">12 perguntas</span>
+                      </div>
+                    </div>
                   </div>
 
-                  <a href="#" class="btn btn-accent btn-block mb-8pt">
-                    <i class="material-icons icon-16pt mr-4pt">flash_on</i>
-                    Buy course now
-                  </a>
-
-                  <a href="#" class="btn btn-outline-primary btn-block mb-16pt">
-                    <i class="material-icons icon-16pt mr-4pt">mail_outline</i>
-                    Send message to teacher
-                  </a>
-                </div>
-              </div>
-
-              <!-- This course includes -->
-              <div class="card mb-24pt">
-                <div class="card-header">
-                  <h5 class="card-title mb-0"><strong>This course includes</strong></h5>
-                </div>
-                <div class="card-body">
-                  <ul class="list-unstyled mb-0">
-                    <li class="d-flex align-items-center mb-16pt">
-                      <i class="material-icons text-muted mr-8pt">ondemand_video</i>
-                      <span class="text-70">65 hours on demand video</span>
-                    </li>
-                    <li class="d-flex align-items-center mb-16pt">
-                      <i class="material-icons text-muted mr-8pt">cloud_download</i>
-                      <span class="text-70">45 downloadable resources</span>
-                    </li>
-                    <li class="d-flex align-items-center mb-16pt">
-                      <i class="material-icons text-muted mr-8pt">phone_android</i>
-                      <span class="text-70">Access on mobile and TV</span>
-                    </li>
-                    <li class="d-flex align-items-center mb-16pt">
-                      <i class="material-icons text-muted mr-8pt">article</i>
-                      <span class="text-70">86 articles</span>
-                    </li>
-                    <li class="d-flex align-items-center mb-16pt">
-                      <i class="material-icons text-muted mr-8pt">schedule</i>
-                      <span class="text-70">30 min personal weekly session</span>
-                    </li>
-                    <li class="d-flex align-items-center mb-16pt">
-                      <i class="material-icons text-muted mr-8pt">school</i>
-                      <span class="text-70">Meeting with Oxford Professor</span>
-                    </li>
-                    <li class="d-flex align-items-center">
-                      <i class="material-icons text-muted mr-8pt">card_membership</i>
-                      <span class="text-70">Certificate of completion</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Trial Course Box -->
-              <div class="card bg-dark text-white">
-                <div class="card-body">
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div>
-                      <h5 class="text-white mb-8pt"><strong>10 min trial course</strong></h5>
-                      <p class="text-white-70 mb-0 small">Have a look and feel at the course with a quick trial.</p>
+                  <div class="accordion__item">
+                    <a
+                      href="#"
+                      class="accordion__toggle collapsed"
+                      data-toggle="collapse"
+                      data-target="#toc-2"
+                      data-parent="#toc">
+                      <span class="flex"
+                        >Módulo 02 — Orquestração de times híbridos</span
+                      >
+                      <span class="badge badge-pill badge-secondary mr-16pt"
+                        >Planejado</span
+                      >
+                      <span class="accordion__toggle-icon material-icons"
+                        >keyboard_arrow_down</span
+                      >
+                    </a>
+                    <div class="accordion__menu collapse" id="toc-2">
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt"
+                            >play_circle</i
+                          >
+                        </span>
+                        <a class="flex" href="#"
+                          >Modelos de squad e definição de rituais</a
+                        >
+                        <span class="text-muted">38min</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt"
+                            >forum</i
+                          >
+                        </span>
+                        <a class="flex" href="#"
+                          >Playbook de conversas difíceis</a
+                        >
+                        <span class="text-muted">12min</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt"
+                            >groups</i
+                          >
+                        </span>
+                        <a class="flex" href="#"
+                          >Mesa redonda com especialistas convidados</a
+                        >
+                        <span class="text-muted">50min</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt">task</i>
+                        </span>
+                        <a class="flex" href="#"
+                          >Checklist de alinhamento semanal</a
+                        >
+                        <span class="text-muted">Download</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt"
+                            >important_devices</i
+                          >
+                        </span>
+                        <a class="flex" href="#"
+                          >Simulador de cenários híbridos</a
+                        >
+                        <span class="text-muted">20min</span>
+                      </div>
                     </div>
-                    <a href="#" class="btn btn-white btn-sm ml-16pt">Preview</a>
+                  </div>
+
+                  <div class="accordion__item">
+                    <a
+                      href="#"
+                      class="accordion__toggle collapsed"
+                      data-toggle="collapse"
+                      data-target="#toc-3"
+                      data-parent="#toc">
+                      <span class="flex"
+                        >Módulo 03 — Operações inteligentes e indicadores</span
+                      >
+                      <span class="badge badge-pill badge-light mr-16pt"
+                        >Em breve</span
+                      >
+                      <span class="accordion__toggle-icon material-icons"
+                        >keyboard_arrow_down</span
+                      >
+                    </a>
+                    <div class="accordion__menu collapse" id="toc-3">
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt">hub</i>
+                        </span>
+                        <a class="flex" href="#"
+                          >Integração com BI corporativo</a
+                        >
+                        <span class="text-muted">1h 20min</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt"
+                            >insights</i
+                          >
+                        </span>
+                        <a class="flex" href="#"
+                          >Análise de indicadores e storytelling</a
+                        >
+                        <span class="text-muted">55min</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt"
+                            >description</i
+                          >
+                        </span>
+                        <a class="flex" href="#"
+                          >Template do plano operacional</a
+                        >
+                        <span class="text-muted">Download</span>
+                      </div>
+                      <div class="accordion__menu-link">
+                        <span
+                          class="icon-holder icon-holder--small rounded-circle d-inline-flex icon--left mr-8pt">
+                          <i class="material-symbols-rounded icon-16pt"
+                            >emoji_events</i
+                          >
+                        </span>
+                        <a class="flex" href="#"
+                          >Apresentação final e ranking</a
+                        >
+                        <span class="text-muted">15min</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="page-separator">
+                <div class="page-separator__text">
+                  Experiências dentro da plataforma
+                </div>
+              </div>
+
+              <div class="row mb-32pt">
+                <div class="col-md-6 mb-24pt">
+                  <div
+                    class="card card-body border-0 shadow-sm h-100"
+                    style="border-radius: 22px">
+                    <div class="d-flex align-items-start mb-12pt">
+                      <span
+                        class="material-symbols-rounded text-success mr-16pt"
+                        style="font-size: 56px"
+                        >check_circle</span
+                      >
+                      <div>
+                        <h5 class="mb-4pt">Mapas de competências VIDDIA</h5>
+                        <p class="text-70 mb-0">
+                          Visualize gaps, trilhas recomendadas e indicadores
+                          diretamente na mesma tela usada no dashboard.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center text-70 small">
+                      <i class="material-symbols-rounded text-accent mr-4pt"
+                        >auto_graph</i
+                      >
+                      Atualização semanal baseada nos seus envios.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-24pt">
+                  <div
+                    class="card card-body border-0 shadow-sm h-100"
+                    style="border-radius: 22px">
+                    <div class="d-flex align-items-start mb-12pt">
+                      <span
+                        class="material-symbols-rounded text-success mr-16pt"
+                        style="font-size: 56px"
+                        >check_circle</span
+                      >
+                      <div>
+                        <h5 class="mb-4pt">Comunidade &amp; ranking</h5>
+                        <p class="text-70 mb-0">
+                          Participe de fóruns moderados, desafios semanais e
+                          acompanhe sua posição no ranking de aprendizado.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-wrap">
+                      <span class="badge badge-light mr-8pt mb-8pt"
+                        >Gamificação</span
+                      >
+                      <span class="badge badge-light mr-8pt mb-8pt"
+                        >Feedback 360º</span
+                      >
+                      <span class="badge badge-light mb-8pt">Networking</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div
+                    class="card border-0 shadow-sm"
+                    style="border-radius: 22px">
+                    <div
+                      class="card-body d-flex flex-column flex-md-row align-items-center">
+                      <div class="flex mb-16pt mb-md-0">
+                        <h5 class="mb-8pt">Laboratórios guiados por dados</h5>
+                        <p class="text-70 mb-12pt">
+                          Simule decisões em um cenário fictício inspirado em
+                          clientes reais e receba devolutivas automáticas com
+                          base no seu desempenho.
+                        </p>
+                        <div class="d-flex align-items-center text-70 small">
+                          <i
+                            class="material-symbols-rounded text-primary mr-4pt"
+                            >bolt</i
+                          >
+                          Resultados sincronizados com o Aprendizômetro VIDDIA.
+                        </div>
+                      </div>
+                      <div class="ml-md-32pt w-100" style="max-width: 320px">
+                        <div
+                          class="d-flex align-items-center justify-content-center text-muted text-center"
+                          style="
+                            height: 160px;
+                            border-radius: 20px;
+                            border: 2px dashed rgba(0, 87, 255, 0.25);
+                            background-color: #eef2ff;
+                          ">
+                          <div>
+                            <span
+                              class="material-symbols-rounded d-block mb-4pt text-accent"
+                              >view_in_ar</span
+                            >
+                            <strong class="d-block">Placeholder visual</strong>
+                            <small>Protótipo do laboratório interativo</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+              <div class="pt-32pt pb-32pt" style="position: sticky; top: 100px">
+                <!-- Course Image Card -->
+                <div
+                  class="card mb-24pt border-0 shadow-sm"
+                  style="border-radius: 26px">
+                  <div class="card-body p-0">
+                    <img
+                      src="../../public/images/Course thumbnails/course_16_9-thumb_47.jpg"
+                      alt="Capa ilustrativa do curso"
+                      class="card-img-top"
+                      style="border-radius: 26px" />
+                  </div>
+                </div>
+
+                <!-- Pricing Card -->
+                <div class="card mb-24pt border-0 shadow-sm">
+                  <div class="card-body text-center">
+                    <div class="mb-24pt">
+                      <h1 class="mb-4pt">
+                        <strong>R$ 389,00</strong>
+                        <span
+                          class="text-muted h4"
+                          style="text-decoration: line-through"
+                          >R$ 629,00</span
+                        >
+                      </h1>
+                      <span class="badge badge-accent">
+                        <i class="material-symbols-rounded icon-16pt"
+                          >auto_awesome</i
+                        >
+                        Acesso de 12 meses
+                      </span>
+                    </div>
+
+                    <a href="#" class="btn btn-primary btn-block mb-8pt">
+                      <i class="material-symbols-rounded icon-16pt mr-4pt"
+                        >flash_on</i
+                      >
+                      Matricular agora
+                    </a>
+
+                    <a
+                      href="#"
+                      class="btn btn-outline-primary btn-block mb-12pt">
+                      <i class="material-symbols-rounded icon-16pt mr-4pt"
+                        >support_agent</i
+                      >
+                      Falar com um especialista
+                    </a>
+
+                    <div
+                      class="d-flex align-items-center justify-content-center text-70 small">
+                      <i class="material-symbols-rounded icon-16pt mr-4pt"
+                        >verified_user</i
+                      >
+                      Garantia de 7 dias e certificado incluso.
+                    </div>
+                    <small class="text-70 d-block mt-12pt"
+                      >Pagamento corporativo, boleto ou cartão em até 6x.</small
+                    >
+                  </div>
+                </div>
+
+                <!-- This course includes -->
+                <div class="card mb-24pt border-0 shadow-sm">
+                  <div class="card-header">
+                    <h5 class="card-title mb-0">
+                      <strong>Este curso inclui</strong>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled mb-0">
+                      <li class="d-flex align-items-center mb-16pt">
+                        <i class="material-symbols-rounded text-muted mr-8pt"
+                          >ondemand_video</i
+                        >
+                        <span class="text-70"
+                          >65h de aulas sob demanda e estudos dirigidos</span
+                        >
+                      </li>
+                      <li class="d-flex align-items-center mb-16pt">
+                        <i class="material-symbols-rounded text-muted mr-8pt"
+                          >cloud_download</i
+                        >
+                        <span class="text-70"
+                          >Materiais, checklists e canvas editáveis</span
+                        >
+                      </li>
+                      <li class="d-flex align-items-center mb-16pt">
+                        <i class="material-symbols-rounded text-muted mr-8pt"
+                          >phone_android</i
+                        >
+                        <span class="text-70"
+                          >Aplicativo mobile e acesso via TV/Chromecast</span
+                        >
+                      </li>
+                      <li class="d-flex align-items-center mb-16pt">
+                        <i class="material-symbols-rounded text-muted mr-8pt"
+                          >fact_check</i
+                        >
+                        <span class="text-70"
+                          >Planilhas de diagnóstico e simuladores VIDDIA</span
+                        >
+                      </li>
+                      <li class="d-flex align-items-center mb-16pt">
+                        <i class="material-symbols-rounded text-muted mr-8pt"
+                          >groups</i
+                        >
+                        <span class="text-70"
+                          >Mentorias coletivas quinzenais</span
+                        >
+                      </li>
+                      <li class="d-flex align-items-center mb-16pt">
+                        <i class="material-symbols-rounded text-muted mr-8pt"
+                          >diversity_3</i
+                        >
+                        <span class="text-70"
+                          >Comunidade moderada com ranking ao vivo</span
+                        >
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="material-symbols-rounded text-muted mr-8pt"
+                          >card_membership</i
+                        >
+                        <span class="text-70"
+                          >Certificado VIDDIA com QR Code</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Trial Course Box -->
+                <div class="card bg-dark text-white mb-24pt">
+                  <div class="card-body">
+                    <div
+                      class="d-flex align-items-center justify-content-between">
+                      <div>
+                        <h5 class="text-white mb-8pt">
+                          <strong>Aula demonstrativa</strong>
+                        </h5>
+                        <p class="text-white-70 mb-0 small">
+                          Teste a experiência por 10 minutos com dados reais da
+                          plataforma antes de assumir a turma.
+                        </p>
+                      </div>
+                      <a
+                        href="#"
+                        class="btn btn-white btn-sm ml-16pt d-inline-flex align-items-center">
+                        <span class="material-symbols-rounded icon-16pt mr-4pt"
+                          >play_arrow</span
+                        >
+                        Assistir agora
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -332,153 +919,157 @@
           </div>
         </div>
       </div>
+      <!-- // END Header Layout Content -->
+
+      <!-- // END Drawer -->
+
+      <!-- Footer -->
+
+      <div class="bg-white border-top-2 mt-auto">
+        <div class="container page__container page-section d-flex flex-column">
+          <p class="text-70 brand mb-24pt">
+            <img
+              class="brand-icon"
+              src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png"
+              width="120"
+              alt="VIDDIA" />
+          </p>
+          <p class="measure-lead-max text-50 small mr-8pt">
+            Somos uma Edtech especializada em educação corporativa para os mais
+            diversos segmentos de negócio e setores da sociedade. Somos
+            parceiros estratégicos de organizações que desejam melhorar sua
+            capacidade de execução e seus indicadores de negócio.
+          </p>
+          <p class="mb-8pt d-flex">
+            <a href="" class="text-70 text-underline mr-8pt small"
+              >Sobre a VIDDIA</a
+            >
+            <a href="" class="text-70 text-underline small">Termos de Uso</a>
+          </p>
+          <p class="text-50 small mt-n1 mb-0">
+            Copyright 2025 &copy; Todos os Direitos Reservados.
+          </p>
+        </div>
+      </div>
+
+      <!-- // END Footer -->
     </div>
-    <!-- // END Header Layout Content -->
+    <!-- // END Header Layout -->
+
+    <!-- Drawer -->
 
     <!-- // END Drawer -->
 
-    <!-- Footer -->
+    <!-- jQuery -->
+    <script src="../../public/vendor/jquery.min.js"></script>
 
-    <div class="bg-white border-top-2 mt-auto">
-      <div class="container page__container page-section d-flex flex-column">
-        <p class="text-70 brand mb-24pt">
-          <img class="brand-icon" src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png" width="120" alt="VIDDIA" />
-        </p>
-        <p class="measure-lead-max text-50 small mr-8pt">
-          Somos uma Edtech especializada em educação corporativa para os mais
-          diversos segmentos de negócio e setores da sociedade. Somos
-          parceiros estratégicos de organizações que desejam melhorar sua
-          capacidade de execução e seus indicadores de negócio.
-        </p>
-        <p class="mb-8pt d-flex">
-          <a href="" class="text-70 text-underline mr-8pt small">Sobre a VIDDIA</a>
-          <a href="" class="text-70 text-underline small">Termos de Uso</a>
-        </p>
-        <p class="text-50 small mt-n1 mb-0">
-          Copyright 2025 &copy; Todos os Direitos Reservados.
-        </p>
-      </div>
-    </div>
+    <!-- Bootstrap -->
+    <script src="../../public/vendor/popper.min.js"></script>
+    <script src="../../public/vendor/bootstrap.min.js"></script>
 
-    <!-- // END Footer -->
-  </div>
-  <!-- // END Header Layout -->
+    <!-- Perfect Scrollbar -->
+    <script src="../../public/vendor/perfect-scrollbar.min.js"></script>
 
-  <!-- Drawer -->
+    <!-- DOM Factory -->
+    <script src="../../public/vendor/dom-factory.js"></script>
 
-  <!-- // END Drawer -->
+    <!-- MDK -->
+    <script src="../../public/vendor/material-design-kit.js"></script>
 
-  <!-- jQuery -->
-  <script src="../../public/vendor/jquery.min.js"></script>
+    <!-- App JS -->
+    <script src="../../public/js/app.js"></script>
 
-  <!-- Bootstrap -->
-  <script src="../../public/vendor/popper.min.js"></script>
-  <script src="../../public/vendor/bootstrap.min.js"></script>
+    <!-- Preloader -->
+    <script src="../../public/js/preloader.js"></script>
 
-  <!-- Perfect Scrollbar -->
-  <script src="../../public/vendor/perfect-scrollbar.min.js"></script>
+    <script>
+      (function () {
+        "use strict";
+        var headerNode = document.querySelector(".mdk-header");
+        var layoutNode = document.querySelector(".mdk-header-layout");
+        var componentNode = layoutNode ? layoutNode : headerNode;
+        componentNode.addEventListener(
+          "domfactory-component-upgraded",
+          function () {
+            headerNode.mdkHeader.eventTarget.addEventListener(
+              "scroll",
+              function () {
+                var progress = headerNode.mdkHeader.getScrollState().progress;
+                var navbarNode = headerNode.querySelector("#default-navbar");
+                navbarNode.classList.toggle("bg-transparent", progress <= 0.2);
+              }
+            );
+          }
+        );
+      })();
+    </script>
 
-  <!-- DOM Factory -->
-  <script src="../../public/vendor/dom-factory.js"></script>
+    <script>
+      (function () {
+        var sections = document.querySelectorAll(".course-grid-section");
+        if (!sections.length) {
+          return;
+        }
 
-  <!-- MDK -->
-  <script src="../../public/vendor/material-design-kit.js"></script>
+        sections.forEach(function (section) {
+          var button = section.querySelector("[data-show-more-target]");
+          var targetId = button
+            ? button.getAttribute("data-show-more-target")
+            : null;
+          var targetSection = targetId
+            ? document.getElementById(targetId)
+            : section;
+          var grid = targetSection
+            ? targetSection.querySelector(".course-grid")
+            : null;
+          if (!grid || !button) {
+            return;
+          }
 
-  <!-- App JS -->
-  <script src="../../public/js/app.js"></script>
+          if (!grid) {
+            return;
+          }
 
-  <!-- Preloader -->
-  <script src="../../public/js/preloader.js"></script>
+          var extras = grid.querySelectorAll(".course-card--extra");
+          if (!extras.length) {
+            button.parentNode.style.display = "none";
+            return;
+          }
 
-  <script>
-    (function () {
-      "use strict";
-      var headerNode = document.querySelector(".mdk-header");
-      var layoutNode = document.querySelector(".mdk-header-layout");
-      var componentNode = layoutNode ? layoutNode : headerNode;
-      componentNode.addEventListener(
-        "domfactory-component-upgraded",
-        function () {
-          headerNode.mdkHeader.eventTarget.addEventListener(
-            "scroll",
-            function () {
-              var progress = headerNode.mdkHeader.getScrollState().progress;
-              var navbarNode = headerNode.querySelector("#default-navbar");
-              navbarNode.classList.toggle("bg-transparent", progress <= 0.2);
+          function isCollapsed() {
+            return grid.getAttribute("data-collapsed") !== "false";
+          }
+
+          function updateLabel() {
+            var collapsed = isCollapsed();
+            var label = button.querySelector(".btn__label");
+            var icon = button.querySelector(".material-icons");
+            if (label) {
+              label.textContent = collapsed ? "Mostrar mais" : "Mostrar menos";
+            } else {
+              button.textContent = collapsed ? "Mostrar mais" : "Mostrar menos";
             }
-          );
-        }
-      );
-    })();
-  </script>
-
-  <script>
-    (function () {
-      var sections = document.querySelectorAll(".course-grid-section");
-      if (!sections.length) {
-        return;
-      }
-
-      sections.forEach(function (section) {
-        var button = section.querySelector("[data-show-more-target]");
-        var targetId = button
-          ? button.getAttribute("data-show-more-target")
-          : null;
-        var targetSection = targetId
-          ? document.getElementById(targetId)
-          : section;
-        var grid = targetSection
-          ? targetSection.querySelector(".course-grid")
-          : null;
-        if (!grid || !button) {
-          return;
-        }
-
-        if (!grid) {
-          return;
-        }
-
-        var extras = grid.querySelectorAll(".course-card--extra");
-        if (!extras.length) {
-          button.parentNode.style.display = "none";
-          return;
-        }
-
-        function isCollapsed() {
-          return grid.getAttribute("data-collapsed") !== "false";
-        }
-
-        function updateLabel() {
-          var collapsed = isCollapsed();
-          var label = button.querySelector(".btn__label");
-          var icon = button.querySelector(".material-icons");
-          if (label) {
-            label.textContent = collapsed ? "Mostrar mais" : "Mostrar menos";
-          } else {
-            button.textContent = collapsed ? "Mostrar mais" : "Mostrar menos";
+            if (icon) {
+              icon.textContent = collapsed ? "expand_more" : "expand_less";
+            }
+            button.setAttribute("aria-expanded", (!collapsed).toString());
+            section.classList.toggle(
+              "course-grid-section--expanded",
+              !collapsed
+            );
           }
-          if (icon) {
-            icon.textContent = collapsed ? "expand_more" : "expand_less";
-          }
-          button.setAttribute("aria-expanded", (!collapsed).toString());
-          section.classList.toggle(
-            "course-grid-section--expanded",
-            !collapsed
-          );
-        }
 
-        button.addEventListener("click", function () {
-          grid.setAttribute(
-            "data-collapsed",
-            isCollapsed() ? "false" : "true"
-          );
+          button.addEventListener("click", function () {
+            grid.setAttribute(
+              "data-collapsed",
+              isCollapsed() ? "false" : "true"
+            );
+            updateLabel();
+          });
+
           updateLabel();
         });
-
-        updateLabel();
-      });
-    })();
-  </script>
-</body>
-
+      })();
+    </script>
+  </body>
 </html>
