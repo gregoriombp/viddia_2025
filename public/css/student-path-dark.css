@@ -34,11 +34,11 @@ html.dark-mode .card-status-badge--locked {
 }
 
 html.dark-mode .card--status-completed {
-    box-shadow: 0 0 0 2px rgba(34, 197, 94, .4), 0 20px 40px -20px rgba(34, 197, 94, .35);
+    box-shadow: none;
 }
 
 html.dark-mode .card--status-completed:hover {
-    box-shadow: 0 0 0 2px rgba(34, 197, 94, .55), 0 26px 56px -18px rgba(34, 197, 94, .4);
+    box-shadow: none;
 }
 
 html.dark-mode .card--status-current {
@@ -189,11 +189,9 @@ html.dark-mode .hero--fade::after {
    ========================================== */
 
 html.dark-mode .profile-card-gradient {
-    background: linear-gradient(
-        0deg,
-        rgba(22, 26, 38, 0.95),
-        rgba(30, 41, 59, 0.98)
-    ) !important;
+    background: linear-gradient(0deg,
+            rgba(22, 26, 38, 0.95),
+            rgba(30, 41, 59, 0.98)) !important;
 }
 
 html.dark-mode .profile-card-gradient h4,
@@ -225,6 +223,86 @@ html.dark-mode .profile-card-gradient .bg-light {
 
 html.dark-mode .text-golden {
     color: #fbbf24;
+}
+
+/* ==========================================
+   MODULE TRACK CAROUSEL - Dark Mode
+   ========================================== */
+
+html.dark-mode .module-track-section {
+    --module-surface: #050a18;
+    --module-border: rgba(148, 163, 184, 0.35);
+    --module-mask-color: #050a18;
+    --module-card-bg: rgba(15, 23, 42, 0.85);
+    --module-card-border: rgba(148, 163, 184, 0.25);
+    --module-card-text: #f8fafc;
+    --module-card-subtext: rgba(226, 232, 240, 0.7);
+    --module-chip-bg: rgba(15, 23, 42, 0.5);
+    --module-chip-text: #e2e8f0;
+    --module-chip-border: rgba(148, 163, 184, 0.3);
+    --module-progress-bg: rgba(15, 23, 42, 0.6);
+    --module-progress-fill: #38bdf8;
+    --module-nav-icon: #f8fafc;
+    --module-state-complete: rgba(34, 197, 94, 0.85);
+    --module-state-next: rgba(59, 130, 246, 0.85);
+    --module-state-progress: rgba(250, 204, 21, 0.85);
+}
+
+html.dark-mode .module-block__description {
+    color: rgba(226, 232, 240, 0.8);
+}
+
+html.dark-mode .module-block__meta small {
+    color: rgba(148, 163, 184, 0.8);
+}
+
+html.dark-mode .module-block--current .module-block__chip {
+    color: #bfdbfe;
+    border-color: rgba(59, 130, 246, 0.35);
+}
+
+html.dark-mode .module-block--completed .module-block__chip {
+    color: #bbf7d0;
+    border-color: rgba(34, 197, 94, 0.35);
+}
+
+html.dark-mode .module-block--upcoming .module-block__chip {
+    color: #cbd5f5;
+    border-color: rgba(148, 163, 184, 0.45);
+}
+
+html.dark-mode .module-carousel__nav {
+    background: rgba(15, 23, 42, 0.85);
+    border-color: rgba(148, 163, 184, 0.4);
+    box-shadow: 0 16px 30px -24px #00050d;
+}
+
+html.dark-mode .module-carousel__nav:hover {
+    background: rgba(59, 130, 246, 0.15);
+}
+
+html.dark-mode .module-video {
+    box-shadow: 0 24px 50px -30px rgba(0, 5, 13, 0.85);
+}
+
+html.dark-mode .module-video:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+html.dark-mode .module-video__hover {
+    background: linear-gradient(180deg, rgba(3, 6, 18, 0) 0%, rgba(3, 6, 18, 0.9) 100%);
+}
+
+html.dark-mode .module-video--not-started .module-video__hover {
+    background: linear-gradient(180deg, rgba(3, 6, 18, 0) 0%, rgba(3, 6, 18, 0.55) 100%);
+}
+
+html.dark-mode .module-video__meta h5 {
+    color: #f8fafc;
+}
+
+html.dark-mode .module-carousel__fade {
+    background: linear-gradient(90deg, rgba(5, 10, 24, 1) 15%, rgba(5, 10, 24, 0));
 }
 
 /* ==========================================
@@ -270,15 +348,13 @@ html.dark-mode .student-page-num .text-primary {
    CAROUSEL CARD - Dark Mode
    ========================================== */
 
-html.dark-mode .carousel-card .carousel-control-next {
-    background-color: rgba(30, 41, 59, 0.9);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+html.dark-mode .carousel-card::after {
+    background: linear-gradient(to right, transparent 0%, #00050d 85%);
 }
 
-html.dark-mode .carousel-card .carousel-control-next:hover {
-    background-color: rgba(30, 41, 59, 1);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
-}
+html.dark-mode .carousel-card .carousel-control-next {}
+
+html.dark-mode .carousel-card .carousel-control-next:hover {}
 
 html.dark-mode .carousel-card .carousel-control-next .carousel-control-icon {
     color: #60a5fa;
@@ -298,4 +374,85 @@ html.dark-mode .btn-white-pill {
 html.dark-mode .btn-white-pill:hover {
     background: var(--bg-theme-5);
     color: var(--text-theme-4);
+}
+
+/* ==========================================
+   LESSON MATERIALS DROPDOWN - Dark Mode
+   ========================================== */
+
+html.dark-mode .lesson-materials-dropdown__toggle {
+    background: --var(bg-theme-8, #667eea);
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+}
+
+html.dark-mode .lesson-materials-dropdown__toggle:hover {
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+html.dark-mode .lesson-materials-dropdown__menu {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+html.dark-mode .lesson-materials-dropdown__header {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.6) 100%);
+    border-bottom: 1px solid rgba(102, 126, 234, 0.15);
+    color: #cbd5e1;
+}
+
+html.dark-mode .lesson-materials-dropdown__header .material-symbols-rounded {
+    color: #818cf8;
+}
+
+html.dark-mode .lesson-materials-dropdown__item {
+    border-bottom: 1px solid rgba(102, 126, 234, 0.08);
+}
+
+html.dark-mode .lesson-materials-dropdown__link:hover {
+    background-color: rgba(102, 126, 234, 0.12);
+}
+
+html.dark-mode .lesson-materials-dropdown__filename {
+    color: #e2e8f0;
+}
+
+html.dark-mode .lesson-materials-dropdown__filesize {
+    color: #94a3b8;
+}
+
+html.dark-mode .lesson-materials-dropdown__download {
+    color: #818cf8;
+}
+
+html.dark-mode .lesson-materials-dropdown__list::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+}
+
+html.dark-mode .lesson-materials-dropdown__list::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.4);
+}
+
+html.dark-mode .lesson-materials-dropdown__list::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.6);
+}
+
+/* ==========================================
+   MODULE VIDEO NEXT ANIMATION - Dark Mode
+   ========================================== */
+
+html.dark-mode .module-video--next {
+    animation: pulse-blue-border-dark 2s ease-in-out infinite;
+}
+
+@keyframes pulse-blue-border-dark {
+    0%, 100% {
+        border-color: rgba(59, 130, 246, 0.4);
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        border-color: rgba(96, 165, 250, 0.7);
+        box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.5), 0 0 24px rgba(59, 130, 246, 0.4);
+    }
 }
