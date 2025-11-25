@@ -1,0 +1,1066 @@
+/* ========================================
+   STUDENT-COURSE-PREVIEW.CSS - Estilos específicos da página student-course-preview.html
+   Tema Claro
+   ======================================== */
+
+/* ==========================================
+   ICON HOLDER COMPONENT
+   ========================================== */
+
+.icon-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px
+}
+
+.icon-holder {
+    padding: 0
+}
+
+.icon-holder[href]:hover {
+    text-decoration: none
+}
+
+.icon-holder--small {
+    width: 30px;
+    height: 30px
+}
+
+.icon-holder--default {
+    background-color: var(--color-static-193)
+}
+
+.icon-holder--primary {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary {
+    background-image: none;
+    background-color: var(--color-static-197);
+    border: 1px solid var(--color-static-197)
+}
+
+.icon-holder--primary:hover {
+    color: var(--color-static-197)
+}
+
+.icon-holder--primary:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-197)
+}
+
+.icon-holder--primary:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary:hover:hover {
+    background-color: var(--color-static-197);
+    border-color: var(--color-static-197)
+}
+
+.icon-holder--outline-primary {
+    color: var(--color-static-197)
+}
+
+.icon-holder--outline-primary {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-197)
+}
+
+.icon-holder--outline-primary:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-primary:hover {
+    background-color: var(--color-static-197);
+    border-color: var(--color-static-197)
+}
+
+.icon-holder--secondary {
+    color: var(--color-static-11)
+}
+
+.icon-holder--secondary {
+    background-image: none;
+    background-color: var(--color-static-12);
+    border: 1px solid var(--color-static-12)
+}
+
+.icon-holder--secondary:hover {
+    color: var(--color-static-12)
+}
+
+.icon-holder--secondary:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-12)
+}
+
+.icon-holder--secondary:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--secondary:hover:hover {
+    background-color: var(--color-static-12);
+    border-color: var(--color-static-12)
+}
+
+.icon-holder--outline-secondary {
+    color: var(--color-static-12)
+}
+
+.icon-holder--outline-secondary {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-12)
+}
+
+.icon-holder--outline-secondary:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-secondary:hover {
+    background-color: var(--color-static-12);
+    border-color: var(--color-static-12)
+}
+
+.icon-holder--success {
+    color: var(--color-static-11)
+}
+
+.icon-holder--success {
+    background-image: none;
+    background-color: var(--color-static-15);
+    border: 1px solid var(--color-static-15)
+}
+
+.icon-holder--success:hover {
+    color: var(--color-static-15)
+}
+
+.icon-holder--success:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-15)
+}
+
+.icon-holder--success:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--success:hover:hover {
+    background-color: var(--color-static-15);
+    border-color: var(--color-static-15)
+}
+
+.icon-holder--outline-success {
+    color: var(--color-static-15)
+}
+
+.icon-holder--outline-success {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-15)
+}
+
+.icon-holder--outline-success:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-success:hover {
+    background-color: var(--color-static-15);
+    border-color: var(--color-static-15)
+}
+
+.icon-holder--info {
+    color: var(--color-static-11)
+}
+
+.icon-holder--info {
+    background-image: none;
+    background-color: var(--color-static-10);
+    border: 1px solid var(--color-static-10)
+}
+
+.icon-holder--info:hover {
+    color: var(--color-static-10)
+}
+
+.icon-holder--info:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-10)
+}
+
+.icon-holder--info:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--info:hover:hover {
+    background-color: var(--color-static-10);
+    border-color: var(--color-static-10)
+}
+
+.icon-holder--outline-info {
+    color: var(--color-static-10)
+}
+
+.icon-holder--outline-info {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-10)
+}
+
+.icon-holder--outline-info:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-info:hover {
+    background-color: var(--color-static-10);
+    border-color: var(--color-static-10)
+}
+
+.icon-holder--warning {
+    color: var(--color-static-11)
+}
+
+.icon-holder--warning {
+    background-image: none;
+    background-color: var(--color-static-16);
+    border: 1px solid var(--color-static-16)
+}
+
+.icon-holder--warning:hover {
+    color: var(--color-static-16)
+}
+
+.icon-holder--warning:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-16)
+}
+
+.icon-holder--warning:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--warning:hover:hover {
+    background-color: var(--color-static-16);
+    border-color: var(--color-static-16)
+}
+
+.icon-holder--outline-warning {
+    color: var(--color-static-16)
+}
+
+.icon-holder--outline-warning {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-16)
+}
+
+.icon-holder--outline-warning:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-warning:hover {
+    background-color: var(--color-static-16);
+    border-color: var(--color-static-16)
+}
+
+.icon-holder--danger {
+    color: var(--color-static-11)
+}
+
+.icon-holder--danger {
+    background-image: none;
+    background-color: var(--color-static-17);
+    border: 1px solid var(--color-static-17)
+}
+
+.icon-holder--danger:hover {
+    color: var(--color-static-17)
+}
+
+.icon-holder--danger:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-17)
+}
+
+.icon-holder--danger:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--danger:hover:hover {
+    background-color: var(--color-static-17);
+    border-color: var(--color-static-17)
+}
+
+.icon-holder--outline-danger {
+    color: var(--color-static-17)
+}
+
+.icon-holder--outline-danger {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-17)
+}
+
+.icon-holder--outline-danger:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-danger:hover {
+    background-color: var(--color-static-17);
+    border-color: var(--color-static-17)
+}
+
+.icon-holder--light {
+    color: var(--color-static-11)
+}
+
+.icon-holder--light {
+    background-image: none;
+    background-color: var(--color-static-18);
+    border: 1px solid var(--color-static-18)
+}
+
+.icon-holder--light:hover {
+    color: var(--color-static-18)
+}
+
+.icon-holder--light:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-18)
+}
+
+.icon-holder--light:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--light:hover:hover {
+    background-color: var(--color-static-18);
+    border-color: var(--color-static-18)
+}
+
+.icon-holder--outline-light {
+    color: var(--color-static-18)
+}
+
+.icon-holder--outline-light {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-18)
+}
+
+.icon-holder--outline-light:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-light:hover {
+    background-color: var(--color-static-18);
+    border-color: var(--color-static-18)
+}
+
+.icon-holder--dark {
+    color: var(--color-static-11)
+}
+
+.icon-holder--dark {
+    background-image: none;
+    background-color: var(--color-static-234);
+    border: 1px solid var(--color-static-234)
+}
+
+.icon-holder--dark:hover {
+    color: var(--color-static-234)
+}
+
+.icon-holder--dark:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-234)
+}
+
+.icon-holder--dark:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--dark:hover:hover {
+    background-color: var(--color-static-234);
+    border-color: var(--color-static-234)
+}
+
+.icon-holder--outline-dark {
+    color: var(--color-static-234)
+}
+
+.icon-holder--outline-dark {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-234)
+}
+
+.icon-holder--outline-dark:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-dark:hover {
+    background-color: var(--color-static-234);
+    border-color: var(--color-static-234)
+}
+
+.icon-holder--black {
+    color: var(--color-static-11)
+}
+
+.icon-holder--black {
+    background-image: none;
+    background-color: var(--color-static-20);
+    border: 1px solid var(--color-static-20)
+}
+
+.icon-holder--black:hover {
+    color: var(--color-static-20)
+}
+
+.icon-holder--black:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-20)
+}
+
+.icon-holder--black:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--black:hover:hover {
+    background-color: var(--color-static-20);
+    border-color: var(--color-static-20)
+}
+
+.icon-holder--outline-black {
+    color: var(--color-static-20)
+}
+
+.icon-holder--outline-black {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-20)
+}
+
+.icon-holder--outline-black:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-black:hover {
+    background-color: var(--color-static-20);
+    border-color: var(--color-static-20)
+}
+
+.icon-holder--accent {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent {
+    background-image: none;
+    background-color: var(--color-static-143);
+    border: 1px solid var(--color-static-143)
+}
+
+.icon-holder--accent:hover {
+    color: var(--color-static-143)
+}
+
+.icon-holder--accent:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-143)
+}
+
+.icon-holder--accent:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent:hover:hover {
+    background-color: var(--color-static-143);
+    border-color: var(--color-static-143)
+}
+
+.icon-holder--outline-accent {
+    color: var(--color-static-143)
+}
+
+.icon-holder--outline-accent {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-143)
+}
+
+.icon-holder--outline-accent:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-accent:hover {
+    background-color: var(--color-static-143);
+    border-color: var(--color-static-143)
+}
+
+.icon-holder--accent-red {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent-red {
+    background-image: none;
+    background-color: var(--color-static-143);
+    border: 1px solid var(--color-static-143)
+}
+
+.icon-holder--accent-red:hover {
+    color: var(--color-static-143)
+}
+
+.icon-holder--accent-red:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-143)
+}
+
+.icon-holder--accent-red:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent-red:hover:hover {
+    background-color: var(--color-static-143);
+    border-color: var(--color-static-143)
+}
+
+.icon-holder--outline-accent-red {
+    color: var(--color-static-143)
+}
+
+.icon-holder--outline-accent-red {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-143)
+}
+
+.icon-holder--outline-accent-red:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-accent-red:hover {
+    background-color: var(--color-static-143);
+    border-color: var(--color-static-143)
+}
+
+.icon-holder--accent-yellow {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent-yellow {
+    background-image: none;
+    background-color: var(--color-static-16);
+    border: 1px solid var(--color-static-16)
+}
+
+.icon-holder--accent-yellow:hover {
+    color: var(--color-static-16)
+}
+
+.icon-holder--accent-yellow:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-16)
+}
+
+.icon-holder--accent-yellow:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent-yellow:hover:hover {
+    background-color: var(--color-static-16);
+    border-color: var(--color-static-16)
+}
+
+.icon-holder--outline-accent-yellow {
+    color: var(--color-static-16)
+}
+
+.icon-holder--outline-accent-yellow {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-16)
+}
+
+.icon-holder--outline-accent-yellow:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-accent-yellow:hover {
+    background-color: var(--color-static-16);
+    border-color: var(--color-static-16)
+}
+
+.icon-holder--accent-dodger-blue {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent-dodger-blue {
+    background-image: none;
+    background-color: var(--color-static-197);
+    border: 1px solid var(--color-static-197)
+}
+
+.icon-holder--accent-dodger-blue:hover {
+    color: var(--color-static-197)
+}
+
+.icon-holder--accent-dodger-blue:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-197)
+}
+
+.icon-holder--accent-dodger-blue:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent-dodger-blue:hover:hover {
+    background-color: var(--color-static-197);
+    border-color: var(--color-static-197)
+}
+
+.icon-holder--outline-accent-dodger-blue {
+    color: var(--color-static-197)
+}
+
+.icon-holder--outline-accent-dodger-blue {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-197)
+}
+
+.icon-holder--outline-accent-dodger-blue:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-accent-dodger-blue:hover {
+    background-color: var(--color-static-197);
+    border-color: var(--color-static-197)
+}
+
+.icon-holder--accent-pickled-bluewood {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent-pickled-bluewood {
+    background-image: none;
+    background-color: var(--color-static-244);
+    border: 1px solid var(--color-static-244)
+}
+
+.icon-holder--accent-pickled-bluewood:hover {
+    color: var(--color-static-244)
+}
+
+.icon-holder--accent-pickled-bluewood:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-244)
+}
+
+.icon-holder--accent-pickled-bluewood:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent-pickled-bluewood:hover:hover {
+    background-color: var(--color-static-244);
+    border-color: var(--color-static-244)
+}
+
+.icon-holder--outline-accent-pickled-bluewood {
+    color: var(--color-static-244)
+}
+
+.icon-holder--outline-accent-pickled-bluewood {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-244)
+}
+
+.icon-holder--outline-accent-pickled-bluewood:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-accent-pickled-bluewood:hover {
+    background-color: var(--color-static-244);
+    border-color: var(--color-static-244)
+}
+
+.icon-holder--accent-electric-violet {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent-electric-violet {
+    background-image: none;
+    background-color: var(--color-static-249);
+    border: 1px solid var(--color-static-249)
+}
+
+.icon-holder--accent-electric-violet:hover {
+    color: var(--color-static-249)
+}
+
+.icon-holder--accent-electric-violet:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-249)
+}
+
+.icon-holder--accent-electric-violet:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--accent-electric-violet:hover:hover {
+    background-color: var(--color-static-249);
+    border-color: var(--color-static-249)
+}
+
+.icon-holder--outline-accent-electric-violet {
+    color: var(--color-static-249)
+}
+
+.icon-holder--outline-accent-electric-violet {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-249)
+}
+
+.icon-holder--outline-accent-electric-violet:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-accent-electric-violet:hover {
+    background-color: var(--color-static-249);
+    border-color: var(--color-static-249)
+}
+
+.icon-holder--primary-purple {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-purple {
+    background-image: none;
+    background-color: var(--color-static-254);
+    border: 1px solid var(--color-static-254)
+}
+
+.icon-holder--primary-purple:hover {
+    color: var(--color-static-254)
+}
+
+.icon-holder--primary-purple:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-254)
+}
+
+.icon-holder--primary-purple:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-purple:hover:hover {
+    background-color: var(--color-static-254);
+    border-color: var(--color-static-254)
+}
+
+.icon-holder--outline-primary-purple {
+    color: var(--color-static-254)
+}
+
+.icon-holder--outline-primary-purple {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-254)
+}
+
+.icon-holder--outline-primary-purple:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-primary-purple:hover {
+    background-color: var(--color-static-254);
+    border-color: var(--color-static-254)
+}
+
+.icon-holder--primary-red {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-red {
+    background-image: none;
+    background-color: var(--color-static-143);
+    border: 1px solid var(--color-static-143)
+}
+
+.icon-holder--primary-red:hover {
+    color: var(--color-static-143)
+}
+
+.icon-holder--primary-red:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-143)
+}
+
+.icon-holder--primary-red:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-red:hover:hover {
+    background-color: var(--color-static-143);
+    border-color: var(--color-static-143)
+}
+
+.icon-holder--outline-primary-red {
+    color: var(--color-static-143)
+}
+
+.icon-holder--outline-primary-red {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-143)
+}
+
+.icon-holder--outline-primary-red:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-primary-red:hover {
+    background-color: var(--color-static-143);
+    border-color: var(--color-static-143)
+}
+
+.icon-holder--primary-yellow {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-yellow {
+    background-image: none;
+    background-color: var(--color-static-16);
+    border: 1px solid var(--color-static-16)
+}
+
+.icon-holder--primary-yellow:hover {
+    color: var(--color-static-16)
+}
+
+.icon-holder--primary-yellow:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-16)
+}
+
+.icon-holder--primary-yellow:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-yellow:hover:hover {
+    background-color: var(--color-static-16);
+    border-color: var(--color-static-16)
+}
+
+.icon-holder--outline-primary-yellow {
+    color: var(--color-static-16)
+}
+
+.icon-holder--outline-primary-yellow {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-16)
+}
+
+.icon-holder--outline-primary-yellow:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-primary-yellow:hover {
+    background-color: var(--color-static-16);
+    border-color: var(--color-static-16)
+}
+
+.icon-holder--primary-light {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-light {
+    background-image: none;
+    background-color: var(--color-static-259);
+    border: 1px solid var(--color-static-259)
+}
+
+.icon-holder--primary-light:hover {
+    color: var(--color-static-259)
+}
+
+.icon-holder--primary-light:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-259)
+}
+
+.icon-holder--primary-light:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-light:hover:hover {
+    background-color: var(--color-static-259);
+    border-color: var(--color-static-259)
+}
+
+.icon-holder--outline-primary-light {
+    color: var(--color-static-259)
+}
+
+.icon-holder--outline-primary-light {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-259)
+}
+
+.icon-holder--outline-primary-light:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-primary-light:hover {
+    background-color: var(--color-static-259);
+    border-color: var(--color-static-259)
+}
+
+.icon-holder--primary-dodger-blue {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-dodger-blue {
+    background-image: none;
+    background-color: var(--color-static-197);
+    border: 1px solid var(--color-static-197)
+}
+
+.icon-holder--primary-dodger-blue:hover {
+    color: var(--color-static-197)
+}
+
+.icon-holder--primary-dodger-blue:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-197)
+}
+
+.icon-holder--primary-dodger-blue:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-dodger-blue:hover:hover {
+    background-color: var(--color-static-197);
+    border-color: var(--color-static-197)
+}
+
+.icon-holder--outline-primary-dodger-blue {
+    color: var(--color-static-197)
+}
+
+.icon-holder--outline-primary-dodger-blue {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-197)
+}
+
+.icon-holder--outline-primary-dodger-blue:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-primary-dodger-blue:hover {
+    background-color: var(--color-static-197);
+    border-color: var(--color-static-197)
+}
+
+.icon-holder--primary-pickled-bluewood {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-pickled-bluewood {
+    background-image: none;
+    background-color: var(--color-static-244);
+    border: 1px solid var(--color-static-244)
+}
+
+.icon-holder--primary-pickled-bluewood:hover {
+    color: var(--color-static-244)
+}
+
+.icon-holder--primary-pickled-bluewood:hover {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-244)
+}
+
+.icon-holder--primary-pickled-bluewood:hover:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--primary-pickled-bluewood:hover:hover {
+    background-color: var(--color-static-244);
+    border-color: var(--color-static-244)
+}
+
+.icon-holder--outline-primary-pickled-bluewood {
+    color: var(--color-static-244)
+}
+
+.icon-holder--outline-primary-pickled-bluewood {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-244)
+}
+
+.icon-holder--outline-primary-pickled-bluewood:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-primary-pickled-bluewood:hover {
+    background-color: var(--color-static-244);
+    border-color: var(--color-static-244)
+}
+
+.icon-holder--outline-muted {
+    color: var(--color-static-137)
+}
+
+.icon-holder--outline-muted {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid var(--color-static-137)
+}
+
+.icon-holder--outline-muted:hover {
+    color: var(--color-static-11)
+}
+
+.icon-holder--outline-muted:hover {
+    background-color: var(--color-static-137);
+    border-color: var(--color-static-137)
+}
+
+.icon-holder--light,
+.icon-holder--light:focus,
+.icon-holder--light:hover {
+    color: var(--color-static-135)
+}
