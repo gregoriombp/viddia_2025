@@ -1,0 +1,35 @@
+/* ========================================
+   STUDENT-MODIFY-PROFILE-DARK.CSS - Estilos específicos da página student-modify-profile.html
+   Tema Escuro
+   ======================================== */
+
+/* ==========================================
+   FORM CONTROLS - Dark Mode Styling
+   ========================================== */
+
+/* Form controls styling (matching auth-input) */
+html.dark-mode .student-profile-edit-page .form-control {
+    background: var(--bg-theme-31);
+    border: 1px solid rgba(71, 85, 105, 0.4);
+    color: #e2e8f0;
+}
+
+html.dark-mode .student-profile-edit-page .form-control::placeholder {
+    color: var(--text-theme-83);
+}
+
+html.dark-mode .student-profile-edit-page .form-control:focus {
+    border-color: rgba(96, 165, 250, 0.65);
+    background: var(--bg-theme-32);
+    box-shadow: 0 0 0 4px var(--color-theme-29);
+}
+
+html.dark-mode .student-profile-edit-page .form-label {
+    color: #e2e8f0;
+}
+
+html.dark-mode .student-profile-edit-page .input-group-text {
+    background: var(--bg-theme-31);
+    border: 1px solid rgba(71, 85, 105, 0.4);
+    color: #e2e8f0;
+}

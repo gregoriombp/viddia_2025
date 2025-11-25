@@ -1,0 +1,213 @@
+/* ========================================
+   STUDENT-RANKING-DARK.CSS - Estilos específicos da página student-ranking.html
+   Tema Escuro
+   ======================================== */
+
+/* ==========================================
+   PAGE CONTAINER & LAYOUT (Dark Mode)
+   ========================================== */
+
+html.dark-mode .student-ranking-page {
+    background: linear-gradient(160deg, #0a0d1a 0%, #0f1218 35%, #00050d 100%);
+}
+
+/* ==========================================
+   HERO SECTION (Dark Mode)
+   ========================================== */
+
+html.dark-mode .student-ranking-page .ranking-hero {
+    background: radial-gradient(circle at top right, rgba(84, 101, 255, 0.25), transparent 60%), #1a1f35;
+    box-shadow: 0 28px 60px var(--color-theme-9);
+}
+
+html.dark-mode .student-ranking-page .ranking-hero::after {
+    background: radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.12), transparent 45%);
+}
+
+html.dark-mode .student-ranking-page .ranking-hero h1 {
+    color: #f2f9ff;
+}
+
+html.dark-mode .student-ranking-page .ranking-hero p {
+    color: var(--text-theme-46);
+}
+
+/* ==========================================
+   RANKING CARD & CONTROLS (Dark Mode)
+   ========================================== */
+
+html.dark-mode .student-ranking-page .ranking-card {
+    background: var(--bg-theme-10);
+    box-shadow: 0 32px 68px var(--color-theme-10);
+    border: 1px solid rgba(96, 165, 250, 0.1);
+}
+
+html.dark-mode .student-ranking-page .ranking-filter-group {
+    background: var(--bg-theme-11);
+}
+
+html.dark-mode .student-ranking-page .ranking-filter {
+    color: var(--text-theme-47);
+}
+
+html.dark-mode .student-ranking-page .ranking-filter:hover {
+    background: var(--bg-theme-12);
+    color: var(--text-theme-48);
+}
+
+html.dark-mode .student-ranking-page .ranking-filter.is-active {
+    background: linear-gradient(120deg, #3b82f6, #60a5fa);
+    color: var(--color-static-11);
+    box-shadow: 0 10px 20px var(--color-theme-11);
+}
+
+html.dark-mode .student-ranking-page .ranking-meta {
+    color: var(--text-theme-49);
+}
+
+/* ==========================================
+   TABLE WRAPPER & STRUCTURE (Dark Mode)
+   ========================================== */
+
+html.dark-mode .student-ranking-page .ranking-table-wrapper {
+    border: 1px solid var(--border-theme-3);
+}
+
+html.dark-mode .student-ranking-page table.ranking-table {
+    background: var(--bg-theme-10);
+}
+
+/* ==========================================
+   RANKING TABLE (Dark Mode)
+   ========================================== */
+
+html.dark-mode .student-ranking-page .ranking-table thead {
+    background: var(--bg-theme-13);
+}
+
+html.dark-mode .student-ranking-page .ranking-table th {
+    color: var(--text-theme-54);
+    border-bottom: 1px solid var(--border-theme-3);
+}
+
+html.dark-mode .student-ranking-page .ranking-table td {
+    border-bottom: 1px solid var(--border-theme-4);
+}
+
+/* ==========================================
+   RANKING ROWS & POSITION (Dark Mode)
+   ========================================== */
+
+html.dark-mode .student-ranking-page .ranking-row:hover {
+    box-shadow: 0 12px 28px var(--color-theme-12);
+    background: var(--bg-theme-14);
+}
+
+html.dark-mode .student-ranking-page .ranking-position {
+    background: var(--bg-theme-15);
+    color: var(--text-theme-55);
+}
+
+html.dark-mode .student-ranking-page .ranking-row--top-1 .ranking-position {
+    background: linear-gradient(140deg, #fbbf24, #f59e0b);
+    color: var(--text-theme-56);
+}
+
+html.dark-mode .student-ranking-page .ranking-row--top-2 .ranking-position {
+    background: linear-gradient(140deg, #94a3b8, #cbd5e1);
+    color: var(--text-theme-57);
+}
+
+html.dark-mode .student-ranking-page .ranking-row--top-3 .ranking-position {
+    background: linear-gradient(140deg, #fb923c, #f97316);
+    color: var(--text-theme-58);
+}
+
+/* ==========================================
+   STUDENT INFO (Dark Mode)
+   ========================================== */
+
+html.dark-mode .student-ranking-page .ranking-avatar {
+    box-shadow: 0 6px 16px var(--color-theme-13);
+    border: 1px solid rgba(96, 165, 250, 0.15);
+}
+
+html.dark-mode .student-ranking-page .ranking-student__info strong {
+    color: var(--text-theme-59);
+}
+
+html.dark-mode .student-ranking-page .ranking-student__info span {
+    color: var(--text-theme-54);
+}
+
+/* ==========================================
+   TABLE CELLS (Dark Mode)
+   ========================================== */
+
+html.dark-mode .student-ranking-page .ranking-cell {
+    color: var(--text-theme-60);
+}
+
+html.dark-mode .student-ranking-page .ranking-value__icon {
+    color: var(--text-theme-50);
+}
+
+html.dark-mode .student-ranking-page .ranking-value__icon--coins {
+    color: var(--text-theme-51);
+}
+
+html.dark-mode .student-ranking-page .ranking-value__icon--level {
+    color: var(--text-theme-52);
+}
+
+html.dark-mode .student-ranking-page .ranking-value__icon--performance {
+    color: var(--text-theme-53);
+}
+
+/* ==========================================
+   MEDALS (Dark Mode)
+   ========================================== */
+
+html.dark-mode .student-ranking-page .ranking-medal {
+    border: 3px solid var(--border-theme-5);
+    box-shadow: 0 6px 14px var(--color-theme-14);
+}
+
+html.dark-mode .student-ranking-page .ranking-medal--gold {
+    background: linear-gradient(140deg, #fbbf24, #f59e0b);
+}
+
+html.dark-mode .student-ranking-page .ranking-medal--silver {
+    background: linear-gradient(140deg, #cbd5e1, #94a3b8);
+}
+
+html.dark-mode .student-ranking-page .ranking-medal--bronze {
+    background: linear-gradient(140deg, #fb923c, #f97316);
+}
+
+html.dark-mode .student-ranking-page .ranking-medal--platinum {
+    background: linear-gradient(140deg, #67e8f9, #22d3ee);
+}
+
+html.dark-mode .student-ranking-page .ranking-medals small {
+    color: var(--text-theme-54);
+}
+
+html.dark-mode .student-ranking-page .ranking-medal.is-empty {
+    background: var(--bg-theme-16);
+    border-color: var(--text-theme-61);
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE DARK MODE
+   ========================================== */
+
+@media (max-width: 991.98px) {
+    html.dark-mode .student-ranking-page table.ranking-table tr {
+        border-bottom: 1px solid var(--border-theme-3);
+    }
+
+    html.dark-mode .student-ranking-page table.ranking-table td[data-label]::before {
+        color: var(--text-theme-54);
+    }
+}

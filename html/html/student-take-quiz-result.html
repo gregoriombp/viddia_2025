@@ -42,6 +42,68 @@
 
   <!-- Dark Mode Styles (loaded when html has class "dark-mode") -->
   <link type="text/css" href="../../public/css/dark.css" rel="stylesheet" />
+
+  <!-- Theme Toggle Switch Styles -->
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .3s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    .slider.round {
+      border-radius: 24px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    #theme-toggle-item:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    html.dark-mode #theme-toggle-item:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  </style>
 </head>
 
 <body class="layout-sticky-subnav layout-default">
@@ -95,6 +157,20 @@
                 <a href="student-dashboard.html" class="dropdown-item">Dashboard</a>
 
                 <a href="edit-account-profile.html" class="dropdown-item">Preferências</a>
+                <div class="dropdown-divider"></div>
+
+                <!-- Theme Toggle -->
+                <div class="dropdown-item d-flex align-items-center justify-content-between" style="cursor: pointer;" id="theme-toggle-item">
+                  <div class="d-flex align-items-center">
+                    <span class="material-symbols-rounded mr-2" id="theme-icon">dark_mode</span>
+                    <span id="theme-label">Modo Escuro</span>
+                  </div>
+                  <label class="switch mb-0" style="margin-left: 16px;">
+                    <input type="checkbox" id="theme-toggle-checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+
                 <div class="dropdown-divider"></div>
                 <a href="login.html" class="dropdown-item">Logout</a>
               </div>
@@ -802,6 +878,9 @@
 
     <!-- Lesson Tabs Responsive Logic -->
     <script src="../../public/js/lesson-tabs.js"></script>
+
+    <!-- Theme Toggle -->
+    <script src="../../public/js/theme-toggle.js"></script>
 
     <script>
       (function () {

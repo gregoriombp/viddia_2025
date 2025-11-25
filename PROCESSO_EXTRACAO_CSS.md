@@ -244,6 +244,12 @@ wc -l public/css/dark.css
   - Criados: `index.css` (300 linhas), `index-dark.css` (95 linhas)
   - Economizado: ~395 linhas do CSS global
 
+- [x] **student-ranking.html** - Concluído
+  - Criados: `student-ranking.css` (390 linhas), `student-ranking-dark.css` (213 linhas)
+  - Removido de app.css: ~348 linhas
+  - Removido de dark.css: ~172 linhas
+  - Economizado: ~520 linhas do CSS global
+
 - [ ] Próximas páginas a processar...
 
 ---
