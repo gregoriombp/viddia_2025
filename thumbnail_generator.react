@@ -1,0 +1,480 @@
+import React, { useState, useRef, useEffect } from 'react';
+import { 
+  Image, 
+  Type, 
+  Download, 
+  Settings, 
+  Palette, 
+  LayoutTemplate, 
+  Video, 
+  Wand2, 
+  Sparkles,
+  RefreshCw,
+  Layers,
+  MonitorPlay
+} from 'lucide-react';
+
+// --- CONFIGURAÇÃO DA API ---
+const apiKey = ""; // A chave será injetada pelo ambiente de execução
+
+// --- PROMPT DE ESTILO (A "ALMA" DA ILUSTRAÇÃO) ---
+const BASE_STYLE_PROMPT = "flat vector art illustration, corporate memphis style, thick bold black outlines, minimalist, professional, flat colors, simple character design, white background, high quality, vector graphics style.";
+
+const STYLES = [
+  { id: 'corporate_outline', name: 'Corporativo (Linhas)', prompt: BASE_STYLE_PROMPT },
+  { id: '3d_cute', name: '3D Fofinho (Clay)', prompt: '3d render, claymorphism style, cute, soft lighting, pastel colors, rounded shapes, high quality 3d icon.' },
+  { id: 'realistic', name: 'Realista (Stock)', prompt: 'cinematic photo, professional photography, realistic lighting, 4k, office environment, high detailed.' },
+  { id: 'lofi', name: 'Lo-Fi Anime', prompt: 'lo-fi aesthetic, anime style, soft coloring, relaxing vibe, study environment.' }
+];
+
+const ASPECT_RATIOS = [
+  { id: '16:9', name: 'Youtube / Vídeo (16:9)', width: 1280, height: 720 },
+  { id: '1:1', name: 'Quadrado / Post (1:1)', width: 1024, height: 1024 },
+  { id: '9:16', name: 'Stories / Shorts (9:16)', width: 720, height: 1280 },
+];
+
+const COLOR_PALETTES = [
+  { id: 'default', name: 'Padrão (Multicolorido)', prompt: 'vibrant and professional colors' },
+  { id: 'blue_tech', name: 'Azul Tech & Cinza', prompt: 'primary color palette of blue, grey and white' },
+  { id: 'warm_orange', name: 'Laranja Criativo', prompt: 'warm tones, orange, yellow and dark grey' },
+  { id: 'green_growth', name: 'Verde Crescimento', prompt: 'shades of green, nature tones, white background' },
+  { id: 'purple_innovation', name: 'Roxo Inovação', prompt: 'purple, violet and neon accents' },
+];
+
+export default function App() {
+  const [activeTab, setActiveTab] = useState('course'); // 'course' ou 'thumbnail'
+  const [loading, setLoading] = useState(false);
+  const [generatedImage, setGeneratedImage] = useState(null);
+  
+  // Estados do Formulário
+  const [inputType, setInputType] = useState('prompt'); // 'prompt' ou 'description'
+  const [inputText, setInputText] = useState('');
+  const [selectedStyle, setSelectedStyle] = useState('corporate_outline');
+  const [selectedRatio, setSelectedRatio] = useState('16:9');
+  const [selectedPalette, setSelectedPalette] = useState('default');
+  
+  // Estados Específicos de Thumbnail
+  const [thumbText, setThumbText] = useState('');
+  const [thumbTitleSize, setThumbTitleSize] = useState(60);
+  const [thumbTextColor, setThumbTextColor] = useState('#FFFFFF');
+  const [thumbTextBg, setThumbTextBg] = useState(true);
+
+  const canvasRef = useRef(null);
+
+  // --- FUNÇÕES DE API ---
+
+  // 1. Otimizador de Prompt (Transforma descrição em prompt visual)
+  const optimizePrompt = async (description) => {
+    try {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{
+              text: `Transforme a seguinte descrição de um curso ou vídeo em um prompt visual detalhado para um gerador de imagens de IA. 
+              Mantenha o prompt em inglês. Foque apenas nos elementos visuais (cenário, personagens, ações).
+              Descrição: "${description}"
+              Saída (apenas o prompt):`
+            }]
+          }]
+        })
+      });
+      const data = await response.json();
+      return data.candidates?.[0]?.content?.parts?.[0]?.text || description;
+    } catch (error) {
+      console.error("Erro ao otimizar prompt:", error);
+      return description;
+    }
+  };
+
+  // 2. Gerador de Imagem
+  const handleGenerate = async () => {
+    if (!inputText) return;
+    setLoading(true);
+    setGeneratedImage(null);
+
+    try {
+      let finalPrompt = inputText;
+
+      // Se for descrição, otimiza primeiro
+      if (inputType === 'description') {
+        finalPrompt = await optimizePrompt(inputText);
+      }
+
+      // Constrói o prompt final com estilo e paleta
+      const styleObj = STYLES.find(s => s.id === selectedStyle);
+      const paletteObj = COLOR_PALETTES.find(c => c.id === selectedPalette);
+      
+      const fullPrompt = `${finalPrompt}, ${styleObj.prompt}, color palette: ${paletteObj.prompt}`;
+
+      // Chama API de Imagem (Imagen 3)
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          instances: [{ prompt: fullPrompt }],
+          parameters: { sampleCount: 1, aspectRatio: selectedRatio }
+        })
+      });
+
+      const data = await response.json();
+      
+      if (data.predictions && data.predictions[0]) {
+        const base64Image = `data:image/png;base64,${data.predictions[0].bytesBase64Encoded}`;
+        setGeneratedImage(base64Image);
+      } else {
+        alert("Erro ao gerar imagem. Tente um prompt diferente.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Erro na conexão com a API.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // --- FUNÇÃO DE DOWNLOAD (COMBINA IMAGEM + TEXTO) ---
+  const handleDownload = () => {
+    if (!generatedImage) return;
+
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new window.Image();
+
+    img.onload = () => {
+      // Configurar tamanho do canvas
+      canvas.width = img.width;
+      canvas.height = img.height;
+
+      // Desenhar Imagem
+      ctx.drawImage(img, 0, 0);
+
+      // Se estiver na aba Thumbnail e tiver texto
+      if (activeTab === 'thumbnail' && thumbText) {
+        // Configurar Fonte
+        // Escala o tamanho da fonte baseado na largura da imagem para consistência
+        const fontSize = (thumbTitleSize / 1000) * canvas.width; 
+        ctx.font = `bold ${fontSize}px "Inter", sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        
+        const x = canvas.width / 2;
+        const y = canvas.height / 2;
+
+        // Fundo do texto (opcional)
+        if (thumbTextBg) {
+            const metrics = ctx.measureText(thumbText);
+            const bgHeight = fontSize * 1.4;
+            const bgWidth = metrics.width + (fontSize * 1.5);
+            
+            ctx.fillStyle = 'rgba(0,0,0,0.7)';
+            // Rounded rect simples
+            ctx.fillRect(x - bgWidth/2, y - bgHeight/2, bgWidth, bgHeight);
+        }
+
+        // Texto
+        ctx.fillStyle = thumbTextColor;
+        ctx.shadowColor = "rgba(0,0,0,0.5)";
+        ctx.shadowBlur = 10;
+        ctx.fillText(thumbText, x, y);
+      }
+
+      // Download
+      const link = document.createElement('a');
+      link.download = `curso-ai-${Date.now()}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    };
+
+    img.src = generatedImage;
+  };
+
+  // Atualiza o canvas preview quando a imagem ou configurações mudam
+  // (Isso é apenas para o efeito visual complexo, a UI principal usa <img> para simplicidade)
+
+  return (
+    <div className="flex h-screen bg-gray-50 text-slate-800 font-sans overflow-hidden">
+      
+      {/* SIDEBAR */}
+      <div className="w-20 lg:w-64 bg-white border-r border-gray-200 flex flex-col justify-between">
+        <div>
+          <div className="p-6 flex items-center gap-2 border-b border-gray-100">
+            <div className="bg-indigo-600 p-2 rounded-lg">
+               <Sparkles className="w-6 h-6 text-white" />
+            </div>
+            <span className="font-bold text-xl hidden lg:block text-slate-900">CourseAi</span>
+          </div>
+
+          <nav className="p-4 space-y-2">
+            <button 
+              onClick={() => setActiveTab('course')}
+              className={`w-full flex items-center gap-3 p-3 rounded-xl transition-all ${activeTab === 'course' ? 'bg-indigo-50 text-indigo-700 font-medium' : 'text-slate-500 hover:bg-gray-50'}`}
+            >
+              <LayoutTemplate className="w-5 h-5" />
+              <span className="hidden lg:block">Ilustração de Curso</span>
+            </button>
+            <button 
+              onClick={() => setActiveTab('thumbnail')}
+              className={`w-full flex items-center gap-3 p-3 rounded-xl transition-all ${activeTab === 'thumbnail' ? 'bg-indigo-50 text-indigo-700 font-medium' : 'text-slate-500 hover:bg-gray-50'}`}
+            >
+              <Video className="w-5 h-5" />
+              <span className="hidden lg:block">Thumbnail YouTube</span>
+            </button>
+          </nav>
+        </div>
+
+        <div className="p-4 border-t border-gray-100">
+          <div className="flex items-center gap-3 p-3 text-slate-400 text-sm">
+            <Settings className="w-4 h-4" />
+            <span className="hidden lg:block">Configurações</span>
+          </div>
+        </div>
+      </div>
+
+      {/* MAIN CONTENT */}
+      <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
+        
+        {/* LEFT PANEL - CONTROLS */}
+        <div className="w-full md:w-[450px] bg-white border-r border-gray-200 p-6 overflow-y-auto z-10 shadow-lg">
+          <h2 className="text-2xl font-bold mb-6 text-slate-800">
+            {activeTab === 'course' ? 'Gerar Ilustração' : 'Criar Thumbnail'}
+          </h2>
+
+          <div className="space-y-6">
+            
+            {/* INPUT METHOD */}
+            <div className="bg-slate-50 p-1 rounded-lg flex text-sm font-medium border border-slate-200">
+              <button 
+                onClick={() => setInputType('prompt')}
+                className={`flex-1 py-2 px-4 rounded-md transition-all ${inputType === 'prompt' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+              >
+                Escrever Prompt
+              </button>
+              <button 
+                onClick={() => setInputType('description')}
+                className={`flex-1 py-2 px-4 rounded-md transition-all ${inputType === 'description' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+              >
+                Descrever Conteúdo
+              </button>
+            </div>
+
+            {/* TEXT INPUT */}
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                {inputType === 'prompt' ? 'Descreva a imagem visualmente' : 'Sobre o que é a aula/vídeo?'}
+              </label>
+              <textarea 
+                className="w-full h-32 p-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none bg-slate-50 text-slate-800"
+                placeholder={inputType === 'prompt' 
+                  ? "Ex: Um instrutor apontando para um quadro branco com gráficos de vendas, estilo flat..." 
+                  : "Ex: Esta é uma aula sobre como gerenciar tempo e produtividade usando o método Pomodoro..."}
+                value={inputText}
+                onChange={(e) => setInputText(e.target.value)}
+              />
+              {inputType === 'description' && (
+                <p className="text-xs text-indigo-600 mt-2 flex items-center gap-1">
+                  <Wand2 className="w-3 h-3" /> A IA irá converter sua descrição em um prompt visual.
+                </p>
+              )}
+            </div>
+
+            {/* SETTINGS GRID */}
+            <div className="grid grid-cols-2 gap-4">
+              
+              {/* STYLE */}
+              <div className="col-span-2">
+                <label className="block text-sm font-medium text-slate-700 mb-2 flex items-center gap-2">
+                  <Layers className="w-4 h-4" /> Estilo da Arte
+                </label>
+                <select 
+                  value={selectedStyle}
+                  onChange={(e) => setSelectedStyle(e.target.value)}
+                  className="w-full p-2.5 rounded-lg border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 text-sm"
+                >
+                  {STYLES.map(style => (
+                    <option key={style.id} value={style.id}>{style.name}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* ASPECT RATIO */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2 flex items-center gap-2">
+                  <MonitorPlay className="w-4 h-4" /> Proporção
+                </label>
+                <select 
+                  value={selectedRatio}
+                  onChange={(e) => setSelectedRatio(e.target.value)}
+                  className="w-full p-2.5 rounded-lg border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 text-sm"
+                >
+                  {ASPECT_RATIOS.map(ratio => (
+                    <option key={ratio.id} value={ratio.id}>{ratio.name}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* PALETTE */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2 flex items-center gap-2">
+                  <Palette className="w-4 h-4" /> Cores
+                </label>
+                <select 
+                  value={selectedPalette}
+                  onChange={(e) => setSelectedPalette(e.target.value)}
+                  className="w-full p-2.5 rounded-lg border border-slate-200 bg-white focus:ring-2 focus:ring-indigo-500 text-sm"
+                >
+                  {COLOR_PALETTES.map(p => (
+                    <option key={p.id} value={p.id}>{p.name}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* THUMBNAIL SPECIFIC CONTROLS */}
+            {activeTab === 'thumbnail' && (
+              <div className="pt-6 border-t border-slate-100">
+                <h3 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <Type className="w-4 h-4" /> Editor de Texto
+                </h3>
+                
+                <div className="space-y-4">
+                  <input 
+                    type="text" 
+                    placeholder="Texto da Thumbnail (ex: AULA 01)"
+                    value={thumbText}
+                    onChange={(e) => setThumbText(e.target.value)}
+                    className="w-full p-2.5 rounded-lg border border-slate-200 bg-slate-50 text-sm"
+                  />
+                  
+                  <div className="flex gap-4">
+                    <div className="flex-1">
+                       <label className="text-xs text-slate-500 mb-1 block">Tamanho</label>
+                       <input 
+                        type="range" 
+                        min="20" 
+                        max="200" 
+                        value={thumbTitleSize} 
+                        onChange={(e) => setThumbTitleSize(parseInt(e.target.value))}
+                        className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                       />
+                    </div>
+                    <div>
+                        <label className="text-xs text-slate-500 mb-1 block">Cor Texto</label>
+                        <input 
+                          type="color" 
+                          value={thumbTextColor}
+                          onChange={(e) => setThumbTextColor(e.target.value)}
+                          className="w-10 h-8 rounded border border-slate-200 cursor-pointer"
+                        />
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2">
+                    <input 
+                      type="checkbox" 
+                      id="bgCheck"
+                      checked={thumbTextBg}
+                      onChange={(e) => setThumbTextBg(e.target.checked)}
+                      className="rounded text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label htmlFor="bgCheck" className="text-sm text-slate-600">Adicionar fundo escuro no texto</label>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* GENERATE BUTTON */}
+            <button 
+              onClick={handleGenerate}
+              disabled={loading || !inputText}
+              className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-xl font-bold text-lg shadow-lg shadow-indigo-200 transition-all flex items-center justify-center gap-2"
+            >
+              {loading ? (
+                <>
+                  <RefreshCw className="w-5 h-5 animate-spin" /> Gerando...
+                </>
+              ) : (
+                <>
+                  <Wand2 className="w-5 h-5" /> Gerar Imagem
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* RIGHT PANEL - PREVIEW */}
+        <div className="flex-1 bg-slate-100 flex items-center justify-center p-8 relative overflow-hidden">
+          {/* Background grid pattern */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '20px 20px'}}></div>
+
+          {generatedImage ? (
+            <div className="flex flex-col items-center gap-6 max-w-full w-full">
+              
+              {/* IMAGE CONTAINER */}
+              <div className="relative shadow-2xl rounded-lg overflow-hidden group bg-white">
+                <img 
+                  src={generatedImage} 
+                  alt="Generated Course Art" 
+                  className="max-h-[70vh] w-auto object-contain"
+                  style={{ aspectRatio: selectedRatio === '16:9' ? '16/9' : selectedRatio === '1:1' ? '1/1' : '9/16' }}
+                />
+
+                {/* THUMBNAIL TEXT OVERLAY PREVIEW (CSS based for fast rendering) */}
+                {activeTab === 'thumbnail' && thumbText && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <h1 
+                      style={{ 
+                        fontSize: '3vw', // Relative to container mostly, simplistic preview
+                        color: thumbTextColor,
+                        backgroundColor: thumbTextBg ? 'rgba(0,0,0,0.7)' : 'transparent',
+                        padding: thumbTextBg ? '0.5em 1em' : '0',
+                        borderRadius: '0.2em',
+                        textShadow: '0px 4px 10px rgba(0,0,0,0.5)'
+                      }}
+                      className="font-bold text-center leading-tight"
+                    >
+                      {thumbText}
+                    </h1>
+                  </div>
+                )}
+                
+                {/* ACTIONS */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                   <span className="bg-black/75 text-white text-xs py-1 px-2 rounded backdrop-blur-sm">
+                      {ASPECT_RATIOS.find(r => r.id === selectedRatio)?.name}
+                   </span>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <button 
+                  onClick={handleDownload}
+                  className="bg-slate-900 hover:bg-black text-white px-6 py-3 rounded-xl font-medium flex items-center gap-2 transition-all shadow-xl"
+                >
+                  <Download className="w-5 h-5" /> Baixar Imagem (PNG)
+                </button>
+                <button 
+                  onClick={() => setGeneratedImage(null)}
+                  className="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-6 py-3 rounded-xl font-medium transition-all"
+                >
+                  Descartar
+                </button>
+              </div>
+
+            </div>
+          ) : (
+            <div className="text-center text-slate-400 max-w-md">
+              <div className="bg-white p-6 rounded-full inline-flex mb-6 shadow-sm">
+                <Image className="w-12 h-12 text-slate-200" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-600 mb-2">Pronto para criar</h3>
+              <p>Selecione um estilo no painel esquerdo e descreva sua ideia para gerar uma ilustração exclusiva para seu curso.</p>
+            </div>
+          )}
+        </div>
+
+      </div>
+    </div>
+  );
+}
