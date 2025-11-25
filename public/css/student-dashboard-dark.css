@@ -1,0 +1,295 @@
+/* ========================================
+   STUDENT-DASHBOARD-DARK.CSS - Estilos específicos da página student-dashboard.html
+   Tema Escuro
+   ======================================== */
+
+/* ==========================================
+   SEÇÃO 1 - Page Background & Hero (Dark Mode)
+   ========================================== */
+
+/* Page Background */
+html.dark-mode .student-dashboard-page {
+    background-color: #00050d;
+}
+
+/* Hero Section */
+html.dark-mode .mdk-box__bg-dark {
+    background-color: #0f1218;
+}
+
+html.dark-mode .mdk-box__bg-front {
+    opacity: 0.15;
+}
+
+/* ==========================================
+   SEÇÃO 2 - Dashboard Cards (Dark Mode)
+   ========================================== */
+
+/* Dashboard Cards Background */
+html.dark-mode .dashboard-card {
+    background-color: #161a26 !important;
+    border-color: rgba(71, 85, 105, 0.3) !important;
+}
+
+html.dark-mode .card {
+    background-color: #161a26;
+    border-color: rgba(71, 85, 105, 0.3);
+}
+
+/* Dashboard Section Headers */
+html.dark-mode .dashboard-section-header h3,
+html.dark-mode .dashboard-section-header h4,
+html.dark-mode .dashboard-section-title {
+    color: #f2f9ff;
+}
+
+html.dark-mode .dashboard-link {
+    color: rgba(226, 232, 240, 0.7) !important;
+}
+
+html.dark-mode .dashboard-link:hover {
+    color: #60a5fa !important;
+}
+
+/* ==========================================
+   SEÇÃO 3 - Course Cards (Dark Mode)
+   ========================================== */
+
+/* Course Cards */
+html.dark-mode .sd-course-card {
+    background-color: #161a26 !important;
+    border-color: rgba(71, 85, 105, 0.3) !important;
+}
+
+html.dark-mode .sd-course-card:hover {
+    border-color: rgba(96, 165, 250, 0.4) !important;
+}
+
+/* Course Thumb Overlay - Dark Mode */
+html.dark-mode .sd-course-thumb__overlay {
+    background: rgba(0, 5, 13, 0.9);
+}
+
+/* Course Card Content */
+html.dark-mode .sd-course-card__content h5 {
+    color: #f2f9ff;
+}
+
+html.dark-mode .sd-course-card__content p {
+    color: rgba(226, 232, 240, 0.8);
+}
+
+/* Course Chips */
+html.dark-mode .sd-chip {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+}
+
+/* Course Modules */
+html.dark-mode .sd-course-modules {
+    color: rgba(226, 232, 240, 0.7);
+}
+
+/* Course Stats */
+html.dark-mode .sd-course-stat {
+    background: rgba(30, 41, 59, 0.6) !important;
+    color: #e2e8f0;
+}
+
+html.dark-mode .sd-course-stat strong {
+    color: #f2f9ff;
+}
+
+html.dark-mode .sd-course-stat.bg-dark {
+    background: rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Course Footer */
+html.dark-mode .sd-course-card__footer {
+    background: rgba(15, 18, 24, 0.6);
+    border-top: 1px solid rgba(71, 85, 105, 0.3);
+    color: rgba(226, 232, 240, 0.7);
+}
+
+html.dark-mode .sd-course-card__footer strong {
+    color: #f2f9ff;
+}
+
+/* Progress Bars */
+html.dark-mode .sd-progress__segment {
+    background: rgba(71, 85, 105, 0.3);
+}
+
+html.dark-mode .sd-progress__segment.is-complete {
+    background: #34d399;
+}
+
+html.dark-mode .sd-progress__segment.is-active {
+    background: #004ECC;
+}
+
+/* ==========================================
+   SEÇÃO 4 - Overview Cards (Dark Mode)
+   ========================================== */
+
+/* Overview Cards */
+html.dark-mode .sd-overview-card {
+    background: linear-gradient(135deg, rgba(22, 26, 38, 0.95) 0%, rgba(30, 41, 59, 0.8) 100%);
+    border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+html.dark-mode .sd-overview-card__label {
+    color: rgba(226, 232, 240, 0.8);
+}
+
+html.dark-mode .sd-overview-card__note {
+    color: rgba(226, 232, 240, 0.7);
+}
+
+/* Performance Gauge */
+html.dark-mode .sd-performance-gauge__value strong {
+    color: #f2f9ff;
+}
+
+html.dark-mode .sd-gauge-track {
+    stroke: rgba(71, 85, 105, 0.3);
+}
+
+/* Level Card */
+html.dark-mode .sd-level-card__number {
+    color: #f2f9ff;
+}
+
+html.dark-mode .sd-level-card__note {
+    color: rgba(226, 232, 240, 0.7);
+}
+
+/* Coins Card */
+html.dark-mode .sd-overview-card--coins strong,
+html.dark-mode .sd-overview-card--coins2 strong {
+    color: #fbbf24;
+}
+
+/* ==========================================
+   SEÇÃO 5 - Overall Progress Card (Dark Mode)
+   ========================================== */
+
+/* Overall Progress Card */
+html.dark-mode .sd-overall-card strong {
+    color: #f2f9ff;
+}
+
+html.dark-mode .sd-overall-note {
+    color: rgba(226, 232, 240, 0.8);
+}
+
+html.dark-mode .sd-overall-card__tip {
+    color: rgba(226, 232, 240, 0.7);
+}
+
+/* Overall Course Items */
+html.dark-mode .sd-overall-course {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+html.dark-mode .sd-overall-course:hover {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+html.dark-mode .sd-overall-course__info strong {
+    color: #f2f9ff;
+}
+
+html.dark-mode .sd-overall-course__info span {
+    color: rgba(226, 232, 240, 0.7);
+}
+
+/* ==========================================
+   SEÇÃO 6 - Leader List (Dark Mode)
+   ========================================== */
+
+/* Leader List */
+html.dark-mode .sd-leader-list {
+    background: transparent;
+}
+
+html.dark-mode .sd-leader-item {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+html.dark-mode .sd-leader-item:hover {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+html.dark-mode .sd-leader-item.is-active {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(96, 165, 250, 0.4);
+}
+
+html.dark-mode .sd-leader-position {
+    color: #60a5fa;
+}
+
+html.dark-mode .sd-leader-profile strong {
+    color: #f2f9ff;
+}
+
+html.dark-mode .sd-leader-profile small {
+    color: rgba(226, 232, 240, 0.7);
+}
+
+html.dark-mode .sd-leader-score {
+    color: #34d399;
+}
+
+html.dark-mode .sd-leader-score--highlight {
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+}
+
+/* ==========================================
+   SEÇÃO 7 - Medals (Dark Mode)
+   ========================================== */
+
+/* Medals */
+html.dark-mode .sd-medals-grid {
+    background: transparent;
+}
+
+html.dark-mode .sd-medal {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+html.dark-mode .sd-medal:hover {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(96, 165, 250, 0.3);
+    transform: translateY(-4px);
+}
+
+html.dark-mode .sd-medal strong {
+    color: #f2f9ff;
+}
+
+html.dark-mode .sd-medal small {
+    color: rgba(226, 232, 240, 0.7);
+}
+
+/* ==========================================
+   SEÇÃO 8 - Buttons (Dark Mode)
+   ========================================== */
+
+/* Continue Course Button */
+html.dark-mode .btn-continue-course {
+    background: #3b82f6;
+    color: #f2f9ff;
+}
+
+html.dark-mode .btn-continue-course:hover {
+    background: #60a5fa;
+    color: #ffffff;
+}

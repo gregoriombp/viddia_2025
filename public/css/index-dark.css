@@ -1,0 +1,108 @@
+/* ========================================
+   INDEX-DARK.CSS - Estilos específicos da página index.html
+   Tema Escuro
+   ======================================== */
+
+/* ==========================================
+   DASHBOARD PILLS - Hero Section (Dark Mode)
+   ========================================== */
+
+html.dark-mode .dashboard-pill {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+html.dark-mode .dashboard-pill__icon {
+    color: #60a5fa;
+}
+
+html.dark-mode .dashboard-pill--coins .dashboard-pill__icon {
+    color: #fbbf24;
+}
+
+html.dark-mode .dashboard-pill--level .dashboard-pill__icon {
+    color: #818cf8;
+}
+
+html.dark-mode .dashboard-pill--progress .dashboard-pill__icon {
+    color: #34d399;
+}
+
+html.dark-mode .dashboard-pill__value {
+    color: #f2f9ff;
+}
+
+html.dark-mode .dashboard-pill__label {
+    color: rgba(148, 163, 184, 0.8);
+}
+
+/* ==========================================
+   HERO SECTION (Dark Mode)
+   ========================================== */
+
+html.dark-mode .hero-bg-light {
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.25), transparent 60%), #0f1218 !important;
+}
+
+html.dark-mode .hero-welcome,
+html.dark-mode .hero-name {
+    color: #f2f9ff;
+}
+
+/* ==========================================
+   WELCOME PANEL (Dark Mode)
+   ========================================== */
+
+html.dark-mode .welcome-panel {
+    background: #161a26 !important;
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(96, 165, 250, 0.1);
+}
+
+html.dark-mode .welcome-panel__eyebrow {
+    color: var(--text-theme-34);
+}
+
+html.dark-mode .welcome-panel__title {
+    color: var(--text-theme-35);
+}
+
+html.dark-mode .welcome-panel__subtitle {
+    color: var(--text-theme-36);
+}
+
+html.dark-mode .welcome-panel__progress-circle {
+    background: rgba(30, 41, 59, 0.6);
+}
+
+html.dark-mode .welcome-panel__progress-percentage {
+    color: var(--text-theme-37);
+}
+
+html.dark-mode .welcome-panel__progress-modules {
+    color: var(--text-theme-38);
+}
+
+html.dark-mode .welcome-panel__tooltip-line {
+    color: #e2e8f0;
+}
+
+html.dark-mode .welcome-panel__tooltip-course {
+    color: var(--text-theme-39);
+}
+
+html.dark-mode .welcome-panel__tooltip-meta {
+    color: var(--text-theme-40);
+}
+
+/* ==========================================
+   VIDEO THUMBNAIL (Dark Mode)
+   ========================================== */
+
+html.dark-mode .video-thumbnail {
+    border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+html.dark-mode .video-play-label {
+    color: #f2f9ff;
+}
