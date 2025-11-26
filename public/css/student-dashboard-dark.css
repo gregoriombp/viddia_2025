@@ -27,13 +27,14 @@ html.dark-mode .mdk-box__bg-front {
 
 /* Dashboard Cards Background */
 html.dark-mode .dashboard-card {
-    background-color: #161a26 !important;
+    background-color: #12172460 !important;
     border-color: rgba(71, 85, 105, 0.3) !important;
 }
 
 html.dark-mode .card {
     background-color: #161a26;
     border-color: rgba(71, 85, 105, 0.3);
+    border-color: rgba(96, 165, 250, 0.4) !important;
 }
 
 /* Dashboard Section Headers */
@@ -49,6 +50,7 @@ html.dark-mode .dashboard-link {
 
 html.dark-mode .dashboard-link:hover {
     color: #60a5fa !important;
+
 }
 
 /* ==========================================
@@ -146,28 +148,176 @@ html.dark-mode .sd-overview-card__note {
     color: rgba(226, 232, 240, 0.7);
 }
 
-/* Performance Gauge */
+/* Performance Card - Dark Mode */
+html.dark-mode .sd-overview-card--performance {
+    background: linear-gradient(135deg, #0a0f1a 0%, #0f1a28 50%, #0a1018 100%);
+    border: 1px solid rgba(43, 208, 125, 0.15);
+    box-shadow: 0 14px 32px rgba(43, 208, 125, 0.1);
+}
+
 html.dark-mode .sd-performance-gauge__value strong {
-    color: #f2f9ff;
+    color: #2bd07d;
+    text-shadow: 0 2px 12px rgba(43, 208, 125, 0.4);
+}
+
+html.dark-mode .sd-performance-gauge__value small {
+    color: #54f0a0;
 }
 
 html.dark-mode .sd-gauge-track {
-    stroke: rgba(71, 85, 105, 0.3);
+    stroke: rgba(71, 85, 105, 0.2);
 }
 
-/* Level Card */
-html.dark-mode .sd-level-card__number {
+html.dark-mode .sd-gauge-fill {
+    filter: drop-shadow(0 0 12px rgba(43, 208, 125, 0.5));
+}
+
+html.dark-mode .sd-performance-stat {
+    background: rgba(43, 208, 125, 0.08);
+    border: 1px solid rgba(43, 208, 125, 0.15);
+}
+
+html.dark-mode .sd-performance-stat:hover {
+    background: rgba(43, 208, 125, 0.12);
+}
+
+html.dark-mode .sd-performance-stat__icon {
+    color: #54f0a0;
+}
+
+html.dark-mode .sd-performance-stat__info strong {
     color: #f2f9ff;
 }
 
-html.dark-mode .sd-level-card__note {
+html.dark-mode .sd-performance-stat__info small {
     color: rgba(226, 232, 240, 0.7);
 }
 
+html.dark-mode .sd-performance-particle {
+    background: radial-gradient(circle at 30% 30%, rgba(84, 240, 160, 0.4), rgba(43, 208, 125, 0.15));
+    box-shadow: 0 2px 8px rgba(43, 208, 125, 0.4);
+}
+
+/* Level Card - Dark Mode */
+html.dark-mode .sd-overview-card--level {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #312e81 100%);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    box-shadow: 0 14px 32px rgba(59, 130, 246, 0.15);
+}
+
+html.dark-mode .sd-level-card__number {
+    color: #f2f9ff;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.25), rgba(59, 130, 246, 0.15));
+    border-color: rgba(96, 165, 250, 0.4);
+    text-shadow: 0 2px 12px rgba(96, 165, 250, 0.6);
+}
+
+html.dark-mode .sd-level-ring {
+    border-color: rgba(96, 165, 250, 0.15);
+}
+
+html.dark-mode .sd-level-progress__info small {
+    color: rgba(226, 232, 240, 0.8);
+}
+
+html.dark-mode .sd-level-progress__info strong {
+    color: #60a5fa;
+}
+
+html.dark-mode .sd-level-progress__bar {
+    background: rgba(71, 85, 105, 0.3);
+}
+
+html.dark-mode .sd-level-progress__bar span {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    box-shadow: 0 0 16px rgba(96, 165, 250, 0.7);
+}
+
+html.dark-mode .sd-level-stat {
+    background: rgba(96, 165, 250, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+html.dark-mode .sd-level-stat:hover {
+    background: rgba(96, 165, 250, 0.18);
+}
+
+html.dark-mode .sd-level-stat .material-symbols-rounded {
+    color: #fbbf24;
+}
+
+html.dark-mode .sd-level-stat strong {
+    color: #f2f9ff;
+}
+
+html.dark-mode .sd-level-stat small {
+    color: rgba(226, 232, 240, 0.7);
+}
+
+html.dark-mode .sd-level-particle {
+    background: radial-gradient(circle at 30% 30%, rgba(96, 165, 250, 0.7), rgba(59, 130, 246, 0.2));
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.8);
+}
+
 /* Coins Card */
+html.dark-mode .sd-overview-card--coins,
+html.dark-mode .sd-overview-card--coins2 {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 50%, #92400e 100%);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    box-shadow: 0 14px 32px rgba(217, 119, 6, 0.3);
+}
+
+html.dark-mode .sd-overview-card--coins::after {
+    opacity: .08;
+}
+
 html.dark-mode .sd-overview-card--coins strong,
 html.dark-mode .sd-overview-card--coins2 strong {
     color: #fbbf24;
+}
+
+html.dark-mode .sd-overview-card--coins .sd-overview-card__icon {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+}
+
+html.dark-mode .sd-overview-card--coins .sd-overview-card__label {
+    color: #fde68a;
+}
+
+html.dark-mode .sd-coins-display__main strong {
+    color: #fbbf24;
+    text-shadow: 0 2px 12px rgba(251, 191, 36, 0.4);
+}
+
+html.dark-mode .sd-coins-display__label {
+    color: #fde68a;
+}
+
+html.dark-mode .sd-coins-stat {
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+html.dark-mode .sd-coins-stat:hover {
+    background: rgba(251, 191, 36, 0.25);
+}
+
+html.dark-mode .sd-coins-stat__icon {
+    color: #fbbf24;
+}
+
+html.dark-mode .sd-coins-stat__info strong {
+    color: #fbbf24;
+}
+
+html.dark-mode .sd-coins-stat__info small {
+    color: #fde68a;
+}
+
+html.dark-mode .sd-coin-particle {
+    background: radial-gradient(circle at 30% 30%, rgba(251, 191, 36, 0.5), rgba(217, 119, 6, 0.2));
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* ==========================================
@@ -260,15 +410,16 @@ html.dark-mode .sd-medals-grid {
     background: transparent;
 }
 
-html.dark-mode .sd-medal {
-    background: rgba(30, 41, 59, 0.4);
-    border: 1px solid rgba(71, 85, 105, 0.3);
-}
+html.dark-mode .sd-medal {}
 
 html.dark-mode .sd-medal:hover {
-    background: rgba(30, 41, 59, 0.6);
+
     border-color: rgba(96, 165, 250, 0.3);
     transform: translateY(-4px);
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+    filter: brightness(1.5);
+    filter: contrast(1.3);
 }
 
 html.dark-mode .sd-medal strong {
