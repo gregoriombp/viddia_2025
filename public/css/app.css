@@ -44190,7 +44190,7 @@ html.dark-mode .lesson-layout__breadcrumbs a {
 }
 
 .text-vdark-700 {
-    color: var(--color-static-365) !important;
+    color: var(--color-static-365);
 }
 
 /* Background Colors - VDark */
@@ -44219,7 +44219,7 @@ html.dark-mode .lesson-layout__breadcrumbs a {
 }
 
 .bg-vdark-700 {
-    background-color: var(--color-static-365) !important;
+    background-color: var(--color-static-365);
 }
 
 /* Border Colors - VDark */
@@ -44228,7 +44228,7 @@ html.dark-mode .lesson-layout__breadcrumbs a {
 }
 
 .border-vdark-200 {
-    border-color: var(--color-static-576) !important;
+    border-color: var(--color-static-576);
 }
 
 .border-vdark-300 {
@@ -44248,7 +44248,7 @@ html.dark-mode .lesson-layout__breadcrumbs a {
 }
 
 .border-vdark-700 {
-    border-color: var(--color-static-365) !important;
+    border-color: var(--color-static-365);
 }
 
 /* Semantic Background Utilities for Dark Mode */

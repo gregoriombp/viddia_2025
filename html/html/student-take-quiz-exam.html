@@ -103,6 +103,492 @@
     html.dark-mode #theme-toggle-item:hover {
       background-color: rgba(255, 255, 255, 0.05);
     }
+
+    /* ================================================
+       QUIZ EXAM - MODERN STYLES (LIGHT MODE)
+       ================================================ */
+
+    /* Question Cards with Material Elevation */
+    .quiz-question {
+      position: relative;
+      padding: 24px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(81, 97, 150, 0.12);
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06),
+                  0 2px 4px rgba(15, 23, 42, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .quiz-question:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1),
+                  0 4px 8px rgba(15, 23, 42, 0.06);
+    }
+
+    /* Question Header */
+    .quiz-question .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(81, 97, 150, 0.12);
+    }
+
+    .quiz-question .question-title {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .quiz-question .badge-primary {
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 12px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(85, 103, 255, 0.25);
+    }
+
+    /* Question Context */
+    .quiz-question .question-context {
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      background: #f5f7fa;
+      border-left: 3px solid #5567FF;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .quiz-question .question-context strong {
+      font-weight: 700;
+      color: #5567FF;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Question Text */
+    .quiz-question .question-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    /* Question Options Container */
+    .quiz-question .question-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Modern Radio Option Styling */
+    .quiz-question .custom-control.custom-radio {
+      position: relative;
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    .quiz-question .custom-control-label {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 14px 18px 14px 48px;
+      border: 2px solid rgba(81, 97, 150, 0.12);
+      border-radius: 12px;
+      background: #ffffff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      font-weight: 500;
+      user-select: none;
+    }
+
+    /* Hover State */
+    .quiz-question .custom-control-label:hover {
+      border-color: rgba(85, 103, 255, 0.4);
+      background: rgba(85, 103, 255, 0.03);
+      transform: translateX(4px);
+    }
+
+    /* Focus State (Keyboard Navigation) */
+    .quiz-question .custom-control-input:focus ~ .custom-control-label {
+      border-color: #5567FF;
+      box-shadow: 0 0 0 3px rgba(85, 103, 255, 0.12);
+      outline: none;
+    }
+
+    /* Selected State */
+    .quiz-question .custom-control-input:checked ~ .custom-control-label {
+      border-color: #5567FF;
+      background: rgba(85, 103, 255, 0.08);
+      color: #5567FF;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(85, 103, 255, 0.15);
+    }
+
+    /* Selected + Hover */
+    .quiz-question .custom-control-input:checked ~ .custom-control-label:hover {
+      background: rgba(85, 103, 255, 0.12);
+      transform: translateX(0);
+    }
+
+    /* Custom Radio Button Indicator */
+    .quiz-question .custom-control-label::before {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border: 2px solid #cbd5e0;
+      border-radius: 50%;
+      background: #ffffff;
+      transition: all 0.2s ease;
+      content: '';
+    }
+
+    /* Radio Checked Indicator */
+    .quiz-question .custom-control-label::after {
+      position: absolute;
+      left: 21px;
+      top: 50%;
+      transform: translateY(-50%) scale(0);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #5567FF;
+      transition: transform 0.2s ease;
+      content: '';
+    }
+
+    .quiz-question .custom-control-input:checked ~ .custom-control-label::before {
+      border-color: #5567FF;
+      background: #ffffff;
+    }
+
+    .quiz-question .custom-control-input:checked ~ .custom-control-label::after {
+      transform: translateY(-50%) scale(1);
+    }
+
+    /* Hover on Radio Indicator */
+    .quiz-question .custom-control-label:hover::before {
+      border-color: #5567FF;
+    }
+
+    /* Progress Bar */
+    .quiz-progress-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #ffffff;
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(81, 97, 150, 0.12);
+      margin: -24px -24px 24px -24px;
+    }
+
+    .quiz-progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #5567FF 0%, #7B89FF 100%);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+      box-shadow: 0 2px 8px rgba(85, 103, 255, 0.3);
+    }
+
+    .quiz-progress-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+
+    .quiz-progress-label {
+      font-weight: 600;
+    }
+
+    .quiz-progress-count {
+      color: #5567FF;
+      font-weight: 700;
+    }
+
+    /* Timer with Circular Progress */
+    .quiz-timer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .quiz-timer-circle {
+      position: relative;
+      width: 48px;
+      height: 48px;
+    }
+
+    .quiz-timer-svg {
+      transform: rotate(-90deg);
+    }
+
+    .quiz-timer-circle-bg {
+      fill: none;
+      stroke: #e2e8f0;
+      stroke-width: 4;
+    }
+
+    .quiz-timer-circle-progress {
+      fill: none;
+      stroke: #5567FF;
+      stroke-width: 4;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1s linear, stroke 0.3s ease;
+    }
+
+    .quiz-timer-circle-progress.warning {
+      stroke: #e4a93c;
+    }
+
+    .quiz-timer-circle-progress.danger {
+      stroke: #ED0B4C;
+    }
+
+    .quiz-timer-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      color: #5567FF;
+      transition: color 0.3s ease;
+    }
+
+    .quiz-timer-icon.warning {
+      color: #e4a93c;
+    }
+
+    .quiz-timer-icon.danger {
+      color: #ED0B4C;
+      animation: pulse-icon 1s ease-in-out infinite;
+    }
+
+    @keyframes pulse-icon {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.15); }
+    }
+
+    .quiz-timer-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .quiz-timer-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6c789c;
+    }
+
+    #timer.warning {
+      color: #e4a93c !important;
+    }
+
+    #timer.danger {
+      color: #ED0B4C !important;
+    }
+
+    /* Footer Buttons */
+    .card-footer {
+      padding: 20px 24px;
+      background: #f5f7fa;
+      border-top: 2px solid rgba(81, 97, 150, 0.12);
+    }
+
+    .card-footer .btn {
+      padding: 12px 24px;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-footer .btn-outline-secondary {
+      border-width: 2px;
+    }
+
+    .card-footer .btn-outline-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-footer .btn-primary {
+      box-shadow: 0 4px 12px rgba(85, 103, 255, 0.3);
+    }
+
+    .card-footer .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(85, 103, 255, 0.4);
+    }
+
+    /* Micro-Animations */
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .quiz-question {
+      animation: fadeSlideIn 0.5s ease-out both;
+    }
+
+    .quiz-question:nth-child(1) { animation-delay: 0.05s; }
+    .quiz-question:nth-child(2) { animation-delay: 0.1s; }
+    .quiz-question:nth-child(3) { animation-delay: 0.15s; }
+    .quiz-question:nth-child(4) { animation-delay: 0.2s; }
+    .quiz-question:nth-child(5) { animation-delay: 0.25s; }
+
+    @keyframes selectionPulse {
+      0% { box-shadow: 0 4px 12px rgba(85, 103, 255, 0.15); }
+      50% { box-shadow: 0 4px 20px rgba(85, 103, 255, 0.35); }
+      100% { box-shadow: 0 4px 12px rgba(85, 103, 255, 0.15); }
+    }
+
+    .custom-control-input:checked ~ .custom-control-label {
+      animation: selectionPulse 0.6s ease-out;
+    }
+
+    /* ================================================
+       QUIZ EXAM - DARK MODE
+       ================================================ */
+
+    html.dark-mode .quiz-question {
+      background: #161a26;
+      border-color: rgba(71, 85, 105, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4),
+                  0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    html.dark-mode .quiz-question:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5),
+                  0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    html.dark-mode .quiz-question .question-header {
+      border-bottom-color: rgba(71, 85, 105, 0.3);
+    }
+
+    html.dark-mode .quiz-question .question-title {
+      color: #f2f9ff;
+    }
+
+    html.dark-mode .quiz-question .question-context {
+      background: #0f1218;
+      border-left-color: #60a5fa;
+      color: #e2e8f0;
+    }
+
+    html.dark-mode .quiz-question .question-context strong {
+      color: #93c5fd;
+    }
+
+    html.dark-mode .quiz-question .question-text {
+      color: #f2f9ff;
+    }
+
+    html.dark-mode .custom-control-label {
+      background: #0f1218;
+      border-color: rgba(71, 85, 105, 0.3);
+      color: #e2e8f0;
+    }
+
+    html.dark-mode .custom-control-label:hover {
+      background: #1e293b;
+      border-color: rgba(96, 165, 250, 0.4);
+    }
+
+    html.dark-mode .custom-control-input:checked ~ .custom-control-label {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: #60a5fa;
+      color: #93c5fd;
+      box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
+    }
+
+    html.dark-mode .custom-control-label::before {
+      background: #0f1218;
+      border-color: rgba(71, 85, 105, 0.3);
+    }
+
+    html.dark-mode .custom-control-input:checked ~ .custom-control-label::before {
+      background: #0f1218;
+      border-color: #60a5fa;
+    }
+
+    html.dark-mode .custom-control-input:checked ~ .custom-control-label::after {
+      background: #60a5fa;
+    }
+
+    html.dark-mode .quiz-progress-wrapper {
+      background: #161a26;
+      border-bottom-color: rgba(71, 85, 105, 0.3);
+    }
+
+    html.dark-mode .quiz-progress-bar {
+      background: #0f1218;
+    }
+
+    html.dark-mode .quiz-progress-fill {
+      background: linear-gradient(90deg, #60a5fa 0%, #93c5fd 100%);
+      box-shadow: 0 2px 8px rgba(96, 165, 250, 0.4);
+    }
+
+    html.dark-mode .quiz-progress-label {
+      color: #e2e8f0;
+    }
+
+    html.dark-mode .quiz-progress-count {
+      color: #93c5fd;
+    }
+
+    html.dark-mode .quiz-timer-circle-bg {
+      stroke: rgba(71, 85, 105, 0.3);
+    }
+
+    html.dark-mode .quiz-timer-circle-progress {
+      stroke: #60a5fa;
+    }
+
+    html.dark-mode .quiz-timer-icon {
+      color: #60a5fa;
+    }
+
+    html.dark-mode #timer {
+      color: #60a5fa;
+    }
+
+    html.dark-mode .card-footer {
+      background: #0f1218;
+      border-top-color: rgba(71, 85, 105, 0.3);
+    }
   </style>
 </head>
 
@@ -542,18 +1028,48 @@
               <!-- Quiz Header with Timer -->
               <div class="card-header d-flex align-items-center justify-content-between">
                 <h4 class="card-title mb-0">Avaliação de Marketing Digital</h4>
-                <div class="quiz-timer d-flex align-items-center">
-                  <span class="material-icons text-primary mr-2">schedule</span>
-                  <span id="timer" class="h5 mb-0 text-primary font-weight-bold">60:00</span>
+                <div class="quiz-timer">
+                  <div class="quiz-timer-circle">
+                    <svg class="quiz-timer-svg" width="48" height="48" viewBox="0 0 48 48">
+                      <circle class="quiz-timer-circle-bg" cx="24" cy="24" r="20"></circle>
+                      <circle
+                        id="timerCircle"
+                        class="quiz-timer-circle-progress"
+                        cx="24"
+                        cy="24"
+                        r="20"
+                        stroke-dasharray="125.66"
+                        stroke-dashoffset="0"
+                      ></circle>
+                    </svg>
+                    <span id="timerIcon" class="material-icons quiz-timer-icon">schedule</span>
+                  </div>
+                  <div class="quiz-timer-text">
+                    <span class="quiz-timer-label">Tempo restante</span>
+                    <span id="timer" class="h5 mb-0 text-primary font-weight-bold">60:00</span>
+                  </div>
                 </div>
               </div>
 
               <!-- Quiz Content -->
               <div class="card-body" style="max-height: calc(100vh - 200px); overflow-y: auto;">
 
+                <!-- Progress Bar -->
+                <div class="quiz-progress-wrapper">
+                  <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="quizProgressFill" style="width: 0%"></div>
+                  </div>
+                  <div class="quiz-progress-text">
+                    <span class="quiz-progress-label">Progresso</span>
+                    <span class="quiz-progress-count">
+                      <span id="answeredCount">0</span>/15 respondidas
+                    </span>
+                  </div>
+                </div>
+
                 <!-- Question 1 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 1</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -600,8 +1116,8 @@
                 </div>
 
                 <!-- Question 2 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 2</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -647,8 +1163,8 @@
                 </div>
 
                 <!-- Question 3 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 3</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -694,8 +1210,8 @@
                 </div>
 
                 <!-- Question 4 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 4</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -741,8 +1257,8 @@
                 </div>
 
                 <!-- Question 5 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 5</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -788,8 +1304,8 @@
                 </div>
 
                 <!-- Question 6 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 6</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -835,8 +1351,8 @@
                 </div>
 
                 <!-- Question 7 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 7</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -882,8 +1398,8 @@
                 </div>
 
                 <!-- Question 8 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 8</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -929,8 +1445,8 @@
                 </div>
 
                 <!-- Question 9 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 9</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -976,8 +1492,8 @@
                 </div>
 
                 <!-- Question 10 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 10</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -1023,8 +1539,8 @@
                 </div>
 
                 <!-- Question 11 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 11</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -1070,8 +1586,8 @@
                 </div>
 
                 <!-- Question 12 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 12</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -1117,8 +1633,8 @@
                 </div>
 
                 <!-- Question 13 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 13</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -1164,8 +1680,8 @@
                 </div>
 
                 <!-- Question 14 -->
-                <div class="quiz-question mb-5 pb-4 border-bottom">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 14</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -1211,8 +1727,8 @@
                 </div>
 
                 <!-- Question 15 -->
-                <div class="quiz-question mb-5 pb-4">
-                  <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="quiz-question">
+                  <div class="question-header">
                     <h5 class="question-title mb-0">Questão 15</h5>
                     <span class="badge badge-primary">1 ponto</span>
                   </div>
@@ -1265,10 +1781,10 @@
                   <span class="material-icons mr-2">schedule_send</span>
                   Tentar em outro momento
                 </button>
-                <button type="button" class="btn btn-primary">
+                <a href="student-take-quiz-result.html" class="btn btn-primary">
                   <span class="material-icons mr-2">check_circle</span>
                   Finalizar avaliação
-                </button>
+                </a>
               </div>
 
             </div>
@@ -1417,28 +1933,52 @@
       })();
     </script>
 
-    <!-- Quiz Timer Script -->
+    <!-- Enhanced Quiz Timer with Circular Progress -->
     <script>
       (function () {
         "use strict";
 
-        // Set timer to 1 hour (3600 seconds)
         let totalSeconds = 3600;
+        const initialSeconds = 3600;
         const timerElement = document.getElementById('timer');
+        const timerIcon = document.getElementById('timerIcon');
+        const timerCircle = document.getElementById('timerCircle');
+        const circumference = 125.66; // 2 * PI * r (r=20)
 
-        if (timerElement) {
+        if (timerElement && timerCircle) {
           function updateTimer() {
             const minutes = Math.floor(totalSeconds / 60);
             const seconds = totalSeconds % 60;
 
-            // Format time as MM:SS
             const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
             timerElement.textContent = formattedTime;
 
-            // Change color when time is running low (less than 5 minutes)
-            if (totalSeconds <= 300) {
-              timerElement.classList.remove('text-primary');
-              timerElement.classList.add('text-danger');
+            // Update circular progress
+            const progress = totalSeconds / initialSeconds;
+            const offset = circumference * (1 - progress);
+            timerCircle.style.strokeDashoffset = offset;
+
+            // Color changes based on remaining time
+            if (totalSeconds <= 300 && totalSeconds > 60) {
+              // Warning: 5 minutes or less (yellow)
+              timerElement.classList.remove('text-primary', 'danger');
+              timerElement.classList.add('warning');
+              timerCircle.classList.remove('danger');
+              timerCircle.classList.add('warning');
+              if (timerIcon) {
+                timerIcon.classList.remove('danger');
+                timerIcon.classList.add('warning');
+              }
+            } else if (totalSeconds <= 60) {
+              // Danger: 1 minute or less (red)
+              timerElement.classList.remove('text-primary', 'warning');
+              timerElement.classList.add('danger');
+              timerCircle.classList.remove('warning');
+              timerCircle.classList.add('danger');
+              if (timerIcon) {
+                timerIcon.classList.remove('warning');
+                timerIcon.classList.add('danger');
+              }
             }
 
             if (totalSeconds > 0) {
@@ -1449,12 +1989,57 @@
             }
           }
 
-          // Update timer every second
           const timerInterval = setInterval(updateTimer, 1000);
-
-          // Initial call to display time immediately
           updateTimer();
         }
+      })();
+    </script>
+
+    <!-- Progress Tracking Script -->
+    <script>
+      (function() {
+        "use strict";
+
+        const totalQuestions = 15;
+        let answeredQuestions = new Set();
+
+        const radioInputs = document.querySelectorAll('.quiz-question input[type="radio"]');
+
+        function updateProgress() {
+          const answered = answeredQuestions.size;
+          const percentage = (answered / totalQuestions) * 100;
+
+          const progressFill = document.getElementById('quizProgressFill');
+          const answeredCount = document.getElementById('answeredCount');
+
+          if (progressFill) {
+            progressFill.style.width = percentage + '%';
+          }
+
+          if (answeredCount) {
+            answeredCount.textContent = answered;
+          }
+        }
+
+        radioInputs.forEach(input => {
+          input.addEventListener('change', function() {
+            const questionName = this.name;
+            answeredQuestions.add(questionName);
+            updateProgress();
+
+            // Smooth scroll to next question
+            const currentQuestion = this.closest('.quiz-question');
+            const nextQuestion = currentQuestion.nextElementSibling;
+
+            if (nextQuestion && nextQuestion.classList.contains('quiz-question')) {
+              setTimeout(() => {
+                nextQuestion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 300);
+            }
+          });
+        });
+
+        updateProgress();
       })();
     </script>
 </body>
