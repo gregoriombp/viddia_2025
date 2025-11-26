@@ -67,6 +67,12 @@
       type="text/css"
       href="../../public/css/responsive.css"
       rel="stylesheet" />
+
+    <!-- Index Dark Mode Styles -->
+    <link
+      type="text/css"
+      href="../../public/css/index-dark.css"
+      rel="stylesheet" />
   </head>
 
   <body class="layout-sticky-subnav layout-default">
@@ -101,7 +107,7 @@
                 src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png"
                 alt="VIDDIA"
                 class="navbar-brand-icon mr-0 mr-lg-8pt"
-                width="150" />
+                width="120" />
             </a>
 
             <!-- Navigation Links -->
@@ -127,7 +133,7 @@
           <div
             class="mdk-box__bg-primary"
             style="
-              background-image: url('../../public/images/background/index-hero-background.jpg');
+              background-image: url('../../public/images/background/background-blue-1-upscaled.jpg');
               background-size: cover;
               background-position: center;
               position: absolute;
@@ -173,7 +179,8 @@
                   class="text-white mb-24pt"
                   style="
                     font-size: 3.3rem;
-                    font-weight: 600;
+                    font-weight: 400;
+                    letter-spacing: 0.06px !important;
                     line-height: 1.2;
                     max-width: 800px;
                     margin-left: auto;
@@ -203,7 +210,7 @@
                   >
                 </div>
 
-                <!-- Stats -->
+                <!-- Stats
                 <div class="row justify-content-center">
                   <div class="col-auto text-center px-5">
                     <h2 class="text-white mb-0" style="font-weight: 600">
@@ -230,6 +237,7 @@
                     </p>
                   </div>
                 </div>
+              END Stats -->
               </div>
             </div>
           </div>
@@ -594,15 +602,13 @@
             <div class="row">
               <!-- Feature 1 -->
               <div class="col-md-3 col-sm-6 text-center mb-4">
-                <div class="card" style="border: none; background: transparent">
-                  <div class="card-body">
-                    <span
-                      class="material-symbols-rounded mb-3 d-block"
-                      style="font-size: 56px; color: #5b7dff"
-                      >schedule</span
-                    >
-                    <h5 class="mb-3">Aprenda no seu ritmo</h5>
-                    <p class="text-70 mb-0">
+                <div class="feature-card">
+                  <div class="feature-card__body">
+                    <div class="feature-card__icon">
+                      <span class="material-symbols-rounded">schedule</span>
+                    </div>
+                    <h5 class="feature-card__title">Aprenda no seu ritmo</h5>
+                    <p class="feature-card__text">
                       Acesse vídeos dos cursos. Estude quando e onde quiser, sem
                       pressão.
                     </p>
@@ -612,15 +618,15 @@
 
               <!-- Feature 2 -->
               <div class="col-md-3 col-sm-6 text-center mb-4">
-                <div class="card" style="border: none; background: transparent">
-                  <div class="card-body">
-                    <span
-                      class="material-symbols-rounded mb-3 d-block"
-                      style="font-size: 56px; color: #5b7dff"
-                      >workspace_premium</span
-                    >
-                    <h5 class="mb-3">Certificado reconhecido</h5>
-                    <p class="text-70 mb-0">
+                <div class="feature-card">
+                  <div class="feature-card__body">
+                    <div class="feature-card__icon">
+                      <span class="material-symbols-rounded"
+                        >workspace_premium</span
+                      >
+                    </div>
+                    <h5 class="feature-card__title">Certificado reconhecido</h5>
+                    <p class="feature-card__text">
                       Receba certificados ao concluir os cursos e destaque-se no
                       mercado.
                     </p>
@@ -630,15 +636,13 @@
 
               <!-- Feature 3 -->
               <div class="col-md-3 col-sm-6 text-center mb-4">
-                <div class="card" style="border: none; background: transparent">
-                  <div class="card-body">
-                    <span
-                      class="material-symbols-rounded mb-3 d-block"
-                      style="font-size: 56px; color: #5b7dff"
-                      >group</span
-                    >
-                    <h5 class="mb-3">Instrutores especialistas</h5>
-                    <p class="text-70 mb-0">
+                <div class="feature-card">
+                  <div class="feature-card__body">
+                    <div class="feature-card__icon">
+                      <span class="material-symbols-rounded">group</span>
+                    </div>
+                    <h5 class="feature-card__title">Instrutores especialistas</h5>
+                    <p class="feature-card__text">
                       Aprenda com profissionais experientes e referências em
                       suas áreas.
                     </p>
@@ -648,15 +652,13 @@
 
               <!-- Feature 4 -->
               <div class="col-md-3 col-sm-6 text-center mb-4">
-                <div class="card" style="border: none; background: transparent">
-                  <div class="card-body">
-                    <span
-                      class="material-symbols-rounded mb-3 d-block"
-                      style="font-size: 56px; color: #5b7dff"
-                      >update</span
-                    >
-                    <h5 class="mb-3">Conteúdo atualizado</h5>
-                    <p class="text-70 mb-0">
+                <div class="feature-card">
+                  <div class="feature-card__body">
+                    <div class="feature-card__icon">
+                      <span class="material-symbols-rounded">update</span>
+                    </div>
+                    <h5 class="feature-card__title">Conteúdo atualizado</h5>
+                    <p class="feature-card__text">
                       Cursos sempre atualizados com as últimas tendências e
                       tecnologias.
                     </p>
@@ -669,11 +671,13 @@
 
         <!-- Final CTA Section -->
         <div class="page-section pt-64pt pb-64pt">
-          <div class="container page__container">
+          <div
+            class="container page__container mx-auto"
+            style="width: 100%; max-width: 80%">
             <div
               class="card rounded"
               style="
-                background-image: url('../../public/images/background/section-non-logged-background.jpg');
+                background-image: url('../../public/images/background/index-hero-background.jpg');
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -696,7 +700,7 @@
                 <!-- Badge -->
                 <div class="mb-3">
                   <span
-                    class="badge badge-light"
+                    class="badge badge-primary-outlined chip chip--raised"
                     style="font-size: 14px; padding: 10px 20px">
                     <span
                       class="material-symbols-rounded mr-1"
@@ -726,19 +730,14 @@
                 <div class="d-flex justify-content-center mb-4">
                   <a
                     href="login.html"
-                    class="btn btn-lg btn-white btn-rounded mr-3">
-                    <span class="mr-2">Criar conta grátis</span>
+                    class="btn btn-md btn-light btn-rounded mr-3">
+                    <span class="mr-2">Fale com nossa equipe de vendas</span>
                     <span
                       class="material-symbols-rounded"
                       style="font-size: 20px; vertical-align: middle"
                       >arrow_forward</span
                     >
                   </a>
-                  <a
-                    href="javascript:void(0)"
-                    class="btn btn-lg btn-outline-white btn-rounded"
-                    >Falar com vendas</a
-                  >
                 </div>
 
                 <!-- Small Print -->
