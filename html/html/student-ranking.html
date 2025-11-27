@@ -200,8 +200,6 @@
 
 
 
-        
-
 
         <!-- // END Header -->
 
@@ -219,9 +217,8 @@
                 <div class="ranking-card">
                     <div class="ranking-controls">
                         <div class="ranking-filter-group">
-                            <button type="button" class="ranking-filter is-active" data-sort="level"
-                                data-order-symbol="↓">Nível</button>
-                            <button type="button" class="ranking-filter" data-sort="coins">Moedas</button>
+                            <button type="button" class="ranking-filter is-active" data-sort="coins"
+                                data-order-symbol="↓">Moedas</button>
                             <button type="button" class="ranking-filter" data-sort="medals">Medalhas</button>
                             <button type="button" class="ranking-filter" data-sort="performance">Aproveitamento</button>
                         </div>
@@ -237,7 +234,6 @@
                                     <th scope="col">Posição</th>
                                     <th scope="col">Aluno</th>
                                     <th scope="col">Moedas</th>
-                                    <th scope="col">Nível</th>
                                     <th scope="col">Aproveitamento</th>
                                     <th scope="col">Medalhas</th>
                                 </tr>
@@ -382,7 +378,7 @@
                     const loadMoreWrapper = document.querySelector('.ranking-load-more');
                     const numberFormatter = new Intl.NumberFormat('pt-BR');
                     const ITEMS_PER_LOAD = 10;
-                    let currentSort = { key: 'level', direction: 'desc' };
+                    let currentSort = { key: 'coins', direction: 'desc' };
                     let visibleCount = Math.min(ITEMS_PER_LOAD, rankingData.length);
 
                     const medalClassMap = {
@@ -450,18 +446,10 @@
 
                         const rows = visibleData.map((student, index) => {
                             const positionClass = index < 3 ? `ranking-row--top-${index + 1}` : '';
-                            const medalsToShow = student.medals.slice(0, 3);
-                            const extraMedals = student.medals.length - medalsToShow.length;
-                            const medalStack = medalsToShow.length
-                                ? medalsToShow.map((type) => {
-                                    const modifier = medalClassMap[type] || 'ranking-medal--silver';
-                                    return `<span class="ranking-medal ${modifier}" aria-hidden="true"></span>`;
-                                }).join('')
-                                : '<span class="ranking-medal is-empty" aria-hidden="true"></span>';
-
-                            const medalsLabel = medalsToShow.length
-                                ? `Medalhas de ${student.medals.length === 1 ? 'desempenho' : 'destaque'}`
-                                : 'Sem medalhas no momento';
+                            const medalsCount = student.medals.length;
+                            const medalsLabel = medalsCount === 0
+                                ? 'Sem medalhas no momento'
+                                : `${medalsCount} ${medalsCount === 1 ? 'medalha' : 'medalhas'}`;
 
                             return `
                                 <tr class="ranking-row ${positionClass}">
@@ -483,12 +471,6 @@
                                             <span class="ranking-cell ranking-cell--numeric">${numberFormatter.format(student.coins)}</span>
                                         </div>
                                     </td>
-                                    <td data-label="Nível">
-                                        <div class="ranking-value ranking-value--center">
-                                            <span class="material-symbols-rounded ranking-value__icon ranking-value__icon--level" aria-hidden="true">military_tech</span>
-                                            <span class="ranking-cell ranking-cell--center">Nível ${student.level}</span>
-                                        </div>
-                                    </td>
                                     <td data-label="Aproveitamento">
                                         <div class="ranking-value ranking-value--center">
                                             <span class="material-icons ranking-value__icon ranking-value__icon--performance" aria-hidden="true">trending_up</span>
@@ -496,11 +478,9 @@
                                         </div>
                                     </td>
                                     <td data-label="Medalhas">
-                                        <div class="ranking-medals ranking-cell--medals" aria-label="${medalsLabel}">
-                                            <div class="ranking-medal-stack">
-                                                ${medalStack}
-                                            </div>
-                                            ${extraMedals > 0 ? `<small>+${extraMedals}</small>` : student.medals.length === 0 ? '<small>0</small>' : ''}
+                                        <div class="ranking-value ranking-value--center">
+                                            <span class="material-symbols-rounded ranking-value__icon ranking-value__icon--medals" aria-hidden="true">workspace_premium</span>
+                                            <span class="ranking-cell ranking-cell--center" aria-label="${medalsLabel}">${medalsCount}</span>
                                         </div>
                                     </td>
                                 </tr>

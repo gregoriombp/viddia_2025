@@ -1298,6 +1298,65 @@
 }
 
 /* ==========================================
+   PATH PROGRESS MILESTONES - Indicadores de módulos
+   ========================================== */
+
+.path-progress-milestones {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0;
+}
+
+.path-progress-milestones__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+}
+
+.path-progress-milestones__icon {
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.path-progress-milestones__icon--complete {
+    color: rgba(11, 92, 255, 0.85);
+}
+
+.path-progress-milestones__icon--current {
+    color: rgba(11, 92, 255, 0.85);
+    animation: pulse-milestone 2s ease-in-out infinite;
+}
+
+@keyframes pulse-milestone {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.15);
+    }
+}
+
+.path-progress-milestones__label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #64748b;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.path-progress-milestones__label--current {
+    color: rgba(11, 92, 255, 0.95);
+    font-weight: 700;
+}
+
+/* ==========================================
    MEDIA QUERIES - Responsividade
    ========================================== */
 
