@@ -302,44 +302,48 @@
                                         <span class="sd-performance-particle"></span>
                                     </div>
                                 </article>
-                                <article class="sd-overview-card sd-overview-card--level">
+                                <article class="sd-overview-card sd-overview-card--medals">
                                     <div class="sd-overview-card__header">
-                                        <span class="sd-overview-card__icon material-symbols-rounded">radar</span>
-                                        <span class="sd-overview-card__label">Nível Atual</span>
+                                        <span class="sd-overview-card__icon material-symbols-rounded">military_tech</span>
+                                        <span class="sd-overview-card__label">Medalhas</span>
                                     </div>
-                                    <div class="sd-level-card">
-                                        <div class="sd-level-card__display">
-                                            <span class="sd-level-card__number">12</span>
-                                            <div class="sd-level-card__rings">
-                                                <span class="sd-level-ring"></span>
-                                                <span class="sd-level-ring"></span>
-                                                <span class="sd-level-ring"></span>
-                                            </div>
-                                        </div>
-                                        <div class="sd-level-progress">
-                                            <div class="sd-level-progress__info">
-                                                <small>Progresso para o nível 13</small>
-                                                <strong>672 / 1000 XP</strong>
-                                            </div>
-                                            <div class="sd-level-progress__bar">
-                                                <span style="width: 67.2%;"></span>
-                                            </div>
-                                        </div>
-                                        <div class="sd-level-stats">
-                                            <div class="sd-level-stat">
-                                                <span class="material-symbols-rounded">local_fire_department</span>
-                                                <div>
-                                                    <strong>328 XP</strong>
-                                                    <small>Para próximo nível</small>
+                                    <div class="sd-medals-card">
+                                        <div class="sd-medals-card__display">
+                                            <div class="sd-medals-card__total-wrapper">
+                                                <span class="sd-medals-card__total">15</span>
+                                                <div class="sd-medals-card__rings">
+                                                    <span class="sd-medals-ring"></span>
+                                                    <span class="sd-medals-ring"></span>
+                                                    <span class="sd-medals-ring"></span>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="sd-medals-breakdown pr-16pt pl-16pt">
+                                            <div class="sd-medal-type" data-tooltip="Medalhas de Bronze">
+                                                <div class="sd-medal-type__indicator sd-medal-type__indicator--bronze">
+                                                    <img src="../../public/images/medals/0.5x/copper-medal@0.5x.png" alt="Bronze">
+                                                </div>
+                                                <strong class="sd-medal-type__count">8</strong>
+                                            </div>
+                                            <div class="sd-medal-type" data-tooltip="Medalhas de Prata">
+                                                <div class="sd-medal-type__indicator sd-medal-type__indicator--silver">
+                                                    <img src="../../public/images/medals/0.5x/silver-medal@0.5x.png" alt="Prata">
+                                                </div>
+                                                <strong class="sd-medal-type__count">5</strong>
+                                            </div>
+                                            <div class="sd-medal-type" data-tooltip="Medalhas de Ouro">
+                                                <div class="sd-medal-type__indicator sd-medal-type__indicator--gold">
+                                                    <img src="../../public/images/medals/0.5x/golden-medal@0.5x.png" alt="Ouro">
+                                                </div>
+                                                <strong class="sd-medal-type__count">2</strong>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="sd-level-particles">
-                                        <span class="sd-level-particle"></span>
-                                        <span class="sd-level-particle"></span>
-                                        <span class="sd-level-particle"></span>
-                                        <span class="sd-level-particle"></span>
+                                    <div class="sd-medals-particles">
+                                        <span class="sd-medals-particle"></span>
+                                        <span class="sd-medals-particle"></span>
+                                        <span class="sd-medals-particle"></span>
+                                        <span class="sd-medals-particle"></span>
                                     </div>
                                 </article>
                                 <article class="sd-overview-card sd-overview-card--coins sd-overview-card--coins2">
@@ -389,14 +393,14 @@
                                     </div>
                                     <div class="dashboard-courses__grid">
                                         <article class="sd-course-card sd-course-card--in-progress bg-white border-1">
-                                            <div class="sd-course-thumb">
+                                            <a href="student-take-lesson.html" class="sd-course-thumb">
                                                 <img src="../../public/images/Course thumbnails/course_16_9-thumb_6.jpg"
                                                     alt="Thumbnail do curso Laboratório de Machine Learning">
                                                 <div class="sd-course-thumb__overlay">
                                                     <span class="material-icons" aria-hidden="true">play_arrow</span>
                                                     <span class="sd-course-thumb__overlay-label">Continuar curso</span>
                                                 </div>
-                                            </div>
+                                            </a>
                                             <div class="sd-course-card__content">
                                                 <div class="sd-course-card__meta">
 
@@ -427,14 +431,11 @@
                                                 style="display: flex; justify-content: space-between; align-items: center;">
                                                 <div style="display: flex; gap: 12px;">
                                                     <div class="sd-course-stat bg-light" data-tooltip="Aproveitamento">
-                                                        <span class="material-symbols-rounded">radar</span>
-                                                        <strong>74%</strong>
+                                                        <span class="material-symbols-rounded">data_usage</span>
+                              
+                                                           <span class="text-white text-sm-left ml-1 mr-1">74%</span>
                                                     </div>
-                                                    <div class="sd-course-stat bg-light"
-                                                        data-tooltip="Moedas adquiridas">
-                                                        <span class="material-symbols-rounded">paid</span>
-                                                        <strong class="text-70">760</strong>
-                                                    </div>
+                                                  
                                                 </div>
                                                 <a href="student-take-lesson.html"
                                                     class="btn btn-continue-course btn-md btn-rounded">
@@ -446,14 +447,14 @@
 
                                         </article>
                                         <article class="sd-course-card sd-course-card--in-progress bg-white border-1">
-                                            <div class="sd-course-thumb">
+                                            <a href="student-take-lesson.html" class="sd-course-thumb">
                                                 <img src="../../public/images/Course thumbnails/course_16_9-thumb_12.jpg"
                                                     alt="Thumbnail do curso Laboratório de Machine Learning">
                                                 <div class="sd-course-thumb__overlay">
                                                     <span class="material-icons" aria-hidden="true">play_arrow</span>
                                                     <span class="sd-course-thumb__overlay-label">Continuar curso</span>
                                                 </div>
-                                            </div>
+                                            </a>
                                             <div class="sd-course-card__content">
                                                 <div class="sd-course-card__meta">
 
@@ -485,14 +486,11 @@
                                                 style="display: flex; justify-content: space-between; align-items: center;">
                                                 <div style="display: flex; gap: 12px;">
                                                     <div class="sd-course-stat bg-light" data-tooltip="Aproveitamento">
-                                                        <span class="material-symbols-rounded">radar</span>
-                                                        <strong>74%</strong>
+                                                        <span class="material-symbols-rounded">data_usage</span>
+
+                                                           <span class="text-white text-sm-left ml-1 mr-1">86%</span>
                                                     </div>
-                                                    <div class="sd-course-stat bg-light"
-                                                        data-tooltip="Moedas adquiridas">
-                                                        <span class="material-symbols-rounded">paid</span>
-                                                        <strong class="text-70">760</strong>
-                                                    </div>
+
                                                 </div>
                                                 <a href="student-take-lesson.html"
                                                     class="btn btn-continue-course btn-md btn-rounded">
@@ -504,14 +502,14 @@
 
                                         </article>
                                         <article class="sd-course-card sd-course-card--in-progress bg-white border-1">
-                                            <div class="sd-course-thumb">
+                                            <a href="student-take-lesson.html" class="sd-course-thumb">
                                                 <img src="../../public/images/Course thumbnails/course_16_9-thumb_38.jpg"
                                                     alt="Thumbnail do curso Laboratório de Machine Learning">
                                                 <div class="sd-course-thumb__overlay">
                                                     <span class="material-icons" aria-hidden="true">play_arrow</span>
                                                     <span class="sd-course-thumb__overlay-label">Continuar curso</span>
                                                 </div>
-                                            </div>
+                                            </a>
                                             <div class="sd-course-card__content">
                                                 <div class="sd-course-card__meta">
 
@@ -533,7 +531,7 @@
                                                 <p>Próxima etapa: ajuste de hiperparâmetros com AutoML.</p>
                                                 <div class="sd-progress">
                                                     <div class="sd-progress__segment is-complete"></div>
-                                                 
+
                                                   <div class="sd-progress__segment is-active"
                                                         style="--segment-progress: .25; background-color: dimgray;"></div>
                                               <div class="sd-progress__segment is-active"
@@ -544,14 +542,11 @@
                                                 style="display: flex; justify-content: space-between; align-items: center;">
                                                 <div style="display: flex; gap: 12px;">
                                                     <div class="sd-course-stat bg-light" data-tooltip="Aproveitamento">
-                                                        <span class="material-symbols-rounded">radar</span>
-                                                        <strong>74%</strong>
+                                                        <span class="material-symbols-rounded">data_usage</span>
+
+                                                           <span class="text-white text-sm-left ml-1 mr-1">63%</span>
                                                     </div>
-                                                    <div class="sd-course-stat bg-light"
-                                                        data-tooltip="Moedas adquiridas">
-                                                        <span class="material-symbols-rounded">paid</span>
-                                                        <strong class="text-70">760</strong>
-                                                    </div>
+
                                                 </div>
                                                 <a href="student-take-lesson.html"
                                                     class="btn btn-continue-course btn-md btn-rounded">
@@ -576,14 +571,14 @@
                                     </div>
                                     <div class="dashboard-courses__grid">
                                         <article class="sd-course-card sd-course-card--completed bg-white">
-                                            <div class="sd-course-thumb">
+                                            <a href="student-take-lesson.html" class="sd-course-thumb">
                                                 <img src="../../public/images/Course thumbnails/course_16_9-thumb_27.jpg"
                                                     alt="Thumbnail do curso Narrativas com dados reais">
                                                 <div class="sd-course-thumb__overlay">
                                                     <span class="material-icons" aria-hidden="true">replay</span>
                                                     <span class="sd-course-thumb__overlay-label">Rever curso</span>
                                                 </div>
-                                            </div>
+                                            </a>
                                             <div class="sd-course-card__content">
                                                 <div class="sd-course-card__meta">
 
@@ -617,14 +612,11 @@
                                                 style="display: flex; justify-content: space-between; align-items: center;">
                                                 <div style="display: flex; gap: 12px;">
                                                     <div class="sd-course-stat bg-light" data-tooltip="Aproveitamento">
-                                                        <span class="material-symbols-rounded">radar</span>
-                                                        <strong>74%</strong>
+                                                        <span class="material-symbols-rounded">data_usage</span>
+
+                                                           <span class="text-white text-sm-left ml-1 mr-1">91%</span>
                                                     </div>
-                                                    <div class="sd-course-stat bg-light"
-                                                        data-tooltip="Moedas adquiridas">
-                                                        <span class="material-symbols-rounded">paid</span>
-                                                        <strong class="text-70">760</strong>
-                                                    </div>
+
                                                 </div>
 
                                             </div>
@@ -637,14 +629,14 @@
                                             </div>
                                         </article>
                                         <article class="sd-course-card sd-course-card--completed bg-white">
-                                            <div class="sd-course-thumb">
+                                            <a href="student-take-lesson.html" class="sd-course-thumb">
                                                 <img src="../../public/images/Course thumbnails/course_16_9-thumb_36.jpg"
                                                     alt="Thumbnail do curso Narrativas com dados reais">
                                                 <div class="sd-course-thumb__overlay">
                                                     <span class="material-icons" aria-hidden="true">replay</span>
                                                     <span class="sd-course-thumb__overlay-label">Rever curso</span>
                                                 </div>
-                                            </div>
+                                            </a>
                                             <div class="sd-course-card__content">
                                                 <div class="sd-course-card__meta">
 
@@ -678,14 +670,11 @@
                                                 style="display: flex; justify-content: space-between; align-items: center;">
                                                 <div style="display: flex; gap: 12px;">
                                                     <div class="sd-course-stat bg-light" data-tooltip="Aproveitamento">
-                                                        <span class="material-symbols-rounded">radar</span>
-                                                        <strong>74%</strong>
+                                                        <span class="material-symbols-rounded">data_usage</span>
+
+                                                           <span class="text-white text-sm-left ml-1 mr-1">88%</span>
                                                     </div>
-                                                    <div class="sd-course-stat bg-light"
-                                                        data-tooltip="Moedas adquiridas">
-                                                        <span class="material-symbols-rounded">paid</span>
-                                                        <strong class="text-70">760</strong>
-                                                    </div>
+
                                                 </div>
 
                                             </div>
@@ -717,7 +706,7 @@
                                             <span class="material-symbols-rounded sd-notification__icon">emoji_events</span>
                                             <div class="sd-overall-course__info">
                                                 <strong>Você ganhou uma medalha</strong>
-                                                <span>Desempenho acima de 70% no módulo 3 do Curso X</span>
+                                                <span>Desempenho acima de 70% no conteúdo 3 do Curso Marketing Empresarial</span>
                                                 <small class="text-muted">32 minutos atrás</small>
                                             </div>
                                         </div>
@@ -725,7 +714,7 @@
                                             <span class="material-symbols-rounded sd-notification__icon">military_tech</span>
                                             <div class="sd-overall-course__info">
                                                 <strong>Curso concluído</strong>
-                                                <span>Você concluiu o Curso X em menos de 7 dias</span>
+                                                <span>Você concluiu o Curso Gerenciamento de Projetos em menos de 7 dias</span>
                                                 <small class="text-muted">4 horas atrás</small>
                                             </div>
                                         </div>
@@ -740,19 +729,12 @@
                                         <div class="sd-overall-course sd-notification">
                                             <span class="material-symbols-rounded sd-notification__icon">quiz</span>
                                             <div class="sd-overall-course__info">
-                                                <strong>Quiz relâmpago</strong>
-                                                <span>Acerto de 85% no quiz do Módulo 5 • +120 pts de XP</span>
+                                                <strong>Nota Alta!</strong>
+                                                <span>Você acertou 85% do quiz UX Layout do Módulo 5 do curso Figma UX/UI Concepts</span>
                                                 <small class="text-muted">Ontem</small>
                                             </div>
                                         </div>
-                                        <div class="sd-overall-course sd-notification">
-                                            <span class="material-symbols-rounded sd-notification__icon">trending_up</span>
-                                            <div class="sd-overall-course__info">
-                                                <strong>Nível 6 desbloqueado</strong>
-                                                <span>Você subiu de nível e liberou 2 desafios avançados</span>
-                                                <small class="text-muted">2 dias atrás</small>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -763,7 +745,7 @@
 
                                             <h4 class="mb-0 ml-2"
                                                 style="letter-spacing: -.02em; font-family: 'Inter Tight', sans-serif;">
-                                                Ranking da semana</h4>
+                                                Ranking dos Alunos</h4>
                                         </div>
                                         <a href="student-ranking.html"
                                             class="dashboard-link text-muted text-sm-left">Ver completo</a>
@@ -840,45 +822,44 @@
                                                 style="letter-spacing: -.02em; font-family: 'Inter Tight', sans-serif;">
                                                 Medalhas</h4>
                                         </div>
-                                        <a href="student-ranking.html"
-                                            class="dashboard-link text-muted text-sm-left">Ver completo</a>
+                                        
                                     </div>
-                                    <div class="sd-medals-grid">
-                                        <div class="sd-medal">
-                                            <div class="sd-medal-thumb"><img
-                                                    src="../../public/images/medals/medal_11.png" width="88"></div>
-                                            <strong>Impact Maker</strong>
-                                            <small>Complete 5 desafios em grupo</small>
+                                    <div class="sd-medals-count-grid">
+                                        <div class="sd-medal-count-item sd-medal-count-item--bronze">
+                                            <div class="sd-medal-count-item__visual">
+                                                                 <img src="../../public/images/medals/1x/copper-medal.png"
+                                                     alt="Medalha Bronze"
+                                                     class="sd-medal-count-item__image">
+                                                <div class="sd-medal-count-item__badge">8</div>
+                                            </div>
+                                            <div class="sd-medal-count-item__info">
+                                                <strong>Bronze</strong>
+                                                <small>8 medalhas</small>
+                                            </div>
                                         </div>
-                                        <div class="sd-medal">
-                                            <div class="sd-medal-thumb"><img
-                                                    src="../../public/images/medals/medal_6.png" width="88"></div>
-                                            <strong>Busy Bee</strong>
-                                            <small>Entregas consecutivas por 7 dias</small>
+                                        <div class="sd-medal-count-item sd-medal-count-item--silver">
+                                            <div class="sd-medal-count-item__visual">
+                                             <img src="../../public/images/medals/1x/silver-medal.png"
+                                                     alt="Medalha Prata"
+                                                     class="sd-medal-count-item__image">
+                                                <div class="sd-medal-count-item__badge">5</div>
+                                            </div>
+                                            <div class="sd-medal-count-item__info">
+                                                <strong>Prata</strong>
+                                                <small>5 medalhas</small>
+                                            </div>
                                         </div>
-                                        <div class="sd-medal">
-                                            <div class="sd-medal-thumb"><img
-                                                    src="../../public/images/medals/medal_3.png" width="88"></div>
-                                            <strong>Champion Sprint</strong>
-                                            <small>Top 3 no ranking semanal</small>
-                                        </div>
-                                        <div class="sd-medal">
-                                            <div class="sd-medal-thumb"><img
-                                                    src="../../public/images/medals/medal_2.png" width="88"></div>
-                                            <strong>Feedback Hero</strong>
-                                            <small>Avalie 10 colegas</small>
-                                        </div>
-                                        <div class="sd-medal">
-                                            <div class="sd-medal-thumb"><img
-                                                    src="../../public/images/medals/medal_1.png" width="88"></div>
-                                            <strong>Learning Streak</strong>
-                                            <small>30 dias de estudo contínuo</small>
-                                        </div>
-                                        <div class="sd-medal">
-                                            <div class="sd-medal-thumb"><img
-                                                    src="../../public/images/medals/medal_5.png" width="88"></div>
-                                            <strong>Moedas Mestre</strong>
-                                            <small>Acumule 5.000 moedas</small>
+                                        <div class="sd-medal-count-item sd-medal-count-item--gold">
+                                            <div class="sd-medal-count-item__visual">
+                                                <img src="../../public/images/medals/1x/golden-medal.png"
+                                                     alt="Medalha Ouro"
+                                                     class="sd-medal-count-item__image">
+                                                <div class="sd-medal-count-item__badge">2</div>
+                                            </div>
+                                            <div class="sd-medal-count-item__info">
+                                                <strong>Ouro</strong>
+                                                <small>2 medalhas</small>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
