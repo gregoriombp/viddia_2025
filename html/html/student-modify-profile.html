@@ -46,6 +46,258 @@
     <!-- Responsive CSS -->
     <link type="text/css" href="../../public/css/responsive.css" rel="stylesheet" />
 
+    <!-- Photo Selector Modal Styles -->
+    <style>
+        .photo-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .photo-modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        html.dark-mode .photo-modal-content {
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+
+        .photo-modal-header {
+            padding: 24px 24px 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        html.dark-mode .photo-modal-header {
+            border-bottom-color: #333;
+        }
+
+        .photo-modal-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .photo-modal-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 20px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .photo-modal-close:hover,
+        .photo-modal-close:focus {
+            color: #000;
+        }
+
+        html.dark-mode .photo-modal-close:hover,
+        html.dark-mode .photo-modal-close:focus {
+            color: #fff;
+        }
+
+        .photo-modal-body {
+            padding: 24px;
+        }
+
+        .avatar-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 576px) {
+            .avatar-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+
+        .avatar-option {
+            aspect-ratio: 1;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .avatar-option:hover {
+            transform: scale(1.05);
+            border-color: #2196F3;
+        }
+
+        .avatar-option.selected {
+            border-color: #2196F3;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .avatar-option img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .upload-section {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 24px;
+            margin-top: 8px;
+        }
+
+        html.dark-mode .upload-section {
+            border-top-color: #333;
+        }
+
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 32px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #f9f9f9;
+        }
+
+        html.dark-mode .upload-area {
+            background-color: #2a2a2a;
+            border-color: #555;
+        }
+
+        .upload-area:hover {
+            border-color: #2196F3;
+            background-color: #f0f7ff;
+        }
+
+        html.dark-mode .upload-area:hover {
+            background-color: #333;
+            border-color: #2196F3;
+        }
+
+        .upload-area input[type="file"] {
+            display: none;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: #2196F3;
+            margin-bottom: 8px;
+        }
+
+        .photo-modal-footer {
+            padding: 16px 24px;
+            border-top: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        html.dark-mode .photo-modal-footer {
+            border-top-color: #333;
+        }
+
+        .change-photo-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .change-photo-btn .material-symbols-rounded {
+            font-size: 20px;
+        }
+
+        /* Avatar Hover Overlay */
+        .avatar-clickable {
+            position: relative;
+            cursor: pointer;
+            isolation: isolate;
+        }
+
+        .avatar-clickable .avatar-overlay {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .avatar-clickable .avatar-icon {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 11;
+            transition: transform 0.3s ease;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-clickable .avatar-icon .material-symbols-rounded {
+            font-size: 48px;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .avatar-clickable:hover .avatar-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .avatar-clickable:hover .avatar-icon {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .avatar-clickable:active .avatar-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .avatar-clickable img {
+            position: relative;
+            z-index: 0;
+        }
+    </style>
+
     <!-- Theme Toggle Switch Styles -->
     <style>
         .switch {
@@ -244,18 +496,21 @@
                             <div class="col-md-4 mb-24pt mb-md-0">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <div class="avatar avatar-xxl avatar-online mb-3">
+                                        <div class="avatar avatar-xxl avatar-online mb-3 avatar-clickable" id="avatarClickable">
                                             <img src="../../public/images/person_image/male-1.jpg" alt="Avatar"
-                                                class="avatar-img rounded-circle">
+                                                class="avatar-img rounded-circle" id="profilePhoto">
+                                            <div class="avatar-overlay"></div>
+                                            <div class="avatar-icon">
+                                                <span class="material-symbols-rounded">photo_camera</span>
+                                            </div>
                                         </div>
-                                        <h5 class="card-title mb-1">Gregório Pinheiro</h5>
-                                        <p class="text-muted small">Aluno Destaque</p>
+                                        <h5 class="card-title mb-1" style="text-transform: none !important;">Gregório Pinheiro</h5>
+                                        <p class="text-muted small">Membro desde 7 de Janeiro de 2019</p>
 
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="profilePhotoInput">
-                                            <label class="btn btn-outline-primary btn-block"
-                                                for="profilePhotoInput">Alterar Foto</label>
-                                        </div>
+                                        <button type="button" class="btn btn-outline-primary btn-block change-photo-btn" id="openPhotoModal">
+                                            <span class="material-symbols-rounded">photo_camera</span>
+                                            Alterar Foto
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -376,6 +631,71 @@
         </div>
 
         <!-- // END Footer -->
+
+        <!-- Photo Selection Modal -->
+        <div id="photoModal" class="photo-modal">
+            <div class="photo-modal-content">
+                <div class="photo-modal-header">
+                    <span class="photo-modal-close">&times;</span>
+                    <h3>Escolha sua Foto de Perfil</h3>
+                </div>
+                <div class="photo-modal-body">
+                    <p class="text-muted mb-3">Selecione um avatar ou envie sua própria foto</p>
+
+                    <!-- Avatar Grid -->
+                    <div class="avatar-grid">
+                        <div class="avatar-option" data-avatar="1">
+                            <img src="../../public/images/avatars/avatar-01.svg" alt="Avatar 1">
+                        </div>
+                        <div class="avatar-option" data-avatar="2">
+                            <img src="../../public/images/avatars/avatar-02.svg" alt="Avatar 2">
+                        </div>
+                        <div class="avatar-option" data-avatar="3">
+                            <img src="../../public/images/avatars/avatar-03.svg" alt="Avatar 3">
+                        </div>
+                        <div class="avatar-option" data-avatar="4">
+                            <img src="../../public/images/avatars/avatar-04.svg" alt="Avatar 4">
+                        </div>
+                        <div class="avatar-option" data-avatar="5">
+                            <img src="../../public/images/avatars/avatar-05.svg" alt="Avatar 5">
+                        </div>
+                        <div class="avatar-option" data-avatar="6">
+                            <img src="../../public/images/avatars/avatar-06.svg" alt="Avatar 6">
+                        </div>
+                        <div class="avatar-option" data-avatar="7">
+                            <img src="../../public/images/avatars/avatar-07.svg" alt="Avatar 7">
+                        </div>
+                        <div class="avatar-option" data-avatar="8">
+                            <img src="../../public/images/avatars/avatar-08.svg" alt="Avatar 8">
+                        </div>
+                        <div class="avatar-option" data-avatar="9">
+                            <img src="../../public/images/avatars/avatar-09.svg" alt="Avatar 9">
+                        </div>
+                        <div class="avatar-option" data-avatar="10">
+                            <img src="../../public/images/avatars/avatar-10.svg" alt="Avatar 10">
+                        </div>
+                    </div>
+
+                    <!-- Upload Section -->
+                    <div class="upload-section">
+                        <h5 class="mb-3">Ou envie sua própria foto</h5>
+                        <div class="upload-area" id="uploadArea">
+                            <input type="file" id="customPhotoInput" accept="image/*">
+                            <div class="upload-icon">
+                                <span class="material-symbols-rounded">cloud_upload</span>
+                            </div>
+                            <p class="mb-1"><strong>Clique para fazer upload</strong></p>
+                            <p class="text-muted small mb-0">PNG, JPG até 5MB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelPhotoSelection">Cancelar</button>
+                    <button type="button" class="btn btn-primary ml-2" id="confirmPhotoSelection">Confirmar</button>
+                </div>
+            </div>
+        </div>
+
         <!-- jQuery -->
         <script src="../../public/vendor/jquery.min.js"></script>
 
@@ -462,6 +782,150 @@
                         updateLabel();
                     });
                 })();
+        </script>
+
+        <!-- Photo Selection Modal Script -->
+        <script>
+            (function() {
+                'use strict';
+
+                var modal = document.getElementById('photoModal');
+                var openBtn = document.getElementById('openPhotoModal');
+                var avatarClickable = document.getElementById('avatarClickable');
+                var closeBtn = document.querySelector('.photo-modal-close');
+                var cancelBtn = document.getElementById('cancelPhotoSelection');
+                var confirmBtn = document.getElementById('confirmPhotoSelection');
+                var profilePhoto = document.getElementById('profilePhoto');
+                var avatarOptions = document.querySelectorAll('.avatar-option');
+                var uploadArea = document.getElementById('uploadArea');
+                var customPhotoInput = document.getElementById('customPhotoInput');
+
+                var selectedPhotoSrc = null;
+                var selectedType = null; // 'avatar' or 'custom'
+
+                // Function to open modal
+                function openModal() {
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Prevent background scroll
+                }
+
+                // Open modal via button
+                if (openBtn) {
+                    openBtn.addEventListener('click', openModal);
+                }
+
+                // Open modal via avatar click
+                if (avatarClickable) {
+                    avatarClickable.addEventListener('click', openModal);
+                }
+
+                // Close modal
+                function closeModal() {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    // Reset selection
+                    avatarOptions.forEach(function(option) {
+                        option.classList.remove('selected');
+                    });
+                    selectedPhotoSrc = null;
+                    selectedType = null;
+                }
+
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', closeModal);
+                }
+
+                if (cancelBtn) {
+                    cancelBtn.addEventListener('click', closeModal);
+                }
+
+                // Close when clicking outside
+                window.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        closeModal();
+                    }
+                });
+
+                // Avatar selection
+                avatarOptions.forEach(function(option) {
+                    option.addEventListener('click', function() {
+                        // Remove previous selection
+                        avatarOptions.forEach(function(opt) {
+                            opt.classList.remove('selected');
+                        });
+
+                        // Add selection to clicked avatar
+                        this.classList.add('selected');
+
+                        // Store selected photo source
+                        var img = this.querySelector('img');
+                        selectedPhotoSrc = img.src;
+                        selectedType = 'avatar';
+                    });
+                });
+
+                // Custom photo upload
+                if (uploadArea && customPhotoInput) {
+                    uploadArea.addEventListener('click', function() {
+                        customPhotoInput.click();
+                    });
+
+                    customPhotoInput.addEventListener('change', function(e) {
+                        var file = e.target.files[0];
+                        if (file && file.type.startsWith('image/')) {
+                            // Check file size (5MB limit)
+                            if (file.size > 5 * 1024 * 1024) {
+                                alert('O arquivo é muito grande. Por favor, escolha uma imagem menor que 5MB.');
+                                return;
+                            }
+
+                            // Read and preview the image
+                            var reader = new FileReader();
+                            reader.onload = function(event) {
+                                selectedPhotoSrc = event.target.result;
+                                selectedType = 'custom';
+
+                                // Remove avatar selection
+                                avatarOptions.forEach(function(opt) {
+                                    opt.classList.remove('selected');
+                                });
+
+                                // Update upload area to show preview
+                                uploadArea.style.backgroundImage = 'url(' + selectedPhotoSrc + ')';
+                                uploadArea.style.backgroundSize = 'cover';
+                                uploadArea.style.backgroundPosition = 'center';
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                }
+
+                // Confirm selection
+                if (confirmBtn) {
+                    confirmBtn.addEventListener('click', function() {
+                        if (selectedPhotoSrc) {
+                            // Update profile photo
+                            profilePhoto.src = selectedPhotoSrc;
+
+                            // Close modal
+                            closeModal();
+
+                            // Optional: Show success message
+                            // You can add a toast notification here
+                            console.log('Foto de perfil atualizada com sucesso!');
+                        } else {
+                            alert('Por favor, selecione uma foto primeiro.');
+                        }
+                    });
+                }
+
+                // Close modal with ESC key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape' && modal.style.display === 'block') {
+                        closeModal();
+                    }
+                });
+            })();
         </script>
 
 </body>
