@@ -5,26 +5,150 @@
    ======================================== */
 
 /* ==========================================
+   HERO SECTION STYLES
+   ========================================== */
+
+.hero-background {
+  background-image: url('../../public/images/background/background-blue-1-upscaled.jpg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-title {
+  font-size: 3.3rem;
+  font-weight: 400;
+  letter-spacing: 0.06px;
+  line-height: 1.2;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 700px;
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================
    CAROUSEL SECTIONS - FULL WIDTH
    ========================================== */
 
 /* Container principal - SEM limitação de largura */
 .carousel-section {
-  padding: 36px 0 32px 0;
-  margin-bottom: 20px;
+  padding: 0px 0 0px 0;
+  margin-bottom: 10px;
   width: 100%;
-  overflow: visible !important;
-  /* IMPORTANTE: Permitir que hover expanda para fora */
+  overflow: visible;
+  animation: fadeInUp 0.6s ease-out;
 }
 
-/* Título da seção - com padding lateral apenas para o título */
+.carousel-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.carousel-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* Header da seção - contém título, ícone, linha e link */
+.carousel-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 4%;
+}
+
+/* Wrapper do título com ícone e linha */
+.carousel-section__title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+/* Ícone ao lado do título */
+.carousel-section__icon {
+  font-size: 28px;
+  color: #60a5fa;
+}
+
+/* Título da seção */
 .carousel-section__title {
   font-size: 2rem;
   font-weight: 700;
   color: var(--text-theme-35);
-  margin-bottom: 24px;
-  padding: 0 4%;
+  margin: 0;
   letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+/* Linha separadora fina */
+.carousel-section__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right,
+    rgba(96, 165, 250, 0.3) 0%,
+    rgba(96, 165, 250, 0.1) 50%,
+    transparent 100%);
+  margin-left: 16px;
+}
+
+/* Link "Ver mais" */
+.carousel-section__link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #60a5fa;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.carousel-section__link:hover {
+  color: #93c5fd;
+  background: rgba(96, 165, 250, 0.1);
 }
 
 /* Wrapper - full width com padding lateral mínimo */
@@ -32,8 +156,7 @@
   position: relative;
   padding: 0;
   width: 100%;
-  overflow: visible !important;
-  /* IMPORTANTE: Permitir expansão do hover */
+  overflow: visible;
 }
 
 /* ==========================================
@@ -79,21 +202,17 @@
 /* Viewport - área rolável horizontal */
 .carousel-viewport {
   display: flex;
-  gap: 32px;
-  /* Gap maior para evitar sobreposição no hover */
+  gap: 20px;
   overflow-x: auto;
   overflow-y: visible;
-  /* IMPORTANTE: permitir que hover expanda verticalmente */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   padding: 64px calc(120px + 4%) 80px 4%;
   scroll-padding-left: 4%;
   scroll-padding-right: 4%;
-  /* Espaço extra para o glow, folga final e início sob a máscara */
-
-  /* Ocultar scrollbar nativa */
   scrollbar-width: none;
   -ms-overflow-style: none;
+  position: relative;
 }
 
 .carousel-viewport::-webkit-scrollbar {
@@ -109,25 +228,16 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 9999;
-  /* Acima das fade masks (z-index: 10) */
-
-  /* Visual mais chamativo */
   background: rgba(10, 15, 30, 0.95);
   border: 2px solid rgba(96, 165, 250, 0.4);
   border-radius: 50%;
   width: 32px;
   height: 32px;
-
-  /* Layout */
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* Ícone maior */
   color: #60a5fa;
   font-size: 32px;
-
-  /* Interação suave */
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   backdrop-filter: blur(12px);
@@ -163,28 +273,16 @@
 
 .carousel-card {
   position: relative;
-
-  /* CARDS MAIORES - 340px no desktop */
   flex: 0 0 340px;
   width: 340px;
   min-height: 191px;
-  /* Mantém aspect ratio 16:9 */
-
-  /* Visual premium */
   border-radius: 12px;
   overflow: visible;
-  /* IMPORTANTE: permitir expansão no hover */
   background: rgba(20, 25, 35, 0.8);
-
-  /* Interação suave */
   cursor: pointer;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-
-  /* Sombra inicial sutil */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
-
 
 /* Container da thumbnail */
 .carousel-card__thumbnail {
@@ -213,23 +311,15 @@
 
   /* EXPANSÃO DRAMÁTICA no hover */
   .carousel-card:hover {
-    /* Expansão significativa sem invadir cartões vizinhos */
     transform: scale(1.25) translateY(-12px);
-
-    /* Sombra ultra dramática com glow azul */
     box-shadow:
       0 0 20px rgba(96, 165, 250, 0.6),
       20px 80px 120px rgba(0, 0, 0, 0.8),
       30px 0 80px rgba(59, 130, 246, 0.4);
-
-    /* Prioridade visual MÁXIMA */
-    z-index: 9999 !important;
-    position: relative !important;
-
-    /* Border luminoso */
+    z-index: 9999;
+    position: relative;
     outline: 2px solid rgba(96, 165, 250, 0.5);
     outline-offset: 4px;
-
   }
 
   .carousel-card:hover::after {
@@ -580,6 +670,10 @@
     font-size: 1.75rem;
   }
 
+  .carousel-section__icon {
+    font-size: 24px;
+  }
+
   /* Hover simplificado */
   .carousel-card:hover {
     transform: scale(1.08) translateY(-8px);
@@ -620,6 +714,32 @@
   .carousel-card {
     flex: 0 0 200px;
     width: 200px;
+  }
+
+  /* Header responsivo */
+  .carousel-section__header {
+    padding: 0 3%;
+  }
+
+  .carousel-section__title {
+    font-size: 1.5rem;
+  }
+
+  .carousel-section__icon {
+    font-size: 20px;
+  }
+
+  .carousel-section__title-wrapper {
+    gap: 8px;
+  }
+
+  .carousel-section__line {
+    margin-left: 12px;
+  }
+
+  .carousel-section__link {
+    font-size: 0.85rem;
+    padding: 4px 8px;
   }
 
   .carousel-viewport {
@@ -697,7 +817,7 @@
 }
 
 /* ==========================================
-   EXTRA: Animação sutil ao carregar página
+   ANIMATIONS
    ========================================== */
 
 @keyframes fadeInUp {
@@ -712,58 +832,25 @@
   }
 }
 
-.carousel-section {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.carousel-section:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.carousel-section:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
 /* ==========================================
-   POLISH: Prevent layout shift during hover
+   LAYOUT FIXES - Prevent layout shift during hover
    ========================================== */
 
-/* Garante que a página tenha espaço para expansão do hover */
-.page-section {
-  overflow: visible !important;
-  padding-bottom: 80px !important;
-  /* Espaço extra para hover expansion */
-}
-
-/* Forçar overflow visible em containers pai */
+.page-section,
 .mdk-header-layout__content,
 .page-content,
-.mdk-header-layout,
-.container,
-.page__container {
-  overflow: visible !important;
+.mdk-header-layout {
+  overflow: visible;
 }
 
-/* IMPORTANTE: Remover qualquer clip-path ou contain que possa cortar o card */
 .carousel-section *,
 .carousel-wrapper *,
 .carousel-viewport * {
-  contain: none !important;
+  contain: none;
 }
 
-/* Garantir que o body e HTML também permitam overflow */
-body.layout-sticky-subnav,
-html {
+html,
+body {
   overflow-x: hidden;
-  /* Prevenir scroll horizontal */
-  overflow-y: visible !important;
-  /* Permitir expansão vertical */
-}
-
-/* Container do viewport NÃO deve clipar conteúdo */
-.carousel-viewport {
-  clip-path: none !important;
-  -webkit-clip-path: none !important;
-  overflow-y: visible !important;
-  overflow-x: auto !important;
+  overflow-y: auto;
 }

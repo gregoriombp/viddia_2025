@@ -136,37 +136,10 @@
       <div class="mdk-header-layout__content page-content">
         <!-- Hero Section -->
         <div class="mdk-box js-mdk-box mb-0">
+          <div class="mdk-box__bg-primary hero-background"></div>
+          <div class="hero-overlay"></div>
           <div
-            class="mdk-box__bg-primary"
-            style="
-              background-image: url('../../public/images/background/background-blue-1-upscaled.jpg');
-              background-size: cover;
-              background-position: center;
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              width: 100%;
-              height: 100%;
-            "></div>
-          <!-- Overlay escuro -->
-          <div
-            style="
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              width: 100%;
-              height: 100%;
-              background-color: black;
-              opacity: 0.6;
-              z-index: 1;
-            "></div>
-          <div
-            class="mdk-box__content justify-content-center py-112pt"
-            style="position: relative; z-index: 2">
+            class="mdk-box__content justify-content-center py-112pt hero-content">
             <div class="hero container page__container text-center">
               <div class="page-section">
                 <!-- VIDDIA Icon -->
@@ -176,36 +149,26 @@
                       src="../../public/images/logos/0.5x/VIDDIA Logo White@0.5x.png"
                       alt="VIDDIA"
                       width="240"
-                      style="max-width: 100%; height: auto" />
+                      class="hero-logo" />
                   </a>
                 </div>
 
                 <!-- Main Heading -->
-                <h1
-                  class="text-white mb-24pt"
-                  style="
-                    font-size: 3.3rem;
-                    font-weight: 400;
-                    letter-spacing: 0.06px !important;
-                    line-height: 1.2;
-                    max-width: 800px;
-                    margin-left: auto;
-                    margin-right: auto;
-                  ">
+                <h1 class="hero-title text-white mb-24pt">
                   Aprenda habilidades que impulsionam sua carreira
                 </h1>
 
                 <!-- Subtitle -->
                 <p
-                  class="text-white-70 mb-48pt measure-lead mx-auto"
-                  style="font-size: 1.25rem; max-width: 700px">
+                  class="hero-subtitle text-white-70 mb-48pt measure-lead mx-auto">
                   Acesse cursos de alta qualidade em desenvolvimento, design,
                   marketing e liderança. Aprenda no seu ritmo com instrutores
                   experientes.
                 </p>
 
                 <!-- CTA Buttons -->
-                <div class="d-flex justify-content-center mb-64pt">
+                <div
+                  class="hero-cta-wrapper d-flex justify-content-center mb-64pt">
                   <a
                     href="login.html"
                     class="btn btn-md btn-primary btn-rounded mr-3">
@@ -215,35 +178,6 @@
                     >Criar Conta</a
                   >
                 </div>
-
-                <!-- Stats
-                <div class="row justify-content-center">
-                  <div class="col-auto text-center px-5">
-                    <h2 class="text-white mb-0" style="font-weight: 600">
-                      150+
-                    </h2>
-                    <p class="text-white-50 mb-0" style="font-size: 0.95rem">
-                      Cursos
-                    </p>
-                  </div>
-                  <div class="col-auto text-center px-5">
-                    <h2 class="text-white mb-0" style="font-weight: 600">
-                      50.000+
-                    </h2>
-                    <p class="text-white-50 mb-0" style="font-size: 0.95rem">
-                      Alunos
-                    </p>
-                  </div>
-                  <div class="col-auto text-center px-5">
-                    <h2 class="text-white mb-0" style="font-weight: 600">
-                      +300
-                    </h2>
-                    <p class="text-white-50 mb-0" style="font-size: 0.95rem">
-                      Empresas clientes
-                    </p>
-                  </div>
-                </div>
-              END Stats -->
               </div>
             </div>
           </div>
@@ -254,7 +188,16 @@
           <div class="pt-32pt">
             <!-- Carousel 1: Explore e Comece Agora -->
             <div class="carousel-section" data-carousel-id="explore">
-              <h3 class="carousel-section__title">Explore e Comece Agora</h3>
+              <div class="carousel-section__header">
+                <div class="carousel-section__title-wrapper">
+                  <i class="material-icons carousel-section__icon">explore</i>
+                  <h3 class="carousel-section__title">
+                    Explore e Comece Agora
+                  </h3>
+                  <div class="carousel-section__line"></div>
+                </div>
+                <a href="login.html" class="carousel-section__link">Ver mais</a>
+              </div>
               <div class="carousel-wrapper">
                 <button
                   class="carousel-btn carousel-btn--prev"
@@ -412,7 +355,14 @@
 
             <!-- Carousel 2: Mais recomendados -->
             <div class="carousel-section" data-carousel-id="recommended">
-              <h3 class="carousel-section__title">Mais recomendados</h3>
+              <div class="carousel-section__header">
+                <div class="carousel-section__title-wrapper">
+                  <i class="material-icons carousel-section__icon">thumb_up</i>
+                  <h3 class="carousel-section__title">Mais recomendados</h3>
+                  <div class="carousel-section__line"></div>
+                </div>
+                <a href="login.html" class="carousel-section__link">Ver mais</a>
+              </div>
               <div class="carousel-wrapper">
                 <button
                   class="carousel-btn carousel-btn--prev"
@@ -570,9 +520,18 @@
               </div>
             </div>
 
-            <!-- Carousel 3: Alta avaliação -->
+            <!-- Carousel 3: Novidades -->
             <div class="carousel-section" data-carousel-id="top-rated">
-              <h3 class="carousel-section__title">Alta avaliação</h3>
+              <div class="carousel-section__header">
+                <div class="carousel-section__title-wrapper">
+                  <i class="material-symbols-rounded carousel-section__icon"
+                    >podcasts</i
+                  >
+                  <h3 class="carousel-section__title">Novidades</h3>
+                  <div class="carousel-section__line"></div>
+                </div>
+                <a href="login.html" class="carousel-section__link">Ver mais</a>
+              </div>
               <div class="carousel-wrapper">
                 <button
                   class="carousel-btn carousel-btn--prev"
@@ -811,95 +770,5 @@
 
     <!-- Not-Logged Streaming Script -->
     <script src="../../public/js/not-logged-streaming.js"></script>
-
-    <script>
-      (function () {
-        "use strict";
-        var headerNode = document.querySelector(".mdk-header");
-        var layoutNode = document.querySelector(".mdk-header-layout");
-        var componentNode = layoutNode ? layoutNode : headerNode;
-        componentNode.addEventListener(
-          "domfactory-component-upgraded",
-          function () {
-            headerNode.mdkHeader.eventTarget.addEventListener(
-              "scroll",
-              function () {
-                var progress = headerNode.mdkHeader.getScrollState().progress;
-                var navbarNode = headerNode.querySelector("#default-navbar");
-                navbarNode.classList.toggle("bg-transparent", progress <= 0.2);
-              }
-            );
-          }
-        );
-      })();
-    </script>
-
-    <script>
-      (function () {
-        var sections = document.querySelectorAll(".course-grid-section");
-        if (!sections.length) {
-          return;
-        }
-
-        sections.forEach(function (section) {
-          var button = section.querySelector("[data-show-more-target]");
-          var targetId = button
-            ? button.getAttribute("data-show-more-target")
-            : null;
-          var targetSection = targetId
-            ? document.getElementById(targetId)
-            : section;
-          var grid = targetSection
-            ? targetSection.querySelector(".course-grid-4")
-            : null;
-          if (!grid || !button) {
-            return;
-          }
-
-          if (!grid) {
-            return;
-          }
-
-          var extras = grid.querySelectorAll(".course-card--extra");
-          if (!extras.length) {
-            button.parentNode.style.display = "none";
-            return;
-          }
-
-          function isCollapsed() {
-            return grid.getAttribute("data-collapsed") !== "false";
-          }
-
-          function updateLabel() {
-            var collapsed = isCollapsed();
-            var label = button.querySelector(".btn__label");
-            var icon = button.querySelector(".material-icons");
-            if (label) {
-              label.textContent = collapsed ? "Mostrar mais" : "Mostrar menos";
-            } else {
-              button.textContent = collapsed ? "Mostrar mais" : "Mostrar menos";
-            }
-            if (icon) {
-              icon.textContent = collapsed ? "expand_more" : "expand_less";
-            }
-            button.setAttribute("aria-expanded", (!collapsed).toString());
-            section.classList.toggle(
-              "course-grid-section--expanded",
-              !collapsed
-            );
-          }
-
-          button.addEventListener("click", function () {
-            grid.setAttribute(
-              "data-collapsed",
-              isCollapsed() ? "false" : "true"
-            );
-            updateLabel();
-          });
-
-          updateLabel();
-        });
-      })();
-    </script>
   </body>
 </html>

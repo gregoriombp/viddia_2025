@@ -7,71 +7,87 @@
 (function() {
   'use strict';
 
+  // Constants
+  const SCROLL_PERCENTAGE = 0.7;
+  const SCROLL_THRESHOLD = 1;
+  const NAVBAR_TRANSITION_PROGRESS = 0.2;
+  const SELECTORS = {
+    carousel: '[data-carousel-id]',
+    viewport: '.carousel-viewport',
+    prevBtn: '.carousel-btn--prev',
+    nextBtn: '.carousel-btn--next',
+    courseCard: '.carousel-card',
+    modal: '#login-modal',
+    closeModal: '[data-close-modal]',
+    header: '.mdk-header',
+    headerLayout: '.mdk-header-layout',
+    defaultNavbar: '#default-navbar'
+  };
+
   /**
    * MÓDULO 1: GERENCIADOR DE CARROSSÉIS
-   * Responsável por:
-   * - Inicializar todos os carrosséis da página
-   * - Gerenciar scroll horizontal com botões de navegação
-   * - Atualizar estado dos botões (disabled) conforme scroll
-   * - Observar redimensionamento para ajustar comportamento
    */
   const CarouselManager = {
+    carousels: [],
+
     /**
      * Inicializa todos os carrosséis encontrados na página
      */
     init() {
-      const carousels = document.querySelectorAll('[data-carousel-id]');
+      const carousels = document.querySelectorAll(SELECTORS.carousel);
 
-      if (carousels.length === 0) {
-        console.warn('Nenhum carrossel encontrado na página');
+      if (!carousels.length) {
         return;
       }
 
       carousels.forEach(carousel => {
-        this.setupCarousel(carousel);
+        const instance = this.setupCarousel(carousel);
+        if (instance) {
+          this.carousels.push(instance);
+        }
       });
-
-      console.log(`${carousels.length} carrossel(is) inicializado(s)`);
     },
 
     /**
      * Configura um carrossel individual
      * @param {HTMLElement} carouselEl - Elemento raiz do carrossel
+     * @returns {Object|null} Instância do carrossel ou null
      */
     setupCarousel(carouselEl) {
-      const viewport = carouselEl.querySelector('.carousel-viewport');
-      const prevBtn = carouselEl.querySelector('.carousel-btn--prev');
-      const nextBtn = carouselEl.querySelector('.carousel-btn--next');
+      const viewport = carouselEl.querySelector(SELECTORS.viewport);
+      const prevBtn = carouselEl.querySelector(SELECTORS.prevBtn);
+      const nextBtn = carouselEl.querySelector(SELECTORS.nextBtn);
 
-      // Validação: garantir que os elementos existam
       if (!viewport || !prevBtn || !nextBtn) {
-        console.warn('Estrutura incompleta do carrossel:', carouselEl);
-        return;
+        return null;
       }
 
-      // Event listeners para os botões
-      prevBtn.addEventListener('click', () => {
-        this.scroll(viewport, -1); // Scroll para esquerda
-      });
+      const instance = {
+        viewport,
+        prevBtn,
+        nextBtn,
+        observer: null
+      };
 
-      nextBtn.addEventListener('click', () => {
-        this.scroll(viewport, 1); // Scroll para direita
-      });
+      // Event listeners para os botões
+      prevBtn.addEventListener('click', () => this.scroll(viewport, -1));
+      nextBtn.addEventListener('click', () => this.scroll(viewport, 1));
 
       // Atualizar estado dos botões ao fazer scroll
-      viewport.addEventListener('scroll', () => {
-        this.updateButtons(viewport, prevBtn, nextBtn);
-      });
+      viewport.addEventListener('scroll', () =>
+        this.updateButtons(prevBtn, nextBtn, viewport)
+      );
 
       // ResizeObserver para atualizar botões quando viewport mudar de tamanho
-      // Importante para responsividade
-      const resizeObserver = new ResizeObserver(() => {
-        this.updateButtons(viewport, prevBtn, nextBtn);
-      });
-      resizeObserver.observe(viewport);
+      instance.observer = new ResizeObserver(() =>
+        this.updateButtons(prevBtn, nextBtn, viewport)
+      );
+      instance.observer.observe(viewport);
 
       // Definir estado inicial dos botões
-      this.updateButtons(viewport, prevBtn, nextBtn);
+      this.updateButtons(prevBtn, nextBtn, viewport);
+
+      return instance;
     },
 
     /**
@@ -80,42 +96,47 @@
      * @param {number} direction - Direção: -1 (esquerda) ou 1 (direita)
      */
     scroll(viewport, direction) {
-      // Calcula quanto scrollar: 70% da largura visível
-      // Isso garante que sempre mostramos novos cards sem cortar muito
-      const scrollAmount = viewport.clientWidth * 0.7;
+      if (!viewport) return;
+
+      const scrollAmount = viewport.clientWidth * SCROLL_PERCENTAGE;
 
       viewport.scrollBy({
         left: scrollAmount * direction,
-        behavior: 'smooth' // Scroll suave nativo do navegador
+        behavior: 'smooth'
       });
     },
 
     /**
      * Atualiza estado disabled dos botões baseado na posição do scroll
-     * @param {HTMLElement} viewport - Elemento scrollável
      * @param {HTMLElement} prevBtn - Botão anterior
      * @param {HTMLElement} nextBtn - Botão próximo
+     * @param {HTMLElement} viewport - Elemento scrollável
      */
-    updateButtons(viewport, prevBtn, nextBtn) {
+    updateButtons(prevBtn, nextBtn, viewport) {
+      if (!viewport || !prevBtn || !nextBtn) return;
+
       const scrollLeft = viewport.scrollLeft;
       const maxScroll = viewport.scrollWidth - viewport.clientWidth;
 
-      // Desabilita botão prev se estiver no início
-      // Margem de 1px para evitar problemas de arredondamento
-      prevBtn.disabled = scrollLeft <= 1;
+      prevBtn.disabled = scrollLeft <= SCROLL_THRESHOLD;
+      nextBtn.disabled = scrollLeft >= maxScroll - SCROLL_THRESHOLD;
+    },
 
-      // Desabilita botão next se estiver no fim
-      nextBtn.disabled = scrollLeft >= maxScroll - 1;
+    /**
+     * Limpa recursos dos carrosséis
+     */
+    destroy() {
+      this.carousels.forEach(instance => {
+        if (instance.observer) {
+          instance.observer.disconnect();
+        }
+      });
+      this.carousels = [];
     }
   };
 
   /**
    * MÓDULO 2: GERENCIADOR DE MODAL
-   * Responsável por:
-   * - Abrir/fechar modal de login
-   * - Gerenciar cliques nos cards de curso
-   * - Gerenciar fechamento via ESC, backdrop ou botão X
-   * - Prevenir scroll do body quando modal está aberto
    */
   const ModalManager = {
     currentModal: null,
@@ -124,47 +145,30 @@
      * Inicializa event listeners do modal
      */
     init() {
-      // Listeners nos cards de curso para abrir modal
       this.attachCardListeners();
-
-      // Listeners para fechar modal (botão X e backdrop)
       this.attachCloseListeners();
-
-      // Listener para tecla ESC
       this.attachKeyboardListeners();
-
-      console.log('Modal Manager inicializado');
     },
 
     /**
      * Adiciona listeners nos cards de curso
-     * Quando clicado, abre modal de login
      */
     attachCardListeners() {
-      const courseCards = document.querySelectorAll('.carousel-card');
+      const courseCards = document.querySelectorAll(SELECTORS.courseCard);
 
       courseCards.forEach(card => {
         card.addEventListener('click', (e) => {
-          e.preventDefault(); // Prevenir navegação padrão
-
-          // Pode extrair informações do card se necessário
-          const courseId = card.dataset.courseId || '';
-
-          // Abrir modal de login
-          this.open('login-modal');
+          e.preventDefault();
+          this.open(SELECTORS.modal.substring(1));
         });
       });
-
-      if (courseCards.length > 0) {
-        console.log(`Listeners adicionados em ${courseCards.length} cards de curso`);
-      }
     },
 
     /**
      * Adiciona listeners para fechar modal
      */
     attachCloseListeners() {
-      const closeButtons = document.querySelectorAll('[data-close-modal]');
+      const closeButtons = document.querySelectorAll(SELECTORS.closeModal);
 
       closeButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -193,18 +197,12 @@
       const modal = document.getElementById(modalId);
 
       if (!modal) {
-        console.error(`Modal com ID "${modalId}" não encontrado`);
         return;
       }
 
-      // Adiciona classe para mostrar modal
       modal.classList.add('modal--visible');
       this.currentModal = modal;
-
-      // Prevenir scroll do body enquanto modal está aberto
       document.body.style.overflow = 'hidden';
-
-      console.log(`Modal "${modalId}" aberto`);
     },
 
     /**
@@ -215,40 +213,66 @@
         return;
       }
 
-      // Remove classe de visibilidade
       this.currentModal.classList.remove('modal--visible');
-
-      // Limpa referência
-      const modalId = this.currentModal.id;
       this.currentModal = null;
-
-      // Restaurar scroll do body
       document.body.style.overflow = '';
+    }
+  };
 
-      console.log(`Modal "${modalId}" fechado`);
+  /**
+   * MÓDULO 3: GERENCIADOR DE HEADER
+   */
+  const HeaderManager = {
+    /**
+     * Inicializa comportamento do header
+     */
+    init() {
+      const headerNode = document.querySelector(SELECTORS.header);
+      const layoutNode = document.querySelector(SELECTORS.headerLayout);
+      const componentNode = layoutNode || headerNode;
+
+      if (!componentNode || !headerNode) {
+        return;
+      }
+
+      componentNode.addEventListener('domfactory-component-upgraded', () => {
+        if (!headerNode.mdkHeader) return;
+
+        headerNode.mdkHeader.eventTarget.addEventListener('scroll', () => {
+          const progress = headerNode.mdkHeader.getScrollState().progress;
+          const navbarNode = headerNode.querySelector(SELECTORS.defaultNavbar);
+
+          if (navbarNode) {
+            navbarNode.classList.toggle('bg-transparent', progress <= NAVBAR_TRANSITION_PROGRESS);
+          }
+        });
+      });
     }
   };
 
   /**
    * INICIALIZAÇÃO PRINCIPAL
-   * Aguarda o DOM estar pronto antes de inicializar os módulos
    */
   function initialize() {
-    // Inicializa gerenciador de carrosséis
-    CarouselManager.init();
-
-    // Inicializa gerenciador de modal
-    ModalManager.init();
-
-    console.log('Sistema de streaming inicializado com sucesso');
+    try {
+      CarouselManager.init();
+      ModalManager.init();
+      HeaderManager.init();
+    } catch (error) {
+      console.error('Erro ao inicializar sistema de streaming:', error);
+    }
   }
 
   // Aguarda DOM estar carregado
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initialize);
   } else {
-    // DOM já está pronto
     initialize();
   }
+
+  // Cleanup ao sair da página
+  window.addEventListener('beforeunload', () => {
+    CarouselManager.destroy();
+  });
 
 })();
