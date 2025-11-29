@@ -1269,6 +1269,382 @@
 }
 
 /* ==========================================
+   COURSE MATERIALS HUB - Centralized materials dropdown
+   ========================================== */
+
+/* Hub Container */
+.course-materials-hub {
+    margin-top: 24px;
+}
+
+.course-materials-hub__intro {
+    margin-bottom: 16px;
+}
+
+.course-materials-hub__intro h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.course-materials-hub__intro p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Dropdown Container */
+.course-materials-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Main Toggle Button */
+.course-materials-dropdown__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.938rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.course-materials-dropdown__toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.course-materials-dropdown__toggle:active {
+    transform: translateY(0);
+}
+
+.course-materials-dropdown__toggle .material-symbols-rounded {
+    font-size: 22px;
+}
+
+.course-materials-dropdown__title {
+    font-size: 0.938rem;
+}
+
+.course-materials-dropdown__badge {
+    padding: 2px 8px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.course-materials-dropdown__arrow {
+    font-size: 22px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dropdown Menu */
+.course-materials-dropdown__menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    min-width: 420px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    overflow: hidden;
+    animation: dropdownSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.course-materials-dropdown__menu[hidden] {
+    display: none;
+}
+
+/* Menu Header */
+.course-materials-dropdown__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 0.813rem;
+    font-weight: 600;
+    color: #5a6c7d;
+}
+
+.course-materials-dropdown__header .material-symbols-rounded {
+    font-size: 20px;
+    color: #667eea;
+}
+
+/* Accordion Container */
+.course-materials-accordion {
+    max-height: 550px;
+    overflow-y: auto;
+    padding: 0;
+}
+
+/* Custom Scrollbar */
+.course-materials-accordion::-webkit-scrollbar {
+    width: 8px;
+}
+
+.course-materials-accordion::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.course-materials-accordion::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.3);
+    border-radius: 4px;
+}
+
+.course-materials-accordion::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.5);
+}
+
+/* Accordion Item */
+.course-materials-accordion__item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.course-materials-accordion__item:last-child {
+    border-bottom: none;
+}
+
+/* Accordion Trigger (Module Header) */
+.course-materials-accordion__trigger {
+    width: 100%;
+    padding: 16px 20px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: left;
+}
+
+.course-materials-accordion__trigger:hover {
+    background-color: rgba(102, 126, 234, 0.04);
+}
+
+.course-materials-accordion__trigger[aria-expanded="true"] {
+    background-color: rgba(102, 126, 234, 0.06);
+}
+
+.course-materials-accordion__trigger-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Chevron Icon */
+.course-materials-accordion__chevron {
+    font-size: 20px;
+    color: #667eea;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.course-materials-accordion__trigger[aria-expanded="true"] .course-materials-accordion__chevron {
+    transform: rotate(90deg);
+}
+
+/* Module Title */
+.course-materials-accordion__module-title {
+    font-size: 0.938rem;
+    font-weight: 600;
+    color: #2d3748;
+    flex: 1;
+}
+
+/* Module Badge */
+.course-materials-accordion__module-badge {
+    padding: 4px 10px;
+    background: #e8ecf1;
+    color: #5a6c7d;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.course-materials-accordion-total-files {
+    padding: 4px 10px;
+    background: #e8ecf1;
+    color: #5a6c7d00;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: var(--module-border);
+    transition: all 0.3s ease;
+}
+
+.course-materials-accordion__trigger[aria-expanded="true"] .course-materials-accordion__module-badge {
+    background: #667eea;
+    color: white;
+}
+
+/* Accordion Panel (File List Container) */
+.course-materials-accordion__panel {
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+}
+
+.course-materials-accordion__panel[hidden] {
+    display: block;
+    max-height: 0;
+}
+
+/* File List */
+.course-materials-accordion__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #fafbfc;
+}
+
+.course-materials-accordion__list-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.course-materials-accordion__list-item:last-child {
+    border-bottom: none;
+}
+
+/* File Link */
+.course-materials-accordion__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px 14px 52px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.course-materials-accordion__link:hover {
+    background-color: rgba(102, 126, 234, 0.08);
+    padding-left: 56px;
+}
+
+/* File Info Section */
+.course-materials-accordion__file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* File Icon */
+.course-materials-accordion__icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.course-materials-accordion__icon--pdf {
+    color: #e74c3c;
+}
+
+.course-materials-accordion__icon--doc {
+    color: #3498db;
+}
+
+.course-materials-accordion__icon--sheet {
+    color: #27ae60;
+}
+
+.course-materials-accordion__icon--ppt {
+    color: #e67e22;
+}
+
+.course-materials-accordion__icon--zip {
+    color: #95a5a6;
+}
+
+/* File Text */
+.course-materials-accordion__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.course-materials-accordion__filename {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #2d3748;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.course-materials-accordion__filesize {
+    font-size: 0.75rem;
+    color: #718096;
+}
+
+/* Download Icon */
+.course-materials-accordion__download {
+    font-size: 20px;
+    color: #667eea;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.course-materials-accordion__link:hover .course-materials-accordion__download {
+    transform: translateY(2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .course-materials-dropdown__menu {
+        min-width: 360px;
+        max-width: calc(100vw - 32px);
+    }
+
+    .course-materials-accordion {
+        max-height: 500px;
+    }
+
+    .course-materials-accordion__link {
+        padding: 12px 16px 12px 48px;
+    }
+
+    .course-materials-accordion__link:hover {
+        padding-left: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .course-materials-dropdown__toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .course-materials-dropdown__menu {
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 320px;
+    }
+
+    .course-materials-accordion {
+        max-height: 400px;
+    }
+
+    .course-materials-accordion__filename {
+        font-size: 0.813rem;
+    }
+
+    .course-materials-accordion__icon {
+        font-size: 28px;
+    }
+}
+
+/* ==========================================
    BUTTONS - Light Mode
    ========================================== */
 
@@ -1332,10 +1708,13 @@
 }
 
 @keyframes pulse-milestone {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
         transform: scale(1);
     }
+
     50% {
         opacity: 0.7;
         transform: scale(1.15);

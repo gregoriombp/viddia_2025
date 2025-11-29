@@ -1,0 +1,743 @@
+/* ========================================
+   NOT-LOGGED-STREAMING.CSS
+   Experiência Netflix/Prime Video PREMIUM
+   Visual deslumbrante e cinematográfico
+   ======================================== */
+
+/* ==========================================
+   CAROUSEL SECTIONS - FULL WIDTH
+   ========================================== */
+
+/* Container principal - SEM limitação de largura */
+.carousel-section {
+  padding: 60px 0;
+  margin-bottom: 40px;
+  width: 100%;
+  overflow: visible !important; /* IMPORTANTE: Permitir que hover expanda para fora */
+}
+
+/* Título da seção - com padding lateral apenas para o título */
+.carousel-section__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-theme-35);
+  margin-bottom: 32px;
+  padding: 0 4%;
+  letter-spacing: -0.5px;
+}
+
+/* Wrapper - full width com padding lateral mínimo */
+.carousel-wrapper {
+  position: relative;
+  padding: 0 4%; /* Apenas 4% de padding lateral */
+  width: 100%;
+  overflow: visible !important; /* IMPORTANTE: Permitir expansão do hover */
+}
+
+/* ==========================================
+   FADE MASKS - Efeito Netflix/Prime Video
+   ========================================== */
+
+/* Máscara esquerda - gradiente de opaco para transparente */
+.carousel-wrapper::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background: linear-gradient(
+    to right,
+    rgba(10, 15, 25, 1) 0%,
+    rgba(10, 15, 25, 0.85) 25%,
+    rgba(10, 15, 25, 0.5) 50%,
+    rgba(10, 15, 25, 0) 100%
+  );
+  z-index: 10;
+  pointer-events: none; /* Não bloquear cliques */
+}
+
+/* Máscara direita - gradiente de transparente para opaco */
+.carousel-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background: linear-gradient(
+    to left,
+    rgba(10, 15, 25, 1) 0%,
+    rgba(10, 15, 25, 0.85) 25%,
+    rgba(10, 15, 25, 0.5) 50%,
+    rgba(10, 15, 25, 0) 100%
+  );
+  z-index: 10;
+  pointer-events: none; /* Não bloquear cliques */
+}
+
+/* Viewport - área rolável horizontal */
+.carousel-viewport {
+  display: flex;
+  gap: 24px; /* Gap maior para cards maiores */
+  overflow-x: auto;
+  overflow-y: visible; /* IMPORTANTE: permitir que hover expanda verticalmente */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 48px 0 64px 0; /* AUMENTADO: Padding vertical muito mais generoso para hover */
+
+  /* Ocultar scrollbar nativa */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==========================================
+   NAVIGATION BUTTONS - Mais proeminentes
+   ========================================== */
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30; /* Acima das fade masks (z-index: 10) */
+
+  /* Visual mais chamativo */
+  background: rgba(10, 15, 30, 0.95);
+  border: 2px solid rgba(96, 165, 250, 0.4);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Ícone maior */
+  color: #60a5fa;
+  font-size: 32px;
+
+  /* Interação suave */
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: rgba(59, 130, 246, 1);
+  border-color: rgba(96, 165, 250, 0.8);
+  color: white;
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.6),
+              0 0 48px rgba(96, 165, 250, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn--prev {
+  left: 1%;
+}
+
+.carousel-btn--next {
+  right: 1%;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ==========================================
+   COURSE CARDS - TAMANHO GRANDE E IMPACTANTE
+   ========================================== */
+
+.carousel-card {
+  position: relative;
+
+  /* CARDS MAIORES - 340px no desktop */
+  flex: 0 0 340px;
+  width: 340px;
+  min-height: 191px; /* Mantém aspect ratio 16:9 */
+
+  /* Visual premium */
+  border-radius: 12px;
+  overflow: visible; /* IMPORTANTE: permitir expansão no hover */
+  background: rgba(20, 25, 35, 0.8);
+
+  /* Interação suave */
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Sombra inicial sutil */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Container da thumbnail */
+.carousel-card__thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a1f2e 0%, #0f1218 100%);
+}
+
+.carousel-card__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: brightness(0.9);
+}
+
+/* ==========================================
+   HOVER EFFECTS - ULTRA DRAMÁTICO E MODERNO
+   ========================================== */
+
+@media (min-width: 1024px) {
+  /* EXPANSÃO DRAMÁTICA no hover */
+  .carousel-card:hover {
+    /* Expansão significativa - 1.25x */
+    transform: scale(1.25) translateY(-16px);
+
+    /* Sombra ultra dramática com glow azul */
+    box-shadow:
+      0 0 60px rgba(96, 165, 250, 0.6),
+      0 20px 80px rgba(0, 0, 0, 0.8),
+      0 0 120px rgba(59, 130, 246, 0.4);
+
+    /* Prioridade visual MÁXIMA */
+    z-index: 9999 !important;
+    position: relative !important;
+
+    /* Border luminoso */
+    outline: 2px solid rgba(96, 165, 250, 0.5);
+    outline-offset: 4px;
+  }
+
+  /* Garantir que o viewport permita expansão total */
+  .carousel-viewport:has(.carousel-card:hover) {
+    overflow: visible !important;
+  }
+
+  /* Zoom dramático na imagem */
+  .carousel-card:hover .carousel-card__thumbnail img {
+    transform: scale(1.15);
+    filter: brightness(1.1) contrast(1.05);
+  }
+
+  /* Mostrar overlay com animação suave */
+  .carousel-card:hover .carousel-card__overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Delay escalonado dos elementos do overlay */
+  .carousel-card:hover .overlay__title {
+    transition-delay: 0.1s;
+  }
+
+  .carousel-card:hover .overlay__meta {
+    transition-delay: 0.15s;
+  }
+
+  .carousel-card:hover .overlay__description {
+    transition-delay: 0.2s;
+  }
+
+  .carousel-card:hover .overlay__cta {
+    transition-delay: 0.25s;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   OVERLAY - GRADIENTE PREMIUM COM MAIS INFO
+   ========================================== */
+
+.carousel-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Gradiente mais intenso e dramático */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.85) 70%,
+    rgba(10, 15, 25, 0.98) 100%
+  );
+
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  border-radius: 12px;
+
+  /* Estado inicial - invisível e deslocado */
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Título do curso - maior e mais impactante */
+.overlay__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+
+  /* Limitar a 2 linhas */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  /* Sombra de texto para legibilidade */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+
+  transition: all 0.3s ease;
+}
+
+/* Meta info - módulos + rating */
+.overlay__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.overlay__meta .material-icons {
+  font-size: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.overlay__meta .rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.overlay__meta .rating .material-icons {
+  color: #fbbf24;
+  font-size: 18px;
+  margin-right: 2px;
+}
+
+/* NOVA: Descrição curta do curso */
+.overlay__description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(226, 232, 240, 0.85);
+  margin-bottom: 16px;
+
+  /* Limitar a 2 linhas */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+}
+
+/* Botão CTA - mais chamativo */
+.overlay__cta {
+  /* Visual premium */
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* Layout */
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  /* Efeitos */
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Estado inicial */
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.overlay__cta::after {
+  content: '→';
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.overlay__cta:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.6);
+  transform: translateY(-3px);
+}
+
+.overlay__cta:hover::after {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   LOGIN MODAL - Mantido do original
+   ========================================== */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.modal.modal--visible {
+  display: block;
+}
+
+.modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal__dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 520px;
+  background: #161a26;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.6);
+  animation: modalSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1001;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: rgba(148, 163, 184, 0.8);
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.modal__close:hover {
+  color: #f2f9ff;
+  background: rgba(96, 165, 250, 0.15);
+}
+
+.modal__close .material-icons {
+  font-size: 28px;
+}
+
+.modal__header {
+  padding: 40px 32px 20px;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.15);
+}
+
+.modal__header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #f2f9ff;
+  margin: 0;
+}
+
+.modal__body {
+  padding: 28px 32px;
+}
+
+.modal__body p {
+  font-size: 16px;
+  color: rgba(148, 163, 184, 0.95);
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.modal__footer {
+  padding: 20px 32px 32px;
+  display: flex;
+  gap: 16px;
+}
+
+.modal__footer .btn {
+  flex: 1;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.modal__footer .btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+}
+
+.modal__footer .btn-primary:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.5);
+}
+
+.modal__footer .btn-secondary {
+  background: transparent;
+  color: #60a5fa;
+  border: 2px solid #60a5fa;
+}
+
+.modal__footer .btn-secondary:hover {
+  background: rgba(96, 165, 250, 0.1);
+  border-color: #93c5fd;
+}
+
+/* ==========================================
+   RESPONSIVE - TABLET
+   ========================================== */
+
+@media (max-width: 1279px) {
+  /* Cards médios em tablet */
+  .carousel-card {
+    flex: 0 0 280px;
+    width: 280px;
+  }
+
+  .carousel-section__title {
+    font-size: 1.75rem;
+  }
+
+  /* Hover simplificado */
+  .carousel-card:hover {
+    transform: scale(1.08) translateY(-8px);
+  }
+}
+
+@media (max-width: 1023px) {
+  /* Cards menores em tablet pequeno */
+  .carousel-card {
+    flex: 0 0 240px;
+    width: 240px;
+  }
+
+  .carousel-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+  }
+
+  /* Overlay simplificado */
+  .carousel-card:hover .carousel-card__overlay {
+    opacity: 0;
+  }
+
+  .carousel-card:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+   ========================================== */
+
+@media (max-width: 767px) {
+  /* Cards compactos em mobile */
+  .carousel-card {
+    flex: 0 0 200px;
+    width: 200px;
+  }
+
+  .carousel-viewport {
+    gap: 16px;
+    padding: 16px 0 32px 0;
+  }
+
+  /* Esconder botões - usar swipe */
+  .carousel-btn {
+    display: none;
+  }
+
+  .carousel-wrapper {
+    padding: 0 3%;
+  }
+
+  /* Fade masks menores em mobile */
+  .carousel-wrapper::before,
+  .carousel-wrapper::after {
+    width: 60px;
+  }
+
+  .carousel-section__title {
+    font-size: 1.5rem;
+    padding: 0 3%;
+  }
+
+  .carousel-section {
+    padding: 40px 0;
+    margin-bottom: 24px;
+  }
+
+  /* Remover hover effects */
+  .carousel-card:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .carousel-card:hover .carousel-card__thumbnail img {
+    transform: none;
+  }
+
+  .carousel-card:hover .carousel-card__overlay {
+    opacity: 0;
+  }
+
+  /* Modal mobile */
+  .modal__dialog {
+    width: 95%;
+    border-radius: 12px;
+  }
+
+  .modal__header {
+    padding: 32px 24px 16px;
+  }
+
+  .modal__header h2 {
+    font-size: 22px;
+  }
+
+  .modal__body {
+    padding: 20px 24px;
+  }
+
+  .modal__footer {
+    flex-direction: column;
+    padding: 16px 24px 24px;
+  }
+
+  .modal__footer .btn {
+    width: 100%;
+  }
+}
+
+/* ==========================================
+   EXTRA: Animação sutil ao carregar página
+   ========================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.carousel-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.carousel-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* ==========================================
+   POLISH: Prevent layout shift during hover
+   ========================================== */
+
+/* Garante que a página tenha espaço para expansão do hover */
+.page-section {
+  overflow: visible !important;
+  padding-bottom: 120px !important; /* AUMENTADO: Espaço extra para hover expansion */
+}
+
+/* Forçar overflow visible em containers pai */
+.mdk-header-layout__content,
+.page-content,
+.mdk-header-layout,
+.container,
+.page__container {
+  overflow: visible !important;
+}
+
+/* IMPORTANTE: Remover qualquer clip-path ou contain que possa cortar o card */
+.carousel-section *,
+.carousel-wrapper *,
+.carousel-viewport * {
+  contain: none !important;
+}
+
+/* Garantir que o body e HTML também permitam overflow */
+body.layout-sticky-subnav,
+html {
+  overflow-x: hidden; /* Prevenir scroll horizontal */
+  overflow-y: visible !important; /* Permitir expansão vertical */
+}
+
+/* Container do viewport NÃO deve clipar conteúdo */
+.carousel-viewport {
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+}

@@ -73,6 +73,12 @@
       type="text/css"
       href="../../public/css/index-dark.css"
       rel="stylesheet" />
+
+    <!-- Not-Logged Streaming Styles -->
+    <link
+      type="text/css"
+      href="../../public/css/not-logged-streaming.css"
+      rel="stylesheet" />
   </head>
 
   <body class="layout-sticky-subnav layout-default">
@@ -203,10 +209,10 @@
                   <a
                     href="login.html"
                     class="btn btn-md btn-primary btn-rounded mr-3">
-                    <span class="mr-0">Faça seu Login</span>
+                    <span class="mr-0">Fazer Login</span>
                   </a>
                   <a href="#" class="btn btn-md btn-outline-white btn-rounded"
-                    >Falar com vendas</a
+                    >Criar Conta</a
                   >
                 </div>
 
@@ -243,507 +249,482 @@
           </div>
         </div>
 
-        <!-- Course Grid Section -->
+        <!-- Course Carousels Section -->
         <div class="page-section">
-          <div class="container page__container pt-32pt">
-            <div class="course-grid-section" id="courses-explore">
-              <div class="page-separator">
-                <div
-                  class="page-separator__text-free d-flex justify-content-between align-items-center">
-                  <h3>Explore e Comece Agora</h3>
-                </div>
-              </div>
-
-              <div class="course-grid-4" data-collapsed="true">
-                <!-- Course Card 1 -->
-                <article class="course-card course-card--not-started">
-                  <div class="course-card__thumbnail">
-                    <img
-                      src="../../public/images/Course thumbnails/course_16_9-thumb_15.jpg"
-                      alt="Typescript para back-end avançado" />
-                    <div class="course-card__enroll-overlay">
-                      <span class="material-icons mb-2" style="font-size: 32px"
-                        >school</span
-                      >
-                      <span>Matricular</span>
-                    </div>
-                  </div>
-                  <div class="course-card__body">
-                    <div class="course-card__meta justify-content-between">
-                      <span class="course-card__meta-item">
-                        <i class="material-icons">format_list_bulleted</i>
-                        <span>6 Módulos</span>
-                      </span>
-                      <div
-                        class="course-card__rating"
-                        aria-label="Avaliação 4.7 de 5">
-                        <i class="material-icons">star</i>
-                        <span class="course-card__rating-value">4.7</span>
-                      </div>
-                    </div>
-                    <h3 class="course-card__title">
-                      <a href="login.html">Typescript para back-end avançado</a>
-                    </h3>
-                    <p class="course-card__description">
-                      Explore as melhores práticas para desenvolver back-ends
-                      robustos
-                    </p>
-                  </div>
-                </article>
-
-                <!-- Course Card 2 -->
-                <article class="course-card course-card--not-started">
-                  <div class="course-card__thumbnail">
-                    <img
-                      src="../../public/images/Course thumbnails/course_16_9-thumb_3.jpg"
-                      alt="Liderança e Gestão de Equipes" />
-                    <div class="course-card__enroll-overlay">
-                      <span class="material-icons mb-2" style="font-size: 32px"
-                        >school</span
-                      >
-                      <span>Matricular</span>
-                    </div>
-                  </div>
-                  <div class="course-card__body">
-                    <div class="course-card__meta justify-content-between">
-                      <span class="course-card__meta-item">
-                        <i class="material-icons">format_list_bulleted</i>
-                        <span>8 Módulos</span>
-                      </span>
-                      <div
-                        class="course-card__rating"
-                        aria-label="Avaliação 4.8 de 5">
-                        <i class="material-icons">star</i>
-                        <span class="course-card__rating-value">4.8</span>
-                      </div>
-                    </div>
-                    <h3 class="course-card__title">
-                      <a href="login.html">Liderança e Gestão de Equipes</a>
-                    </h3>
-                    <p class="course-card__description">
-                      Desenvolva habilidades essenciais para liderar times de
-                      alta performance.
-                    </p>
-                  </div>
-                </article>
-
-                <!-- Course Card 3 -->
-                <article class="course-card course-card--not-started">
-                  <div class="course-card__thumbnail">
-                    <img
-                      src="../../public/images/Course thumbnails/course_16_9-thumb_4.jpg"
-                      alt="Marketing Digital para Negócios" />
-                    <div class="course-card__enroll-overlay">
-                      <span class="material-icons mb-2" style="font-size: 32px"
-                        >school</span
-                      >
-                      <span>Matricular</span>
-                    </div>
-                  </div>
-                  <div class="course-card__body">
-                    <div class="course-card__meta justify-content-between">
-                      <span class="course-card__meta-item">
-                        <i class="material-icons">format_list_bulleted</i>
-                        <span>5 Módulos</span>
-                      </span>
-                      <div
-                        class="course-card__rating"
-                        aria-label="Avaliação 4.7 de 5">
-                        <i class="material-icons">star</i>
-                        <span class="course-card__rating-value">4.7</span>
-                      </div>
-                    </div>
-                    <h3 class="course-card__title">
-                      <a href="login.html">Marketing Digital para Negócios</a>
-                    </h3>
-                    <p class="course-card__description">
-                      Estratégias completas para alavancar sua marca no ambiente
-                      digital.
-                    </p>
-                  </div>
-                </article>
-
-                <!-- Course Card 4 -->
-                <article class="course-card course-card--not-started">
-                  <div class="course-card__thumbnail">
-                    <img
-                      src="../../public/images/Course thumbnails/course_16_9-thumb_5.jpg"
-                      alt="Gestão Ágil com Scrum" />
-                    <div class="course-card__enroll-overlay">
-                      <span class="material-icons mb-2" style="font-size: 32px"
-                        >school</span
-                      >
-                      <span>Matricular</span>
-                    </div>
-                  </div>
-                  <div class="course-card__body">
-                    <div class="course-card__meta justify-content-between">
-                      <span class="course-card__meta-item">
-                        <i class="material-icons">format_list_bulleted</i>
-                        <span>8 Módulos</span>
-                      </span>
-                      <div
-                        class="course-card__rating"
-                        aria-label="Avaliação 4.9 de 5">
-                        <i class="material-icons">star</i>
-                        <span class="course-card__rating-value">4.9</span>
-                      </div>
-                    </div>
-                    <h3 class="course-card__title">
-                      <a href="login.html">Gestão Ágil com Scrum</a>
-                    </h3>
-                    <p class="course-card__description">
-                      Domine o framework ágil mais utilizado no mundo para
-                      gestão de projetos.
-                    </p>
-                  </div>
-                </article>
-
-                <!-- Course Card 5 -->
-                <article class="course-card course-card--not-started">
-                  <div class="course-card__thumbnail">
-                    <img
-                      src="../../public/images/Course thumbnails/course_16_9-thumb_7.jpg"
-                      alt="Design Thinking na Prática" />
-                    <div class="course-card__enroll-overlay">
-                      <span class="material-icons mb-2" style="font-size: 32px"
-                        >school</span
-                      >
-                      <span>Matricular</span>
-                    </div>
-                  </div>
-                  <div class="course-card__body">
-                    <div class="course-card__meta justify-content-between">
-                      <span class="course-card__meta-item">
-                        <i class="material-icons">format_list_bulleted</i>
-                        <span>4 Módulos</span>
-                      </span>
-                      <div
-                        class="course-card__rating"
-                        aria-label="Avaliação 4.6 de 5">
-                        <i class="material-icons">star</i>
-                        <span class="course-card__rating-value">4.6</span>
-                      </div>
-                    </div>
-                    <h3 class="course-card__title">
-                      <a href="login.html">Design Thinking na Prática</a>
-                    </h3>
-                    <p class="course-card__description">
-                      Aprenda a inovar e resolver problemas complexos com foco
-                      no usuário.
-                    </p>
-                  </div>
-                </article>
-
-                <!-- Course Card 6 -->
-                <article class="course-card course-card--not-started">
-                  <div class="course-card__thumbnail">
-                    <img
-                      src="../../public/images/Course thumbnails/course_16_9-thumb_2.jpg"
-                      alt="Comunicação Assertiva" />
-                    <div class="course-card__enroll-overlay">
-                      <span class="material-icons mb-2" style="font-size: 32px"
-                        >school</span
-                      >
-                      <span>Matricular</span>
-                    </div>
-                  </div>
-                  <div class="course-card__body">
-                    <div class="course-card__meta justify-content-between">
-                      <span class="course-card__meta-item">
-                        <i class="material-icons">format_list_bulleted</i>
-                        <span>3 Módulos</span>
-                      </span>
-                      <div
-                        class="course-card__rating"
-                        aria-label="Avaliação 4.8 de 5">
-                        <i class="material-icons">star</i>
-                        <span class="course-card__rating-value">4.8</span>
-                      </div>
-                    </div>
-                    <h3 class="course-card__title">
-                      <a href="login.html">Comunicação Assertiva</a>
-                    </h3>
-                    <p class="course-card__description">
-                      Melhore seus relacionamentos e resultados com uma
-                      comunicação clara.
-                    </p>
-                  </div>
-                </article>
-
-                <!-- Course Card 7 (Extra) -->
-                <article class="course-card course-card--not-started">
-                  <div class="course-card__thumbnail">
-                    <img
-                      src="../../public/images/Course thumbnails/course_16_9-thumb_8.jpg"
-                      alt="Design Systems na prática" />
-                    <div class="course-card__enroll-overlay">
-                      <span class="material-icons mb-2" style="font-size: 32px"
-                        >school</span
-                      >
-                      <span>Matricular</span>
-                    </div>
-                  </div>
-                  <div class="course-card__body">
-                    <div class="course-card__meta justify-content-between">
-                      <span class="course-card__meta-item">
-                        <i class="material-icons">format_list_bulleted</i>
-                        <span>3 Módulos</span>
-                      </span>
-                      <div
-                        class="course-card__rating"
-                        aria-label="Avaliação 5.0 de 5">
-                        <i class="material-icons">star</i>
-                        <span class="course-card__rating-value">5.0</span>
-                      </div>
-                    </div>
-                    <h3 class="course-card__title">
-                      <a href="login.html">Design Systems na prática</a>
-                    </h3>
-                    <p class="course-card__description">
-                      Estruture guidelines, tokens e bibliotecas compartilhadas
-                      para escalar produtos digitais.
-                    </p>
-                  </div>
-                </article>
-
-                <!-- Course Card 8 (Extra) -->
-                <article class="course-card course-card--not-started">
-                  <div class="course-card__thumbnail">
-                    <img
-                      src="../../public/images/Course thumbnails/course_16_9-thumb_14.jpg"
-                      alt="Interfaces dinâmicas com Vue 3" />
-                    <div class="course-card__enroll-overlay">
-                      <span class="material-icons mb-2" style="font-size: 32px"
-                        >school</span
-                      >
-                      <span>Matricular</span>
-                    </div>
-                  </div>
-                  <div class="course-card__body">
-                    <div class="course-card__meta justify-content-between">
-                      <span class="course-card__meta-item">
-                        <i class="material-icons">format_list_bulleted</i>
-                        <span>5 Módulos</span>
-                      </span>
-                      <div
-                        class="course-card__rating"
-                        aria-label="Avaliação 4.9 de 5">
-                        <i class="material-icons">star</i>
-                        <span class="course-card__rating-value">4.9</span>
-                      </div>
-                    </div>
-                    <h3 class="course-card__title">
-                      <a href="login.html">Interfaces dinâmicas com Vue 3</a>
-                    </h3>
-                    <p class="course-card__description">
-                      Crie painéis interativos, componha estados complexos e
-                      integre APIs REST com Vue.
-                    </p>
-                  </div>
-                </article>
-
-                <!-- Course Card 9 (Extra) -->
-                <article
-                  class="course-card course-card--not-started course-card--extra">
-                  <div class="course-card__thumbnail">
-                    <img
-                      src="../../public/images/Course thumbnails/course_16_9-thumb_16.jpg"
-                      alt="Fundamentos de Kubernetes" />
-                    <div class="course-card__enroll-overlay">
-                      <span class="material-icons mb-2" style="font-size: 32px"
-                        >school</span
-                      >
-                      <span>Matricular</span>
-                    </div>
-                  </div>
-                  <div class="course-card__body">
-                    <div class="course-card__meta justify-content-between">
-                      <span class="course-card__meta-item">
-                        <i class="material-icons">format_list_bulleted</i>
-                        <span>5 Módulos</span>
-                      </span>
-                      <div
-                        class="course-card__rating"
-                        aria-label="Avaliação 4.6 de 5">
-                        <i class="material-icons">star</i>
-                        <span class="course-card__rating-value">4.6</span>
-                      </div>
-                    </div>
-                    <h3 class="course-card__title">
-                      <a href="login.html">Fundamentos de Kubernetes</a>
-                    </h3>
-                    <p class="course-card__description">
-                      Entenda pods, deployments, serviços e automatize pipelines
-                      de entrega cloud-native.
-                    </p>
-                  </div>
-                </article>
-              </div>
-
-              <div class="course-grid__footer">
+          <div class="pt-32pt">
+            <!-- Carousel 1: Explore e Comece Agora -->
+            <div class="carousel-section" data-carousel-id="explore">
+              <h3 class="carousel-section__title">Explore e Comece Agora</h3>
+              <div class="carousel-wrapper">
                 <button
-                  class="btn btn-outline-secondary btn-rounded btn-sm"
-                  type="button"
-                  data-show-more-target="courses-explore">
-                  <span class="material-icons" aria-hidden="true"
-                    >expand_more</span
-                  >
-                  <span class="btn__label">Mostrar mais</span>
+                  class="carousel-btn carousel-btn--prev"
+                  aria-label="Anterior">
+                  <i class="material-icons">chevron_left</i>
+                </button>
+                <div class="carousel-viewport">
+                  <!-- Card 1 -->
+                  <div class="carousel-card" data-course-id="1">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_15.jpg"
+                        alt="Typescript para back-end avançado" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Typescript para back-end avançado
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>6
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.7</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div class="carousel-card" data-course-id="2">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_3.jpg"
+                        alt="Liderança e Gestão de Equipes" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Liderança e Gestão de Equipes
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>8
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.8</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div class="carousel-card" data-course-id="3">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_4.jpg"
+                        alt="Marketing Digital para Negócios" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Marketing Digital para Negócios
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>5
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.7</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 4 -->
+                  <div class="carousel-card" data-course-id="4">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_5.jpg"
+                        alt="Gestão Ágil com Scrum" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">Gestão Ágil com Scrum</h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>8
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.9</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 5 -->
+                  <div class="carousel-card" data-course-id="5">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_7.jpg"
+                        alt="Design Thinking na Prática" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Design Thinking na Prática
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>4
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.6</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 6 -->
+                  <div class="carousel-card" data-course-id="6">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_2.jpg"
+                        alt="Comunicação Assertiva" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">Comunicação Assertiva</h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>3
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.8</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-btn carousel-btn--next"
+                  aria-label="Próximo">
+                  <i class="material-icons">chevron_right</i>
                 </button>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Features Section -->
-        <div class="page-section" style="background-color: rgba(0, 0, 0, 0.15)">
-          <div class="container page__container">
-            <div class="row">
-              <!-- Feature 1 -->
-              <div class="col-md-3 col-sm-6 text-center mb-4">
-                <div class="feature-card">
-                  <div class="feature-card__body">
-                    <div class="feature-card__icon">
-                      <span class="material-symbols-rounded">schedule</span>
+            <!-- Carousel 2: Mais recomendados -->
+            <div class="carousel-section" data-carousel-id="recommended">
+              <h3 class="carousel-section__title">Mais recomendados</h3>
+              <div class="carousel-wrapper">
+                <button
+                  class="carousel-btn carousel-btn--prev"
+                  aria-label="Anterior">
+                  <i class="material-icons">chevron_left</i>
+                </button>
+                <div class="carousel-viewport">
+                  <!-- Card 1 -->
+                  <div class="carousel-card" data-course-id="7">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_8.jpg"
+                        alt="Design Systems na prática" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Design Systems na prática
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>3
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>5.0</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
                     </div>
-                    <h5 class="feature-card__title">Aprenda no seu ritmo</h5>
-                    <p class="feature-card__text">
-                      Acesse vídeos dos cursos. Estude quando e onde quiser, sem
-                      pressão.
-                    </p>
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div class="carousel-card" data-course-id="8">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_14.jpg"
+                        alt="Interfaces dinâmicas com Vue 3" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Interfaces dinâmicas com Vue 3
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>5
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.9</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div class="carousel-card" data-course-id="9">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_16.jpg"
+                        alt="Fundamentos de Kubernetes" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Fundamentos de Kubernetes
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>5
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.6</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 4 -->
+                  <div class="carousel-card" data-course-id="1">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_15.jpg"
+                        alt="Typescript para back-end avançado" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Typescript para back-end avançado
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>6
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.7</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 5 -->
+                  <div class="carousel-card" data-course-id="4">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_5.jpg"
+                        alt="Gestão Ágil com Scrum" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">Gestão Ágil com Scrum</h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>8
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.9</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 6 -->
+                  <div class="carousel-card" data-course-id="2">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_3.jpg"
+                        alt="Liderança e Gestão de Equipes" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Liderança e Gestão de Equipes
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>8
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.8</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <!-- Feature 2 -->
-              <div class="col-md-3 col-sm-6 text-center mb-4">
-                <div class="feature-card">
-                  <div class="feature-card__body">
-                    <div class="feature-card__icon">
-                      <span class="material-symbols-rounded"
-                        >workspace_premium</span
-                      >
-                    </div>
-                    <h5 class="feature-card__title">Certificado reconhecido</h5>
-                    <p class="feature-card__text">
-                      Receba certificados ao concluir os cursos e destaque-se no
-                      mercado.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Feature 3 -->
-              <div class="col-md-3 col-sm-6 text-center mb-4">
-                <div class="feature-card">
-                  <div class="feature-card__body">
-                    <div class="feature-card__icon">
-                      <span class="material-symbols-rounded">group</span>
-                    </div>
-                    <h5 class="feature-card__title">Instrutores especialistas</h5>
-                    <p class="feature-card__text">
-                      Aprenda com profissionais experientes e referências em
-                      suas áreas.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Feature 4 -->
-              <div class="col-md-3 col-sm-6 text-center mb-4">
-                <div class="feature-card">
-                  <div class="feature-card__body">
-                    <div class="feature-card__icon">
-                      <span class="material-symbols-rounded">update</span>
-                    </div>
-                    <h5 class="feature-card__title">Conteúdo atualizado</h5>
-                    <p class="feature-card__text">
-                      Cursos sempre atualizados com as últimas tendências e
-                      tecnologias.
-                    </p>
-                  </div>
-                </div>
+                <button
+                  class="carousel-btn carousel-btn--next"
+                  aria-label="Próximo">
+                  <i class="material-icons">chevron_right</i>
+                </button>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Final CTA Section -->
-        <div class="page-section pt-64pt pb-64pt">
-          <div
-            class="container page__container mx-auto"
-            style="width: 100%; max-width: 80%">
-            <div
-              class="card rounded"
-              style="
-                background-image: url('../../public/images/background/index-hero-background.jpg');
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                border: none;
-                position: relative;
-                z-index: -1;
-              ">
-              <div
-                style="
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  background-color: black;
-                  opacity: 0.4;
-                  z-index: -1;
-                "></div>
-              <div class="card-body bg-transparent text-center py-64pt px-32pt">
-                <!-- Badge -->
-                <div class="mb-3">
-                  <span
-                    class="badge badge-primary-outlined chip chip--raised"
-                    style="font-size: 14px; padding: 10px 20px">
-                    <span
-                      class="material-symbols-rounded mr-1"
-                      style="font-size: 18px; vertical-align: middle"
-                      >auto_awesome</span
-                    >
-                    Comece gratuitamente!
-                  </span>
+            <!-- Carousel 3: Alta avaliação -->
+            <div class="carousel-section" data-carousel-id="top-rated">
+              <h3 class="carousel-section__title">Alta avaliação</h3>
+              <div class="carousel-wrapper">
+                <button
+                  class="carousel-btn carousel-btn--prev"
+                  aria-label="Anterior">
+                  <i class="material-icons">chevron_left</i>
+                </button>
+                <div class="carousel-viewport">
+                  <!-- Card 1 -->
+                  <div class="carousel-card" data-course-id="7">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_8.jpg"
+                        alt="Design Systems na prática" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Design Systems na prática
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>3
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>5.0</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div class="carousel-card" data-course-id="8">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_14.jpg"
+                        alt="Interfaces dinâmicas com Vue 3" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Interfaces dinâmicas com Vue 3
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>5
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.9</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div class="carousel-card" data-course-id="4">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_5.jpg"
+                        alt="Gestão Ágil com Scrum" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">Gestão Ágil com Scrum</h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>8
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.9</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 4 -->
+                  <div class="carousel-card" data-course-id="2">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_3.jpg"
+                        alt="Liderança e Gestão de Equipes" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Liderança e Gestão de Equipes
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>8
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.8</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 5 -->
+                  <div class="carousel-card" data-course-id="6">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_2.jpg"
+                        alt="Comunicação Assertiva" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">Comunicação Assertiva</h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>3
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.8</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 6 -->
+                  <div class="carousel-card" data-course-id="3">
+                    <div class="carousel-card__thumbnail">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_4.jpg"
+                        alt="Marketing Digital para Negócios" />
+                      <div class="carousel-card__overlay">
+                        <h4 class="overlay__title">
+                          Marketing Digital para Negócios
+                        </h4>
+                        <p class="overlay__meta">
+                          <span
+                            ><i class="material-icons">format_list_bulleted</i>5
+                            Módulos</span
+                          >
+                          <span class="rating"
+                            ><i class="material-icons">star</i>4.7</span
+                          >
+                        </p>
+                        <button class="overlay__cta">Ver detalhes</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                <!-- Heading -->
-                <h2
-                  class="text-white mb-3"
-                  style="font-size: 2.25rem; font-weight: 600">
-                  Pronto para transformar sua carreira?
-                </h2>
-
-                <!-- Description -->
-                <p
-                  class="text-white-90 mb-48pt measure-lead mx-auto"
-                  style="font-size: 1.125rem; max-width: 650px">
-                  Junte-se a milhares de profissionais que já estão aprendendo e
-                  crescendo com a VIDDIA. Comece hoje mesmo, sem compromisso.
-                </p>
-
-                <!-- CTA Buttons -->
-                <div class="d-flex justify-content-center mb-4">
-                  <a
-                    href="login.html"
-                    class="btn btn-md btn-light btn-rounded mr-3">
-                    <span class="mr-2">Fale com nossa equipe de vendas</span>
-                    <span
-                      class="material-symbols-rounded"
-                      style="font-size: 20px; vertical-align: middle"
-                      >arrow_forward</span
-                    >
-                  </a>
-                </div>
-
-                <!-- Small Print -->
-                <p class="text-white-70 small mb-0">
-                  Sem cartão de crédito necessário • Cancele quando quiser
-                </p>
+                <button
+                  class="carousel-btn carousel-btn--next"
+                  aria-label="Próximo">
+                  <i class="material-icons">chevron_right</i>
+                </button>
               </div>
             </div>
           </div>
@@ -782,6 +763,30 @@
     </div>
     <!-- // END Header Layout -->
 
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal" data-modal-id="login">
+      <div class="modal__backdrop" data-close-modal></div>
+      <div class="modal__dialog">
+        <button class="modal__close" data-close-modal aria-label="Fechar modal">
+          <i class="material-icons">close</i>
+        </button>
+        <div class="modal__header">
+          <h2>Faça login para continuar</h2>
+        </div>
+        <div class="modal__body">
+          <p>
+            Crie uma conta gratuita ou faça login para acessar nossos cursos e
+            começar sua jornada de aprendizado.
+          </p>
+        </div>
+        <div class="modal__footer">
+          <a href="login.html" class="btn btn-primary">Fazer login</a>
+          <a href="#" class="btn btn-secondary">Criar conta</a>
+        </div>
+      </div>
+    </div>
+    <!-- // END Login Modal -->
+
     <!-- jQuery -->
     <script src="../../public/vendor/jquery.min.js"></script>
 
@@ -803,6 +808,9 @@
 
     <!-- Preloader -->
     <script src="../../public/js/preloader.js"></script>
+
+    <!-- Not-Logged Streaming Script -->
+    <script src="../../public/js/not-logged-streaming.js"></script>
 
     <script>
       (function () {

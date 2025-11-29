@@ -439,6 +439,119 @@ html.dark-mode .lesson-materials-dropdown__list::-webkit-scrollbar-thumb:hover {
 }
 
 /* ==========================================
+   COURSE MATERIALS HUB - Dark Mode
+   ========================================== */
+
+html.dark-mode .course-materials-hub__intro h5 {
+    color: #e2e8f0;
+}
+
+html.dark-mode .course-materials-hub__intro p {
+    color: #94a3b8;
+}
+
+/* Toggle Button */
+html.dark-mode .course-materials-dropdown__toggle {
+    background: #667eea;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+}
+
+html.dark-mode .course-materials-dropdown__toggle:hover {
+    box-shadow: 0 6px 24px rgba(102, 126, 234, 0.5);
+}
+
+/* Dropdown Menu */
+html.dark-mode .course-materials-dropdown__menu {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+html.dark-mode .course-materials-dropdown__header {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.6) 100%);
+    border-bottom: 1px solid rgba(102, 126, 234, 0.15);
+    color: #cbd5e1;
+}
+
+html.dark-mode .course-materials-dropdown__header .material-symbols-rounded {
+    color: #818cf8;
+}
+
+/* Accordion */
+html.dark-mode .course-materials-accordion__item {
+    border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+html.dark-mode .course-materials-accordion__trigger {
+    background: transparent;
+}
+
+html.dark-mode .course-materials-accordion__trigger:hover {
+    background-color: rgba(102, 126, 234, 0.08);
+}
+
+html.dark-mode .course-materials-accordion__trigger[aria-expanded="true"] {
+    background-color: rgba(102, 126, 234, 0.12);
+}
+
+html.dark-mode .course-materials-accordion__module-title {
+    color: #e2e8f0;
+}
+
+html.dark-mode .course-materials-accordion__module-badge {
+    background: rgba(51, 65, 85, 0.6);
+    color: #94a3b8;
+}
+
+html.dark-mode .course-materials-accordion__trigger[aria-expanded="true"] .course-materials-accordion__module-badge {
+    background: #667eea;
+    color: white;
+}
+
+html.dark-mode .course-materials-accordion__chevron {
+    color: #818cf8;
+}
+
+/* File List */
+html.dark-mode .course-materials-accordion__list {
+    background: rgba(15, 23, 42, 0.4);
+}
+
+html.dark-mode .course-materials-accordion__list-item {
+    border-bottom: 1px solid rgba(102, 126, 234, 0.06);
+}
+
+html.dark-mode .course-materials-accordion__link:hover {
+    background-color: rgba(102, 126, 234, 0.15);
+}
+
+html.dark-mode .course-materials-accordion__filename {
+    color: #e2e8f0;
+}
+
+html.dark-mode .course-materials-accordion__filesize {
+    color: #94a3b8;
+}
+
+html.dark-mode .course-materials-accordion__download {
+    color: #818cf8;
+}
+
+/* Scrollbar */
+html.dark-mode .course-materials-accordion::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+}
+
+html.dark-mode .course-materials-accordion::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.4);
+}
+
+html.dark-mode .course-materials-accordion::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.6);
+}
+
+/* ==========================================
    MODULE VIDEO NEXT ANIMATION - Dark Mode
    ========================================== */
 
