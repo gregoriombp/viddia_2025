@@ -30,8 +30,7 @@
 /* Wrapper - full width com padding lateral mínimo */
 .carousel-wrapper {
   position: relative;
-  padding: 0 0 0 0;
-  /* Apenas 4% de padding lateral */
+  padding: 0;
   width: 100%;
   overflow: visible !important;
   /* IMPORTANTE: Permitir expansão do hover */
@@ -48,7 +47,7 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 120px;
+  width: calc(120px + 4%);
   background: linear-gradient(to right,
       rgba(0, 5, 13, 1) 0%,
       rgba(0, 5, 13, 0.8) 30%,
@@ -66,7 +65,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  width: 120px;
+  width: calc(120px + 4%);
   background: linear-gradient(to left,
       rgba(0, 5, 13, 1) 0%,
       rgba(0, 5, 13, 0.8) 30%,
@@ -80,15 +79,17 @@
 /* Viewport - área rolável horizontal */
 .carousel-viewport {
   display: flex;
-  gap: 24px;
+  gap: 32px;
   /* Gap maior para evitar sobreposição no hover */
   overflow-x: auto;
   overflow-y: visible;
   /* IMPORTANTE: permitir que hover expanda verticalmente */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  padding: 56px 0 72px 0;
-  /* Espaço extra para o glow sem cortar */
+  padding: 64px calc(120px + 4%) 80px 4%;
+  scroll-padding-left: 4%;
+  scroll-padding-right: 4%;
+  /* Espaço extra para o glow, folga final e início sob a máscara */
 
   /* Ocultar scrollbar nativa */
   scrollbar-width: none;
@@ -97,16 +98,6 @@
 
 .carousel-viewport::-webkit-scrollbar {
   display: none;
-}
-
-/* Garantir que o primeiro card não fique sob a máscara */
-.carousel-viewport > .carousel-card:first-child {
-  margin-left: 4%;
-}
-
-/* Mantém o último card visível antes da máscara direita */
-.carousel-viewport > .carousel-card:last-child {
-  margin-right: 4%;
 }
 
 /* ==========================================
@@ -193,6 +184,21 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Halo extra para o glow não ser cortado */
+.carousel-card::after {
+  content: '';
+  position: absolute;
+  inset: -48px;
+  border-radius: 24px;
+  box-shadow:
+    0 0 80px rgba(96, 165, 250, 0.55),
+    0 24px 96px rgba(0, 0, 0, 0.78);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
 /* Container da thumbnail */
 .carousel-card__thumbnail {
   position: relative;
@@ -236,9 +242,17 @@
     /* Border luminoso */
     outline: 2px solid rgba(96, 165, 250, 0.5);
     outline-offset: 4px;
+
+    /* Ativar halo externo */
+    box-shadow:
+      0 0 60px rgba(96, 165, 250, 0.6),
+      0 20px 80px rgba(0, 0, 0, 0.8),
+      0 0 120px rgba(59, 130, 246, 0.4);
   }
 
-  /* Zoom dramático na imagem */
+  .carousel-card:hover::after {
+    opacity: 1;
+  }
   .carousel-card:hover .carousel-card__thumbnail img {
     transform: scale(1.15);
     filter: brightness(1.1) contrast(1.05);
@@ -626,7 +640,9 @@
 
   .carousel-viewport {
     gap: 16px;
-    padding: 16px 0 32px 0;
+    padding: 24px 4% 40px 4%;
+    scroll-padding-left: 4%;
+    scroll-padding-right: 4%;
   }
 
   /* Esconder botões - usar swipe */
@@ -650,7 +666,7 @@
   }
 
   .carousel-section {
-    padding: 32px 0;
+    padding: 30px 0;
     margin-bottom: 16px;
   }
 
@@ -732,7 +748,7 @@
 .page-section {
   overflow: visible !important;
   padding-bottom: 80px !important;
-  /* AUMENTADO: Espaço extra para hover expansion */
+  /* Espaço extra para hover expansion */
 }
 
 /* Forçar overflow visible em containers pai */
