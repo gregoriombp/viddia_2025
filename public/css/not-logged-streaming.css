@@ -10,10 +10,11 @@
 
 /* Container principal - SEM limitação de largura */
 .carousel-section {
-  padding: 60px 0;
-  margin-bottom: 40px;
+  padding: 36px 0 32px 0;
+  margin-bottom: 20px;
   width: 100%;
-  overflow: visible !important; /* IMPORTANTE: Permitir que hover expanda para fora */
+  overflow: visible !important;
+  /* IMPORTANTE: Permitir que hover expanda para fora */
 }
 
 /* Título da seção - com padding lateral apenas para o título */
@@ -21,7 +22,7 @@
   font-size: 2rem;
   font-weight: 700;
   color: var(--text-theme-35);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   padding: 0 4%;
   letter-spacing: -0.5px;
 }
@@ -29,9 +30,11 @@
 /* Wrapper - full width com padding lateral mínimo */
 .carousel-wrapper {
   position: relative;
-  padding: 0 4%; /* Apenas 4% de padding lateral */
+  padding: 0 0 0 0;
+  /* Apenas 4% de padding lateral */
   width: 100%;
-  overflow: visible !important; /* IMPORTANTE: Permitir expansão do hover */
+  overflow: visible !important;
+  /* IMPORTANTE: Permitir expansão do hover */
 }
 
 /* ==========================================
@@ -46,15 +49,14 @@
   top: 0;
   bottom: 0;
   width: 120px;
-  background: linear-gradient(
-    to right,
-    rgba(10, 15, 25, 1) 0%,
-    rgba(10, 15, 25, 0.85) 25%,
-    rgba(10, 15, 25, 0.5) 50%,
-    rgba(10, 15, 25, 0) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(0, 5, 13, 1) 0%,
+      rgba(0, 5, 13, 0.8) 30%,
+      rgba(0, 5, 13, 0.45) 60%,
+      rgba(0, 5, 13, 0) 100%);
   z-index: 10;
-  pointer-events: none; /* Não bloquear cliques */
+  pointer-events: none;
+  /* Não bloquear cliques */
 }
 
 /* Máscara direita - gradiente de transparente para opaco */
@@ -65,26 +67,28 @@
   top: 0;
   bottom: 0;
   width: 120px;
-  background: linear-gradient(
-    to left,
-    rgba(10, 15, 25, 1) 0%,
-    rgba(10, 15, 25, 0.85) 25%,
-    rgba(10, 15, 25, 0.5) 50%,
-    rgba(10, 15, 25, 0) 100%
-  );
+  background: linear-gradient(to left,
+      rgba(0, 5, 13, 1) 0%,
+      rgba(0, 5, 13, 0.8) 30%,
+      rgba(0, 5, 13, 0.45) 60%,
+      rgba(0, 5, 13, 0) 100%);
   z-index: 10;
-  pointer-events: none; /* Não bloquear cliques */
+  pointer-events: none;
+  /* Não bloquear cliques */
 }
 
 /* Viewport - área rolável horizontal */
 .carousel-viewport {
   display: flex;
-  gap: 24px; /* Gap maior para cards maiores */
+  gap: 24px;
+  /* Gap maior para evitar sobreposição no hover */
   overflow-x: auto;
-  overflow-y: visible; /* IMPORTANTE: permitir que hover expanda verticalmente */
+  overflow-y: visible;
+  /* IMPORTANTE: permitir que hover expanda verticalmente */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  padding: 48px 0 64px 0; /* AUMENTADO: Padding vertical muito mais generoso para hover */
+  padding: 56px 0 72px 0;
+  /* Espaço extra para o glow sem cortar */
 
   /* Ocultar scrollbar nativa */
   scrollbar-width: none;
@@ -95,6 +99,16 @@
   display: none;
 }
 
+/* Garantir que o primeiro card não fique sob a máscara */
+.carousel-viewport > .carousel-card:first-child {
+  margin-left: 4%;
+}
+
+/* Mantém o último card visível antes da máscara direita */
+.carousel-viewport > .carousel-card:last-child {
+  margin-right: 4%;
+}
+
 /* ==========================================
    NAVIGATION BUTTONS - Mais proeminentes
    ========================================== */
@@ -103,14 +117,15 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 30; /* Acima das fade masks (z-index: 10) */
+  z-index: 9999;
+  /* Acima das fade masks (z-index: 10) */
 
   /* Visual mais chamativo */
   background: rgba(10, 15, 30, 0.95);
   border: 2px solid rgba(96, 165, 250, 0.4);
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
 
   /* Layout */
   display: flex;
@@ -133,7 +148,7 @@
   border-color: rgba(96, 165, 250, 0.8);
   color: white;
   box-shadow: 0 8px 32px rgba(59, 130, 246, 0.6),
-              0 0 48px rgba(96, 165, 250, 0.4);
+    0 0 48px rgba(96, 165, 250, 0.4);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -161,11 +176,13 @@
   /* CARDS MAIORES - 340px no desktop */
   flex: 0 0 340px;
   width: 340px;
-  min-height: 191px; /* Mantém aspect ratio 16:9 */
+  min-height: 191px;
+  /* Mantém aspect ratio 16:9 */
 
   /* Visual premium */
   border-radius: 12px;
-  overflow: visible; /* IMPORTANTE: permitir expansão no hover */
+  overflow: visible;
+  /* IMPORTANTE: permitir expansão no hover */
   background: rgba(20, 25, 35, 0.8);
 
   /* Interação suave */
@@ -200,10 +217,11 @@
    ========================================== */
 
 @media (min-width: 1024px) {
+
   /* EXPANSÃO DRAMÁTICA no hover */
   .carousel-card:hover {
-    /* Expansão significativa - 1.25x */
-    transform: scale(1.25) translateY(-16px);
+    /* Expansão significativa sem invadir cartões vizinhos */
+    transform: scale(1.15) translateY(-12px);
 
     /* Sombra ultra dramática com glow azul */
     box-shadow:
@@ -218,11 +236,6 @@
     /* Border luminoso */
     outline: 2px solid rgba(96, 165, 250, 0.5);
     outline-offset: 4px;
-  }
-
-  /* Garantir que o viewport permita expansão total */
-  .carousel-viewport:has(.carousel-card:hover) {
-    overflow: visible !important;
   }
 
   /* Zoom dramático na imagem */
@@ -269,13 +282,11 @@
   height: 100%;
 
   /* Gradiente mais intenso e dramático */
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.3) 40%,
-    rgba(0, 0, 0, 0.85) 70%,
-    rgba(10, 15, 25, 0.98) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.85) 70%,
+      rgba(10, 15, 25, 0.98) 100%);
 
   /* Layout */
   display: flex;
@@ -442,8 +453,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes modalSlideIn {
@@ -451,6 +467,7 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
@@ -554,6 +571,7 @@
    ========================================== */
 
 @media (max-width: 1279px) {
+
   /* Cards médios em tablet */
   .carousel-card {
     flex: 0 0 280px;
@@ -571,6 +589,7 @@
 }
 
 @media (max-width: 1023px) {
+
   /* Cards menores em tablet pequeno */
   .carousel-card {
     flex: 0 0 240px;
@@ -598,6 +617,7 @@
    ========================================== */
 
 @media (max-width: 767px) {
+
   /* Cards compactos em mobile */
   .carousel-card {
     flex: 0 0 200px;
@@ -630,8 +650,8 @@
   }
 
   .carousel-section {
-    padding: 40px 0;
-    margin-bottom: 24px;
+    padding: 32px 0;
+    margin-bottom: 16px;
   }
 
   /* Remover hover effects */
@@ -685,6 +705,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -710,7 +731,8 @@
 /* Garante que a página tenha espaço para expansão do hover */
 .page-section {
   overflow: visible !important;
-  padding-bottom: 120px !important; /* AUMENTADO: Espaço extra para hover expansion */
+  padding-bottom: 80px !important;
+  /* AUMENTADO: Espaço extra para hover expansion */
 }
 
 /* Forçar overflow visible em containers pai */
@@ -732,8 +754,10 @@
 /* Garantir que o body e HTML também permitam overflow */
 body.layout-sticky-subnav,
 html {
-  overflow-x: hidden; /* Prevenir scroll horizontal */
-  overflow-y: visible !important; /* Permitir expansão vertical */
+  overflow-x: hidden;
+  /* Prevenir scroll horizontal */
+  overflow-y: visible !important;
+  /* Permitir expansão vertical */
 }
 
 /* Container do viewport NÃO deve clipar conteúdo */
