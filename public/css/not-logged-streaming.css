@@ -705,76 +705,727 @@
 }
 
 /* ==========================================
-   RESPONSIVE - MOBILE
+   RESPONSIVE - TABLET (768px - 1024px)
+   Grid de 2 colunas, espaçamentos reduzidos
    ========================================== */
 
-@media (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 
-  /* Cards compactos em mobile */
-  .carousel-card {
-    flex: 0 0 200px;
+  /* Hero Section - Reduzir tamanhos */
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    max-width: 600px;
+  }
+
+  .hero-logo {
     width: 200px;
   }
 
-  /* Header responsivo */
+  /* Navbar - Ajustes */
+  .navbar-brand img {
+    width: 110px !important;
+  }
+
+  /* Carousel Cards - Tamanho médio */
+  .carousel-card {
+    flex: 0 0 260px;
+    width: 260px;
+  }
+
+  .carousel-section__title {
+    font-size: 1.75rem;
+  }
+
+  .carousel-section__icon {
+    font-size: 24px;
+  }
+
+  .carousel-viewport {
+    gap: 18px;
+    padding: 48px calc(100px + 3%) 60px 3%;
+  }
+
+  /* Botões de navegação */
+  .carousel-btn {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+  }
+
+  /* CTA Buttons */
+  .hero-cta-wrapper .btn {
+    padding: 12px 32px;
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  .bg-white.border-top-2 .page__container {
+    padding: 40px 24px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE (576px - 768px)
+   Layout em coluna única, elementos empilhados
+   ========================================== */
+
+@media (min-width: 576px) and (max-width: 768px) {
+
+  /* Hero Section */
+  .hero-title {
+    font-size: 2rem;
+    padding: 0 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 16px;
+    max-width: 500px;
+  }
+
+  .hero-logo {
+    width: 180px;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 8px 16px !important;
+  }
+
+  .navbar-brand img {
+    width: 100px !important;
+  }
+
+  /* CTA Buttons - Empilhados */
+  .hero-cta-wrapper {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .hero-cta-wrapper .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  /* Carousel Cards */
+  .carousel-card {
+    flex: 0 0 220px;
+    width: 220px;
+  }
+
   .carousel-section__header {
-    padding: 0 3%;
+    padding: 0 16px;
   }
 
   .carousel-section__title {
     font-size: 1.5rem;
+  }
+
+  .carousel-section__subtitle {
+    font-size: 0.875rem;
+  }
+
+  .carousel-viewport {
+    gap: 16px;
+    padding: 32px 16px 48px 16px;
+  }
+
+  /* Esconder botões de navegação */
+  .carousel-btn {
+    display: none;
+  }
+
+  .carousel-wrapper::before,
+  .carousel-wrapper::after {
+    width: 40px;
+  }
+
+  /* Modal */
+  .modal__dialog {
+    width: 92%;
+  }
+
+  .modal__header h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal__footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modal__footer .btn {
+    width: 100%;
+  }
+
+  /* Footer */
+  .bg-white.border-top-2 .page__container {
+    padding: 32px 16px;
+  }
+
+  .bg-white.border-top-2 img[width="120"] {
+    width: 100px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE PEQUENO (até 576px)
+   Espaçamentos ultra-compactos
+   ========================================== */
+
+@media (max-width: 576px) {
+
+  /* Hero Section - Ultra compacto */
+  .mdk-box__content {
+    padding-top: 24pt !important;
+    padding-bottom: 24pt !important;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+    padding: 0 12px;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    padding: 0 12px;
+    max-width: 100%;
+  }
+
+  .hero-logo {
+    width: 160px;
+  }
+
+  .mb-32pt {
+    margin-bottom: 24px !important;
+  }
+
+  .mb-24pt {
+    margin-bottom: 16px !important;
+  }
+
+  .mb-48pt {
+    margin-bottom: 32px !important;
+  }
+
+  .mb-64pt {
+    margin-bottom: 40px !important;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 6px 12px !important;
+    min-height: 52px !important;
+  }
+
+  .mdk-header {
+    height: 52px !important;
+  }
+
+  .mdk-header__content {
+    min-height: 52px !important;
+  }
+
+  .navbar-brand img {
+    width: 95px !important;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+    padding: 8px 12px !important;
+  }
+
+  .btn-md {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+  }
+
+  /* CTA Buttons */
+  .hero-cta-wrapper {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .hero-cta-wrapper .btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Carousel Cards - Compactos */
+  .carousel-card {
+    flex: 0 0 180px;
+    width: 180px;
+    min-height: auto;
+  }
+
+  .carousel-section {
+    padding: 24px 0;
+    margin-bottom: 12px;
+  }
+
+  .carousel-section__header {
+    padding: 0 12px;
+    margin-bottom: 12px;
+  }
+
+  .carousel-section__title {
+    font-size: 1.35rem;
+  }
+
+  .carousel-section__subtitle {
+    font-size: 0.8rem;
   }
 
   .carousel-section__icon {
     font-size: 20px;
   }
 
-  .carousel-section__title-wrapper {
-    gap: 8px;
-  }
-
-  .carousel-section__line {
-    margin-left: 12px;
-  }
-
   .carousel-section__link {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     padding: 4px 8px;
   }
 
   .carousel-viewport {
-    gap: 16px;
-    padding: 24px 4% 40px 4%;
-    scroll-padding-left: 4%;
-    scroll-padding-right: 4%;
+    gap: 12px;
+    padding: 24px 12px 40px 12px;
   }
 
-  /* Esconder botões - usar swipe */
+  /* Esconder botões - swipe only */
   .carousel-btn {
     display: none;
   }
 
-  .carousel-wrapper {
-    padding: 0 3%;
-  }
-
-  /* Fade masks menores em mobile */
+  /* Fade masks menores */
   .carousel-wrapper::before,
   .carousel-wrapper::after {
-    width: 60px;
+    width: 30px;
+  }
+
+  /* Overlay simplificado */
+  .overlay__title {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .overlay__meta {
+    font-size: 11px;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .overlay__description {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .overlay__cta {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  /* Modal */
+  .modal__dialog {
+    width: 95%;
+    border-radius: 12px;
+  }
+
+  .modal__header {
+    padding: 24px 20px 16px;
+  }
+
+  .modal__header h2 {
+    font-size: 1.35rem;
+  }
+
+  .modal__body {
+    padding: 16px 20px;
+  }
+
+  .modal__body p {
+    font-size: 0.9rem;
+  }
+
+  .modal__footer {
+    flex-direction: column;
+    padding: 16px 20px 24px;
+    gap: 12px;
+  }
+
+  .modal__footer .btn {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  /* Footer */
+  .bg-white.border-top-2 .page__container {
+    padding: 24px 12px;
+  }
+
+  .bg-white.border-top-2 img[width="120"] {
+    width: 90px;
+  }
+
+  .bg-white.border-top-2 .measure-lead-max {
+    font-size: 0.85rem !important;
+  }
+
+  .bg-white.border-top-2 .small {
+    font-size: 0.8rem !important;
+  }
+
+  /* Page Section */
+  .page-section {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .pt-32pt {
+    padding-top: 24px !important;
+  }
+
+  /* Container */
+  .container.page__container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - EXTRA PEQUENO (até 375px)
+   Otimizações para iPhone SE e dispositivos pequenos
+   ========================================== */
+
+@media (max-width: 375px) {
+
+  /* Hero Section - Extra compacto */
+  .hero-title {
+    font-size: 1.5rem;
+    padding: 0 12px;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.875rem;
+    padding: 0 12px;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-logo {
+    width: 140px;
+    margin-bottom: 24px !important;
+  }
+
+  /* Navbar - Ultra compacto */
+  .navbar {
+    padding: 4px 8px !important;
+    min-height: 48px !important;
+  }
+
+  .mdk-header {
+    height: 48px !important;
+  }
+
+  .mdk-header__content {
+    min-height: 48px !important;
+  }
+
+  .navbar-brand {
+    margin-right: 4px !important;
+  }
+
+  .navbar-brand img {
+    width: 85px !important;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 6px 8px !important;
+  }
+
+  .btn-md {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+  }
+
+  /* CTA Buttons */
+  .hero-cta-wrapper .btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  /* Carousel Cards - Mínimo */
+  .carousel-card {
+    flex: 0 0 160px;
+    width: 160px;
   }
 
   .carousel-section__title {
-    font-size: 1.5rem;
-    padding: 0 3%;
+    font-size: 1.2rem;
+  }
+
+  .carousel-section__icon {
+    font-size: 18px;
+  }
+
+  .carousel-section__link {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+  }
+
+  .carousel-viewport {
+    gap: 10px;
+    padding: 20px 8px 32px 8px;
+  }
+
+  /* Overlay */
+  .overlay__title {
+    font-size: 14px;
+  }
+
+  .overlay__meta {
+    font-size: 10px;
+    gap: 10px;
+  }
+
+  .overlay__description {
+    display: none;
+    /* Esconder descrição em telas muito pequenas */
+  }
+
+  .overlay__cta {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  /* Modal */
+  .modal__dialog {
+    width: 96%;
+    max-width: 100%;
+  }
+
+  .modal__header {
+    padding: 20px 16px 12px;
+  }
+
+  .modal__header h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal__close {
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .modal__body {
+    padding: 12px 16px;
+  }
+
+  .modal__body p {
+    font-size: 0.85rem;
+  }
+
+  .modal__footer {
+    padding: 12px 16px 20px;
+  }
+
+  .modal__footer .btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  /* Footer */
+  .bg-white.border-top-2 .page__container {
+    padding: 20px 8px;
+  }
+
+  .bg-white.border-top-2 img[width="120"] {
+    width: 80px;
+  }
+
+  .bg-white.border-top-2 .measure-lead-max {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .bg-white.border-top-2 .small {
+    font-size: 0.75rem !important;
+  }
+
+  .bg-white.border-top-2 .mb-8pt {
+    margin-bottom: 6px !important;
+  }
+
+  .bg-white.border-top-2 .mb-24pt {
+    margin-bottom: 16px !important;
+  }
+
+  /* Container ultra compacto */
+  .container.page__container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  /* Seções */
+  .page-section {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
   }
 
   .carousel-section {
-    padding: 30px 0;
-    margin-bottom: 16px;
+    padding: 20px 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - LANDSCAPE MODE (altura < 500px)
+   Redução de espaçamento vertical
+   ========================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+  /* Hero Section - Reduzir padding vertical */
+  .mdk-box__content {
+    padding-top: 16pt !important;
+    padding-bottom: 16pt !important;
   }
 
-  /* Remover hover effects */
+  .hero-title {
+    font-size: 1.75rem;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-logo {
+    width: 120px;
+    margin-bottom: 16px !important;
+  }
+
+  .mb-32pt {
+    margin-bottom: 16px !important;
+  }
+
+  .mb-24pt {
+    margin-bottom: 12px !important;
+  }
+
+  .mb-48pt {
+    margin-bottom: 20px !important;
+  }
+
+  .mb-64pt {
+    margin-bottom: 24px !important;
+  }
+
+  /* CTA Buttons - Horizontal em landscape */
+  .hero-cta-wrapper {
+    flex-direction: row !important;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-cta-wrapper .btn {
+    width: auto;
+    min-width: 140px;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+
+  /* Carousel - Reduzir espaçamentos verticais */
+  .carousel-section {
+    padding: 16px 0;
+    margin-bottom: 8px;
+  }
+
+  .carousel-viewport {
+    padding-top: 20px;
+    padding-bottom: 24px;
+  }
+
+  .carousel-section__header {
+    margin-bottom: 8px;
+  }
+
+  /* Footer compacto */
+  .bg-white.border-top-2 .page__container {
+    padding: 16px 12px;
+  }
+
+  .bg-white.border-top-2 .mb-24pt {
+    margin-bottom: 12px !important;
+  }
+
+  /* Navbar */
+  .navbar {
+    min-height: 48px !important;
+  }
+
+  .mdk-header {
+    height: 48px !important;
+  }
+
+  .mdk-header__content {
+    min-height: 48px !important;
+  }
+
+  /* Page Section */
+  .page-section {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+  .pt-32pt {
+    padding-top: 16px !important;
+  }
+
+  /* Modal - Mais compacto verticalmente */
+  .modal__header {
+    padding: 20px 24px 12px;
+  }
+
+  .modal__body {
+    padding: 12px 24px;
+  }
+
+  .modal__footer {
+    padding: 12px 24px 20px;
+  }
+
+  .modal__header h2 {
+    font-size: 1.25rem;
+  }
+
+  .modal__body p {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE (max-width: 767px)
+   FALLBACK para garantir compatibilidade
+   ========================================== */
+
+@media (max-width: 767px) {
+
+  /* Remover hover effects em mobile */
   .carousel-card:hover {
     transform: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -782,37 +1433,37 @@
 
   .carousel-card:hover .carousel-card__thumbnail img {
     transform: none;
+    filter: brightness(0.9);
   }
 
   .carousel-card:hover .carousel-card__overlay {
     opacity: 0;
   }
 
-  /* Modal mobile */
-  .modal__dialog {
-    width: 95%;
-    border-radius: 12px;
+  /* Suavizar transições em mobile */
+  .carousel-card,
+  .btn,
+  * {
+    transition-duration: 0.2s;
   }
 
-  .modal__header {
-    padding: 32px 24px 16px;
+  /* Melhorar touch targets */
+  .btn,
+  .nav-link,
+  .carousel-section__link,
+  .modal__close {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .modal__header h2 {
-    font-size: 22px;
-  }
-
-  .modal__body {
-    padding: 20px 24px;
-  }
-
-  .modal__footer {
-    flex-direction: column;
-    padding: 16px 24px 24px;
-  }
-
-  .modal__footer .btn {
-    width: 100%;
+  /* Prevent zoom on input focus (iOS) */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
   }
 }
 

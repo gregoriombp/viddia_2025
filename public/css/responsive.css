@@ -1609,3 +1609,857 @@
         contain: layout style paint;
     }
 }
+
+/* ========================================
+   INDEX.HTML SPECIFIC RESPONSIVE STYLES
+   Página Home Logado
+   ======================================== */
+
+/* ==========================================
+   TABLET (768px - 1024px)
+   Grid de 2 colunas, espaçamentos reduzidos
+   ========================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* Hero Section */
+    .mdk-box.js-mdk-box {
+        padding-top: 80pt !important;
+        padding-bottom: 80pt !important;
+    }
+
+    .mdk-box__content {
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+    }
+
+    /* Hero Profile Image */
+    .hero .page__container img[width="180"] {
+        width: 140px !important;
+        height: 140px !important;
+    }
+
+    /* Hero Text */
+    .hero-welcome {
+        font-size: 1rem !important;
+    }
+
+    .hero-name {
+        font-size: 2rem !important;
+    }
+
+    /* Dashboard Pills - 2 linhas em tablet */
+    .student-dashboard-page .dashboard-insights__stats {
+        gap: 10px;
+    }
+
+    .student-dashboard-page .dashboard-pill {
+        padding: 14px 18px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__value {
+        font-size: 1.5rem !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__label {
+        font-size: 0.875rem !important;
+    }
+
+    /* Welcome Panel */
+    .welcome-panel {
+        gap: 24px;
+    }
+
+    .welcome-panel__content {
+        padding: 28px 24px;
+    }
+
+    .welcome-panel__title {
+        font-size: 1.875rem;
+    }
+
+    /* Course Grid - 2 colunas */
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Dashboard Button */
+    .hero .col-auto .btn {
+        padding: 12px 24px;
+    }
+}
+
+/* ==========================================
+   MOBILE (576px - 768px)
+   Layout em coluna única, elementos empilhados
+   ========================================== */
+@media (min-width: 576px) and (max-width: 768px) {
+
+    /* Hero Section */
+    .mdk-box.js-mdk-box {
+        padding-top: 64pt !important;
+        padding-bottom: 64pt !important;
+    }
+
+    .mdk-box__content {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+        padding-top: 40pt !important;
+        padding-bottom: 40pt !important;
+    }
+
+    /* Hero Container - Stack vertically */
+    .hero .page__container.d-flex {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .hero .page__container .flex {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* Hero Profile Image */
+    .hero .page__container img[width="180"] {
+        width: 120px !important;
+        height: 120px !important;
+        margin-right: 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Hero Profile Container */
+    .hero-profile-container {
+        width: 100%;
+        text-align: center !important;
+    }
+
+    /* Hero Text */
+    .hero-welcome {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+    }
+
+    .hero-name {
+        font-size: 1.75rem !important;
+        text-align: center !important;
+    }
+
+    .hero .page__container small {
+        font-size: 0.85rem !important;
+    }
+
+    /* Dashboard Pills - Stack vertically */
+    .student-dashboard-page .dashboard-insights {
+        padding-top: 20px !important;
+    }
+
+    .student-dashboard-page .dashboard-insights__stats {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px;
+    }
+
+    .student-dashboard-page .dashboard-pill {
+        width: 100% !important;
+        max-width: 320px;
+        margin: 0 auto !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        padding: 16px 20px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__icon {
+        margin-right: 12px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__content {
+        flex-direction: row !important;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .student-dashboard-page .dashboard-pill__value {
+        font-size: 1.5rem !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__label {
+        font-size: 0.875rem !important;
+    }
+
+    /* Dashboard Button - Full width */
+    .hero .col-auto {
+        width: 100%;
+        margin-top: 24px;
+    }
+
+    .hero .col-auto .btn {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+
+    /* Welcome Panel - Vertical layout */
+    .welcome-panel {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .welcome-panel__video {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 20px 20px 0 0 !important;
+    }
+
+    .welcome-panel__content {
+        padding: 24px 20px;
+        order: 2;
+    }
+
+    .welcome-panel__title {
+        font-size: 1.5rem;
+    }
+
+    .welcome-panel__subtitle {
+        font-size: 0.95rem;
+    }
+
+    .welcome-panel__actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .welcome-panel__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Course Grid - Single column */
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Course Card adjustments */
+    .course-card__body {
+        padding: 20px 16px;
+    }
+
+    .course-card__title {
+        font-size: 1.125rem;
+    }
+
+    .course-card__actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .course-card__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Page separators */
+    .page-separator__text-free h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ==========================================
+   MOBILE PEQUENO (até 576px)
+   Espaçamentos ultra-compactos
+   ========================================== */
+@media (max-width: 576px) {
+
+    /* Hero Section - Ultra compact */
+    .mdk-box.js-mdk-box {
+        padding-top: 48pt !important;
+        padding-bottom: 48pt !important;
+    }
+
+    .mdk-box__content {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        padding-top: 32pt !important;
+        padding-bottom: 32pt !important;
+    }
+
+    /* Hero Container - Stack vertically */
+    .hero .page__container.d-flex {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .hero .page__container .flex {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* Hero Profile Image */
+    .hero .page__container img[width="180"] {
+        width: 100px !important;
+        height: 100px !important;
+        margin-right: 0 !important;
+        margin-bottom: 16px !important;
+    }
+
+    /* Hero Profile Container */
+    .hero-profile-container {
+        width: 100%;
+        text-align: center !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Hero Text */
+    .hero-welcome {
+        font-size: 0.875rem !important;
+        text-align: center !important;
+        margin-bottom: 4px !important;
+    }
+
+    .hero-name {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+        margin-bottom: 8px !important;
+    }
+
+    .hero .page__container small {
+        font-size: 0.8rem !important;
+        padding-bottom: 12px !important;
+    }
+
+    /* Dashboard Pills - Vertical stack */
+    .student-dashboard-page .dashboard-insights {
+        padding-top: 16px !important;
+    }
+
+    .student-dashboard-page .dashboard-insights__stats {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px;
+    }
+
+    .student-dashboard-page .dashboard-pill {
+        width: 100% !important;
+        max-width: 100%;
+        margin: 0 !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        padding: 12px 16px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__icon {
+        font-size: 24px !important;
+        margin-right: 10px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__content {
+        flex-direction: row !important;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .student-dashboard-page .dashboard-pill__value {
+        font-size: 1.25rem !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__label {
+        font-size: 0.75rem !important;
+    }
+
+    /* Dashboard Button */
+    .hero .col-auto {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    .hero .col-auto .btn {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Welcome Panel - Vertical */
+    .welcome-panel {
+        flex-direction: column;
+        gap: 0;
+        margin-top: 24px !important;
+    }
+
+    .welcome-panel__video {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 16px 16px 0 0 !important;
+    }
+
+    .welcome-panel__content {
+        padding: 20px 16px;
+    }
+
+    .welcome-panel__eyebrow {
+        font-size: 0.75rem;
+    }
+
+    .welcome-panel__title {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+
+    .welcome-panel__subtitle {
+        font-size: 0.875rem;
+    }
+
+    .welcome-panel__actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .welcome-panel__actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+        font-size: 0.875rem;
+    }
+
+    /* Course Grid - Single column */
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Course Card */
+    .course-card__body {
+        padding: 16px 12px;
+    }
+
+    .course-card__title {
+        font-size: 1rem;
+    }
+
+    .course-card__description {
+        font-size: 0.85rem;
+    }
+
+    .course-card__meta-item {
+        font-size: 0.8rem;
+    }
+
+    .course-card__actions {
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 12px;
+    }
+
+    .course-card__actions .btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.85rem;
+    }
+
+    .course-card__actions .d-flex {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Page separators */
+    .page-separator__text-free h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Course Grid Footer */
+    .course-grid__footer {
+        padding: 16px 0;
+    }
+
+    .course-grid__footer .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Page Sections */
+    .page-section {
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
+    }
+
+    .container.page__container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* Margins */
+    .mb-32pt {
+        margin-bottom: 24px !important;
+    }
+
+    .mt-32pt {
+        margin-top: 24px !important;
+    }
+
+    .mr-32pt,
+    .mr-md-32pt {
+        margin-right: 0 !important;
+    }
+}
+
+/* ==========================================
+   EXTRA PEQUENO (até 375px)
+   Otimizações para iPhone SE e dispositivos pequenos
+   ========================================== */
+@media (max-width: 375px) {
+
+    /* Hero Section - Extra compact */
+    .mdk-box.js-mdk-box {
+        padding-top: 40pt !important;
+        padding-bottom: 40pt !important;
+    }
+
+    .mdk-box__content {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        padding-top: 24pt !important;
+        padding-bottom: 24pt !important;
+    }
+
+    /* Hero Profile Image */
+    .hero .page__container img[width="180"] {
+        width: 90px !important;
+        height: 90px !important;
+        margin-bottom: 12px !important;
+    }
+
+    /* Hero Text */
+    .hero-welcome {
+        font-size: 0.8rem !important;
+    }
+
+    .hero-name {
+        font-size: 1.35rem !important;
+        margin-bottom: 6px !important;
+    }
+
+    .hero .page__container small {
+        font-size: 0.75rem !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* Dashboard Pills - Ultra compact */
+    .student-dashboard-page .dashboard-insights {
+        padding-top: 12px !important;
+    }
+
+    .student-dashboard-page .dashboard-insights__stats {
+        gap: 8px;
+    }
+
+    .student-dashboard-page .dashboard-pill {
+        padding: 10px 12px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__icon {
+        font-size: 20px !important;
+        margin-right: 8px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__value {
+        font-size: 1.125rem !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__label {
+        font-size: 0.7rem !important;
+    }
+
+    /* Dashboard Button */
+    .hero .col-auto {
+        margin-top: 16px;
+    }
+
+    .hero .col-auto .btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    .hero .col-auto .btn .material-icons {
+        font-size: 18px;
+    }
+
+    /* Welcome Panel */
+    .welcome-panel {
+        margin-top: 20px !important;
+    }
+
+    .welcome-panel__video {
+        border-radius: 12px 12px 0 0 !important;
+    }
+
+    .welcome-panel__content {
+        padding: 16px 12px;
+    }
+
+    .welcome-panel__eyebrow {
+        font-size: 0.7rem;
+        margin-bottom: 6px;
+    }
+
+    .welcome-panel__title {
+        font-size: 1.125rem;
+        margin-bottom: 10px;
+    }
+
+    .welcome-panel__subtitle {
+        font-size: 0.8rem;
+    }
+
+    .welcome-panel__actions {
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .welcome-panel__actions .btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    /* Course Card */
+    .course-card__body {
+        padding: 14px 10px;
+    }
+
+    .course-card__title {
+        font-size: 0.95rem;
+    }
+
+    .course-card__description {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .course-card__meta-item {
+        font-size: 0.75rem;
+    }
+
+    .course-card__meta-item .material-icons {
+        font-size: 16px;
+    }
+
+    .course-card__rating {
+        font-size: 0.75rem;
+    }
+
+    .course-card__actions {
+        gap: 8px;
+        padding-top: 10px;
+    }
+
+    .course-card__actions .btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .course-card__actions .material-icons,
+    .course-card__actions .material-symbols-rounded {
+        font-size: 16px;
+    }
+
+    /* Page separators */
+    .page-separator__text-free h3 {
+        font-size: 1.125rem;
+    }
+
+    /* Course Grid Footer */
+    .course-grid__footer {
+        padding: 12px 0;
+    }
+
+    .course-grid__footer .btn {
+        max-width: 100%;
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    /* Page Sections */
+    .page-section {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+
+    .container.page__container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    /* Margins */
+    .mb-32pt {
+        margin-bottom: 20px !important;
+    }
+
+    .mt-32pt {
+        margin-top: 20px !important;
+    }
+
+    .mb-24pt {
+        margin-bottom: 16px !important;
+    }
+
+    .mb-8pt {
+        margin-bottom: 6px !important;
+    }
+
+    /* Footer */
+    .bg-white.border-top-2 .page__container {
+        padding: 20px 8px;
+    }
+
+    .bg-white.border-top-2 img[width="120"] {
+        width: 80px;
+    }
+
+    .bg-white.border-top-2 .measure-lead-max {
+        font-size: 0.8rem !important;
+    }
+
+    .bg-white.border-top-2 .small {
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ==========================================
+   LANDSCAPE MODE (altura < 500px)
+   Redução de espaçamento vertical
+   ========================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+
+    /* Hero Section - Reduce vertical spacing */
+    .mdk-box.js-mdk-box {
+        padding-top: 32pt !important;
+        padding-bottom: 32pt !important;
+    }
+
+    .mdk-box__content {
+        padding-top: 20pt !important;
+        padding-bottom: 20pt !important;
+    }
+
+    /* Hero Profile Image */
+    .hero .page__container img[width="180"] {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 12px !important;
+    }
+
+    /* Hero Text */
+    .hero-welcome {
+        font-size: 0.85rem !important;
+    }
+
+    .hero-name {
+        font-size: 1.5rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .hero .page__container small {
+        font-size: 0.75rem !important;
+        padding-bottom: 8px !important;
+    }
+
+    /* Dashboard Pills - Horizontal layout if space */
+    .student-dashboard-page .dashboard-insights {
+        padding-top: 12px !important;
+    }
+
+    .student-dashboard-page .dashboard-insights__stats {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .student-dashboard-page .dashboard-pill {
+        flex: 1 1 auto;
+        min-width: 120px;
+        max-width: 200px;
+        padding: 10px 12px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__value {
+        font-size: 1.125rem !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__label {
+        font-size: 0.7rem !important;
+    }
+
+    /* Dashboard Button */
+    .hero .col-auto {
+        margin-top: 12px;
+    }
+
+    .hero .col-auto .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    /* Welcome Panel */
+    .welcome-panel {
+        margin-top: 16px !important;
+    }
+
+    .welcome-panel__content {
+        padding: 16px 20px;
+    }
+
+    .welcome-panel__title {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+    }
+
+    .welcome-panel__subtitle {
+        font-size: 0.85rem;
+    }
+
+    .welcome-panel__actions {
+        margin-top: 12px;
+        gap: 8px;
+    }
+
+    .welcome-panel__actions .btn {
+        padding: 8px 16px;
+        font-size: 0.875rem;
+    }
+
+    /* Page Sections */
+    .page-section {
+        padding-top: 16px !important;
+        padding-bottom: 16px !important;
+    }
+
+    /* Margins */
+    .mb-32pt {
+        margin-bottom: 16px !important;
+    }
+
+    .mt-32pt {
+        margin-top: 16px !important;
+    }
+
+    .mb-24pt {
+        margin-bottom: 12px !important;
+    }
+
+    /* Footer */
+    .bg-white.border-top-2 .page__container {
+        padding: 16px 12px;
+    }
+
+    .bg-white.border-top-2 .mb-24pt {
+        margin-bottom: 12px !important;
+    }
+}
