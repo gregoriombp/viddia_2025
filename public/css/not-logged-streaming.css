@@ -128,9 +128,9 @@
   flex: 1;
   height: 1px;
   background: linear-gradient(to right,
-    rgba(96, 165, 250, 0.3) 0%,
-    rgba(96, 165, 250, 0.1) 50%,
-    transparent 100%);
+      rgba(96, 165, 250, 0.3) 0%,
+      rgba(96, 165, 250, 0.1) 50%,
+      transparent 100%);
   margin-left: 16px;
 }
 
@@ -176,7 +176,7 @@
       rgba(0, 5, 13, 0.8) 30%,
       rgba(0, 5, 13, 0.45) 60%,
       rgba(0, 5, 13, 0) 100%);
-  z-index: 10;
+  z-index: 800;
   pointer-events: none;
   /* Não bloquear cliques */
 }
@@ -227,7 +227,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 9999;
+  z-index: 99999;
   background: rgba(10, 15, 30, 0.95);
   border: 2px solid rgba(96, 165, 250, 0.4);
   border-radius: 50%;
@@ -464,9 +464,9 @@
   background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   color: white;
   border: none;
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-size: 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
 

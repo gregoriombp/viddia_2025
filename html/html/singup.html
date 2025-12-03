@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark-mode">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>VIDDIA - Transforme sua carreira</title>
+
+    <link
+      rel="icon"
+      href="../../public/images/Favicon/FAVICON_VIDDIA-128.png"
+      type="image/x-icon" />
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Material Design Icons -->
+    <link
+      type="text/css"
+      href="../../public/css/material-icons.css"
+      rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link
+      type="text/css"
+      href="../../public/css/fontawesome.css"
+      rel="stylesheet" />
+
+    <!-- Registration Card Flow Styles -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* Animated Gradient Background */
+      .gradient-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #00050d;
+        background-attachment: fixed;
+      }
+
+      /* Header */
+      .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+      }
+
+      .logo img {
+        height: 36px;
+      }
+
+      .header-links {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .header-link {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+      }
+
+      .header-link:hover {
+        color: white;
+      }
+
+      .btn-header {
+        padding: 10px 24px;
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        color: white;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+
+      .btn-header:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-1px);
+      }
+
+      /* Main Container */
+      .registration-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 120px 20px 40px;
+      }
+
+      /* Registration Card */
+      .registration-card {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(30px);
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15),
+          0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 550px;
+        overflow: hidden;
+        animation: cardSlideIn 0.6s ease;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      @keyframes cardSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      html.dark-mode .registration-card {
+        background: rgba(25, 25, 28, 0.98);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Card Header */
+      .card-header {
+        padding: 40px 40px 32px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        text-align: center;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0)
+        );
+      }
+
+      html.dark-mode .card-header {
+        border-bottom-color: rgba(255, 255, 255, 0.06);
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0)
+        );
+      }
+
+      .card-header h2 {
+        margin: 0 0 12px 0;
+        font-size: 1.85rem;
+        font-weight: 600;
+        font-family: "Inter Tight", sans-serif;
+        color: #1a1a1a;
+      }
+
+      html.dark-mode .card-header h2 {
+        color: #fff;
+      }
+
+      .card-header p {
+        margin: 0;
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      html.dark-mode .card-header p {
+        color: #aaa;
+      }
+
+      /* Step Indicator */
+      .step-indicator {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .step-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      html.dark-mode .step-dot {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .step-dot.active {
+        background-color: #2196f3;
+        transform: scale(1.5);
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.15);
+      }
+
+      .step-dot.completed {
+        background-color: #4caf50;
+      }
+
+      /* Card Body */
+      .card-body {
+        padding: 40px;
+      }
+
+      @media (max-width: 576px) {
+        .card-header {
+          padding: 32px 24px 24px;
+        }
+
+        .card-body {
+          padding: 32px 24px;
+        }
+
+        .card-header h2 {
+          font-size: 1.5rem;
+        }
+      }
+
+      /* Form Steps */
+      .form-step {
+        display: none;
+      }
+
+      .form-step.active {
+        display: block;
+        animation: stepFadeIn 0.4s ease;
+      }
+
+      @keyframes stepFadeIn {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Form Elements */
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        color: #333;
+      }
+
+      html.dark-mode .form-label {
+        color: #ddd;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 14px 18px;
+        border: 1.5px solid rgba(0, 0, 0, 0.12);
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        background-color: #fff;
+        color: #333;
+        font-family: "Inter", sans-serif;
+      }
+
+      html.dark-mode .form-control {
+        background-color: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.12);
+        color: #fff;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: #2196f3;
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.08);
+        background-color: #fff;
+      }
+
+      html.dark-mode .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+
+      .form-control.error {
+        border-color: #f44336;
+      }
+
+      .form-control.error:focus {
+        box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.08);
+      }
+
+      .error-message {
+        display: none;
+        color: #f44336;
+        font-size: 0.85rem;
+        margin-top: 6px;
+      }
+
+      .error-message.show {
+        display: block;
+      }
+
+      /* Code Input */
+      .code-input {
+        font-size: 1.8rem;
+        letter-spacing: 0.5em;
+        text-align: center;
+        font-family: "Courier New", monospace;
+        font-weight: 600;
+        padding: 18px;
+      }
+
+      /* Resend Link */
+      .resend-link {
+        display: inline-block;
+        margin-top: 16px;
+        color: #2196f3;
+        text-decoration: none;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+
+      .resend-link:hover {
+        color: #1976d2;
+        text-decoration: underline;
+      }
+
+      /* Avatar Selection */
+      .avatar-selection-container {
+        margin-bottom: 24px;
+      }
+
+      .avatar-carousel {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+        margin-bottom: 20px;
+      }
+
+      .avatar-carousel-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        overflow: hidden;
+        max-width: 100%;
+        width: 100%;
+        justify-content: center;
+        user-select: none;
+      }
+
+      .carousel-container {
+        overflow: hidden;
+        width: 100%;
+        max-width: 760px;
+      }
+
+      .carousel-nav {
+        background: rgba(33, 150, 243, 0.1);
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #2196f3;
+        flex-shrink: 0;
+      }
+
+      .carousel-nav .material-symbols-rounded {
+        font-size: 20px;
+      }
+
+      html.dark-mode .carousel-nav {
+        background: rgba(33, 150, 243, 0.15);
+      }
+
+      .carousel-nav:hover {
+        background: rgba(33, 150, 243, 0.2);
+        transform: scale(1.1);
+      }
+
+      .carousel-nav:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
+      .carousel-nav:disabled:hover {
+        transform: none;
+      }
+
+      .carousel-avatars {
+        display: flex;
+        gap: 12px;
+        transition: transform 0.3s ease;
+        will-change: transform;
+      }
+
+      .carousel-avatars.dragging {
+        transition: none;
+      }
+
+      .avatar-option {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 3px solid transparent;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        position: relative;
+        background-color: #f5f5f5;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        flex-shrink: 0;
+      }
+
+      html.dark-mode .avatar-option {
+        background-color: rgba(255, 255, 255, 0.06);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .avatar-option:hover {
+        transform: scale(1.1);
+        border-color: #2196f3;
+        box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+      }
+
+      .avatar-option.selected {
+        border-color: #2196f3;
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.25);
+        transform: scale(1.1);
+      }
+
+      .avatar-option img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      /* Divider */
+      .avatar-divider {
+        text-align: center;
+        margin: 24px 0;
+        position: relative;
+      }
+
+      .avatar-divider::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      html.dark-mode .avatar-divider::before {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .avatar-divider span {
+        background: #fff;
+        padding: 0 16px;
+        position: relative;
+        color: #999;
+        font-size: 0.85rem;
+      }
+
+      html.dark-mode .avatar-divider span {
+        background: rgba(25, 25, 28, 0.98);
+      }
+
+      /* Upload Section */
+      .upload-section {
+        text-align: center;
+      }
+
+      .upload-area {
+        border: 2px dashed rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        padding: 24px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-color: rgba(0, 0, 0, 0.02);
+      }
+
+      html.dark-mode .upload-area {
+        background-color: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .upload-area:hover {
+        border-color: #2196f3;
+        background-color: rgba(33, 150, 243, 0.05);
+      }
+
+      html.dark-mode .upload-area:hover {
+        background-color: rgba(33, 150, 243, 0.1);
+      }
+
+      .upload-area input[type="file"] {
+        display: none;
+      }
+
+      .upload-icon {
+        font-size: 40px;
+        color: #2196f3;
+        margin-bottom: 8px;
+      }
+
+      .upload-area p {
+        margin: 4px 0;
+        color: #666;
+      }
+
+      html.dark-mode .upload-area p {
+        color: #aaa;
+      }
+
+      .upload-area strong {
+        color: #333;
+      }
+
+      html.dark-mode .upload-area strong {
+        color: #fff;
+      }
+
+      .upload-preview {
+        margin-top: 16px;
+        display: none;
+      }
+
+      .upload-preview.show {
+        display: block;
+      }
+
+      .upload-preview-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+        border: 3px solid #2196f3;
+        box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+      }
+
+      /* Card Footer */
+      .card-footer {
+        padding: 24px 40px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        border-top: 1px solid rgba(0, 0, 0, 0.04);
+        margin-top: 8px;
+      }
+
+      html.dark-mode .card-footer {
+        border-top-color: rgba(255, 255, 255, 0.04);
+      }
+
+      @media (max-width: 576px) {
+        .card-footer {
+          padding: 20px 24px 32px;
+          flex-direction: column-reverse;
+        }
+      }
+
+      /* Buttons */
+      .btn {
+        padding: 14px 36px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        font-family: "Inter", sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .btn:active::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #2196f3, #1976d2);
+        color: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #1976d2, #1565c0);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-primary:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-primary:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      html.dark-mode .btn-primary:disabled {
+        background: #555;
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: #666;
+        border: 2px solid rgba(0, 0, 0, 0.15);
+      }
+
+      html.dark-mode .btn-secondary {
+        color: #aaa;
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 0, 0, 0.25);
+        transform: translateY(-1px);
+      }
+
+      html.dark-mode .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+
+      .btn-secondary:active {
+        transform: translateY(0);
+      }
+
+      @media (max-width: 576px) {
+        .btn {
+          width: 100%;
+        }
+      }
+
+      /* Success Message */
+      .success-message {
+        text-align: center;
+        padding: 24px 0;
+      }
+
+      .success-icon {
+        font-size: 80px;
+        color: #4caf50;
+        margin-bottom: 20px;
+        animation: scaleIn 0.5s ease;
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .success-message h3 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        font-family: "Inter Tight", sans-serif;
+        color: #1a1a1a;
+      }
+
+      html.dark-mode .success-message h3 {
+        color: #fff;
+      }
+
+      .success-message > p {
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      html.dark-mode .success-message > p {
+        color: #aaa;
+      }
+
+      .success-details {
+        background-color: rgba(0, 0, 0, 0.04);
+        border-radius: 16px;
+        padding: 24px;
+        margin-top: 24px;
+        text-align: left;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      html.dark-mode .success-details {
+        background-color: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.08);
+      }
+
+      .success-details p {
+        margin: 10px 0;
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      html.dark-mode .success-details p {
+        color: #bbb;
+      }
+
+      .success-details strong {
+        color: #1a1a1a;
+        font-weight: 600;
+      }
+
+      html.dark-mode .success-details strong {
+        color: #fff;
+      }
+
+      /* Hidden utility */
+      .hidden {
+        display: none;
+      }
+
+      /* Responsive adjustments for carousel */
+      @media (max-width: 768px) {
+        .carousel-container {
+          max-width: 400px;
+        }
+
+        .avatar-option {
+          width: 70px;
+          height: 70px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .carousel-container {
+          max-width: 280px;
+        }
+
+        .avatar-option {
+          width: 60px;
+          height: 60px;
+        }
+
+        .carousel-nav {
+          width: 32px;
+          height: 32px;
+        }
+
+        .carousel-nav .material-symbols-rounded {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Animated Gradient Background -->
+    <div class="gradient-background"></div>
+
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <a href="index-not-logged.html">
+          <img
+            src="../../public/images/logos/1x/VIDDIA Logo White.png"
+            alt="VIDDIA" />
+        </a>
+      </div>
+      <div class="header-links">
+        <a href="#" class="header-link">Contato</a>
+        <a href="login.html" class="btn-header">Entrar</a>
+      </div>
+    </div>
+
+    <!-- Registration Container -->
+    <div class="registration-container">
+      <!-- Registration Card -->
+      <div class="registration-card">
+        <!-- Card Header -->
+        <div class="card-header">
+          <h2 id="cardTitle">Entre com seu email corporativo</h2>
+          <p id="cardDescription">
+            Use seu email corporativo para criar sua conta na VIDDIA
+          </p>
+          <!-- Step Indicator -->
+          <div class="step-indicator">
+            <div class="step-dot active" data-step="1"></div>
+            <div class="step-dot" data-step="2"></div>
+            <div class="step-dot" data-step="3"></div>
+          </div>
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body">
+          <!-- Step 1: Corporate Email -->
+          <div class="form-step active" id="step1">
+            <div class="form-group">
+              <label class="form-label" for="corporateEmail">
+                Email Corporativo
+              </label>
+              <input
+                type="email"
+                class="form-control"
+                id="corporateEmail"
+                placeholder="seu.nome@empresa.com"
+                autocomplete="email" />
+              <div class="error-message" id="emailError">
+                Por favor, insira um email válido
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Confirmation Code -->
+          <div class="form-step" id="step2">
+            <div class="form-group">
+              <label class="form-label" for="confirmationCode">
+                Código de Confirmação
+              </label>
+              <input
+                type="text"
+                class="form-control code-input"
+                id="confirmationCode"
+                placeholder="000000"
+                maxlength="6"
+                pattern="[0-9]{6}"
+                autocomplete="one-time-code" />
+              <div class="error-message" id="codeError">
+                O código deve conter 6 dígitos
+              </div>
+            </div>
+            <div style="text-align: center">
+              <a href="#" class="resend-link" id="resendCode">
+                Reenviar código
+              </a>
+            </div>
+          </div>
+
+          <!-- Step 3: Personal Details -->
+          <div class="form-step" id="step3">
+            <div class="form-group">
+              <label class="form-label" for="fullName"> Nome Completo </label>
+              <input
+                type="text"
+                class="form-control"
+                id="fullName"
+                placeholder="Seu nome completo"
+                autocomplete="name" />
+              <div class="error-message" id="nameError">
+                Por favor, insira seu nome completo
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="dateOfBirth">
+                Data de Nascimento
+              </label>
+              <input
+                type="date"
+                class="form-control"
+                id="dateOfBirth"
+                autocomplete="bday" />
+              <div class="error-message" id="dobError">
+                Por favor, insira sua data de nascimento
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label"> Escolha seu Avatar </label>
+
+              <!-- Avatar Carousel -->
+              <div class="avatar-selection-container">
+                <div class="avatar-carousel">
+                  <div class="avatar-carousel-wrapper">
+                    <button class="carousel-nav" id="prevAvatar" type="button">
+                      <span class="material-symbols-rounded">chevron_left</span>
+                    </button>
+                    <div class="carousel-container">
+                      <div class="carousel-avatars" id="carouselAvatars">
+                      <div class="avatar-option" data-avatar="1">
+                        <img src="../../public/images/avatars/avatar-01.svg" alt="Avatar 1" />
+                      </div>
+                      <div class="avatar-option" data-avatar="2">
+                        <img src="../../public/images/avatars/avatar-02.svg" alt="Avatar 2" />
+                      </div>
+                      <div class="avatar-option" data-avatar="3">
+                        <img src="../../public/images/avatars/avatar-03.svg" alt="Avatar 3" />
+                      </div>
+                      <div class="avatar-option" data-avatar="4">
+                        <img src="../../public/images/avatars/avatar-04.svg" alt="Avatar 4" />
+                      </div>
+                      <div class="avatar-option" data-avatar="5">
+                        <img src="../../public/images/avatars/avatar-05.svg" alt="Avatar 5" />
+                      </div>
+                      <div class="avatar-option" data-avatar="6">
+                        <img src="../../public/images/avatars/avatar-06.svg" alt="Avatar 6" />
+                      </div>
+                      <div class="avatar-option" data-avatar="7">
+                        <img src="../../public/images/avatars/avatar-07.svg" alt="Avatar 7" />
+                      </div>
+                      <div class="avatar-option" data-avatar="8">
+                        <img src="../../public/images/avatars/avatar-08.svg" alt="Avatar 8" />
+                      </div>
+                      <div class="avatar-option" data-avatar="9">
+                        <img src="../../public/images/avatars/avatar-09.svg" alt="Avatar 9" />
+                      </div>
+                      <div class="avatar-option" data-avatar="10">
+                        <img src="../../public/images/avatars/avatar-10.svg" alt="Avatar 10" />
+                      </div>
+                      </div>
+                    </div>
+                    <button class="carousel-nav" id="nextAvatar" type="button">
+                      <span class="material-symbols-rounded">chevron_right</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="avatar-divider">
+                  <span>ou</span>
+                </div>
+
+                <!-- Upload Section -->
+                <div class="upload-section">
+                  <div class="upload-area" id="uploadArea">
+                    <input type="file" id="customPhotoInput" accept="image/*" />
+                    <div class="upload-icon">
+                      <span class="material-symbols-rounded">cloud_upload</span>
+                    </div>
+                    <p><strong>Clique para fazer upload</strong></p>
+                    <p class="text-muted small">PNG, JPG até 5MB</p>
+                  </div>
+                  <div class="upload-preview" id="uploadPreview">
+                    <img src="" alt="Preview" class="upload-preview-image" id="previewImage" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="error-message" id="avatarError">
+                Por favor, escolha um avatar ou envie uma foto
+              </div>
+            </div>
+          </div>
+
+          <!-- Success Step -->
+          <div class="form-step" id="stepSuccess">
+            <div class="success-message">
+              <div class="success-icon">
+                <span class="material-symbols-rounded" style="font-size: 80px">
+                  check_circle
+                </span>
+              </div>
+              <h3>Cadastro realizado com sucesso!</h3>
+              <p>Bem-vindo à VIDDIA. Seus dados foram registrados:</p>
+              <div class="success-details" id="successDetails">
+                <!-- Details will be populated by JavaScript -->
+              </div>
+              <div style="margin-top: 32px; text-align: center">
+                <a
+                  href="index.html"
+                  class="btn btn-primary"
+                  id="accessPlatformButton">
+                  Acessar Plataforma
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer" id="cardFooter">
+          <button
+            class="btn btn-secondary"
+            id="backButton"
+            style="display: none">
+            Voltar
+          </button>
+          <button class="btn btn-primary" id="nextButton">Continuar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registration Script -->
+    <script>
+      (function () {
+        "use strict";
+
+        // State
+        let currentStep = 1;
+        const formData = {
+          email: "",
+          code: "",
+          fullName: "",
+          dateOfBirth: "",
+          avatarId: null,
+        };
+
+        // DOM Elements
+        const nextButton = document.getElementById("nextButton");
+        const backButton = document.getElementById("backButton");
+        const cardTitle = document.getElementById("cardTitle");
+        const cardDescription = document.getElementById("cardDescription");
+        const cardFooter = document.getElementById("cardFooter");
+
+        // Step Elements
+        const emailInput = document.getElementById("corporateEmail");
+        const codeInput = document.getElementById("confirmationCode");
+        const fullNameInput = document.getElementById("fullName");
+        const dateOfBirthInput = document.getElementById("dateOfBirth");
+        const resendCodeLink = document.getElementById("resendCode");
+        const avatarOptions = document.querySelectorAll(".avatar-option");
+        const carouselAvatars = document.getElementById("carouselAvatars");
+        const prevAvatarBtn = document.getElementById("prevAvatar");
+        const nextAvatarBtn = document.getElementById("nextAvatar");
+        const uploadArea = document.getElementById("uploadArea");
+        const customPhotoInput = document.getElementById("customPhotoInput");
+        const uploadPreview = document.getElementById("uploadPreview");
+        const previewImage = document.getElementById("previewImage");
+
+        // Carousel state
+        let currentAvatarIndex = 0;
+        const avatarsPerView = 8;
+        const totalAvatars = avatarOptions.length;
+        let customPhotoFile = null;
+        const avatarWidth = 80; // width of avatar
+        const avatarGap = 12; // gap between avatars
+        const avatarTotalWidth = avatarWidth + avatarGap;
+
+        // Carousel Functions
+        function updateCarousel() {
+          const offset = -(currentAvatarIndex * avatarTotalWidth);
+          carouselAvatars.style.transform = `translateX(${offset}px)`;
+
+          // Update navigation button states
+          prevAvatarBtn.disabled = currentAvatarIndex === 0;
+          nextAvatarBtn.disabled = currentAvatarIndex >= totalAvatars - avatarsPerView;
+
+          // Hide navigation buttons if all avatars fit
+          if (totalAvatars <= avatarsPerView) {
+            prevAvatarBtn.style.display = 'none';
+            nextAvatarBtn.style.display = 'none';
+          }
+        }
+
+        // Carousel Navigation Handlers
+        prevAvatarBtn.addEventListener("click", function () {
+          if (currentAvatarIndex > 0) {
+            currentAvatarIndex--;
+            updateCarousel();
+          }
+        });
+
+        nextAvatarBtn.addEventListener("click", function () {
+          if (currentAvatarIndex < totalAvatars - avatarsPerView) {
+            currentAvatarIndex++;
+            updateCarousel();
+          }
+        });
+
+        // Drag/Swipe functionality for carousel
+        let isDragging = false;
+        let startX = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let animationID = 0;
+
+        carouselAvatars.addEventListener("mousedown", dragStart);
+        carouselAvatars.addEventListener("touchstart", dragStart, { passive: false });
+        carouselAvatars.addEventListener("mouseup", dragEnd);
+        carouselAvatars.addEventListener("touchend", dragEnd);
+        carouselAvatars.addEventListener("mouseleave", dragEnd);
+        carouselAvatars.addEventListener("mousemove", drag);
+        carouselAvatars.addEventListener("touchmove", drag, { passive: false });
+
+        function dragStart(e) {
+          isDragging = true;
+          startX = getPositionX(e);
+          prevTranslate = -(currentAvatarIndex * avatarTotalWidth);
+          carouselAvatars.classList.add("dragging");
+        }
+
+        function drag(e) {
+          if (!isDragging) return;
+          e.preventDefault();
+
+          const currentPosition = getPositionX(e);
+          const movedBy = currentPosition - startX;
+          currentTranslate = prevTranslate + movedBy;
+
+          // Add resistance at boundaries
+          const maxTranslate = 0;
+          const minTranslate = -((totalAvatars - avatarsPerView) * avatarTotalWidth);
+
+          if (currentTranslate > maxTranslate) {
+            currentTranslate = maxTranslate + (currentTranslate - maxTranslate) * 0.3;
+          } else if (currentTranslate < minTranslate) {
+            currentTranslate = minTranslate + (currentTranslate - minTranslate) * 0.3;
+          }
+
+          carouselAvatars.style.transform = `translateX(${currentTranslate}px)`;
+        }
+
+        function dragEnd() {
+          if (!isDragging) return;
+          isDragging = false;
+          carouselAvatars.classList.remove("dragging");
+
+          const movedBy = currentTranslate - prevTranslate;
+
+          // Calculate which index we should snap to
+          const moveThreshold = avatarTotalWidth / 3;
+
+          if (Math.abs(movedBy) > moveThreshold) {
+            // Moved significantly, update index
+            const direction = movedBy < 0 ? 1 : -1;
+            const steps = Math.round(Math.abs(movedBy) / avatarTotalWidth);
+
+            currentAvatarIndex += direction * steps;
+
+            // Clamp to valid range
+            currentAvatarIndex = Math.max(0, Math.min(currentAvatarIndex, totalAvatars - avatarsPerView));
+          }
+
+          updateCarousel();
+        }
+
+        function getPositionX(e) {
+          return e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+        }
+
+        // Update Step Indicator
+        function updateStepIndicator() {
+          const dots = document.querySelectorAll(".step-dot");
+          dots.forEach((dot, index) => {
+            const stepNumber = index + 1;
+            dot.classList.remove("active", "completed");
+
+            if (stepNumber < currentStep) {
+              dot.classList.add("completed");
+            } else if (stepNumber === currentStep) {
+              dot.classList.add("active");
+            }
+          });
+        }
+
+        // Show Step
+        function showStep(step) {
+          // Hide all steps
+          document.querySelectorAll(".form-step").forEach((stepEl) => {
+            stepEl.classList.remove("active");
+          });
+
+          // Show current step
+          const currentStepEl = document.getElementById("step" + step);
+          if (currentStepEl) {
+            currentStepEl.classList.add("active");
+          }
+
+          // Update step indicator
+          updateStepIndicator();
+
+          // Update header and buttons
+          if (step === 1) {
+            cardTitle.textContent = "Entre com seu email corporativo";
+            cardDescription.textContent =
+              "Use seu email corporativo para criar sua conta na VIDDIA";
+            backButton.style.display = "none";
+            nextButton.textContent = "Continuar";
+            nextButton.style.display = "block";
+            document.querySelector(".step-indicator").style.display = "flex";
+          } else if (step === 2) {
+            cardTitle.textContent = "Verifique sua caixa de entrada";
+            cardDescription.textContent =
+              "Enviamos um código de confirmação para " + formData.email;
+            backButton.style.display = "block";
+            nextButton.textContent = "Verificar Código";
+            nextButton.style.display = "block";
+          } else if (step === 3) {
+            cardTitle.textContent = "Complete seu perfil";
+            cardDescription.textContent =
+              "Adicione suas informações pessoais para finalizar o cadastro";
+            backButton.style.display = "block";
+            nextButton.textContent = "Finalizar Cadastro";
+            nextButton.style.display = "block";
+          } else if (step === "Success") {
+            cardTitle.textContent = "";
+            cardDescription.textContent = "";
+            cardFooter.style.display = "none";
+            document.querySelector(".step-indicator").style.display = "none";
+          }
+        }
+
+        // Validation Functions
+        function validateEmail(email) {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(email);
+        }
+
+        function validateCode(code) {
+          return /^\d{6}$/.test(code);
+        }
+
+        function showError(inputId, errorId, message) {
+          const input = document.getElementById(inputId);
+          const error = document.getElementById(errorId);
+
+          input.classList.add("error");
+          error.textContent = message || error.textContent;
+          error.classList.add("show");
+        }
+
+        function clearError(inputId, errorId) {
+          const input = document.getElementById(inputId);
+          const error = document.getElementById(errorId);
+
+          input.classList.remove("error");
+          error.classList.remove("show");
+        }
+
+        // Email validation on blur
+        emailInput.addEventListener("blur", function () {
+          if (emailInput.value && !validateEmail(emailInput.value)) {
+            showError("corporateEmail", "emailError");
+          }
+        });
+
+        emailInput.addEventListener("input", function () {
+          clearError("corporateEmail", "emailError");
+        });
+
+        // Code input: only numbers
+        codeInput.addEventListener("input", function (e) {
+          this.value = this.value.replace(/\D/g, "");
+          clearError("confirmationCode", "codeError");
+        });
+
+        // Name input validation
+        fullNameInput.addEventListener("input", function () {
+          clearError("fullName", "nameError");
+        });
+
+        dateOfBirthInput.addEventListener("input", function () {
+          clearError("dateOfBirth", "dobError");
+        });
+
+        // Avatar Selection
+        avatarOptions.forEach((option) => {
+          option.addEventListener("click", function () {
+            // Remove previous selection
+            avatarOptions.forEach((opt) => opt.classList.remove("selected"));
+
+            // Select this avatar
+            this.classList.add("selected");
+            formData.avatarId = this.getAttribute("data-avatar");
+
+            // Clear uploaded photo if avatar is selected
+            customPhotoFile = null;
+            uploadPreview.classList.remove("show");
+            previewImage.src = "";
+            customPhotoInput.value = "";
+
+            clearError("avatarGrid", "avatarError");
+          });
+        });
+
+        // File Upload Handlers
+        uploadArea.addEventListener("click", function () {
+          customPhotoInput.click();
+        });
+
+        customPhotoInput.addEventListener("change", function (e) {
+          const file = e.target.files[0];
+          if (!file) return;
+
+          // Validate file type
+          if (!file.type.startsWith("image/")) {
+            alert("Por favor, selecione uma imagem válida");
+            return;
+          }
+
+          // Validate file size (5MB max)
+          if (file.size > 5 * 1024 * 1024) {
+            alert("A imagem deve ter no máximo 5MB");
+            return;
+          }
+
+          // Store file
+          customPhotoFile = file;
+
+          // Show preview
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            previewImage.src = e.target.result;
+            uploadPreview.classList.add("show");
+
+            // Clear avatar selection if photo is uploaded
+            avatarOptions.forEach((opt) => opt.classList.remove("selected"));
+            formData.avatarId = null;
+
+            document.getElementById("avatarError").classList.remove("show");
+          };
+          reader.readAsDataURL(file);
+        });
+
+        // Resend Code
+        resendCodeLink.addEventListener("click", function (e) {
+          e.preventDefault();
+          console.log("Resending confirmation code to:", formData.email);
+
+          // Show visual feedback
+          const originalText = this.textContent;
+          this.textContent = "Código reenviado!";
+          this.style.color = "#4CAF50";
+
+          setTimeout(() => {
+            this.textContent = originalText;
+            this.style.color = "";
+          }, 3000);
+        });
+
+        // Next Button Handler
+        nextButton.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          if (currentStep === 1) {
+            // Validate email
+            const email = emailInput.value.trim();
+
+            if (!email) {
+              showError(
+                "corporateEmail",
+                "emailError",
+                "O email é obrigatório"
+              );
+              return;
+            }
+
+            if (!validateEmail(email)) {
+              showError("corporateEmail", "emailError");
+              return;
+            }
+
+            // Save email and simulate sending code
+            formData.email = email;
+            console.log("Sending confirmation code to:", email);
+
+            // Move to step 2
+            currentStep = 2;
+            showStep(2);
+          } else if (currentStep === 2) {
+            // Validate code
+            const code = codeInput.value.trim();
+
+            if (!code) {
+              showError(
+                "confirmationCode",
+                "codeError",
+                "O código é obrigatório"
+              );
+              return;
+            }
+
+            if (!validateCode(code)) {
+              showError("confirmationCode", "codeError");
+              return;
+            }
+
+            // Save code
+            formData.code = code;
+            console.log("Code verified:", code);
+
+            // Move to step 3
+            currentStep = 3;
+            showStep(3);
+          } else if (currentStep === 3) {
+            // Validate all fields
+            let isValid = true;
+
+            const fullName = fullNameInput.value.trim();
+            const dateOfBirth = dateOfBirthInput.value;
+
+            if (!fullName) {
+              showError("fullName", "nameError");
+              isValid = false;
+            }
+
+            if (!dateOfBirth) {
+              showError("dateOfBirth", "dobError");
+              isValid = false;
+            }
+
+            // Check if either avatar or custom photo is selected
+            if (!formData.avatarId && !customPhotoFile) {
+              document.getElementById("avatarError").classList.add("show");
+              isValid = false;
+            }
+
+            if (!isValid) {
+              return;
+            }
+
+            // Save data
+            formData.fullName = fullName;
+            formData.dateOfBirth = dateOfBirth;
+
+            // If custom photo was uploaded, convert to base64 for storage
+            if (customPhotoFile) {
+              const reader = new FileReader();
+              reader.onload = function (e) {
+                formData.customPhoto = e.target.result;
+
+                // Log all data
+                console.log("Registration completed!");
+                console.log("Form Data:", formData);
+
+                // Show success message
+                displaySuccess();
+              };
+              reader.readAsDataURL(customPhotoFile);
+            } else {
+              // Log all data
+              console.log("Registration completed!");
+              console.log("Form Data:", formData);
+
+              // Show success message
+              displaySuccess();
+            }
+          }
+        });
+
+        // Back Button Handler
+        backButton.addEventListener("click", function () {
+          if (currentStep > 1) {
+            currentStep--;
+            showStep(currentStep);
+          }
+        });
+
+        // Display Success
+        function displaySuccess() {
+          const successDetails = document.getElementById("successDetails");
+
+          let avatarInfo = "";
+          if (formData.customPhoto) {
+            avatarInfo = `
+              <p><strong>Foto de Perfil:</strong></p>
+              <div style="text-align: center; margin-top: 12px;">
+                <img src="${formData.customPhoto}" alt="Custom Photo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #2196f3;" />
+              </div>
+            `;
+          } else {
+            avatarInfo = `<p><strong>Avatar ID:</strong> ${formData.avatarId}</p>`;
+          }
+
+          successDetails.innerHTML = `
+            <p><strong>Email:</strong> ${formData.email}</p>
+            <p><strong>Nome:</strong> ${formData.fullName}</p>
+            <p><strong>Data de Nascimento:</strong> ${new Date(
+              formData.dateOfBirth
+            ).toLocaleDateString("pt-BR")}</p>
+            ${avatarInfo}
+          `;
+
+          showStep("Success");
+
+          // Note: User can now click "Acessar Plataforma" button to continue
+          // No auto-redirect needed
+        }
+
+        // Initialize
+        showStep(1);
+        updateCarousel(); // Initialize carousel navigation buttons
+
+        // Auto-focus first input
+        emailInput.focus();
+      })();
+    </script>
+  </body>
+</html>
