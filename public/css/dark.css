@@ -2126,3 +2126,16 @@ html.dark-mode .page-separator__text-free {
     border-radius: .25rem;
     background-color: #00050d
 }
+
+/* Course Card Overlay - Dark Mode */
+html.dark-mode .course-card__overlay {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+html.dark-mode .course-card__overlay-icon {
+    color: #fff;
+}
+
+html.dark-mode .course-card__overlay-text {
+    color: #fff;
+}
