@@ -41,23 +41,57 @@
         height: 100%;
         overflow: hidden;
       }
+
+      /* Logo no canto superior esquerdo */
+      .page-logo {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        z-index: 1000;
+      }
+
+      .page-logo__img {
+        height: 40px;
+        width: auto;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+      }
+
+      .page-logo__img:hover {
+        opacity: 1;
+      }
+
+      /* Responsivo para telas menores */
+      @media (max-width: 768px) {
+        .page-logo {
+          top: 1.5rem;
+          left: 1.5rem;
+        }
+
+        .page-logo__img {
+          height: 32px;
+        }
+      }
     </style>
   </head>
 
   <body class="login-page">
+    <!-- Logo no canto superior esquerdo -->
+    <div class="page-logo">
+      <img
+        src="../../public/images/logos/0.75x/VIDDIA Logo White@0.75x.png"
+        alt="VIDDIA"
+        class="page-logo__img" />
+    </div>
+
     <div class="login-shell">
       <section class="auth-card">
-        <div class="auth-card__brand">
-          <img
-            src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png"
-            alt="VIDDIA"
-            class="auth-logo" />
-        </div>
-
         <header class="auth-header">
-          <h1 class="auth-title" style="line-height: 2rem !important">
+          <h3
+            class="auth-title"
+            style="line-height: 2rem !important; font-size: 1.5rem">
             Bem-vindo(a) de volta!
-          </h1>
+          </h3>
           <p class="auth-subtitle">
             Use suas credenciais para retomar sua jornada de aprendizado.
           </p>
