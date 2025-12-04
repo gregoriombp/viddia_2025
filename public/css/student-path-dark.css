@@ -593,3 +593,214 @@ html.dark-mode .path-progress-milestones__label {
 html.dark-mode .path-progress-milestones__label--current {
     color: rgba(96, 165, 250, 1);
 }
+
+/* ========================================
+   STUDENT PATH PAGE - DARK MODE RESPONSIVE
+   ======================================== */
+
+/* ==========================================
+   TABLET (max-width: 1024px) - Dark Mode
+   ========================================== */
+@media (max-width: 1024px) {
+    html.dark-mode .profile-card-gradient {
+        background: linear-gradient(0deg,
+                rgba(15, 23, 42, 0.95),
+                rgba(22, 33, 51, 0.98)) !important;
+    }
+}
+
+/* ==========================================
+   MOBILE (max-width: 768px) - Dark Mode
+   ========================================== */
+@media (max-width: 768px) {
+    /* Hero adjustments - garantir máscara sem margens */
+    html.dark-mode .hero--fade::before,
+    html.dark-mode .hero--fade::after {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    html.dark-mode .hero--fade::after {
+        bottom: 0 !important;
+        top: 35% !important;
+        background: linear-gradient(180deg, rgba(0, 5, 13, 0) 0%, rgba(0, 5, 13, .9) 75%, #00050d 100%);
+    }
+
+    /* Profile card */
+    html.dark-mode .profile-card-gradient {
+        background: linear-gradient(0deg,
+                rgba(12, 18, 32, 0.96),
+                rgba(18, 28, 45, 0.98)) !important;
+        border: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    html.dark-mode .profile-card-gradient .bg-light {
+        background-color: rgba(30, 41, 59, 0.6) !important;
+        border: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    /* Course materials dropdown - bottom sheet style */
+    html.dark-mode .course-materials-dropdown__menu {
+        background: rgba(12, 18, 32, 0.98);
+        border: 1px solid rgba(102, 126, 234, 0.25);
+        border-bottom: none;
+        box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Module track */
+    html.dark-mode .module-track-section {
+        --module-mask-color: #00050d;
+    }
+
+    html.dark-mode .module-block + .module-block {
+        border-top-color: rgba(148, 163, 184, 0.15);
+    }
+
+    /* Module carousel navigation */
+    html.dark-mode .module-carousel__nav {
+        background: rgba(12, 18, 32, 0.9);
+        border-color: rgba(148, 163, 184, 0.3);
+    }
+
+    html.dark-mode .module-carousel__nav:hover {
+        background: rgba(59, 130, 246, 0.2);
+        border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    /* Module video cards */
+    html.dark-mode .module-video {
+        background: rgba(15, 23, 42, 0.9);
+        border-color: rgba(148, 163, 184, 0.2);
+    }
+
+    html.dark-mode .module-video:hover {
+        border-color: rgba(59, 130, 246, 0.45);
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE (max-width: 576px) - Dark Mode
+   ========================================== */
+@media (max-width: 576px) {
+    /* Hero adjustments - garantir máscara sem margens */
+    html.dark-mode .hero--fade::before,
+    html.dark-mode .hero--fade::after {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    html.dark-mode .hero--fade::after {
+        bottom: 0 !important;
+        top: 30% !important;
+    }
+
+    /* Profile card compact */
+    html.dark-mode .profile-card-gradient .d-flex.align-items-center.pr-12pt {
+        background-color: rgba(30, 41, 59, 0.5) !important;
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        border-radius: 12px;
+    }
+
+    /* Progress section */
+    html.dark-mode .path-progress-overview__segments {
+        background: rgba(30, 41, 59, 0.8);
+    }
+
+    /* Milestones scrollbar */
+    html.dark-mode .path-progress-milestones::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    html.dark-mode .path-progress-milestones::-webkit-scrollbar-track {
+        background: rgba(30, 41, 59, 0.5);
+        border-radius: 2px;
+    }
+
+    html.dark-mode .path-progress-milestones::-webkit-scrollbar-thumb {
+        background: rgba(59, 130, 246, 0.4);
+        border-radius: 2px;
+    }
+
+    /* Module carousel */
+    html.dark-mode .module-carousel__track {
+        scrollbar-width: none;
+    }
+
+    html.dark-mode .module-carousel__track::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Module video - smaller size adjustments */
+    html.dark-mode .module-video {
+        box-shadow: 0 16px 40px -24px rgba(0, 5, 13, 0.9);
+    }
+
+    html.dark-mode .module-video--completed .module-video__thumb::after {
+        background: rgba(10, 15, 28, 0.6);
+    }
+}
+
+/* ==========================================
+   EXTRA SMALL MOBILE (max-width: 375px) - Dark Mode
+   ========================================== */
+@media (max-width: 375px) {
+    /* Hero adjustments - garantir máscara sem margens */
+    html.dark-mode .hero--fade::before,
+    html.dark-mode .hero--fade::after {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    html.dark-mode .hero--fade::after {
+        bottom: 0 !important;
+        top: 25% !important;
+    }
+
+    html.dark-mode .profile-card-gradient {
+        background: linear-gradient(0deg,
+                rgba(10, 15, 28, 0.97),
+                rgba(15, 23, 42, 0.98)) !important;
+    }
+
+    html.dark-mode .path-progress-milestones__icon {
+        color: rgba(96, 165, 250, 0.8);
+    }
+
+    html.dark-mode .path-progress-milestones__label {
+        color: rgba(148, 163, 184, 0.8);
+    }
+}
+
+/* ==========================================
+   LANDSCAPE MODE - Dark Mode
+   ========================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    /* Hero adjustments - garantir máscara sem margens */
+    html.dark-mode .hero--fade::before,
+    html.dark-mode .hero--fade::after {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    html.dark-mode .hero--fade::after {
+        bottom: 0 !important;
+        top: 20% !important;
+        background: linear-gradient(180deg, rgba(0, 5, 13, 0) 0%, rgba(0, 5, 13, .85) 60%, #00050d 100%);
+    }
+
+    html.dark-mode .module-track-section {
+        --module-mask-color: #00050d;
+    }
+}

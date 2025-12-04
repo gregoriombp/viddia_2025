@@ -499,13 +499,14 @@
 .hero--fade::before {
     content: "";
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.56) 0%, rgba(10, 16, 28, .60) 55%, rgba(0, 0, 0, 0.2) 80%, rgba(10, 16, 28, 0) 100%);
     pointer-events: none;
     z-index: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .hero--fade::after {
@@ -515,23 +516,33 @@
     right: 0;
     bottom: 0;
     top: 40%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     background: linear-gradient(180deg,
             rgba(255, 255, 255, 0) 0%,
             rgba(255, 255, 255, 0.1) 20%,
-
             rgba(255, 255, 255, 0.499) 60%,
             rgba(255, 255, 255, 0.799) 80%,
-
             #fff 100%);
     pointer-events: none;
     z-index: 1;
-
-
 }
 
 .hero--fade>* {
     position: relative;
     z-index: 2;
+}
+
+/* Garantir que o container pai do hero não afete as máscaras */
+.mdk-box.mdk-box--bg-dark {
+    position: relative;
+    overflow: hidden;
+}
+
+.mdk-box.mdk-box--bg-dark::before,
+.mdk-box.mdk-box--bg-dark::after {
+    box-sizing: border-box;
 }
 
 /* ==========================================
@@ -1834,5 +1845,637 @@
 
     .lesson-materials-dropdown__download {
         font-size: 20px;
+    }
+}
+
+/* ========================================
+   STUDENT PATH PAGE - RESPONSIVE STYLES
+   ======================================== */
+
+/* ==========================================
+   TABLET (max-width: 1024px)
+   ========================================== */
+@media (max-width: 1024px) {
+    /* Hero section adjustments */
+    .hero--fade {
+        min-height: 600px;
+    }
+
+    /* Garantir máscara sem margens */
+    .hero--fade::before,
+    .hero--fade::after {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .hero--fade::after {
+        bottom: 0 !important;
+    }
+
+    .hero--fade .container.page__container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .hero--fade .d-flex.flex-column.flex-sm-row {
+        margin-left: 32px !important;
+    }
+
+    .hero--fade h1.text-white {
+        font-size: 2rem;
+    }
+
+    .hero--fade .lead {
+        font-size: 1rem;
+    }
+
+    /* Main content container adjustments */
+    .container.ui.page__container.container-sm {
+        padding-left: 48px !important;
+        padding-right: 24px !important;
+        max-width: 100% !important;
+    }
+
+    /* Progress and profile sections - 2 column layout */
+    .container.ui.page__container .row.justify-content-between {
+        gap: 32px;
+    }
+
+    .container.ui.page__container .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+
+    .container.ui.page__container .col-lg-5 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    /* Profile card adjustments */
+    .profile-card-gradient {
+        padding: 24px !important;
+    }
+
+    /* Module track section */
+    .module-track-section {
+        margin-top: 48px;
+        gap: 36px;
+    }
+
+    .container-xxl.pl-64pt.pr-64pt {
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+    }
+}
+
+/* ==========================================
+   MOBILE (max-width: 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    /* Hero section */
+    .hero--fade {
+        min-height: 480px;
+    }
+
+    /* Garantir máscara sem margens em mobile */
+    .hero--fade::before,
+    .hero--fade::after {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        width: 100vw !important;
+        margin: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+    }
+
+    .hero--fade::after {
+        bottom: 0 !important;
+        top: 35% !important;
+    }
+
+    /* Garantir que o container pai não adicione margens */
+    .mdk-box.mdk-box--bg-dark {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100vw;
+        overflow: hidden;
+    }
+
+    .hero--fade .container.page__container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero--fade .d-flex.flex-column.flex-sm-row {
+        margin-left: 0 !important;
+        text-align: center;
+    }
+
+    .hero--fade .d-flex.align-items-center.mb-16pt {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .hero--fade .mx-16pt {
+        display: none;
+    }
+
+    .hero--fade h1.text-white {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .hero--fade .lead.text-white-70 {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .hero--fade .btn-md {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Main content container */
+    .container.ui.page__container.container-sm {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    /* Progress section */
+    .path-progress-overview {
+        padding: 0;
+    }
+
+    .path-progress-overview__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .path-progress-overview__value {
+        font-size: 1.5rem;
+    }
+
+    /* Milestones - scroll horizontally */
+    .path-progress-milestones {
+        overflow-x: auto;
+        gap: 4px;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .path-progress-milestones__item {
+        flex: 0 0 auto;
+        min-width: 60px;
+    }
+
+    .path-progress-milestones__label {
+        font-size: 0.6rem;
+    }
+
+    /* Profile card */
+    .profile-card-gradient {
+        padding: 20px 16px !important;
+        border-radius: 20px !important;
+    }
+
+    .profile-card-gradient .d-flex.align-items-center.mb-24pt {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .profile-card-gradient .avatar-lg {
+        margin-right: 0 !important;
+    }
+
+    .profile-card-gradient h4 {
+        font-size: 1.125rem;
+    }
+
+    .profile-card-gradient .mb-24pt h5 {
+        text-align: center;
+    }
+
+    .profile-card-gradient .d-flex.align-items-center > .avatar {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .profile-card-gradient .row .col-12.col-sm-6 {
+        width: 50%;
+    }
+
+    /* Course materials hub */
+    .course-materials-hub {
+        flex-direction: column !important;
+        gap: 16px;
+    }
+
+    .course-materials-hub__intro {
+        padding-right: 0 !important;
+    }
+
+    .course-materials-dropdown {
+        width: 100%;
+    }
+
+    .course-materials-dropdown__toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .course-materials-dropdown__menu {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        min-width: 100%;
+        max-width: 100%;
+        border-radius: 20px 20px 0 0;
+        max-height: 70vh;
+        transform: none;
+    }
+
+    /* Module track section */
+    .container-xxl.pl-64pt.pr-64pt {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .module-track-section {
+        margin-top: 32px;
+        gap: 32px;
+    }
+
+    .module-block__header {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .module-block__number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .module-block__copy h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .module-block__description {
+        width: 100% !important;
+        font-size: 0.9rem;
+    }
+
+    /* Module carousel */
+    .module-carousel {
+        grid-template-columns: 32px 1fr 32px;
+        gap: 8px;
+    }
+
+    .module-carousel__nav {
+        width: 32px;
+        height: 32px;
+    }
+
+    .module-carousel__nav .material-symbols-rounded {
+        font-size: 18px;
+    }
+
+    .module-carousel::before {
+        left: 40px;
+        width: 40px;
+    }
+
+    .module-carousel::after {
+        right: 40px;
+        width: 40px;
+    }
+
+    .module-video {
+        flex: 0 0 260px;
+        border-radius: 14px;
+    }
+
+    .module-video__meta {
+        padding: 12px 14px 16px;
+    }
+
+    .module-video__meta h5 {
+        font-size: 0.875rem;
+    }
+
+    .module-video__meta p {
+        font-size: 0.75rem;
+    }
+
+    /* Quiz card adjustments */
+    .module-video--quiz .module-video__thumb {
+        min-height: 140px !important;
+    }
+
+    .module-video--quiz .module-video__thumb span.material-symbols-rounded {
+        font-size: 56px !important;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE (max-width: 576px)
+   ========================================== */
+@media (max-width: 576px) {
+    /* Hero section */
+    .hero--fade {
+        min-height: 420px;
+    }
+
+    /* Garantir máscara sem margens em small mobile */
+    .hero--fade::before,
+    .hero--fade::after {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box;
+    }
+
+    .hero--fade::after {
+        bottom: 0 !important;
+        top: 30% !important;
+    }
+
+    .hero--fade .container.page__container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hero--fade .d-flex.align-items-center.mb-16pt {
+        font-size: 0.8rem;
+    }
+
+    .hero--fade .d-flex.align-items-center.mb-16pt .material-symbols-rounded {
+        font-size: 14px !important;
+    }
+
+    .hero--fade h1.text-white {
+        font-size: 1.5rem;
+    }
+
+    .hero--fade .lead.text-white-70 {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .hero--fade .btn-md {
+        padding: 10px 20px;
+        font-size: 0.875rem;
+    }
+
+    /* Progress section */
+    .page-separator__text.text-lg {
+        font-size: 0.875rem !important;
+    }
+
+    .path-progress-overview__label {
+        font-size: 0.55rem;
+    }
+
+    .path-progress-overview__value {
+        font-size: 1.35rem;
+    }
+
+    .path-progress-overview__segments {
+        height: 8px;
+    }
+
+    /* Info text */
+    .d-flex.align-items-center.mt-16pt p.text-muted {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+
+    /* Profile card */
+    .profile-card-gradient .row .col-12.col-sm-6 {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .profile-card-gradient .row .col-12.col-sm-6:last-child {
+        margin-bottom: 0;
+    }
+
+    .profile-card-gradient .d-flex.align-items-center.pr-12pt {
+        padding: 10px !important;
+    }
+
+    .profile-card-gradient .icon-40pt,
+    .profile-card-gradient .icon-48pt {
+        font-size: 28px !important;
+    }
+
+    /* Module track */
+    .module-block + .module-block {
+        margin-top: 24px;
+        padding-top: 32px;
+    }
+
+    .module-block__copy h3 {
+        font-size: 1.25rem !important;
+    }
+
+    .module-block__copy small.text-muted {
+        font-size: 0.75rem;
+    }
+
+    .module-block__description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    /* Module carousel */
+    .module-carousel__track {
+        gap: 12px;
+        padding: 8px 2px 12px;
+    }
+
+    .module-video {
+        flex: 0 0 220px;
+        border-radius: 12px;
+    }
+
+    .module-video__thumb {
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .module-video__state-indicator {
+        width: 26px;
+        height: 26px;
+        top: 8px;
+        left: 8px;
+    }
+
+    .module-video__state-indicator .material-symbols-rounded {
+        font-size: 14px;
+    }
+
+    .module-video__meta {
+        padding: 10px 12px 14px;
+    }
+
+    .module-video__meta h5 {
+        font-size: 0.8rem;
+    }
+
+    .module-video__meta p {
+        font-size: 0.7rem;
+    }
+
+    /* Quiz card */
+    .module-video--quiz .module-video__thumb {
+        min-height: 120px !important;
+    }
+
+    .module-video--quiz .module-video__thumb span.material-symbols-rounded {
+        font-size: 48px !important;
+    }
+
+    .module-video--quiz .module-video__thumb > div[style*="position: absolute"] {
+        padding: 4px 8px !important;
+        font-size: 10px !important;
+    }
+}
+
+/* ==========================================
+   EXTRA SMALL MOBILE (max-width: 375px)
+   ========================================== */
+@media (max-width: 375px) {
+    /* Hero section */
+    .hero--fade {
+        min-height: 380px;
+    }
+
+    /* Garantir máscara sem margens em extra small */
+    .hero--fade::before,
+    .hero--fade::after {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .hero--fade::after {
+        bottom: 0 !important;
+        top: 25% !important;
+    }
+
+    .hero--fade h1.text-white {
+        font-size: 1.35rem;
+    }
+
+    .hero--fade .lead.text-white-70 {
+        font-size: 0.8rem;
+    }
+
+    /* Progress section */
+    .path-progress-overview__value {
+        font-size: 1.25rem;
+    }
+
+    .path-progress-milestones__item {
+        min-width: 50px;
+    }
+
+    .path-progress-milestones__icon {
+        font-size: 16px;
+    }
+
+    .path-progress-milestones__label {
+        font-size: 0.55rem;
+    }
+
+    /* Profile card */
+    .profile-card-gradient {
+        padding: 16px 12px !important;
+    }
+
+    .profile-card-gradient h4 {
+        font-size: 1rem;
+    }
+
+    .profile-card-gradient h5 {
+        font-size: 0.85rem;
+    }
+
+    .profile-card-gradient .d-flex.align-items-center > .avatar {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* Module carousel */
+    .module-video {
+        flex: 0 0 200px;
+    }
+
+    .module-video__meta h5 {
+        font-size: 0.75rem;
+    }
+
+    .module-video__meta p {
+        font-size: 0.65rem;
+    }
+}
+
+/* ==========================================
+   LANDSCAPE MODE OPTIMIZATIONS
+   ========================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero--fade {
+        min-height: 320px;
+    }
+
+    /* Garantir máscara sem margens em landscape */
+    .hero--fade::before,
+    .hero--fade::after {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .hero--fade::after {
+        bottom: 0 !important;
+        top: 20% !important;
+    }
+
+    .hero--fade .py-64pt {
+        padding-top: 32pt !important;
+        padding-bottom: 32pt !important;
+    }
+
+    .hero--fade h1.text-white {
+        font-size: 1.5rem;
+    }
+
+    .hero--fade .lead.text-white-70 {
+        font-size: 0.85rem;
+    }
+
+    .module-track-section {
+        margin-top: 24px;
     }
 }
