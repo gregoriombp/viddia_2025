@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="dark-mode">
+<html lang="en"  class="dark-mode">
 
 <head>
     <meta charset="utf-8">
@@ -490,7 +490,8 @@
             <div class="container page__container">
                 <div class="js-mdk-header-layout__content page-content">
 
-                    <div class="page-section">
+                    <div class="page-section container page__container container-xl">
+                 
                         <div class="page-separator">
                             <div class="page-separator__text">Editar Perfil</div>
                         </div>
@@ -511,13 +512,30 @@
                                         <h5 class="card-title mb-1" style="text-transform: none !important;">Gregório Pinheiro</h5>
                                         <p class="text-muted small">Membro desde 7 de Janeiro de 2019</p>
 
-                                        <button type="button" class="btn btn-outline-primary btn-block change-photo-btn" id="openPhotoModal">
+                                        <button type="button" class="btn btn-outline-primary  btn-block change-photo-btn" id="openPhotoModal">
                                             <span class="material-symbols-rounded">photo_camera</span>
                                             Alterar Foto
                                         </button>
                                     </div>
                                 </div>
+
+                                <!-- Password Change Card -->
+                                <div class="card mt-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-2" style="text-transform: none !important;">
+                                            <span class="material-symbols-rounded mr-2" style="vertical-align: middle; font-size: 24px;">lock</span>
+                                            Segurança
+                                        </h5>
+                                        <p class="text-muted small mb-3">Altere sua senha para manter sua conta segura.</p>
+                                        <button type="button" class="btn btn-outline-secondary btn-block" id="openPasswordModal">
+                                            <span class="material-symbols-rounded mr-1" style="vertical-align: middle; font-size: 18px;">key</span>
+                                            Alterar Senha
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
+
+
 
                             <!-- Right Column: Edit Form -->
                             <div class="col-md-8">
@@ -593,7 +611,7 @@
                                             <div class="d-flex justify-content-end">
                                                 <a href="student-dashboard.html"
                                                     class="btn btn-link text-secondary mr-2">Voltar</a>
-                                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                                                <button type="submit" class="btn btn-primary btn-rounded">Salvar Alterações</button>
                                             </div>
                                         </form>
                                     </div>
@@ -635,6 +653,72 @@
         </div>
 
         <!-- // END Footer -->
+
+        <!-- Password Change Modal -->
+        <div id="passwordModal" class="photo-modal">
+            <div class="photo-modal-content" style="max-width: 450px;">
+                <div class="photo-modal-header">
+                    <span class="photo-modal-close" id="closePasswordModal">&times;</span>
+                    <h3>Alterar Senha</h3>
+                </div>
+                <div class="photo-modal-body">
+                    <form id="passwordChangeForm">
+                        <!-- Current Password -->
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="currentPassword">Senha Atual</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="currentPassword"
+                                    placeholder="Digite sua senha atual" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary toggle-password" type="button" data-target="currentPassword">
+                                        <span class="material-symbols-rounded" style="font-size: 20px;">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <!-- New Password -->
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="newPassword">Nova Senha</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="newPassword"
+                                    placeholder="Digite sua nova senha" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary toggle-password" type="button" data-target="newPassword">
+                                        <span class="material-symbols-rounded" style="font-size: 20px;">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <small class="text-muted">Mínimo de 8 caracteres</small>
+                        </div>
+
+                        <!-- Confirm New Password -->
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="confirmPassword">Confirmar Nova Senha</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="confirmPassword"
+                                    placeholder="Confirme sua nova senha" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary toggle-password" type="button" data-target="confirmPassword">
+                                        <span class="material-symbols-rounded" style="font-size: 20px;">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <small class="text-danger" id="passwordMismatch" style="display: none;">As senhas não coincidem</small>
+                        </div>
+                    </form>
+                </div>
+                <div class="photo-modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelPasswordChange">Cancelar</button>
+                    <button type="button" class="btn btn-primary ml-2" id="savePasswordChange">
+                        <span class="material-symbols-rounded mr-1" style="vertical-align: middle; font-size: 18px;">save</span>
+                        Salvar Senha
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <!-- Photo Selection Modal -->
         <div id="photoModal" class="photo-modal">
@@ -926,6 +1010,160 @@
                 // Close modal with ESC key
                 document.addEventListener('keydown', function(event) {
                     if (event.key === 'Escape' && modal.style.display === 'block') {
+                        closeModal();
+                    }
+                });
+            })();
+        </script>
+
+        <!-- Password Change Modal Script -->
+        <script>
+            (function() {
+                'use strict';
+
+                var passwordModal = document.getElementById('passwordModal');
+                var openPasswordBtn = document.getElementById('openPasswordModal');
+                var closePasswordBtn = document.getElementById('closePasswordModal');
+                var cancelPasswordBtn = document.getElementById('cancelPasswordChange');
+                var savePasswordBtn = document.getElementById('savePasswordChange');
+                var passwordForm = document.getElementById('passwordChangeForm');
+                var currentPasswordInput = document.getElementById('currentPassword');
+                var newPasswordInput = document.getElementById('newPassword');
+                var confirmPasswordInput = document.getElementById('confirmPassword');
+                var passwordMismatch = document.getElementById('passwordMismatch');
+
+                // Toggle password visibility
+                var toggleButtons = document.querySelectorAll('.toggle-password');
+                toggleButtons.forEach(function(btn) {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var targetId = this.getAttribute('data-target');
+                        var input = document.getElementById(targetId);
+                        var icon = this.querySelector('.material-symbols-rounded');
+
+                        if (input.type === 'password') {
+                            input.type = 'text';
+                            icon.textContent = 'visibility_off';
+                        } else {
+                            input.type = 'password';
+                            icon.textContent = 'visibility';
+                        }
+                    });
+                });
+
+                // Open modal
+                function openModal() {
+                    passwordModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                    // Clear form
+                    passwordForm.reset();
+                    passwordMismatch.style.display = 'none';
+                }
+
+                // Close modal
+                function closeModal() {
+                    passwordModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    // Reset form
+                    passwordForm.reset();
+                    passwordMismatch.style.display = 'none';
+                    // Reset password visibility
+                    var inputs = passwordForm.querySelectorAll('input[type="text"]');
+                    inputs.forEach(function(input) {
+                        input.type = 'password';
+                    });
+                    var icons = passwordForm.querySelectorAll('.toggle-password .material-symbols-rounded');
+                    icons.forEach(function(icon) {
+                        icon.textContent = 'visibility';
+                    });
+                }
+
+                // Open modal button
+                if (openPasswordBtn) {
+                    openPasswordBtn.addEventListener('click', openModal);
+                }
+
+                // Close modal buttons
+                if (closePasswordBtn) {
+                    closePasswordBtn.addEventListener('click', closeModal);
+                }
+
+                if (cancelPasswordBtn) {
+                    cancelPasswordBtn.addEventListener('click', closeModal);
+                }
+
+                // Close when clicking outside
+                window.addEventListener('click', function(event) {
+                    if (event.target === passwordModal) {
+                        closeModal();
+                    }
+                });
+
+                // Validate passwords match
+                function validatePasswords() {
+                    if (newPasswordInput.value !== confirmPasswordInput.value) {
+                        passwordMismatch.style.display = 'block';
+                        return false;
+                    }
+                    passwordMismatch.style.display = 'none';
+                    return true;
+                }
+
+                // Check password match on input
+                confirmPasswordInput.addEventListener('input', validatePasswords);
+                newPasswordInput.addEventListener('input', function() {
+                    if (confirmPasswordInput.value) {
+                        validatePasswords();
+                    }
+                });
+
+                // Save password
+                if (savePasswordBtn) {
+                    savePasswordBtn.addEventListener('click', function() {
+                        // Validate current password is filled
+                        if (!currentPasswordInput.value) {
+                            alert('Por favor, digite sua senha atual.');
+                            currentPasswordInput.focus();
+                            return;
+                        }
+
+                        // Validate new password
+                        if (!newPasswordInput.value) {
+                            alert('Por favor, digite sua nova senha.');
+                            newPasswordInput.focus();
+                            return;
+                        }
+
+                        // Validate password length
+                        if (newPasswordInput.value.length < 8) {
+                            alert('A nova senha deve ter pelo menos 8 caracteres.');
+                            newPasswordInput.focus();
+                            return;
+                        }
+
+                        // Validate password confirmation
+                        if (!confirmPasswordInput.value) {
+                            alert('Por favor, confirme sua nova senha.');
+                            confirmPasswordInput.focus();
+                            return;
+                        }
+
+                        // Validate passwords match
+                        if (!validatePasswords()) {
+                            confirmPasswordInput.focus();
+                            return;
+                        }
+
+                        // Here you would send the data to the server
+                        // For now, just show success message
+                        alert('Senha alterada com sucesso!');
+                        closeModal();
+                    });
+                }
+
+                // Close modal with ESC key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape' && passwordModal.style.display === 'block') {
                         closeModal();
                     }
                 });
