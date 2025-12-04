@@ -140,6 +140,73 @@
       html.dark-mode #theme-toggle-item:hover {
         background-color: rgba(255, 255, 255, 0.05);
       }
+
+      /* Circular Progress Bar */
+      .circular-progress {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .circular-progress svg {
+        transform: rotate(-90deg);
+        width: 100%;
+        height: 100%;
+      }
+
+      .circular-progress__circle-bg {
+        fill: none;
+        stroke: rgba(33, 150, 243, 0.2) !important;
+        stroke-width: 3;
+      }
+
+      html.dark-mode .circular-progress__circle-bg {
+        stroke: rgba(33, 150, 243, 0.3) !important;
+      }
+
+      .circular-progress__circle {
+        fill: none;
+        stroke: #2196f3 !important;
+        stroke-width: 3;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 0.5s ease;
+      }
+
+      /* Circular Progress on Welcome Panel */
+      .welcome-panel__content .circular-progress__circle-bg {
+        stroke: rgba(255, 255, 255, 0.3);
+      }
+
+      .welcome-panel__content .circular-progress__circle {
+        stroke: #ffffff;
+      }
+
+      /* Welcome Panel Progress Text - Light Mode */
+      .welcome-panel__progress-percentage {
+        color: #ffffff;
+        font-size: 1.1rem;
+      }
+
+      .welcome-panel__progress-details {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+      }
+
+      /* Welcome Panel Progress Text - Dark Mode */
+      html.dark-mode .welcome-panel__progress-percentage {
+        color: #ffffff;
+      }
+
+      .welcome-panel__progress-percentage {
+        color: #ffffffce;
+      }
+
+      html.dark-mode .welcome-panel__progress-details {
+        color: rgba(255, 255, 255, 0.8);
+      }
     </style>
   </head>
 
@@ -394,6 +461,30 @@
                 <h2 class="welcome-panel__title">
                   Continue no curso Dominando Angular
                 </h2>
+                <div class="d-flex align-items-center mb-16pt">
+                  <div class="circular-progress">
+                    <svg viewBox="0 0 24 24">
+                      <circle
+                        class="circular-progress__circle-bg"
+                        cx="12"
+                        cy="12"
+                        r="10"></circle>
+                      <circle
+                        class="circular-progress__circle"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke-dasharray="62.83"
+                        stroke-dashoffset="12.57"></circle>
+                    </svg>
+                  </div>
+                  <strong class="ml-2 welcome-panel__progress-percentage"
+                    >80%</strong
+                  >
+                  <span class="ml-2 welcome-panel__progress-details"
+                    >(24 de 30 Conteúdos)</span
+                  >
+                </div>
                 <p class="welcome-panel__subtitle">
                   Você estava assistindo a aula
                   <strong>Boas práticas com RxJS</strong>, do módulo
@@ -404,7 +495,10 @@
                   <a
                     href="student-take-lesson.html"
                     class="btn btn-primary btn--raised btn-rounded"
-                    >Continuar assistindo</a
+                    >Continuar assistindo
+                    <span class="material-symbols-rounded pl-2"
+                      >play_circle</span
+                    ></a
                   >
                   <a
                     href="student-path.html"
@@ -437,11 +531,7 @@
                       <div class="flex d-flex">
                         <span class="course-card__meta-item mr-2">
                           <i class="material-icons">format_list_bulleted</i>
-                          <span>6 Conteúdos</span>
-                        </span>
-                        <span class="course-card__meta-item">
-                          <i class="material-symbols-rounded">paid</i>
-                          <span>124</span>
+                          <span>32 Conteúdos</span>
                         </span>
                       </div>
                       <div
@@ -463,11 +553,24 @@
                   </div>
                   <div class="course-card__actions">
                     <div class="d-flex align-items-center pt-2">
-                      <span class="material-symbols-rounded text-lightblue1"
-                        >progress_activity</span
-                      >
-                      <strong class="ml-1 text-lightblue1">65%</strong>
-                      <span class="text-muted ml-2">(4 de 6 Conteúdos)</span>
+                      <div class="circular-progress">
+                        <svg viewBox="0 0 24 24">
+                          <circle
+                            class="circular-progress__circle-bg"
+                            cx="12"
+                            cy="12"
+                            r="10"></circle>
+                          <circle
+                            class="circular-progress__circle"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke-dasharray="62.83"
+                            stroke-dashoffset="10.05"></circle>
+                        </svg>
+                      </div>
+                      <strong class="ml-1 text-lightblue1">84%</strong>
+                      <span class="text-muted ml-2">(27 de 32 Conteúdos)</span>
                     </div>
                     <a
                       href="student-take-lesson.html"
@@ -510,10 +613,23 @@
                   </div>
                   <div class="course-card__actions">
                     <div class="d-flex align-items-center pt-2">
-                      <span class="material-symbols-rounded text-lightblue1"
-                        >progress_activity</span
-                      >
-                      <strong class="ml-1 text-lightblue1">42%</strong>
+                      <div class="circular-progress">
+                        <svg viewBox="0 0 24 24">
+                          <circle
+                            class="circular-progress__circle-bg"
+                            cx="12"
+                            cy="12"
+                            r="10"></circle>
+                          <circle
+                            class="circular-progress__circle"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke-dasharray="62.83"
+                            stroke-dashoffset="37.70"></circle>
+                        </svg>
+                      </div>
+                      <strong class="ml-1 text-lightblue1">40%</strong>
                       <span class="text-muted ml-2">(2 de 5 Conteúdos)</span>
                     </div>
                     <a
@@ -555,9 +671,22 @@
                   </div>
                   <div class="course-card__actions">
                     <div class="d-flex align-items-center pt-2">
-                      <span class="material-symbols-rounded text-lightblue1"
-                        >progress_activity</span
-                      >
+                      <div class="circular-progress">
+                        <svg viewBox="0 0 24 24">
+                          <circle
+                            class="circular-progress__circle-bg"
+                            cx="12"
+                            cy="12"
+                            r="10"></circle>
+                          <circle
+                            class="circular-progress__circle"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke-dasharray="62.83"
+                            stroke-dashoffset="7.54"></circle>
+                        </svg>
+                      </div>
                       <strong class="ml-1 text-lightblue1">88%</strong>
                       <span class="text-muted ml-2">(7 de 8 Conteúdos)</span>
                     </div>
@@ -583,7 +712,7 @@
                     <div class="course-card__meta justify-content-between">
                       <span class="course-card__meta-item">
                         <i class="material-icons">format_list_bulleted</i>
-                        <span>4 Conteúdos</span>
+                        <span>20 Conteúdos</span>
                       </span>
                       <div
                         class="course-card__rating"
@@ -602,11 +731,24 @@
                   </div>
                   <div class="course-card__actions">
                     <div class="d-flex align-items-center pt-2">
-                      <span class="material-symbols-rounded text-lightblue1"
-                        >progress_activity</span
-                      >
+                      <div class="circular-progress">
+                        <svg viewBox="0 0 24 24">
+                          <circle
+                            class="circular-progress__circle-bg"
+                            cx="12"
+                            cy="12"
+                            r="10"></circle>
+                          <circle
+                            class="circular-progress__circle"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke-dasharray="62.83"
+                            stroke-dashoffset="47.12"></circle>
+                        </svg>
+                      </div>
                       <strong class="ml-1 text-lightblue1">25%</strong>
-                      <span class="text-muted ml-2">(1 de 4 Conteúdos)</span>
+                      <span class="text-muted ml-2">(5 de 20 Conteúdos)</span>
                     </div>
                     <a
                       href="student-take-lesson.html"
@@ -630,7 +772,7 @@
                     <div class="course-card__meta justify-content-between">
                       <span class="course-card__meta-item">
                         <i class="material-icons">format_list_bulleted</i>
-                        <span>3 Conteúdos</span>
+                        <span>9 Conteúdos</span>
                       </span>
                       <div
                         class="course-card__rating"
@@ -649,11 +791,24 @@
                   </div>
                   <div class="course-card__actions">
                     <div class="d-flex align-items-center pt-2">
-                      <span class="material-symbols-rounded text-lightblue1"
-                        >progress_activity</span
-                      >
-                      <strong class="ml-1 text-lightblue1">15%</strong>
-                      <span class="text-muted ml-2">(0 de 3 Conteúdos)</span>
+                      <div class="circular-progress">
+                        <svg viewBox="0 0 24 24">
+                          <circle
+                            class="circular-progress__circle-bg"
+                            cx="12"
+                            cy="12"
+                            r="10"></circle>
+                          <circle
+                            class="circular-progress__circle"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke-dasharray="62.83"
+                            stroke-dashoffset="42.10"></circle>
+                        </svg>
+                      </div>
+                      <strong class="ml-1 text-lightblue1">33%</strong>
+                      <span class="text-muted ml-2">(3 de 9 Conteúdos)</span>
                     </div>
                     <a
                       href="student-take-lesson.html"
@@ -697,7 +852,7 @@
                     <div class="course-card__meta justify-content-between">
                       <span class="course-card__meta-item">
                         <i class="material-icons">format_list_bulleted</i>
-                        <span>3 Conteúdos</span>
+                        <span>15 Conteúdos</span>
                       </span>
                       <div class="course-card__meta-status">
                         <div
@@ -709,31 +864,7 @@
                       </div>
                     </div>
                     <h3 class="course-card__title">
-                      Design Systems na prática
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        style="
-                          display: inline-block;
-                          margin-left: 8px;
-                          vertical-align: middle;
-                        ">
-                        <circle
-                          cx="10"
-                          cy="10"
-                          r="9"
-                          fill="#00D084"
-                          stroke="#00D084"
-                          stroke-width="1" />
-                        <path
-                          d="M6 10L8.5 12.5L14 7"
-                          stroke="white"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
-                      </svg>
+                      <a href="student-path.html">Design Systems na prática</a>
                     </h3>
 
                     <p class="course-card__description">
@@ -753,7 +884,7 @@
                     <div class="course-card__meta justify-content-between">
                       <span class="course-card__meta-item">
                         <i class="material-icons">format_list_bulleted</i>
-                        <span>4 Conteúdos</span>
+                        <span>12 Conteúdos</span>
                       </span>
                       <div class="course-card__meta-status">
                         <div
@@ -765,7 +896,9 @@
                       </div>
                     </div>
                     <h3 class="course-card__title">
-                      Ilustração digital para campanhas
+                      <a href="student-path.html"
+                        >Ilustração digital para campanhas</a
+                      >
                     </h3>
                     <p class="course-card__description">
                       Crie peças ilustradas do zero usando Photoshop e
@@ -796,7 +929,9 @@
                       </div>
                     </div>
                     <h3 class="course-card__title">
-                      Otimização de sites WordPress
+                      <a href="student-path.html"
+                        >Otimização de sites WordPress</a
+                      >
                     </h3>
                     <p class="course-card__description">
                       Simplifique a performance de projetos WordPress com
@@ -827,7 +962,9 @@
                       </div>
                     </div>
                     <h3 class="course-card__title">
-                      Prototipação avançada no Figma
+                      <a href="student-path.html"
+                        >Prototipação avançada no Figma</a
+                      >
                     </h3>
                     <p class="course-card__description">
                       Construa protótipos interativos ricos e conecte flows
@@ -847,7 +984,7 @@
                     <div class="course-card__meta justify-content-between">
                       <span class="course-card__meta-item">
                         <i class="material-icons">format_list_bulleted</i>
-                        <span> Conteúdos</span>
+                        <span>16 Conteúdos</span>
                       </span>
                       <div class="course-card__meta-status">
                         <div
@@ -859,7 +996,9 @@
                       </div>
                     </div>
                     <h3 class="course-card__title">
-                      Arquitetura de componentes Angular
+                      <a href="student-path.html"
+                        >Arquitetura de componentes Angular</a
+                      >
                     </h3>
                     <p class="course-card__description">
                       Domine padrões avançados de componentes, módulos e lazy
@@ -891,7 +1030,9 @@
                       </div>
                     </div>
                     <h3 class="course-card__title">
-                      Storytelling visual para produtos digitais
+                      <a href="student-path.html"
+                        >Storytelling visual para produtos digitais</a
+                      >
                     </h3>
                     <p class="course-card__description">
                       Construa narrativas impactantes para lançamentos e
