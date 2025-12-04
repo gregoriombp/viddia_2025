@@ -1439,7 +1439,8 @@
     .video-thumbnail {
         position: relative;
         width: 100%;
-        padding-bottom: 56.25%;
+        height: 0;
+        padding-top: 56.25%;
         /* 16:9 aspect ratio */
         overflow: hidden;
     }
@@ -2067,6 +2068,14 @@
     .course-card__actions .d-flex {
         justify-content: center;
         width: 100%;
+    }
+
+    .course-card--completed .course-card__body {
+        padding: 20px;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     /* Page separators */

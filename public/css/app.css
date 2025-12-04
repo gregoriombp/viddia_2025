@@ -43030,18 +43030,6 @@ label {
     .course-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr))
     }
-
-    .welcome-panel {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 28px
-    }
-
-    .welcome-panel__status {
-        flex-direction: row;
-        align-items: center;
-        gap: 16px
-    }
 }
 
 @media (max-width: 767.98px) {
@@ -43075,11 +43063,6 @@ label {
     .course-grid__footer {
         margin-top: 16px
     }
-
-    .welcome-panel__status {
-        align-self: stretch;
-        justify-content: center
-    }
 }
 
 @media (max-width: 575.98px) {
@@ -43089,22 +43072,6 @@ label {
 
     .course-card__actions {
         padding: 0 18px 18px
-    }
-
-    .welcome-panel {
-        padding: 24px;
-        gap: 24px
-    }
-
-    .welcome-panel__actions .btn {
-        min-width: 0;
-        flex: 1 1 auto;
-        text-align: center
-    }
-
-    .welcome-panel__status {
-        flex-direction: column;
-        gap: 10px
     }
 }
 

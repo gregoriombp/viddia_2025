@@ -346,6 +346,192 @@
 }
 
 /* ==========================================
+   THEME TOGGLE SWITCH
+   ========================================== */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+input:checked+.slider {
+    background-color: #2196f3;
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#theme-toggle-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================
+   CIRCULAR PROGRESS BAR
+   ========================================== */
+
+.circular-progress {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-progress svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.circular-progress__circle-bg {
+    fill: none;
+    stroke: rgba(33, 150, 243, 0.2) !important;
+    stroke-width: 3;
+}
+
+.circular-progress__circle {
+    fill: none;
+    stroke: #2196f3 !important;
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+/* Circular Progress on Welcome Panel */
+.welcome-panel__content .circular-progress__circle-bg {
+    stroke: rgba(255, 255, 255, 0.3);
+}
+
+.welcome-panel__content .circular-progress__circle {
+    stroke: #ffffff;
+}
+
+/* Welcome Panel Progress Text - Light Mode */
+.welcome-panel__progress-percentage {
+    color: var(--color-static-336) !important;
+    font-size: 1.1rem;
+}
+
+.welcome-panel__progress-details {
+    color: var(--color-static-137) !important;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   COURSE CARD THUMBNAIL - In Progress Cards
+   ========================================== */
+
+.course-card--in-progress .course-card__thumbnail {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.course-card--in-progress .course-card__thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.course-card--in-progress .course-card__thumbnail::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-static-107);
+    opacity: 0;
+    transition: opacity .3s ease;
+    z-index: 2;
+}
+
+.course-card--in-progress .course-card__thumbnail:hover::before {
+    opacity: 1;
+}
+
+.course-card--in-progress .course-card__thumbnail:hover img {
+    transform: scale(1.05);
+}
+
+.course-card__play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.94);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    gap: 4px;
+    transition: opacity .3s ease, transform .3s ease;
+    z-index: 3;
+}
+
+.course-card--in-progress .course-card__thumbnail:hover .course-card__play-overlay {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.course-card__play-overlay .material-icons,
+.course-card__play-overlay .material-symbols-rounded {
+    font-size: 48px;
+    text-shadow: 0 2px 4px var(--color-static-108);
+}
+
+.course-card__play-label {
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    text-shadow: 0 1px 2px var(--color-static-109);
+}
+
+/* ==========================================
    VIDEO THUMBNAIL - Welcome Panel
    ========================================== */
 
@@ -424,14 +610,46 @@
    RESPONSIVE - Mobile
    ========================================== */
 
+@media (max-width: 991.98px) {
+    .welcome-panel {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px
+    }
+
+    .welcome-panel__status {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px
+    }
+}
+
 @media (max-width: 768px) {
     .welcome-panel {
         grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
     .welcome-panel__video {
         width: 100%;
-        max-width: 500px;
+        max-width: none;
+        order: -1;
+    }
+
+    .video-thumbnail {
+        width: 100%;
+        height: 0;
+        padding-top: 56.25%;
+        position: relative;
+    }
+
+    .video-thumbnail img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .hero-profile-container {
@@ -444,5 +662,61 @@
 
     .hero-welcome {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .welcome-panel__status {
+        align-self: stretch;
+        justify-content: center
+    }
+}
+
+@media (max-width: 575.98px) {
+    .welcome-panel {
+        padding: 24px;
+        gap: 24px;
+        flex-direction: column;
+    }
+
+    .welcome-panel__video {
+        width: 100%;
+        max-width: none;
+        order: -1;
+        margin-bottom: 16px;
+    }
+
+    .video-thumbnail {
+        width: 100%;
+        height: 0;
+        padding-top: 56.25%;
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .video-thumbnail img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .welcome-panel__actions {
+        flex-direction: column;
+    }
+
+    .welcome-panel__actions .btn {
+        min-width: 0;
+        flex: 1 1 auto;
+        text-align: center;
+        width: 100%;
+    }
+
+    .welcome-panel__status {
+        flex-direction: column;
+        gap: 10px
     }
 }

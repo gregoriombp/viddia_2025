@@ -79,135 +79,6 @@
       type="text/css"
       href="../../public/css/responsive.css"
       rel="stylesheet" />
-
-    <!-- Theme Toggle Switch Styles -->
-    <style>
-      .switch {
-        position: relative;
-        display: inline-block;
-        width: 44px;
-        height: 24px;
-      }
-
-      .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
-
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        transition: 0.3s;
-      }
-
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 18px;
-        width: 18px;
-        left: 3px;
-        bottom: 3px;
-        background-color: white;
-        transition: 0.3s;
-      }
-
-      input:checked + .slider {
-        background-color: #2196f3;
-      }
-
-      input:checked + .slider:before {
-        transform: translateX(20px);
-      }
-
-      .slider.round {
-        border-radius: 24px;
-      }
-
-      .slider.round:before {
-        border-radius: 50%;
-      }
-
-      #theme-toggle-item:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-      }
-
-      html.dark-mode #theme-toggle-item:hover {
-        background-color: rgba(255, 255, 255, 0.05);
-      }
-
-      /* Circular Progress Bar */
-      .circular-progress {
-        width: 24px;
-        height: 24px;
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .circular-progress svg {
-        transform: rotate(-90deg);
-        width: 100%;
-        height: 100%;
-      }
-
-      .circular-progress__circle-bg {
-        fill: none;
-        stroke: rgba(33, 150, 243, 0.2) !important;
-        stroke-width: 3;
-      }
-
-      html.dark-mode .circular-progress__circle-bg {
-        stroke: rgba(33, 150, 243, 0.3) !important;
-      }
-
-      .circular-progress__circle {
-        fill: none;
-        stroke: #2196f3 !important;
-        stroke-width: 3;
-        stroke-linecap: round;
-        transition: stroke-dashoffset 0.5s ease;
-      }
-
-      /* Circular Progress on Welcome Panel */
-      .welcome-panel__content .circular-progress__circle-bg {
-        stroke: rgba(255, 255, 255, 0.3);
-      }
-
-      .welcome-panel__content .circular-progress__circle {
-        stroke: #ffffff;
-      }
-
-      /* Welcome Panel Progress Text - Light Mode */
-      .welcome-panel__progress-percentage {
-        color: #ffffff;
-        font-size: 1.1rem;
-      }
-
-      .welcome-panel__progress-details {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 0.95rem;
-      }
-
-      /* Welcome Panel Progress Text - Dark Mode */
-      html.dark-mode .welcome-panel__progress-percentage {
-        color: #ffffff;
-      }
-
-      .welcome-panel__progress-percentage {
-        color: #ffffffce;
-      }
-
-      html.dark-mode .welcome-panel__progress-details {
-        color: rgba(255, 255, 255, 0.8);
-      }
-    </style>
   </head>
 
   <body class="layout-sticky-subnav layout-default">
@@ -430,7 +301,8 @@
                     <a
                       href="student-dashboard.html"
                       class="btn btn-primary btn-rounded">
-                      <span class="material-icons pr-2">settings</span>Dashboard
+                      <span class="material-icons pr-2">dashboard</span
+                      >Dashboard
                     </a>
                   </div>
                 </div>
@@ -521,11 +393,18 @@
               </div>
               <div class="course-grid" data-collapsed="true">
                 <article class="course-card course-card--in-progress">
-                  <div class="course-card__thumbnail">
+                  <a
+                    href="student-take-lesson.html"
+                    class="course-card__thumbnail">
                     <img
                       src="../../public/images/Course thumbnails/course_16_9-thumb_3.jpg"
                       alt="Miniatura do curso Liderança e Gestão de Equipes" />
-                  </div>
+                    <div class="course-card__play-overlay">
+                      <span class="material-symbols-rounded">play_circle</span>
+                      <span class="course-card__play-label">Reproduzir</span>
+                    </div>
+                  </a>
+
                   <div class="course-card__body">
                     <div class="course-card__meta justify-content-between">
                       <div class="flex d-flex">
@@ -583,11 +462,17 @@
                   </div>
                 </article>
                 <article class="course-card course-card--in-progress">
-                  <div class="course-card__thumbnail">
+                  <a
+                    href="student-take-lesson.html"
+                    class="course-card__thumbnail">
                     <img
                       src="../../public/images/Course thumbnails/course_16_9-thumb_4.jpg"
                       alt="Miniatura do curso Marketing Digital para Negócios" />
-                  </div>
+                    <div class="course-card__play-overlay">
+                      <span class="material-symbols-rounded">play_circle</span>
+                      <span class="course-card__play-label">Reproduzir</span>
+                    </div>
+                  </a>
                   <div class="course-card__body">
                     <div class="course-card__meta justify-content-between">
                       <span class="course-card__meta-item">
@@ -643,11 +528,17 @@
                   </div>
                 </article>
                 <article class="course-card course-card--in-progress">
-                  <div class="course-card__thumbnail">
+                  <a
+                    href="student-take-lesson.html"
+                    class="course-card__thumbnail">
                     <img
                       src="../../public/images/Course thumbnails/course_16_9-thumb_5.jpg"
                       alt="Miniatura do curso Gestão Ágil com Scrum" />
-                  </div>
+                    <div class="course-card__play-overlay">
+                      <span class="material-symbols-rounded">play_circle</span>
+                      <span class="course-card__play-label">Reproduzir</span>
+                    </div>
+                  </a>
                   <div class="course-card__body">
                     <div class="course-card__meta justify-content-between">
                       <span class="course-card__meta-item">
@@ -703,11 +594,17 @@
 
                 <article
                   class="course-card course-card--in-progress course-card--extra">
-                  <div class="course-card__thumbnail">
+                  <a
+                    href="student-take-lesson.html"
+                    class="course-card__thumbnail">
                     <img
                       src="../../public/images/Course thumbnails/course_16_9-thumb_7.jpg"
                       alt="Miniatura do curso Design Thinking na Prática" />
-                  </div>
+                    <div class="course-card__play-overlay">
+                      <span class="material-symbols-rounded">play_circle</span>
+                      <span class="course-card__play-label">Reproduzir</span>
+                    </div>
+                  </a>
                   <div class="course-card__body">
                     <div class="course-card__meta justify-content-between">
                       <span class="course-card__meta-item">
@@ -763,11 +660,17 @@
 
                 <article
                   class="course-card course-card--in-progress course-card--extra">
-                  <div class="course-card__thumbnail">
+                  <a
+                    href="student-take-lesson.html"
+                    class="course-card__thumbnail">
                     <img
                       src="../../public/images/Course thumbnails/course_16_9-thumb_2.jpg"
                       alt="Miniatura do curso Comunicação Assertiva" />
-                  </div>
+                    <div class="course-card__play-overlay">
+                      <span class="material-symbols-rounded">play_circle</span>
+                      <span class="course-card__play-label">Reproduzir</span>
+                    </div>
+                  </a>
                   <div class="course-card__body">
                     <div class="course-card__meta justify-content-between">
                       <span class="course-card__meta-item">
@@ -1066,12 +969,15 @@
                     <img
                       src="../../public/images/Course thumbnails/course_16_9-thumb_14.jpg"
                       alt="Miniatura do curso Interfaces dinâmicas com Vue 3" />
-                    <div class="course-card__enroll-overlay">
+
+                    <a
+                      href="student-course-preview.html"
+                      class="course-card__enroll-overlay">
                       <span class="material-icons mb-2" style="font-size: 32px"
                         >school</span
                       >
                       <span>Matricular</span>
-                    </div>
+                    </a>
                   </div>
                   <div class="course-card__body">
                     <div class="course-card__meta justify-content-between">
@@ -1102,12 +1008,14 @@
                     <img
                       src="../../public/images/Course thumbnails/course_16_9-thumb_15.jpg"
                       alt="Miniatura do curso Typescript para back-end" />
-                    <div class="course-card__enroll-overlay">
+                    <a
+                      href="student-course-preview.html"
+                      class="course-card__enroll-overlay">
                       <span class="material-icons mb-2" style="font-size: 32px"
                         >school</span
                       >
                       <span>Matricular</span>
-                    </div>
+                    </a>
                   </div>
                   <div class="course-card__body">
                     <div class="course-card__meta justify-content-between">
@@ -1138,12 +1046,14 @@
                     <img
                       src="../../public/images/Course thumbnails/course_16_9-thumb_16.jpg"
                       alt="Miniatura do curso Fundamentos de Kubernetes" />
-                    <div class="course-card__enroll-overlay">
+                    <a
+                      href="student-course-preview.html"
+                      class="course-card__enroll-overlay">
                       <span class="material-icons mb-2" style="font-size: 32px"
                         >school</span
                       >
                       <span>Matricular</span>
-                    </div>
+                    </a>
                   </div>
                   <div class="course-card__body">
                     <div class="course-card__meta justify-content-between">
@@ -1173,12 +1083,14 @@
                     <img
                       src="../../public/images/Course thumbnails/course_16_9-thumb_17.jpg"
                       alt="Miniatura do curso Performance front-end extrema" />
-                    <div class="course-card__enroll-overlay">
+                    <a
+                      href="student-course-preview.html"
+                      class="course-card__enroll-overlay">
                       <span class="material-icons mb-2" style="font-size: 32px"
                         >school</span
                       >
                       <span>Matricular</span>
-                    </div>
+                    </a>
                   </div>
                   <div class="course-card__body">
                     <div class="course-card__meta justify-content-between">
@@ -1210,12 +1122,14 @@
                     <img
                       src="../../public/images/Course thumbnails/course_16_9-thumb_18.jpg"
                       alt="Miniatura do curso UX Writing para interfaces" />
-                    <div class="course-card__enroll-overlay">
+                    <a
+                      href="student-course-preview.html"
+                      class="course-card__enroll-overlay">
                       <span class="material-icons mb-2" style="font-size: 32px"
                         >school</span
                       >
                       <span>Matricular</span>
-                    </div>
+                    </a>
                   </div>
                   <div class="course-card__body">
                     <div class="course-card__meta justify-content-between">

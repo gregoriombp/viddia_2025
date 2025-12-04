@@ -240,9 +240,13 @@ wc -l public/css/dark.css
 
 ## Páginas Processadas
 
-- [x] **index.html** - Concluído
-  - Criados: `index.css` (300 linhas), `index-dark.css` (95 linhas)
-  - Economizado: ~395 linhas do CSS global
+- [x] **index.html** - Concluído e Verificado ✅
+  - Criados: `index.css` (598 linhas), `index-dark.css` (215 linhas)
+  - Removido de app.css: ~320 linhas (incluindo media queries)
+  - Removido de dark.css: ~95 linhas
+  - Removido do HTML: ~130 linhas (estilos inline do bloco <style>)
+  - Economizado: ~545 linhas do CSS global e inline
+  - Status: Todos os estilos específicos extraídos, media queries movidas e estilos inline eliminados
 
 - [x] **student-ranking.html** - Concluído
   - Criados: `student-ranking.css` (390 linhas), `student-ranking-dark.css` (213 linhas)
