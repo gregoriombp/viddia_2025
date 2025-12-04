@@ -802,6 +802,7 @@
     grid-template-columns: 44px 1fr 44px;
     align-items: center;
     gap: 16px;
+    position: relative;
 }
 
 .module-carousel__nav {
@@ -838,38 +839,44 @@
     display: none;
 }
 
-.module-carousel__track {
-    display: flex;
-    gap: 20px;
-    padding: 8px 4px 16px;
-}
-
-.module-carousel__fade {
+/* Fade masks - posicionadas no grid container que NÃO faz scroll */
+.module-carousel::before,
+.module-carousel::after {
+    content: '';
     position: absolute;
     top: 0;
     bottom: 0;
     width: 80px;
     pointer-events: none;
-    background: linear-gradient(90deg, var(--module-mask-color) 20%, rgba(255, 255, 255, 0));
+    z-index: 10;
     opacity: 0;
     transition: opacity .3s ease;
 }
 
-.module-carousel__fade--left {
-    left: 0;
+.module-carousel::before {
+    /* Posiciona no início da coluna do meio (após o botão de 44px + gap de 16px) */
+    left: 60px;
+    background: linear-gradient(to right, var(--module-mask-color) 0%, var(--module-mask-color) 20%, transparent 100%);
 }
 
-.module-carousel__fade--right {
-    right: 0;
-    transform: scaleX(-1);
+.module-carousel::after {
+    /* Posiciona no fim da coluna do meio (antes do botão de 44px + gap de 16px) */
+    right: 60px;
+    background: linear-gradient(to left, var(--module-mask-color) 0%, var(--module-mask-color) 20%, transparent 100%);
 }
 
-.module-carousel.has-left-overflow .module-carousel__fade--left {
+.module-carousel.has-left-overflow::before {
     opacity: 1;
 }
 
-.module-carousel.has-right-overflow .module-carousel__fade--right {
+.module-carousel.has-right-overflow::after {
     opacity: 1;
+}
+
+.module-carousel__track {
+    display: flex;
+    gap: 20px;
+    padding: 8px 4px 16px;
 }
 
 .module-video {
@@ -1057,6 +1064,17 @@
     .module-carousel {
         grid-template-columns: 36px 1fr 36px;
         gap: 12px;
+    }
+
+    /* Ajustar posição das máscaras de fade para o novo layout */
+    .module-carousel::before {
+        left: 48px; /* 36px botão + 12px gap */
+        width: 60px;
+    }
+
+    .module-carousel::after {
+        right: 48px; /* 36px botão + 12px gap */
+        width: 60px;
     }
 
     .module-video {

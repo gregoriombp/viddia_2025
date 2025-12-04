@@ -301,8 +301,12 @@ html.dark-mode .module-video__meta h5 {
     color: #f8fafc;
 }
 
-html.dark-mode .module-carousel__fade {
-    background: linear-gradient(90deg, rgba(5, 10, 24, 1) 15%, rgba(5, 10, 24, 0));
+html.dark-mode .module-carousel::before {
+    background: linear-gradient(to right, var(--module-mask-color) 0%, var(--module-mask-color) 20%, transparent 100%);
+}
+
+html.dark-mode .module-carousel::after {
+    background: linear-gradient(to left, var(--module-mask-color) 0%, var(--module-mask-color) 20%, transparent 100%);
 }
 
 /* ==========================================
