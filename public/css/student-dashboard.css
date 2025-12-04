@@ -2255,3 +2255,36 @@
         width: auto;
     }
 }
+
+/* ==========================================
+   CIRCULAR PROGRESS - Barra de progresso circular
+   ========================================== */
+
+.circular-progress {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-progress svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.circular-progress__circle-bg {
+    fill: none;
+    stroke: rgba(33, 150, 243, 0.2) !important;
+    stroke-width: 3;
+}
+
+.circular-progress__circle {
+    fill: none;
+    stroke: #2196f3 !important;
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}

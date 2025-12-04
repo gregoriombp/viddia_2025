@@ -593,6 +593,409 @@
       background: #0f1218;
       border-top-color: rgba(71, 85, 105, 0.3);
     }
+
+    /* ================================================
+       QUIZ CONFIRMATION MODAL STYLES
+       ================================================ */
+
+    .quiz-confirm-modal {
+      border-radius: 20px;
+      border: none;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .quiz-confirm-modal .modal-header {
+      background: linear-gradient(135deg, #5567FF 0%, #7B89FF 100%);
+      border-bottom: none;
+      padding: 24px 28px;
+    }
+
+    .quiz-confirm-modal .modal-header-content {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .quiz-confirm-modal .modal-icon {
+      font-size: 40px;
+      color: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.15);
+      padding: 12px;
+      border-radius: 14px;
+    }
+
+    .quiz-confirm-modal .modal-title {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin-bottom: 4px;
+    }
+
+    .quiz-confirm-modal .modal-subtitle {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.9rem;
+    }
+
+    .quiz-confirm-modal .close {
+      color: rgba(255, 255, 255, 0.8);
+      opacity: 1;
+      text-shadow: none;
+      font-size: 1.75rem;
+      padding: 0;
+      margin: -8px -8px -8px auto;
+    }
+
+    .quiz-confirm-modal .close:hover {
+      color: #ffffff;
+    }
+
+    .quiz-confirm-modal .modal-body {
+      padding: 28px;
+      background: #ffffff;
+    }
+
+    /* Summary Stats */
+    .quiz-summary-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-card .material-symbols-rounded {
+      font-size: 28px;
+    }
+
+    .stat-answered .material-symbols-rounded {
+      color: #10b981;
+    }
+
+    .stat-unanswered .material-symbols-rounded {
+      color: #f59e0b;
+    }
+
+    .stat-total .material-symbols-rounded {
+      color: #5567FF;
+    }
+
+    .stat-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* Warning Message */
+    .quiz-warning-message {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: #fef3c7;
+      border: 1px solid #fcd34d;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .quiz-warning-message .material-symbols-rounded {
+      font-size: 24px;
+      color: #d97706;
+      flex-shrink: 0;
+    }
+
+    .quiz-warning-message p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #92400e;
+      line-height: 1.5;
+    }
+
+    /* Questions List */
+    .quiz-questions-list {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .quiz-questions-list .list-title {
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .question-status-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 8px;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .question-status-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .question-status-item.answered {
+      background: #ecfdf5;
+      border-color: #10b981;
+    }
+
+    .question-status-item.unanswered {
+      background: #fffbeb;
+      border-color: #f59e0b;
+    }
+
+    .question-status-item .question-number {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1e293b;
+    }
+
+    .question-status-item .question-status-icon {
+      font-size: 18px;
+      margin-top: 4px;
+    }
+
+    .question-status-item.answered .question-status-icon {
+      color: #10b981;
+    }
+
+    .question-status-item.unanswered .question-status-icon {
+      color: #f59e0b;
+    }
+
+    .question-status-item .question-answer {
+      font-size: 0.7rem;
+      color: #64748b;
+      margin-top: 2px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+
+    .question-status-item.answered .question-answer {
+      color: #059669;
+      font-weight: 500;
+    }
+
+    /* Modal Footer */
+    .quiz-confirm-modal .modal-footer {
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      padding: 20px 28px;
+      gap: 12px;
+    }
+
+    .quiz-confirm-modal .modal-footer .btn {
+      padding: 14px 28px;
+      font-weight: 600;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.25s ease;
+    }
+
+    .quiz-confirm-modal .modal-footer .btn-outline-secondary {
+      border-width: 2px;
+      color: #64748b;
+      border-color: #cbd5e1;
+    }
+
+    .quiz-confirm-modal .modal-footer .btn-outline-secondary:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+      color: #475569;
+      transform: translateY(-2px);
+    }
+
+    .quiz-confirm-modal .modal-footer .btn-primary {
+      background: linear-gradient(135deg, #5567FF 0%, #7B89FF 100%);
+      border: none;
+      box-shadow: 0 4px 14px rgba(85, 103, 255, 0.4);
+    }
+
+    .quiz-confirm-modal .modal-footer .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(85, 103, 255, 0.5);
+    }
+
+    /* ================================================
+       QUIZ CONFIRMATION MODAL - DARK MODE
+       ================================================ */
+
+    html.dark-mode .quiz-confirm-modal {
+      background: #161a26;
+    }
+
+    html.dark-mode .quiz-confirm-modal .modal-header {
+      background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    }
+
+    html.dark-mode .quiz-confirm-modal .modal-body {
+      background: #161a26;
+    }
+
+    html.dark-mode .stat-card {
+      background: #0f1218;
+      border-color: rgba(71, 85, 105, 0.3);
+    }
+
+    html.dark-mode .stat-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    html.dark-mode .stat-value {
+      color: #f2f9ff;
+    }
+
+    html.dark-mode .stat-label {
+      color: #94a3b8;
+    }
+
+    html.dark-mode .quiz-warning-message {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    html.dark-mode .quiz-warning-message p {
+      color: #fcd34d;
+    }
+
+    html.dark-mode .quiz-questions-list {
+      background: #0f1218;
+      border-color: rgba(71, 85, 105, 0.3);
+    }
+
+    html.dark-mode .quiz-questions-list .list-title {
+      color: #94a3b8;
+    }
+
+    html.dark-mode .question-status-item {
+      background: #1e293b;
+      border-color: rgba(71, 85, 105, 0.3);
+    }
+
+    html.dark-mode .question-status-item:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    html.dark-mode .question-status-item.answered {
+      background: rgba(16, 185, 129, 0.1);
+      border-color: #10b981;
+    }
+
+    html.dark-mode .question-status-item.unanswered {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: #f59e0b;
+    }
+
+    html.dark-mode .question-status-item .question-number {
+      color: #f2f9ff;
+    }
+
+    html.dark-mode .question-status-item .question-answer {
+      color: #94a3b8;
+    }
+
+    html.dark-mode .quiz-confirm-modal .modal-footer {
+      background: #0f1218;
+      border-top-color: rgba(71, 85, 105, 0.3);
+    }
+
+    html.dark-mode .quiz-confirm-modal .modal-footer .btn-outline-secondary {
+      color: #94a3b8;
+      border-color: rgba(71, 85, 105, 0.5);
+    }
+
+    html.dark-mode .quiz-confirm-modal .modal-footer .btn-outline-secondary:hover {
+      background: #1e293b;
+      border-color: #64748b;
+      color: #e2e8f0;
+    }
+
+    html.dark-mode .quiz-confirm-modal .modal-footer .btn-primary {
+      background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    }
+
+    html.dark-mode .quiz-confirm-modal .modal-footer .btn-primary:hover {
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Modal Animation */
+    .modal.fade .modal-dialog {
+      transform: scale(0.9) translateY(-20px);
+      transition: transform 0.3s ease-out;
+    }
+
+    .modal.show .modal-dialog {
+      transform: scale(1) translateY(0);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .quiz-summary-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .questions-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .quiz-confirm-modal .modal-footer {
+        flex-direction: column;
+      }
+
+      .quiz-confirm-modal .modal-footer .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 
@@ -1786,10 +2189,10 @@
                   <span class="material-icons mr-1">schedule_send</span>
                   Tentar em outro momento
                 </button>
-                <a href="student-take-quiz-result.html" class="btn-rounded-lg btn-primary btn btn-md">
+                <button type="button" id="finishQuizBtn" class="btn-rounded-lg btn-primary btn btn-md">
                   <span class="material-icons mr-1">check_circle</span>
                   Finalizar avaliação
-                </a>
+                </button>
               </div>
 
             </div>
@@ -1828,6 +2231,76 @@
     <!-- Drawer -->
 
     <!-- // END Drawer -->
+
+    <!-- Quiz Confirmation Modal -->
+    <div class="modal fade" id="quizConfirmModal" tabindex="-1" role="dialog" aria-labelledby="quizConfirmModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content quiz-confirm-modal">
+          <div class="modal-header">
+            <div class="modal-header-content">
+              <span class="material-symbols-rounded modal-icon">fact_check</span>
+              <div>
+                <h5 class="modal-title" id="quizConfirmModalLabel">Confirmar Envio da Avaliação</h5>
+                <p class="modal-subtitle mb-0">Revise suas respostas antes de finalizar</p>
+              </div>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Summary Stats -->
+            <div class="quiz-summary-stats">
+              <div class="stat-card stat-answered">
+                <span class="material-symbols-rounded">check_circle</span>
+                <div class="stat-info">
+                  <span class="stat-value" id="modalAnsweredCount">0</span>
+                  <span class="stat-label">Respondidas</span>
+                </div>
+              </div>
+              <div class="stat-card stat-unanswered">
+                <span class="material-symbols-rounded">radio_button_unchecked</span>
+                <div class="stat-info">
+                  <span class="stat-value" id="modalUnansweredCount">15</span>
+                  <span class="stat-label">Não respondidas</span>
+                </div>
+              </div>
+              <div class="stat-card stat-total">
+                <span class="material-symbols-rounded">quiz</span>
+                <div class="stat-info">
+                  <span class="stat-value">15</span>
+                  <span class="stat-label">Total</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Warning Message (if unanswered) -->
+            <div class="quiz-warning-message" id="unansweredWarning" style="display: none;">
+              <span class="material-symbols-rounded">warning</span>
+              <p>Você ainda tem questões não respondidas. Questões em branco serão contabilizadas como erradas.</p>
+            </div>
+
+            <!-- Questions List -->
+            <div class="quiz-questions-list">
+              <h6 class="list-title">Status das Questões</h6>
+              <div class="questions-grid" id="questionsStatusGrid">
+                <!-- Questions will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary btn-lg" data-dismiss="modal" id="resumeQuizBtn">
+              <span class="material-symbols-rounded mr-2">edit</span>
+              Retomar tentativa
+            </button>
+            <a href="student-take-quiz-result.html" class="btn btn-primary btn-lg" id="submitQuizBtn">
+              <span class="material-symbols-rounded mr-2">send</span>
+              Enviar tudo e terminar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery -->
     <script src="../../public/vendor/jquery.min.js"></script>
@@ -2045,6 +2518,141 @@
         });
 
         updateProgress();
+      })();
+    </script>
+
+    <!-- Quiz Confirmation Modal Script -->
+    <script>
+      (function() {
+        "use strict";
+
+        const finishQuizBtn = document.getElementById('finishQuizBtn');
+        const questionsStatusGrid = document.getElementById('questionsStatusGrid');
+        const modalAnsweredCount = document.getElementById('modalAnsweredCount');
+        const modalUnansweredCount = document.getElementById('modalUnansweredCount');
+        const unansweredWarning = document.getElementById('unansweredWarning');
+
+        const totalQuestions = 15;
+        const questionNames = [];
+
+        // Build question names array
+        for (let i = 1; i <= totalQuestions; i++) {
+          questionNames.push('question' + i);
+        }
+
+        // Get answer letter from input id (e.g., q1_opt2 -> B)
+        function getAnswerLetter(inputId) {
+          const match = inputId.match(/opt(\d+)$/);
+          if (match) {
+            const optNumber = parseInt(match[1]);
+            return String.fromCharCode(64 + optNumber); // 1=A, 2=B, 3=C, etc.
+          }
+          return '';
+        }
+
+        // Get selected answer text (truncated)
+        function getAnswerText(questionName) {
+          const selectedInput = document.querySelector(`input[name="${questionName}"]:checked`);
+          if (selectedInput) {
+            const label = document.querySelector(`label[for="${selectedInput.id}"]`);
+            if (label) {
+              const text = label.textContent.trim();
+              return text.length > 25 ? text.substring(0, 25) + '...' : text;
+            }
+          }
+          return '';
+        }
+
+        // Build the questions status grid
+        function buildQuestionsGrid() {
+          questionsStatusGrid.innerHTML = '';
+
+          let answeredCount = 0;
+          let unansweredCount = 0;
+
+          questionNames.forEach((questionName, index) => {
+            const questionNumber = index + 1;
+            const selectedInput = document.querySelector(`input[name="${questionName}"]:checked`);
+            const isAnswered = selectedInput !== null;
+
+            if (isAnswered) {
+              answeredCount++;
+            } else {
+              unansweredCount++;
+            }
+
+            const answerLetter = isAnswered ? getAnswerLetter(selectedInput.id) : '';
+            const statusClass = isAnswered ? 'answered' : 'unanswered';
+            const iconName = isAnswered ? 'check_circle' : 'radio_button_unchecked';
+
+            const item = document.createElement('div');
+            item.className = `question-status-item ${statusClass}`;
+            item.setAttribute('data-question', questionNumber);
+            item.innerHTML = `
+              <span class="question-number">Q${questionNumber}</span>
+              <span class="material-symbols-rounded question-status-icon">${iconName}</span>
+              <span class="question-answer">${isAnswered ? 'Opção ' + answerLetter : 'Sem resposta'}</span>
+            `;
+
+            // Click to scroll to question
+            item.addEventListener('click', function() {
+              $('#quizConfirmModal').modal('hide');
+              setTimeout(() => {
+                const questionElement = document.querySelectorAll('.quiz-question')[index];
+                if (questionElement) {
+                  questionElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  // Highlight the question briefly
+                  questionElement.style.boxShadow = '0 0 0 3px #5567FF';
+                  setTimeout(() => {
+                    questionElement.style.boxShadow = '';
+                  }, 2000);
+                }
+              }, 300);
+            });
+
+            questionsStatusGrid.appendChild(item);
+          });
+
+          // Update counts
+          modalAnsweredCount.textContent = answeredCount;
+          modalUnansweredCount.textContent = unansweredCount;
+
+          // Show/hide warning
+          if (unansweredCount > 0) {
+            unansweredWarning.style.display = 'flex';
+          } else {
+            unansweredWarning.style.display = 'none';
+          }
+        }
+
+        // Open modal when clicking finish button
+        if (finishQuizBtn) {
+          finishQuizBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            buildQuestionsGrid();
+            $('#quizConfirmModal').modal('show');
+          });
+        }
+
+        // Handle resume button click
+        const resumeQuizBtn = document.getElementById('resumeQuizBtn');
+        if (resumeQuizBtn) {
+          resumeQuizBtn.addEventListener('click', function() {
+            // Find first unanswered question and scroll to it
+            for (let i = 0; i < questionNames.length; i++) {
+              const selectedInput = document.querySelector(`input[name="${questionNames[i]}"]:checked`);
+              if (!selectedInput) {
+                setTimeout(() => {
+                  const questionElement = document.querySelectorAll('.quiz-question')[i];
+                  if (questionElement) {
+                    questionElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
+                }, 300);
+                break;
+              }
+            }
+          });
+        }
       })();
     </script>
 </body>

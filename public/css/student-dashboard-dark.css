@@ -517,3 +517,11 @@ html.dark-mode .btn-continue-course:hover {
     background: #60a5fa;
     color: #ffffff;
 }
+
+/* ==========================================
+   CIRCULAR PROGRESS - Barra de progresso circular (Dark Mode)
+   ========================================== */
+
+html.dark-mode .circular-progress__circle-bg {
+    stroke: rgba(33, 150, 243, 0.3) !important;
+}
