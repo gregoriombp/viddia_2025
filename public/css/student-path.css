@@ -2297,27 +2297,20 @@
 
     /* Module carousel */
     .module-carousel {
-        grid-template-columns: 32px 1fr 32px;
+        grid-template-columns: 1fr;
         gap: 8px;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
     }
 
     .module-carousel__nav {
-        width: 32px;
-        height: 32px;
+        display: none;
     }
 
-    .module-carousel__nav .material-symbols-rounded {
-        font-size: 18px;
-    }
-
-    .module-carousel::before {
-        left: 40px;
-        width: 40px;
-    }
-
+    .module-carousel::before,
     .module-carousel::after {
-        right: 40px;
-        width: 40px;
+        display: none;
     }
 
     .module-video {
@@ -2519,6 +2512,13 @@
         line-height: 1.5;
     }
 
+    /* Carrossel sem margens laterais */
+    .module-carousel {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+
     /* Module carousel */
     .module-carousel__track {
         gap: 12px;
@@ -2691,6 +2691,13 @@
     .profile-card-gradient .chip {
         font-size: 0.7rem;
         padding: 4px 10px;
+    }
+
+    /* Carrossel sem margens laterais */
+    .module-carousel {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
     }
 
     /* ===== MODULE CAROUSEL ===== */
