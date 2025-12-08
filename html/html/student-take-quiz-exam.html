@@ -977,6 +977,29 @@
       transform: scale(1) translateY(0);
     }
 
+    /* Fix z-index for modal and backdrop */
+    .modal-backdrop {
+      z-index: 1040 !important;
+    }
+
+    .modal {
+      z-index: 1055 !important;
+    }
+
+    #quizConfirmModal {
+      z-index: 1055 !important;
+    }
+
+    #quizConfirmModal .modal-dialog {
+      z-index: 1056 !important;
+      position: relative;
+    }
+
+    .modal-content {
+      position: relative;
+      z-index: 1056 !important;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .quiz-summary-stats {
@@ -2633,6 +2656,28 @@
             $('#quizConfirmModal').modal('show');
           });
         }
+
+        // Fix z-index when modal opens
+        $('#quizConfirmModal').on('show.bs.modal', function() {
+          // Force correct z-index immediately when modal starts showing
+          setTimeout(function() {
+            const backdrop = $('.modal-backdrop');
+            const modal = $('#quizConfirmModal');
+
+            // Set z-index values
+            backdrop.css({'z-index': '1040', 'opacity': '0.5'});
+            modal.css('z-index', '1055');
+
+            // Ensure modal is after backdrop in DOM
+            backdrop.insertBefore(modal);
+          }, 10);
+        });
+
+        $('#quizConfirmModal').on('shown.bs.modal', function() {
+          // Double-check after modal animation completes
+          $('.modal-backdrop').css('z-index', '1040');
+          $('#quizConfirmModal').css('z-index', '1055');
+        });
 
         // Handle resume button click
         const resumeQuizBtn = document.getElementById('resumeQuizBtn');

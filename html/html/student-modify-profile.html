@@ -159,6 +159,11 @@
             transition: all 0.3s ease;
             overflow: hidden;
             position: relative;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        html.dark-mode .avatar-option {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
         }
 
         .avatar-option:hover {
@@ -724,7 +729,7 @@
         <div id="photoModal" class="photo-modal">
             <div class="photo-modal-content">
                 <div class="photo-modal-header">
-                    <span class="photo-modal-close">&times;</span>
+                    <span class="photo-modal-close" id="closePhotoModal">&times;</span>
                     <h3>Escolha sua Foto de Perfil</h3>
                 </div>
                 <div class="photo-modal-body">
@@ -733,34 +738,64 @@
                     <!-- Avatar Grid -->
                     <div class="avatar-grid">
                         <div class="avatar-option" data-avatar="1">
-                            <img src="../../public/images/avatars/avatar-01.svg" alt="Avatar 1">
+                            <img src="../../public/images/avatars/avatar-01.png" alt="Avatar 1">
                         </div>
                         <div class="avatar-option" data-avatar="2">
-                            <img src="../../public/images/avatars/avatar-02.svg" alt="Avatar 2">
+                            <img src="../../public/images/avatars/avatar-02.png" alt="Avatar 2">
                         </div>
                         <div class="avatar-option" data-avatar="3">
-                            <img src="../../public/images/avatars/avatar-03.svg" alt="Avatar 3">
+                            <img src="../../public/images/avatars/avatar-03.png" alt="Avatar 3">
                         </div>
                         <div class="avatar-option" data-avatar="4">
-                            <img src="../../public/images/avatars/avatar-04.svg" alt="Avatar 4">
+                            <img src="../../public/images/avatars/avatar-04.png" alt="Avatar 4">
                         </div>
                         <div class="avatar-option" data-avatar="5">
-                            <img src="../../public/images/avatars/avatar-05.svg" alt="Avatar 5">
+                            <img src="../../public/images/avatars/avatar-05.png" alt="Avatar 5">
                         </div>
                         <div class="avatar-option" data-avatar="6">
-                            <img src="../../public/images/avatars/avatar-06.svg" alt="Avatar 6">
+                            <img src="../../public/images/avatars/avatar-06.png" alt="Avatar 6">
                         </div>
                         <div class="avatar-option" data-avatar="7">
-                            <img src="../../public/images/avatars/avatar-07.svg" alt="Avatar 7">
+                            <img src="../../public/images/avatars/avatar-07.png" alt="Avatar 7">
                         </div>
                         <div class="avatar-option" data-avatar="8">
-                            <img src="../../public/images/avatars/avatar-08.svg" alt="Avatar 8">
+                            <img src="../../public/images/avatars/avatar-08.png" alt="Avatar 8">
                         </div>
                         <div class="avatar-option" data-avatar="9">
-                            <img src="../../public/images/avatars/avatar-09.svg" alt="Avatar 9">
+                            <img src="../../public/images/avatars/avatar-09.png" alt="Avatar 9">
                         </div>
                         <div class="avatar-option" data-avatar="10">
-                            <img src="../../public/images/avatars/avatar-10.svg" alt="Avatar 10">
+                            <img src="../../public/images/avatars/avatar-10.png" alt="Avatar 10">
+                        </div>
+                        <div class="avatar-option" data-avatar="11">
+                            <img src="../../public/images/avatars/avatar-11.png" alt="Avatar 11">
+                        </div>
+                        <div class="avatar-option" data-avatar="12">
+                            <img src="../../public/images/avatars/avatar-12.png" alt="Avatar 12">
+                        </div>
+                        <div class="avatar-option" data-avatar="13">
+                            <img src="../../public/images/avatars/avatar-13.png" alt="Avatar 13">
+                        </div>
+                        <div class="avatar-option" data-avatar="14">
+                            <img src="../../public/images/avatars/avatar-14.png" alt="Avatar 14">
+                        </div>
+                        <div class="avatar-option" data-avatar="15">
+                            <img src="../../public/images/avatars/avatar-15.png" alt="Avatar 15">
+                        </div>
+                        <div class="avatar-option" data-avatar="16">
+                            <img src="../../public/images/avatars/avatar-16.png" alt="Avatar 16">
+                        </div>
+                        <div class="avatar-option" data-avatar="17">
+                            <img src="../../public/images/avatars/avatar-17.png" alt="Avatar 17">
+                        </div>
+                        <div class="avatar-option" data-avatar="18">
+                            <img src="../../public/images/avatars/avatar-18.png" alt="Avatar 18">
+                        </div>
+                        <div class="avatar-option" data-avatar="19">
+                            <img src="../../public/images/avatars/avatar-19.png" alt="Avatar 19">
+                        </div>
+                        <div class="avatar-option" data-avatar="20">
+                            <img src="../../public/images/avatars/avatar-20.png" alt="Avatar 20">
                         </div>
                     </div>
 
@@ -880,7 +915,7 @@
                 var modal = document.getElementById('photoModal');
                 var openBtn = document.getElementById('openPhotoModal');
                 var avatarClickable = document.getElementById('avatarClickable');
-                var closeBtn = document.querySelector('.photo-modal-close');
+                var closeBtn = document.getElementById('closePhotoModal');
                 var cancelBtn = document.getElementById('cancelPhotoSelection');
                 var confirmBtn = document.getElementById('confirmPhotoSelection');
                 var profilePhoto = document.getElementById('profilePhoto');
