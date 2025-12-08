@@ -43,8 +43,18 @@
 
     /* Container adjustments */
     .container.page__container {
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Prevent overflow on hero sections */
+    .mdk-box,
+    .mdk-box__content,
+    .hero {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
     }
 
     /* Navbar - Mobile optimizations */
@@ -59,10 +69,16 @@
 
     .mdk-header__content {
         min-height: 56px !important;
+        /* Remove justify-content-center no mobile para evitar overflow */
+        justify-content: flex-start !important;
+    }
+
+    .navbar.navbar-expand {
+        justify-content: space-between !important;
     }
 
     .navbar-brand {
-        margin-right: 8px !important;
+        margin-right: auto !important;
     }
 
     .navbar-brand img {
@@ -94,16 +110,29 @@
     .hero .page__container {
         flex-direction: column !important;
         text-align: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
     }
 
     .hero .page__container .flex {
         flex-direction: column !important;
         align-items: center !important;
         width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
     }
 
     .hero .page__container>div:first-child {
-        min-width: 100% !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .hero .page__container>div {
+        min-width: 0 !important;
+        width: 100% !important;
     }
 
     .hero .page__container img[width="180"] {
@@ -132,37 +161,53 @@
         font-size: 1.1rem !important;
     }
 
-    /* Dashboard Pills - Stack vertically */
+    /* Dashboard Pills - Display horizontally side by side */
     .dashboard-insights__stats {
-        flex-direction: column !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px;
         align-items: stretch !important;
-        gap: 12px;
     }
 
     .student-dashboard-page .dashboard-pill {
         width: 100% !important;
-        flex-direction: row !important;
-        justify-content: flex-start !important;
-        padding: 16px 20px !important;
+        min-width: 0 !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 12px 8px !important;
+        text-align: center !important;
+        border-radius: 14px !important;
     }
 
     .student-dashboard-page .dashboard-pill__icon {
-        margin-right: 12px !important;
-        margin-bottom: 0 !important;
-    }
-
-    .student-dashboard-page .dashboard-pill__content {
-        flex-direction: row !important;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .student-dashboard-page .dashboard-pill__value {
+        margin-right: 0 !important;
+        margin-bottom: 6px !important;
         font-size: 1.5rem !important;
     }
 
+    .student-dashboard-page .dashboard-pill__content {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .student-dashboard-page .dashboard-pill__value {
+        font-size: 1.125rem !important;
+        font-weight: 700 !important;
+        white-space: nowrap;
+    }
+
     .student-dashboard-page .dashboard-pill__label {
-        font-size: 0.875rem !important;
+        font-size: 0.65rem !important;
+        text-align: center !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        max-width: 100%;
     }
 
     /* Dashboard Medal Stack - Adjust size */
@@ -177,15 +222,32 @@
         height: 28px !important;
     }
 
-    /* Hero Actions - Full width button */
+    /* Hero Actions - Reduced emphasis button */
     .hero .col-auto {
         width: 100%;
         margin-top: 24px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px;
     }
 
     .hero .col-auto .btn {
         width: 100%;
+        max-width: 240px;
         justify-content: center;
+        padding: 10px 16px !important;
+        font-size: 0.875rem !important;
+        background: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        box-shadow: none !important;
+        margin-right: 0 !important;
+    }
+
+    .hero .col-auto .btn:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: rgba(255, 255, 255, 0.4) !important;
     }
 
     /* Welcome Panel - Vertical layout */
@@ -607,8 +669,8 @@
     }
 
     .container.page__container {
-        padding-left: 12px;
-        padding-right: 12px;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
     }
 
     /* Hero adjustments */
@@ -628,17 +690,46 @@
         height: 100px;
     }
 
-    /* Dashboard Pills - Compact layout */
-    .student-dashboard-page .dashboard-pill {
-        padding: 12px 16px !important;
+    /* Dashboard Pills - Compact layout, side by side */
+    .dashboard-insights__stats {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6px;
     }
 
-    .student-dashboard-page .dashboard-pill__value {
+    .student-dashboard-page .dashboard-pill {
+        padding: 10px 6px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 0 !important;
+        border-radius: 12px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__icon {
+        margin-bottom: 4px !important;
         font-size: 1.25rem !important;
     }
 
+    .student-dashboard-page .dashboard-pill__content {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .student-dashboard-page .dashboard-pill__value {
+        font-size: 1rem !important;
+        white-space: nowrap;
+    }
+
     .student-dashboard-page .dashboard-pill__label {
-        font-size: 0.75rem !important;
+        font-size: 0.625rem !important;
+        text-align: center !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
     }
 
     /* Welcome Panel */
@@ -726,6 +817,15 @@
 
     .mdk-header__content {
         min-height: 46px !important;
+        justify-content: flex-start !important;
+    }
+
+    .navbar.navbar-expand {
+        justify-content: space-between !important;
+    }
+
+    .navbar-brand {
+        margin-right: auto !important;
     }
 
     .navbar-brand img {
@@ -1318,7 +1418,7 @@
 @media (max-width: 768px) {
     .mdk-box__content {
         position: relative;
-        z-index: 10 !important;
+
     }
 }
 
@@ -1349,21 +1449,46 @@
         font-size: 1.5rem !important;
     }
 
-    /* Dashboard pills - ultra compact */
+    /* Dashboard pills - ultra compact, side by side */
+    .dashboard-insights__stats {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 5px !important;
+    }
+
     .student-dashboard-page .dashboard-pill {
-        padding: 10px 12px !important;
+        padding: 8px 4px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 0 !important;
+        border-radius: 10px !important;
     }
 
     .student-dashboard-page .dashboard-pill__icon {
-        font-size: 20px !important;
+        font-size: 1.125rem !important;
+        margin-bottom: 3px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__content {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100%;
+        min-width: 0;
     }
 
     .student-dashboard-page .dashboard-pill__value {
-        font-size: 1.125rem !important;
+        font-size: 0.9rem !important;
+        white-space: nowrap;
     }
 
     .student-dashboard-page .dashboard-pill__label {
-        font-size: 0.7rem !important;
+        font-size: 0.575rem !important;
+        text-align: center !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
     }
 
     /* Buttons - Adjust padding */
@@ -1395,8 +1520,20 @@
     }
 
     /* Logo - Smaller for tiny screens */
+    .navbar-brand {
+        margin-right: auto !important;
+    }
+
     .navbar-brand img {
         width: 90px !important;
+    }
+
+    .navbar.navbar-expand {
+        justify-content: space-between !important;
+    }
+
+    .mdk-header__content {
+        justify-content: flex-start !important;
     }
 }
 
@@ -1749,55 +1886,78 @@
         font-size: 0.85rem !important;
     }
 
-    /* Dashboard Pills - Stack vertically */
+    /* Dashboard Pills - Display horizontally side by side */
     .student-dashboard-page .dashboard-insights {
         padding-top: 20px !important;
     }
 
     .student-dashboard-page .dashboard-insights__stats {
-        flex-direction: column !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px;
         align-items: stretch !important;
-        gap: 12px;
     }
 
     .student-dashboard-page .dashboard-pill {
         width: 100% !important;
-        max-width: 320px;
-        margin: 0 auto !important;
-        flex-direction: row !important;
-        justify-content: flex-start !important;
-        padding: 16px 20px !important;
+        min-width: 0 !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 14px 10px !important;
+        text-align: center !important;
+        border-radius: 14px !important;
     }
 
     .student-dashboard-page .dashboard-pill__icon {
-        margin-right: 12px !important;
-        margin-bottom: 0 !important;
-    }
-
-    .student-dashboard-page .dashboard-pill__content {
-        flex-direction: row !important;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .student-dashboard-page .dashboard-pill__value {
+        margin-right: 0 !important;
+        margin-bottom: 6px !important;
         font-size: 1.5rem !important;
     }
 
-    .student-dashboard-page .dashboard-pill__label {
-        font-size: 0.875rem !important;
+    .student-dashboard-page .dashboard-pill__content {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2px;
+        width: 100%;
+        min-width: 0;
     }
 
-    /* Dashboard Button - Full width */
+    .student-dashboard-page .dashboard-pill__value {
+        font-size: 1.25rem !important;
+        white-space: nowrap;
+    }
+
+    .student-dashboard-page .dashboard-pill__label {
+        font-size: 0.7rem !important;
+        text-align: center !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+    /* Dashboard Button - Reduced emphasis */
     .hero .col-auto {
         width: 100%;
         margin-top: 24px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px;
     }
 
     .hero .col-auto .btn {
         width: 100%;
-        max-width: 320px;
+        max-width: 240px;
         justify-content: center;
+        padding: 10px 16px !important;
+        font-size: 0.875rem !important;
+        background: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        box-shadow: none !important;
+        margin-right: 0 !important;
     }
 
     /* Welcome Panel - Vertical layout */
@@ -1932,59 +2092,79 @@
         padding-bottom: 12px !important;
     }
 
-    /* Dashboard Pills - Vertical stack */
+    /* Dashboard Pills - Display horizontally side by side */
     .student-dashboard-page .dashboard-insights {
         padding-top: 16px !important;
     }
 
     .student-dashboard-page .dashboard-insights__stats {
-        flex-direction: column !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px;
         align-items: stretch !important;
-        gap: 10px;
     }
 
     .student-dashboard-page .dashboard-pill {
         width: 100% !important;
-        max-width: 100%;
-        margin: 0 !important;
-        flex-direction: row !important;
-        justify-content: flex-start !important;
-        padding: 12px 16px !important;
+        min-width: 0 !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 12px 8px !important;
+        text-align: center !important;
+        border-radius: 12px !important;
     }
 
     .student-dashboard-page .dashboard-pill__icon {
-        font-size: 24px !important;
-        margin-right: 10px !important;
-        margin-bottom: 0 !important;
+        font-size: 1.4rem !important;
+        margin-right: 0 !important;
+        margin-bottom: 6px !important;
     }
 
     .student-dashboard-page .dashboard-pill__content {
-        flex-direction: row !important;
-        align-items: center;
-        gap: 6px;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2px;
+        width: 100%;
+        min-width: 0;
     }
 
     .student-dashboard-page .dashboard-pill__value {
-        font-size: 1.25rem !important;
+        font-size: 1.125rem !important;
+        white-space: nowrap;
     }
 
     .student-dashboard-page .dashboard-pill__label {
-        font-size: 0.75rem !important;
+        font-size: 0.65rem !important;
+        text-align: center !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
     }
 
-    /* Dashboard Button */
+    /* Dashboard Button - Reduced emphasis */
     .hero .col-auto {
         width: 100%;
         margin-top: 20px;
         padding: 0;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px;
     }
 
     .hero .col-auto .btn {
         width: 100%;
-        max-width: 100%;
+        max-width: 240px;
         justify-content: center;
-        padding: 12px 20px;
-        font-size: 0.9rem;
+        padding: 10px 16px !important;
+        font-size: 0.875rem !important;
+        background: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        box-shadow: none !important;
+        margin-right: 0 !important;
     }
 
     /* Welcome Panel - Vertical */
@@ -2160,40 +2340,71 @@
         padding-bottom: 10px !important;
     }
 
-    /* Dashboard Pills - Ultra compact */
+    /* Dashboard Pills - Ultra compact, side by side */
     .student-dashboard-page .dashboard-insights {
         padding-top: 12px !important;
     }
 
     .student-dashboard-page .dashboard-insights__stats {
-        gap: 8px;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6px;
     }
 
     .student-dashboard-page .dashboard-pill {
-        padding: 10px 12px !important;
+        padding: 10px 6px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 0 !important;
+        border-radius: 10px !important;
     }
 
     .student-dashboard-page .dashboard-pill__icon {
-        font-size: 20px !important;
-        margin-right: 8px !important;
+        font-size: 1.125rem !important;
+        margin-right: 0 !important;
+        margin-bottom: 4px !important;
+    }
+
+    .student-dashboard-page .dashboard-pill__content {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100%;
+        min-width: 0;
     }
 
     .student-dashboard-page .dashboard-pill__value {
-        font-size: 1.125rem !important;
+        font-size: 0.95rem !important;
+        white-space: nowrap;
     }
 
     .student-dashboard-page .dashboard-pill__label {
-        font-size: 0.7rem !important;
+        font-size: 0.6rem !important;
+        text-align: center !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
     }
 
-    /* Dashboard Button */
+    /* Dashboard Button - Reduced emphasis */
     .hero .col-auto {
         margin-top: 16px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px;
     }
 
     .hero .col-auto .btn {
-        padding: 10px 16px;
-        font-size: 0.85rem;
+        padding: 8px 14px !important;
+        font-size: 0.8rem !important;
+        max-width: 220px !important;
+        background: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        box-shadow: none !important;
+        margin-right: 0 !important;
     }
 
     .hero .col-auto .btn .material-icons {
@@ -2301,8 +2512,8 @@
     }
 
     .container.page__container {
-        padding-left: 8px;
-        padding-right: 8px;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
     }
 
     /* Margins */
