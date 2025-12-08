@@ -473,6 +473,28 @@
    SEÇÃO 5 - Overview Cards (Performance, Level, Coins)
    ========================================== */
 
+
+/* Medal Pulse Icon */
+.student-dashboard-page .sd-overview-card--performance .sd-overview-card__icon {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    animation: sd-performance-icon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes sd-performance-icon-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+    }
+}
+
 .student-dashboard-page .dashboard-overview-cards {
     display: grid;
     gap: 20px;
@@ -568,7 +590,7 @@
 }
 
 .student-dashboard-page .sd-performance-gauge svg {
-    width: 110%;
+    width: 130%;
     height: 100%;
     transform: translateY(1%);
 }
@@ -585,7 +607,7 @@
 }
 
 .student-dashboard-page .sd-performance-gauge__value strong {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     line-height: 1;
     letter-spacing: .02em;
     text-shadow: 0 2px 8px rgba(43, 208, 125, 0.3);
@@ -614,7 +636,7 @@
     stroke-linecap: round;
     stroke-dasharray: 100;
     stroke-dashoffset: calc(100 - var(--gauge-value, 0));
-    filter: drop-shadow(0 0 8px rgba(43, 208, 125, 0.4));
+
 }
 
 .student-dashboard-page .sd-overview-card--performance {
@@ -1180,6 +1202,27 @@
     font-family: 'Inter Tight', sans-serif;
 }
 
+/* Medal Pulse Icon */
+.student-dashboard-page .sd-overview-card--medals .sd-overview-card__icon {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    animation: sd-medals-icon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes sd-medals-icon-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+    }
+}
+
 /* Medals Particles */
 .student-dashboard-page .sd-medals-particles {
     position: absolute;
@@ -1271,6 +1314,9 @@
     background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.9), transparent 65%);
     pointer-events: none;
 }
+
+
+
 
 .student-dashboard-page .sd-overview-card--coins .sd-overview-card__icon {
     background: rgba(255, 255, 255, 0.25);
@@ -2287,4 +2333,147 @@
     stroke-width: 3;
     stroke-linecap: round;
     transition: stroke-dashoffset 0.5s ease;
+}
+
+/* ==========================================
+   SEÇÃO 11 - Medals Card Link & Modal
+   ========================================== */
+
+/* Medals Card Footer Link */
+.student-dashboard-page .sd-medals-card__footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.student-dashboard-page .sd-medals-card__link {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+}
+
+.student-dashboard-page .sd-medals-card__link:hover {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Medals Modal */
+.sd-medals-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sd-medals-modal.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sd-medals-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 5, 13, 0.85);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+}
+
+.sd-medals-modal__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+    background: var(--color-static-38);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--color-static-72);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.sd-medals-modal.is-active .sd-medals-modal__content {
+    transform: scale(1);
+}
+
+.sd-medals-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.sd-medals-modal__header h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Inter Tight', sans-serif;
+    letter-spacing: -0.02em;
+    color: var(--color-static-58);
+    margin: 0;
+}
+
+.sd-medals-modal__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--color-static-93);
+    border-radius: 12px;
+    color: var(--color-static-58);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sd-medals-modal__close:hover {
+    background: var(--color-static-76);
+    transform: rotate(90deg);
+}
+
+.sd-medals-modal__close .material-symbols-rounded {
+    font-size: 24px;
+}
+
+.sd-medals-modal__body {
+    padding: 0;
+}
+
+/* Responsive Modal */
+@media (max-width: 767.98px) {
+    .sd-medals-modal {
+        padding: 16px;
+    }
+
+    .sd-medals-modal__content {
+        padding: 24px;
+        border-radius: 20px;
+    }
+
+    .sd-medals-modal__header {
+        margin-bottom: 20px;
+    }
+
+    .sd-medals-modal__header h4 {
+        font-size: 1.25rem;
+    }
+
+    .sd-medals-modal__close {
+        width: 36px;
+        height: 36px;
+    }
 }

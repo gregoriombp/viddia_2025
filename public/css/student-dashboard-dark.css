@@ -194,9 +194,7 @@ html.dark-mode .sd-gauge-track {
     stroke: rgba(71, 85, 105, 0.2);
 }
 
-html.dark-mode .sd-gauge-fill {
-    filter: drop-shadow(0 0 12px rgba(43, 208, 125, 0.5));
-}
+html.dark-mode .sd-gauge-fill {}
 
 html.dark-mode .sd-performance-stat {
     background: rgba(43, 208, 125, 0.08);
@@ -524,4 +522,43 @@ html.dark-mode .btn-continue-course:hover {
 
 html.dark-mode .circular-progress__circle-bg {
     stroke: rgba(33, 150, 243, 0.3) !important;
+}
+
+/* ==========================================
+   SEÇÃO 9 - Medals Card Link & Modal (Dark Mode)
+   ========================================== */
+
+/* Medals Card Footer Link - Dark Mode */
+html.dark-mode .sd-medals-card__link {
+    color: rgba(226, 232, 240, 0.8);
+}
+
+html.dark-mode .sd-medals-card__link:hover {
+    color: #60a5fa;
+    border-bottom-color: rgba(96, 165, 250, 0.5);
+}
+
+/* Medals Modal - Dark Mode */
+html.dark-mode .sd-medals-modal__overlay {
+    background: rgba(0, 5, 13, 0.95);
+}
+
+html.dark-mode .sd-medals-modal__content {
+    background: #161a26;
+    border-color: rgba(71, 85, 105, 0.4);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+}
+
+html.dark-mode .sd-medals-modal__header h4 {
+    color: #f2f9ff;
+}
+
+html.dark-mode .sd-medals-modal__close {
+    background: rgba(30, 41, 59, 0.6);
+    color: #e2e8f0;
+}
+
+html.dark-mode .sd-medals-modal__close:hover {
+    background: rgba(30, 41, 59, 0.8);
+    color: #60a5fa;
 }

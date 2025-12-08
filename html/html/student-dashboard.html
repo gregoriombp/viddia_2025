@@ -13,23 +13,12 @@
 
      <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
-      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
-      rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-
-
-
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <!-- Preloader -->
     <link type="text/css" href="../../public/vendor/spinkit.css" rel="stylesheet">
@@ -317,7 +306,7 @@
                                         <span class="sd-performance-particle"></span>
                                     </div>
                                 </article>
-                                <article class="sd-overview-card sd-overview-card--medals">
+                                <article class="sd-overview-card sd-overview-card--medals sd-coins-icon-pulse justify-content-between">
                                     <div class="sd-overview-card__header">
                                         <span class="sd-overview-card__icon material-symbols-rounded">military_tech</span>
                                         <span class="sd-overview-card__label">Medalhas</span>
@@ -333,27 +322,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="sd-medals-breakdown pr-16pt pl-16pt">
-                                            <div class="sd-medal-type" data-tooltip="Medalhas de Bronze">
-                                                <div class="sd-medal-type__indicator sd-medal-type__indicator--bronze">
-                                                    <img src="../../public/images/medals/0.5x/copper-medal@0.5x.png" alt="Bronze">
-                                                </div>
-                                                <strong class="sd-medal-type__count">8</strong>
-                                            </div>
-                                            <div class="sd-medal-type" data-tooltip="Medalhas de Prata">
-                                                <div class="sd-medal-type__indicator sd-medal-type__indicator--silver">
-                                                    <img src="../../public/images/medals/0.5x/silver-medal@0.5x.png" alt="Prata">
-                                                </div>
-                                                <strong class="sd-medal-type__count">5</strong>
-                                            </div>
-                                            <div class="sd-medal-type" data-tooltip="Medalhas de Ouro">
-                                                <div class="sd-medal-type__indicator sd-medal-type__indicator--gold">
-                                                    <img src="../../public/images/medals/0.5x/golden-medal@0.5x.png" alt="Ouro">
-                                                </div>
-                                                <strong class="sd-medal-type__count">2</strong>
-                                            </div>
-                                        </div>
+                                     
                                     </div>
+                                       <div class="sd-medals-card__footer">
+                                            <a href="#" class="sd-medals-card__link" id="openMedalsModal">Ver todas as medalhas</a>
+                                        </div>
                                     <div class="sd-medals-particles">
                                         <span class="sd-medals-particle"></span>
                                         <span class="sd-medals-particle"></span>
@@ -361,17 +334,19 @@
                                         <span class="sd-medals-particle"></span>
                                     </div>
                                 </article>
-                                <article class="sd-overview-card sd-overview-card--coins sd-overview-card--coins2">
+                                <article class="sd-overview-card sd-overview-card--coins sd-overview-card--coins2 justify-content-between">
                                     <div class="sd-overview-card__header">
                                         <span class="sd-overview-card__icon material-symbols-rounded">paid</span>
                                         <span class="sd-overview-card__label">Moedas</span>
                                     </div>
-                                    <div class="sd-coins-display">
+                                    <div class="sd-coins-display text-center">
                                         <div class="sd-coins-display__main">
                                             <strong>780</strong>
                                             <span class="sd-coins-display__label">Moedas</span>
                                         </div>
-                                        <div class="sd-coins-display__stats">
+                                        
+                                    </div>
+                                    <div class="sd-coins-display__stats">
                                             <div class="sd-coins-stat">
                                                 <span class="sd-coins-stat__icon material-symbols-rounded">trending_up</span>
                                                 <div class="sd-coins-stat__info">
@@ -387,7 +362,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     <div class="sd-coins-particles">
                                         <span class="sd-coin-particle"></span>
                                         <span class="sd-coin-particle"></span>
@@ -803,7 +777,7 @@
                                             <h4 class="mb-0 ml-2"
                                                 style="letter-spacing: -.02em; font-family: 'Inter Tight', sans-serif;">
                                                 Ranking dos Alunos</h4>
-                                                <span class="ml-2 text-muted">Baseado no número de Moedas</span></div>
+                                                <span class="ml-2 text-muted">Baseado no Aproveitamento</span></div>
                                         </div>
                                         <a href="student-ranking.html"
                                             class="dashboard-link text-muted text-sm-left">Ver completo</a>
@@ -816,57 +790,57 @@
                                                     alt="Gregório Pinheiro">
                                                 <div>
                                                     <strong>Gregório Pinheiro</strong>
-                                                    <small>2.150 Moedas</small>
+                                                    <small>92.6% Aproveitamento</small>
                                                 </div>
                                             </div>
                                             <span class="sd-leader-score sd-leader-score--highlight">Você</span>
                                         </li>
                                         <li class="sd-leader-item">
-                                            <span class="sd-leader-position">#02</span>
+                                            <span class="sd-leader-position">#2</span>
                                             <div class="sd-leader-profile">
                                                 <img src="../../public/images/person_image/female2.jpg" alt="Ana Souza">
                                                 <div>
                                                     <strong>Ana Souza</strong>
-                                                    <small>1.980 Moedas</small>
+                                                    <small>92.5% Aproveitamento</small>
                                                 </div>
                                             </div>
-                                            <span class="sd-leader-score">+320</span>
+                                            <span class="sd-leader-score"></span>
                                         </li>
                                         <li class="sd-leader-item">
-                                            <span class="sd-leader-position">#03</span>
+                                            <span class="sd-leader-position">#3</span>
                                             <div class="sd-leader-profile">
-                                                <img src="../../public/images/person_image/male-1.jpg"
+                                                <img src="../../public/images/person_image/male9.jpg"
                                                     alt="Lucas Mendes">
                                                 <div>
                                                     <strong>Lucas Mendes</strong>
-                                                    <small>1.760 Moedas</small>
+                                                    <small>90.1% Aproveitamento</small>
                                                 </div>
                                             </div>
-                                            <span class="sd-leader-score">+240</span>
+                                  
                                         </li>
                                         <li class="sd-leader-item">
-                                            <span class="sd-leader-position">#04</span>
+                                            <span class="sd-leader-position">#4</span>
                                             <div class="sd-leader-profile">
                                                 <img src="../../public/images/person_image/male3.jpg"
                                                     alt="João Oliveira">
                                                 <div>
                                                     <strong>João Oliveira</strong>
-                                                    <small>1.640 Moedas</small>
+                                                    <small>89.2% Aproveitamento</small>
                                                 </div>
                                             </div>
-                                            <span class="sd-leader-score">+210</span>
+                       
                                         </li>
                                         <li class="sd-leader-item">
-                                            <span class="sd-leader-position">#05</span>
+                                            <span class="sd-leader-position">#5</span>
                                             <div class="sd-leader-profile">
                                                 <img src="../../public/images/person_image/female3.jpg"
                                                     alt="Valéria Luz">
                                                 <div>
                                                     <strong>Valéria Luz</strong>
-                                                    <small>1.640 Moedas</small>
+                                                    <small>88.6% Aproveitamento</small>
                                                 </div>
                                             </div>
-                                            <span class="sd-leader-score">+160</span>
+                        
                                         </li>
                                     </ul>
                                 </div>
@@ -935,6 +909,60 @@
 
 
             <!-- // END Drawer -->
+
+            <!-- Medals Modal -->
+            <div class="sd-medals-modal" id="medalsModal">
+                <div class="sd-medals-modal__overlay" id="medalsModalOverlay"></div>
+                <div class="sd-medals-modal__content">
+                    <div class="sd-medals-modal__header">
+                        <h4>Medalhas</h4>
+                        <button class="sd-medals-modal__close" id="closeMedalsModal" aria-label="Fechar modal">
+                            <span class="material-symbols-rounded">close</span>
+                        </button>
+                    </div>
+                    <div class="sd-medals-modal__body">
+                        <div class="sd-medals-count-grid">
+                            <div class="sd-medal-count-item sd-medal-count-item--bronze">
+                                <div class="sd-medal-count-item__visual">
+                                    <img src="../../public/images/medals/1x/copper-medal.png"
+                                        alt="Medalha Bronze"
+                                        class="sd-medal-count-item__image">
+                                    <div class="sd-medal-count-item__badge">8</div>
+                                </div>
+                                <div class="sd-medal-count-item__info">
+                                    <strong>Bronze</strong>
+                                    <small>8 medalhas</small>
+                                </div>
+                            </div>
+                            <div class="sd-medal-count-item sd-medal-count-item--silver">
+                                <div class="sd-medal-count-item__visual">
+                                    <img src="../../public/images/medals/1x/silver-medal.png"
+                                        alt="Medalha Prata"
+                                        class="sd-medal-count-item__image">
+                                    <div class="sd-medal-count-item__badge">5</div>
+                                </div>
+                                <div class="sd-medal-count-item__info">
+                                    <strong>Prata</strong>
+                                    <small>5 medalhas</small>
+                                </div>
+                            </div>
+                            <div class="sd-medal-count-item sd-medal-count-item--gold">
+                                <div class="sd-medal-count-item__visual">
+                                    <img src="../../public/images/medals/1x/golden-medal.png"
+                                        alt="Medalha Ouro"
+                                        class="sd-medal-count-item__image">
+                                    <div class="sd-medal-count-item__badge">2</div>
+                                </div>
+                                <div class="sd-medal-count-item__info">
+                                    <strong>Ouro</strong>
+                                    <small>2 medalhas</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // END Medals Modal -->
 
             <!-- Footer -->
 
@@ -1044,6 +1072,44 @@
                             updateLabel();
                         });
                     })();
+            </script>
+
+            <!-- Medals Modal Script -->
+            <script>
+                (function() {
+                    'use strict';
+
+                    var modal = document.getElementById('medalsModal');
+                    var openBtn = document.getElementById('openMedalsModal');
+                    var closeBtn = document.getElementById('closeMedalsModal');
+                    var overlay = document.getElementById('medalsModalOverlay');
+
+                    if (!modal || !openBtn || !closeBtn || !overlay) {
+                        return;
+                    }
+
+                    function openModal(e) {
+                        e.preventDefault();
+                        modal.classList.add('is-active');
+                        document.body.style.overflow = 'hidden';
+                    }
+
+                    function closeModal() {
+                        modal.classList.remove('is-active');
+                        document.body.style.overflow = '';
+                    }
+
+                    openBtn.addEventListener('click', openModal);
+                    closeBtn.addEventListener('click', closeModal);
+                    overlay.addEventListener('click', closeModal);
+
+                    // Close on ESC key
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+                            closeModal();
+                        }
+                    });
+                })();
             </script>
 
 </body>
