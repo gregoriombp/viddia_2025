@@ -1320,6 +1320,7 @@
 /* Hub Container */
 .course-materials-hub {
     margin-top: 24px;
+    align-items: flex-start;
 }
 
 .course-materials-hub__intro {
@@ -1342,6 +1343,7 @@
 .course-materials-dropdown {
     position: relative;
     display: inline-block;
+    align-self: flex-start;
 }
 
 /* Main Toggle Button */
@@ -1394,7 +1396,7 @@
 /* Dropdown Menu */
 .course-materials-dropdown__menu {
     position: absolute;
-    top: calc(100% + 12px);
+    top: calc(100% + 6px);
     left: 0;
     min-width: 420px;
     background: white;
@@ -2166,56 +2168,56 @@
 
     /* Header do profile card - avatar e nome */
     .profile-card-gradient .d-flex.align-items-center.mb-24pt {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
         gap: 12px;
     }
 
     .profile-card-gradient .avatar-lg {
-        margin-right: 0 !important;
+        margin-right: 12px !important;
     }
 
-    .profile-card-gradient .avatar-lg + .flex {
-        text-align: center;
+    .profile-card-gradient .avatar-lg+.flex {
+        text-align: left;
     }
 
     .profile-card-gradient h4 {
         font-size: 1.125rem;
-        text-align: center;
+        text-align: left;
     }
 
     /* Seção de conquistas */
     .profile-card-gradient .mb-24pt {
         margin-bottom: 16px !important;
+
     }
 
     .profile-card-gradient .mb-24pt h5 {
-        text-align: center;
+        text-align: left;
     }
 
-    /* Medalhas - centralizar */
+    /* Medalhas - alinhar à esquerda */
     .profile-card-gradient .mb-24pt .d-flex.align-items-center {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
-    .profile-card-gradient .d-flex.align-items-center > .avatar {
-        width: 36px !important;
-        height: 36px !important;
-    }
+
 
     /* Grid de moedas e aproveitamento */
     .profile-card-gradient .row {
         gap: 12px;
+        flex-wrap: wrap;
     }
 
     .profile-card-gradient .row .col-12.col-sm-6 {
-        flex: 0 0 calc(50% - 6px);
+        flex: 1 1 calc(50% - 6px);
         max-width: calc(50% - 6px);
         margin-bottom: 0 !important;
     }
 
     .profile-card-gradient .row .col-12.col-sm-6 .d-flex {
-        padding: 12px !important;
+        padding: 3px 6px 3px 9px !important;
         border-radius: 12px;
     }
 
@@ -2272,8 +2274,10 @@
     }
 
     .module-block__header {
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
         gap: 16px;
+        flex-wrap: nowrap;
     }
 
     .module-block__number {
@@ -2471,14 +2475,15 @@
     }
 
     .profile-card-gradient .row {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 10px;
     }
 
     .profile-card-gradient .row .col-12.col-sm-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        width: 100%;
+        flex: 1 1 calc(50% - 5px);
+        max-width: calc(50% - 5px);
+        width: auto;
         margin-bottom: 0 !important;
     }
 
@@ -2673,7 +2678,7 @@
         font-size: 0.85rem;
     }
 
-    .profile-card-gradient .d-flex.align-items-center > .avatar {
+    .profile-card-gradient .d-flex.align-items-center>.avatar {
         width: 28px !important;
         height: 28px !important;
     }
