@@ -986,11 +986,12 @@
 
 .module-video__progress {
     width: calc(100% - 32px);
-    margin: 0 16px 16px;
+
     height: 4px;
     border-radius: 999px;
     background: var(--module-progress-bg);
     overflow: hidden;
+
 }
 
 .module-video__progress span {
@@ -998,6 +999,7 @@
     height: 100%;
     background: var(--module-progress-fill);
     border-radius: inherit;
+    z-index: 9999999;
 }
 
 .module-video--completed .module-video__thumb::after {
@@ -1079,12 +1081,14 @@
 
     /* Ajustar posição das máscaras de fade para o novo layout */
     .module-carousel::before {
-        left: 48px; /* 36px botão + 12px gap */
+        left: 48px;
+        /* 36px botão + 12px gap */
         width: 60px;
     }
 
     .module-carousel::after {
-        right: 48px; /* 36px botão + 12px gap */
+        right: 48px;
+        /* 36px botão + 12px gap */
         width: 60px;
     }
 
@@ -1856,6 +1860,7 @@
    TABLET (max-width: 1024px)
    ========================================== */
 @media (max-width: 1024px) {
+
     /* Hero section adjustments */
     .hero--fade {
         min-height: 600px;
@@ -1938,6 +1943,7 @@
    MOBILE (max-width: 768px)
    ========================================== */
 @media (max-width: 768px) {
+
     /* Hero section */
     .hero--fade {
         min-height: 480px;
@@ -2068,7 +2074,7 @@
         text-align: center;
     }
 
-    .profile-card-gradient .d-flex.align-items-center > .avatar {
+    .profile-card-gradient .d-flex.align-items-center>.avatar {
         width: 32px !important;
         height: 32px !important;
     }
@@ -2196,6 +2202,7 @@
    SMALL MOBILE (max-width: 576px)
    ========================================== */
 @media (max-width: 576px) {
+
     /* Hero section */
     .hero--fade {
         min-height: 420px;
@@ -2287,7 +2294,7 @@
     }
 
     /* Module track */
-    .module-block + .module-block {
+    .module-block+.module-block {
         margin-top: 24px;
         padding-top: 32px;
     }
@@ -2352,7 +2359,7 @@
         font-size: 48px !important;
     }
 
-    .module-video--quiz .module-video__thumb > div[style*="position: absolute"] {
+    .module-video--quiz .module-video__thumb>div[style*="position: absolute"] {
         padding: 4px 8px !important;
         font-size: 10px !important;
     }
@@ -2362,6 +2369,7 @@
    EXTRA SMALL MOBILE (max-width: 375px)
    ========================================== */
 @media (max-width: 375px) {
+
     /* Hero section */
     .hero--fade {
         min-height: 380px;
@@ -2420,7 +2428,7 @@
         font-size: 0.85rem;
     }
 
-    .profile-card-gradient .d-flex.align-items-center > .avatar {
+    .profile-card-gradient .d-flex.align-items-center>.avatar {
         width: 28px !important;
         height: 28px !important;
     }

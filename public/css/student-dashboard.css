@@ -659,7 +659,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px;
+    padding: 8px;
     border-radius: 12px;
     background: rgba(43, 208, 125, 0.1);
     border: 1px solid rgba(43, 208, 125, 0.2);
@@ -1388,7 +1388,7 @@
 .student-dashboard-page .sd-coins-display__stats {
     display: flex;
     gap: 12px;
-    flex-wrap: wrap;
+
 }
 
 .student-dashboard-page .sd-coins-stat {

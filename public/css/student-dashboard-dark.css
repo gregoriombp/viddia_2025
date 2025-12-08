@@ -177,13 +177,13 @@ html.dark-mode .sd-overview-card__note {
 /* Performance Card - Dark Mode */
 html.dark-mode .sd-overview-card--performance {
     background: linear-gradient(135deg, #0a0f1a 0%, #0f1a28 50%, #0a1018 100%);
-    border: 1px solid rgba(43, 208, 125, 0.15);
+
     box-shadow: 0 14px 32px rgba(43, 208, 125, 0.1);
 }
 
 html.dark-mode .sd-performance-gauge__value strong {
     color: #2bd07d;
-    text-shadow: 0 2px 12px rgba(43, 208, 125, 0.4);
+    text-shadow: 0 2px 12px rgba(43, 208, 125, 0.2);
 }
 
 html.dark-mode .sd-performance-gauge__value small {
