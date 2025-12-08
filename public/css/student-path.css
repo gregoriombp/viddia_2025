@@ -534,6 +534,18 @@
     z-index: 2;
 }
 
+/* Wrapper para aplicar a máscara direto no container do background */
+.hero-mask {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+}
+
+.hero-mask .hero--fade {
+    position: relative;
+    z-index: 2;
+}
+
 /* Garantir que o container pai do hero não afete as máscaras */
 .mdk-box.mdk-box--bg-dark {
     position: relative;
@@ -1944,7 +1956,59 @@
    ========================================== */
 @media (max-width: 768px) {
 
-    /* Hero section */
+    /* ===== SOBRESCREVER CLASSES UTILITÁRIAS DE ESPAÇAMENTO ===== */
+    /* Estas classes têm valores muito grandes para mobile */
+    .pl-112pt,
+    .px-112pt {
+        padding-left: 16px !important;
+    }
+
+    .pr-112pt,
+    .px-112pt {
+        padding-right: 16px !important;
+    }
+
+    .mb-112pt,
+    .my-112pt {
+        margin-bottom: 32px !important;
+    }
+
+    .ml-64pt,
+    .mx-64pt {
+        margin-left: 0 !important;
+    }
+
+    .mr-64pt,
+    .mx-64pt {
+        margin-right: 0 !important;
+    }
+
+    .pl-64pt,
+    .px-64pt {
+        padding-left: 16px !important;
+    }
+
+    .pr-64pt,
+    .px-64pt {
+        padding-right: 16px !important;
+    }
+
+    .pl-32pt,
+    .px-32pt {
+        padding-left: 12px !important;
+    }
+
+    .pr-32pt,
+    .px-32pt {
+        padding-right: 12px !important;
+    }
+
+    .py-32pt {
+        padding-top: 16px !important;
+        padding-bottom: 16px !important;
+    }
+
+    /* ===== HERO SECTION ===== */
     .hero--fade {
         min-height: 480px;
     }
@@ -1966,6 +2030,43 @@
     .hero--fade::after {
         bottom: 0 !important;
         top: 35% !important;
+    }
+
+    /* Aplicar a máscara direto no container para cobrir toda a largura */
+    .hero-mask::before,
+    .hero-mask::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .hero-mask::before {
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.56) 0%,
+                rgba(10, 16, 28, .60) 55%,
+                rgba(0, 0, 0, 0.2) 80%,
+                rgba(10, 16, 28, 0) 100%);
+    }
+
+    .hero-mask::after {
+        background: linear-gradient(180deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.1) 20%,
+                rgba(255, 255, 255, 0.499) 60%,
+                rgba(255, 255, 255, 0.799) 80%,
+                #fff 100%);
+        top: 35%;
+        bottom: 0;
+    }
+
+    /* Desativar a máscara interna para evitar recorte em caixas menores */
+    .hero--fade::before,
+    .hero--fade::after {
+        content: none !important;
     }
 
     /* Garantir que o container pai não adicione margens */
@@ -2050,12 +2151,20 @@
         font-size: 0.6rem;
     }
 
-    /* Profile card */
-    .profile-card-gradient {
-        padding: 20px 16px !important;
-        border-radius: 20px !important;
+    /* ===== PROFILE CARD ===== */
+    /* Container do profile card */
+    .col-lg-5.profile-card-gradient {
+        padding: 24px 20px !important;
+        border-radius: 24px !important;
+        margin-top: 24px;
     }
 
+    .profile-card-gradient {
+        padding: 24px 20px !important;
+        border-radius: 24px !important;
+    }
+
+    /* Header do profile card - avatar e nome */
     .profile-card-gradient .d-flex.align-items-center.mb-24pt {
         flex-direction: column;
         text-align: center;
@@ -2066,21 +2175,57 @@
         margin-right: 0 !important;
     }
 
+    .profile-card-gradient .avatar-lg + .flex {
+        text-align: center;
+    }
+
     .profile-card-gradient h4 {
         font-size: 1.125rem;
+        text-align: center;
+    }
+
+    /* Seção de conquistas */
+    .profile-card-gradient .mb-24pt {
+        margin-bottom: 16px !important;
     }
 
     .profile-card-gradient .mb-24pt h5 {
         text-align: center;
     }
 
-    .profile-card-gradient .d-flex.align-items-center>.avatar {
-        width: 32px !important;
-        height: 32px !important;
+    /* Medalhas - centralizar */
+    .profile-card-gradient .mb-24pt .d-flex.align-items-center {
+        justify-content: center;
+    }
+
+    .profile-card-gradient .d-flex.align-items-center > .avatar {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    /* Grid de moedas e aproveitamento */
+    .profile-card-gradient .row {
+        gap: 12px;
     }
 
     .profile-card-gradient .row .col-12.col-sm-6 {
-        width: 50%;
+        flex: 0 0 calc(50% - 6px);
+        max-width: calc(50% - 6px);
+        margin-bottom: 0 !important;
+    }
+
+    .profile-card-gradient .row .col-12.col-sm-6 .d-flex {
+        padding: 12px !important;
+        border-radius: 12px;
+    }
+
+    /* Ícones menores em mobile */
+    .profile-card-gradient .icon-40pt {
+        font-size: 28px !important;
+    }
+
+    .profile-card-gradient .mr-12pt {
+        margin-right: 8px !important;
     }
 
     /* Course materials hub */
@@ -2203,7 +2348,42 @@
    ========================================== */
 @media (max-width: 576px) {
 
-    /* Hero section */
+    /* ===== SOBRESCREVER CLASSES UTILITÁRIAS ===== */
+    .pl-112pt,
+    .px-112pt {
+        padding-left: 12px !important;
+    }
+
+    .pr-112pt,
+    .px-112pt {
+        padding-right: 12px !important;
+    }
+
+    .mb-112pt,
+    .my-112pt {
+        margin-bottom: 24px !important;
+    }
+
+    .pl-64pt,
+    .pr-64pt,
+    .px-64pt {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .pl-32pt,
+    .pr-32pt,
+    .px-32pt {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .py-32pt {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+
+    /* ===== HERO SECTION ===== */
     .hero--fade {
         min-height: 420px;
     }
@@ -2221,6 +2401,10 @@
 
     .hero--fade::after {
         bottom: 0 !important;
+        top: 30% !important;
+    }
+
+    .hero-mask::after {
         top: 30% !important;
     }
 
@@ -2251,7 +2435,7 @@
         font-size: 0.875rem;
     }
 
-    /* Progress section */
+    /* ===== PROGRESS SECTION ===== */
     .page-separator__text.text-lg {
         font-size: 0.875rem !important;
     }
@@ -2274,10 +2458,28 @@
         line-height: 1.4;
     }
 
-    /* Profile card */
+    /* ===== PROFILE CARD ===== */
+    .col-lg-5.profile-card-gradient {
+        padding: 20px 16px !important;
+        border-radius: 20px !important;
+        margin-top: 20px;
+    }
+
+    .profile-card-gradient {
+        padding: 20px 16px !important;
+        border-radius: 20px !important;
+    }
+
+    .profile-card-gradient .row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .profile-card-gradient .row .col-12.col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
         width: 100%;
-        margin-bottom: 12px;
+        margin-bottom: 0 !important;
     }
 
     .profile-card-gradient .row .col-12.col-sm-6:last-child {
@@ -2370,7 +2572,39 @@
    ========================================== */
 @media (max-width: 375px) {
 
-    /* Hero section */
+    /* ===== SOBRESCREVER CLASSES UTILITÁRIAS ===== */
+    .pl-112pt,
+    .pr-112pt,
+    .px-112pt {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .mb-112pt,
+    .my-112pt {
+        margin-bottom: 20px !important;
+    }
+
+    .pl-64pt,
+    .pr-64pt,
+    .px-64pt {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .pl-32pt,
+    .pr-32pt,
+    .px-32pt {
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+
+    .py-32pt {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* ===== HERO SECTION ===== */
     .hero--fade {
         min-height: 380px;
     }
@@ -2390,6 +2624,10 @@
         top: 25% !important;
     }
 
+    .hero-mask::after {
+        top: 25% !important;
+    }
+
     .hero--fade h1.text-white {
         font-size: 1.35rem;
     }
@@ -2398,7 +2636,7 @@
         font-size: 0.8rem;
     }
 
-    /* Progress section */
+    /* ===== PROGRESS SECTION ===== */
     .path-progress-overview__value {
         font-size: 1.25rem;
     }
@@ -2415,9 +2653,16 @@
         font-size: 0.55rem;
     }
 
-    /* Profile card */
+    /* ===== PROFILE CARD ===== */
+    .col-lg-5.profile-card-gradient {
+        padding: 16px 12px !important;
+        border-radius: 16px !important;
+        margin-top: 16px;
+    }
+
     .profile-card-gradient {
         padding: 16px 12px !important;
+        border-radius: 16px !important;
     }
 
     .profile-card-gradient h4 {
@@ -2428,12 +2673,22 @@
         font-size: 0.85rem;
     }
 
-    .profile-card-gradient .d-flex.align-items-center>.avatar {
+    .profile-card-gradient .d-flex.align-items-center > .avatar {
         width: 28px !important;
         height: 28px !important;
     }
 
-    /* Module carousel */
+    .profile-card-gradient .avatar-lg {
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+    .profile-card-gradient .chip {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+
+    /* ===== MODULE CAROUSEL ===== */
     .module-video {
         flex: 0 0 200px;
     }
@@ -2467,6 +2722,10 @@
 
     .hero--fade::after {
         bottom: 0 !important;
+        top: 20% !important;
+    }
+
+    .hero-mask::after {
         top: 20% !important;
     }
 

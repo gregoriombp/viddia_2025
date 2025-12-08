@@ -184,6 +184,12 @@ html.dark-mode .hero--fade::after {
     background: linear-gradient(180deg, rgba(0, 5, 13, 0) 0%, rgba(0, 5, 13, .85) 70%, #00050d 100%);
 }
 
+@media (max-width: 768px) {
+    html.dark-mode .hero-mask::after {
+        background: linear-gradient(180deg, rgba(0, 5, 13, 0) 0%, rgba(0, 5, 13, .85) 70%, #00050d 100%);
+    }
+}
+
 /* ==========================================
    PROFILE CARD - Dark Mode
    ========================================== */
