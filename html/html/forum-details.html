@@ -460,7 +460,11 @@
         top: 0;
         width: 2px;
         height: 24px;
-        background: linear-gradient(to bottom, rgba(33, 150, 243, 0.3), rgba(0, 0, 0, 0.08));
+        background: linear-gradient(
+          to bottom,
+          rgba(33, 150, 243, 0.3),
+          rgba(0, 0, 0, 0.08)
+        );
       }
 
       .reply-thread__children .discussion-post {
@@ -509,7 +513,11 @@
       }
 
       html.dark-mode .reply-thread__children::before {
-        background: linear-gradient(to bottom, rgba(33, 150, 243, 0.4), rgba(255, 255, 255, 0.08));
+        background: linear-gradient(
+          to bottom,
+          rgba(33, 150, 243, 0.4),
+          rgba(255, 255, 255, 0.08)
+        );
       }
 
       html.dark-mode .reply-thread__children .discussion-post::before {
@@ -809,7 +817,9 @@
           padding-left: 10px;
         }
 
-        .reply-thread__children .reply-thread__children .reply-thread__children {
+        .reply-thread__children
+          .reply-thread__children
+          .reply-thread__children {
           margin-left: 8px;
           padding-left: 8px;
         }
@@ -925,7 +935,6 @@
                   Duvidas sobre o modulo de Excel Avancado - Tabelas Dinamicas
                 </h1>
                 <div class="topic-header__meta">
-                  <span class="topic-header__tag">Excel</span>
                   <div class="topic-header__stats">
                     <span class="topic-header__stat">
                       <span class="material-symbols-rounded">chat_bubble</span>
@@ -1001,6 +1010,12 @@
                     2
                   </button>
                 </div>
+                <div class="reply-form__actions">
+                  <button class="btn-reply">
+                    <span class="material-symbols-rounded">send</span>
+                    Responder
+                  </button>
+                </div>
               </div>
 
               <!-- Reply Form -->
@@ -1070,12 +1085,12 @@
                         significativamente o processamento.
                       </p>
                       <p>
-                        2. Desative a atualizacao automatica da tabela e atualize
-                        manualmente quando necessario.
+                        2. Desative a atualizacao automatica da tabela e
+                        atualize manualmente quando necessario.
                       </p>
                       <p>
-                        3. Se possivel, trabalhe com um subconjunto dos dados para
-                        analises exploratorias.
+                        3. Se possivel, trabalhe com um subconjunto dos dados
+                        para analises exploratorias.
                       </p>
                     </div>
                     <div class="discussion-post__actions">
@@ -1100,7 +1115,9 @@
                     <div class="reply-thread">
                       <div class="discussion-post">
                         <div class="reply-indicator">
-                          <span class="material-symbols-rounded">subdirectory_arrow_right</span>
+                          <span class="material-symbols-rounded"
+                            >subdirectory_arrow_right</span
+                          >
                           Em resposta a Ana Souza
                         </div>
                         <div class="discussion-post__header">
@@ -1130,15 +1147,16 @@
                         </div>
                         <div class="discussion-post__content">
                           <p>
-                            Complementando a resposta da Ana: para campos calculados,
-                            voce precisa ir em Analise de Tabela Dinamica > Campos,
-                            Itens e Conjuntos > Campo Calculado.
+                            Complementando a resposta da Ana: para campos
+                            calculados, voce precisa ir em Analise de Tabela
+                            Dinamica > Campos, Itens e Conjuntos > Campo
+                            Calculado.
                           </p>
                           <p>
                             La voce pode criar formulas personalizadas usando os
-                            campos existentes. Por exemplo, se voce tem "Vendas" e
-                            "Custos", pode criar um campo "Margem" com a formula
-                            =Vendas-Custos.
+                            campos existentes. Por exemplo, se voce tem "Vendas"
+                            e "Custos", pode criar um campo "Margem" com a
+                            formula =Vendas-Custos.
                           </p>
                         </div>
                         <div class="discussion-post__actions">
@@ -1147,11 +1165,15 @@
                             Responder
                           </button>
                           <button class="discussion-post__action">
-                            <span class="material-symbols-rounded">thumb_up</span>
+                            <span class="material-symbols-rounded"
+                              >thumb_up</span
+                            >
                             18
                           </button>
                           <button class="discussion-post__action">
-                            <span class="material-symbols-rounded">thumb_down</span>
+                            <span class="material-symbols-rounded"
+                              >thumb_down</span
+                            >
                             0
                           </button>
                         </div>
@@ -1161,7 +1183,9 @@
                       <div class="reply-thread__children">
                         <div class="discussion-post">
                           <div class="reply-indicator">
-                            <span class="material-symbols-rounded">subdirectory_arrow_right</span>
+                            <span class="material-symbols-rounded"
+                              >subdirectory_arrow_right</span
+                            >
                             Em resposta a Pedro Santos
                           </div>
                           <div class="discussion-post__header">
@@ -1191,22 +1215,28 @@
                           </div>
                           <div class="discussion-post__content">
                             <p>
-                              Perfeito, Pedro! Era exatamente isso que eu precisava.
-                              Consegui criar o campo calculado seguindo seu passo a passo.
-                              Muito obrigado!
+                              Perfeito, Pedro! Era exatamente isso que eu
+                              precisava. Consegui criar o campo calculado
+                              seguindo seu passo a passo. Muito obrigado!
                             </p>
                           </div>
                           <div class="discussion-post__actions">
                             <button class="discussion-post__action">
-                              <span class="material-symbols-rounded">reply</span>
+                              <span class="material-symbols-rounded"
+                                >reply</span
+                              >
                               Responder
                             </button>
                             <button class="discussion-post__action">
-                              <span class="material-symbols-rounded">thumb_up</span>
+                              <span class="material-symbols-rounded"
+                                >thumb_up</span
+                              >
                               5
                             </button>
                             <button class="discussion-post__action">
-                              <span class="material-symbols-rounded">thumb_down</span>
+                              <span class="material-symbols-rounded"
+                                >thumb_down</span
+                              >
                               0
                             </button>
                           </div>
@@ -1249,7 +1279,8 @@
                         Tive o mesmo problema! O que me ajudou foi converter a
                         base de dados para uma Tabela (Ctrl+T) antes de criar a
                         tabela dinamica. Isso melhora a performance e ainda
-                        facilita a atualizacao quando novos dados sao adicionados.
+                        facilita a atualizacao quando novos dados sao
+                        adicionados.
                       </p>
                     </div>
                     <div class="discussion-post__actions">
@@ -1299,11 +1330,11 @@
                     </div>
                     <div class="discussion-post__content">
                       <p>
-                        Excelentes dicas! Aproveitando o topico, alguem conseguiu
-                        fazer segmentacao de dados (slicers) funcionarem bem com
-                        multiplas tabelas dinamicas? Estou tentando criar um
-                        dashboard mas os filtros nao estao sincronizando
-                        corretamente.
+                        Excelentes dicas! Aproveitando o topico, alguem
+                        conseguiu fazer segmentacao de dados (slicers)
+                        funcionarem bem com multiplas tabelas dinamicas? Estou
+                        tentando criar um dashboard mas os filtros nao estao
+                        sincronizando corretamente.
                       </p>
                     </div>
                     <div class="discussion-post__actions">
@@ -1326,7 +1357,9 @@
                   <div class="reply-thread__children">
                     <div class="discussion-post">
                       <div class="reply-indicator">
-                        <span class="material-symbols-rounded">subdirectory_arrow_right</span>
+                        <span class="material-symbols-rounded"
+                          >subdirectory_arrow_right</span
+                        >
                         Em resposta a Fernando Costa
                       </div>
                       <div class="discussion-post__header">
@@ -1356,14 +1389,16 @@
                       </div>
                       <div class="discussion-post__content">
                         <p>
-                          Fernando, para sincronizar slicers com multiplas tabelas
-                          dinamicas, voce precisa clicar com o botao direito no
-                          slicer, ir em "Conexoes de Relatorio" e marcar todas as
-                          tabelas dinamicas que deseja controlar.
+                          Fernando, para sincronizar slicers com multiplas
+                          tabelas dinamicas, voce precisa clicar com o botao
+                          direito no slicer, ir em "Conexoes de Relatorio" e
+                          marcar todas as tabelas dinamicas que deseja
+                          controlar.
                         </p>
                         <p>
-                          Lembre-se que todas as tabelas precisam estar baseadas na
-                          mesma fonte de dados para isso funcionar corretamente!
+                          Lembre-se que todas as tabelas precisam estar baseadas
+                          na mesma fonte de dados para isso funcionar
+                          corretamente!
                         </p>
                       </div>
                       <div class="discussion-post__actions">
@@ -1376,7 +1411,9 @@
                           22
                         </button>
                         <button class="discussion-post__action">
-                          <span class="material-symbols-rounded">thumb_down</span>
+                          <span class="material-symbols-rounded"
+                            >thumb_down</span
+                          >
                           0
                         </button>
                       </div>
@@ -1386,7 +1423,9 @@
                     <div class="reply-thread__children">
                       <div class="discussion-post">
                         <div class="reply-indicator">
-                          <span class="material-symbols-rounded">subdirectory_arrow_right</span>
+                          <span class="material-symbols-rounded"
+                            >subdirectory_arrow_right</span
+                          >
                           Em resposta a Ana Souza
                         </div>
                         <div class="discussion-post__header">
@@ -1416,9 +1455,9 @@
                         </div>
                         <div class="discussion-post__content">
                           <p>
-                            Funcionou perfeitamente, Ana! Era exatamente isso que estava
-                            faltando. O dashboard agora sincroniza todos os filtros
-                            corretamente. Obrigado pela ajuda!
+                            Funcionou perfeitamente, Ana! Era exatamente isso
+                            que estava faltando. O dashboard agora sincroniza
+                            todos os filtros corretamente. Obrigado pela ajuda!
                           </p>
                         </div>
                         <div class="discussion-post__actions">
@@ -1427,11 +1466,15 @@
                             Responder
                           </button>
                           <button class="discussion-post__action">
-                            <span class="material-symbols-rounded">thumb_up</span>
+                            <span class="material-symbols-rounded"
+                              >thumb_up</span
+                            >
                             6
                           </button>
                           <button class="discussion-post__action">
-                            <span class="material-symbols-rounded">thumb_down</span>
+                            <span class="material-symbols-rounded"
+                              >thumb_down</span
+                            >
                             0
                           </button>
                         </div>

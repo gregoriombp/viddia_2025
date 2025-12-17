@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr" class="dark-mode">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>VIDDIA - Responder Topico</title>
+    <link
+      rel="icon"
+      href="../../public/images/Favicon/FAVICON_VIDDIA-128.png"
+      type="image/x-icon" />
+
+    <meta name="robots" content="noindex" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Preloader -->
+    <link
+      type="text/css"
+      href="../../public/vendor/spinkit.css"
+      rel="stylesheet" />
+
+    <!-- Perfect Scrollbar -->
+    <link
+      type="text/css"
+      href="../../public/vendor/perfect-scrollbar.css"
+      rel="stylesheet" />
+
+    <!-- Material Design Icons -->
+    <link
+      type="text/css"
+      href="../../public/css/material-icons.css"
+      rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link
+      type="text/css"
+      href="../../public/css/fontawesome.css"
+      rel="stylesheet" />
+
+    <!-- Preloader -->
+    <link
+      type="text/css"
+      href="../../public/css/preloader.css"
+      rel="stylesheet" />
+
+    <!-- App CSS -->
+    <link type="text/css" href="../../public/css/app.css" rel="stylesheet" />
+
+    <!-- Dark Mode CSS -->
+    <link type="text/css" href="../../public/css/dark.css" rel="stylesheet" />
+
+    <!-- Responsive CSS -->
+    <link
+      type="text/css"
+      href="../../public/css/responsive.css"
+      rel="stylesheet" />
+
+    <style>
+      /* Theme Toggle Switch Styles */
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 24px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.3s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.3s;
+      }
+
+      input:checked + .slider {
+        background-color: #2196f3;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(20px);
+      }
+
+      .slider.round {
+        border-radius: 24px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
+      }
+
+      #theme-toggle-item:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      html.dark-mode #theme-toggle-item:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      /* Reply Page Styles */
+      .forum-reply-page {
+        min-height: calc(100vh - 200px);
+        padding: 32pt 0;
+      }
+
+      .forum-reply-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Page Header */
+      .reply-page-header {
+        margin-bottom: 32pt;
+      }
+
+      .reply-page-header__back {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 14px;
+        text-decoration: none;
+        margin-bottom: 16pt;
+        transition: color 0.2s ease;
+        cursor: pointer;
+      }
+
+      .reply-page-header__back:hover {
+        color: #2196f3;
+        text-decoration: none;
+      }
+
+      .reply-page-header__title {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: #1a1a1a;
+        margin-bottom: 8pt;
+      }
+
+      .reply-page-header__subtitle {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      /* Original Post Preview */
+      .original-post-preview {
+        background: #fff;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 24px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        border-left: 4px solid #2196f3;
+      }
+
+      .original-post-preview__label {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: rgba(0, 0, 0, 0.4);
+        margin-bottom: 16px;
+      }
+
+      .original-post-preview__header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .original-post-preview__avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .original-post-preview__avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .original-post-preview__author-info {
+        flex: 1;
+      }
+
+      .original-post-preview__author-name {
+        font-weight: 600;
+        font-size: 14px;
+        color: #1a1a1a;
+      }
+
+      .original-post-preview__timestamp {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .original-post-preview__content {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .original-post-preview__content p {
+        margin-bottom: 8px;
+      }
+
+      .original-post-preview__content p:last-child {
+        margin-bottom: 0;
+      }
+
+      .original-post-preview__stats {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 16px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .original-post-preview__stat {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .original-post-preview__stat .material-symbols-rounded {
+        font-size: 16px;
+      }
+
+      .original-post-preview__stat--liked {
+        color: #2196f3;
+      }
+
+      /* Reply Form Card */
+      .reply-form-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 32px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+
+      .reply-form-card__header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .reply-form-card__avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .reply-form-card__avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .reply-form-card__user-info {
+        flex: 1;
+      }
+
+      .reply-form-card__user-name {
+        font-weight: 600;
+        font-size: 15px;
+        color: #1a1a1a;
+      }
+
+      .reply-form-card__reply-to {
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .reply-form-card__reply-to strong {
+        color: #2196f3;
+        font-weight: 500;
+      }
+
+      /* Form Label */
+      .form-label-custom {
+        display: block;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: rgba(0, 0, 0, 0.5);
+        margin-bottom: 8px;
+      }
+
+      .form-label-custom .required {
+        color: #e53935;
+      }
+
+      /* Rich Text Editor */
+      .rich-editor {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.2s ease;
+      }
+
+      .rich-editor:focus-within {
+        border-color: #2196f3;
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+      }
+
+      .rich-editor__toolbar {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 8px 12px;
+        background: rgba(0, 0, 0, 0.02);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .rich-editor__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: transparent;
+        color: rgba(0, 0, 0, 0.6);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .rich-editor__btn:hover {
+        background: rgba(0, 0, 0, 0.05);
+        color: #1a1a1a;
+      }
+
+      .rich-editor__btn .material-symbols-rounded {
+        font-size: 20px;
+      }
+
+      .rich-editor__divider {
+        width: 1px;
+        height: 20px;
+        background: rgba(0, 0, 0, 0.1);
+        margin: 0 4px;
+      }
+
+      .rich-editor__textarea {
+        width: 100%;
+        min-height: 180px;
+        padding: 16px;
+        border: none;
+        font-size: 15px;
+        font-family: inherit;
+        resize: vertical;
+        line-height: 1.6;
+      }
+
+      .rich-editor__textarea:focus {
+        outline: none;
+      }
+
+      .rich-editor__textarea::placeholder {
+        color: rgba(0, 0, 0, 0.4);
+      }
+
+      /* Form Actions */
+      .form-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .btn-publish {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        background: #2196f3;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+      }
+
+      .btn-publish:hover {
+        background: #1976d2;
+        color: #fff;
+        text-decoration: none;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+      }
+
+      .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 24px;
+        background: transparent;
+        color: rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+      }
+
+      .btn-back:hover {
+        background: rgba(0, 0, 0, 0.02);
+        border-color: rgba(0, 0, 0, 0.2);
+        color: #1a1a1a;
+        text-decoration: none;
+      }
+
+      /* Dark Mode */
+      html.dark-mode .reply-page-header__back {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      html.dark-mode .reply-page-header__back:hover {
+        color: #64b5f6;
+      }
+
+      html.dark-mode .reply-page-header__title {
+        color: #fff;
+      }
+
+      html.dark-mode .reply-page-header__subtitle {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      html.dark-mode .original-post-preview {
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      html.dark-mode .original-post-preview__label {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      html.dark-mode .original-post-preview__author-name {
+        color: #fff;
+      }
+
+      html.dark-mode .original-post-preview__timestamp {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      html.dark-mode .original-post-preview__content {
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      html.dark-mode .original-post-preview__stats {
+        border-top-color: rgba(255, 255, 255, 0.06);
+      }
+
+      html.dark-mode .original-post-preview__stat {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      html.dark-mode .original-post-preview__stat--liked {
+        color: #64b5f6;
+      }
+
+      html.dark-mode .reply-form-card {
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      html.dark-mode .reply-form-card__user-name {
+        color: #fff;
+      }
+
+      html.dark-mode .reply-form-card__reply-to {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      html.dark-mode .reply-form-card__reply-to strong {
+        color: #64b5f6;
+      }
+
+      html.dark-mode .form-label-custom {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      html.dark-mode .rich-editor {
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      html.dark-mode .rich-editor:focus-within {
+        border-color: #2196f3;
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+      }
+
+      html.dark-mode .rich-editor__toolbar {
+        background: rgba(255, 255, 255, 0.03);
+        border-bottom-color: rgba(255, 255, 255, 0.06);
+      }
+
+      html.dark-mode .rich-editor__btn {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      html.dark-mode .rich-editor__btn:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+      }
+
+      html.dark-mode .rich-editor__divider {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      html.dark-mode .rich-editor__textarea {
+        background: transparent;
+        color: #fff;
+      }
+
+      html.dark-mode .rich-editor__textarea::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      html.dark-mode .btn-back {
+        color: rgba(255, 255, 255, 0.6);
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      html.dark-mode .btn-back:hover {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+
+      /* Responsive */
+      @media (max-width: 576px) {
+        .reply-form-card {
+          padding: 20px;
+        }
+
+        .form-actions {
+          flex-direction: column;
+        }
+
+        .btn-publish,
+        .btn-back {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .original-post-preview {
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="layout-sticky-subnav layout-default">
+    <div class="preloader">
+      <div class="sk-chase">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+      </div>
+    </div>
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+      <!-- Header -->
+      <div id="header" class="" data-effects="" data-fixed data-condenses>
+        <div class="mdk-header__content">
+          <div
+            class="navbar navbar-expand navbar-light bg-white border-bottom"
+            id="default-navbar"
+            data-primary>
+            <!-- Company Logo -->
+            <a href="index.html" class="navbar-brand mr-16pt">
+              <img
+                src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png"
+                alt="Company Logo"
+                class="navbar-brand-icon mr-0 mr-lg-8pt"
+                width="150" />
+            </a>
+
+            <!-- User Profile Menu -->
+            <ul class="nav navbar-nav ml-auto mr-0">
+              <li class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link d-flex align-items-center dropdown-toggle"
+                  data-toggle="dropdown">
+                  <span class="avatar avatar-sm avatar-online mr-8pt">
+                    <img
+                      src="../../public/images/person_image/male-1.jpg"
+                      alt="user"
+                      class="avatar-img rounded-circle" />
+                  </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a href="index.html" class="dropdown-item">Inicio</a>
+                  <a href="student-dashboard.html" class="dropdown-item"
+                    >Dashboard</a
+                  >
+                  <a href="student-modify-profile.html" class="dropdown-item"
+                    >Preferencias</a
+                  >
+                  <div class="dropdown-divider"></div>
+
+                  <!-- Theme Toggle -->
+                  <div
+                    class="dropdown-item d-flex align-items-center justify-content-between"
+                    style="cursor: pointer"
+                    id="theme-toggle-item">
+                    <div class="d-flex align-items-center">
+                      <span
+                        class="material-symbols-rounded mr-2"
+                        id="theme-icon"
+                        >dark_mode</span
+                      >
+                      <span id="theme-label">Modo Escuro</span>
+                    </div>
+                    <label class="switch mb-0" style="margin-left: 16px">
+                      <input
+                        type="checkbox"
+                        id="theme-toggle-checkbox"
+                        checked />
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+
+                  <div class="dropdown-divider"></div>
+                  <a href="login.html" class="dropdown-item">Logout</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- // END Header -->
+
+      <!-- Page Content -->
+      <div class="page-section forum-reply-page">
+        <div class="container page__container">
+          <div class="forum-reply-container">
+            <!-- Page Header -->
+            <div class="reply-page-header">
+              <a onclick="goBack()" class="reply-page-header__back">
+                <span class="material-symbols-rounded">arrow_back</span>
+                Voltar ao Topico
+              </a>
+              <h1 class="reply-page-header__title">Responder</h1>
+              <p class="reply-page-header__subtitle">
+                Topico: Duvidas sobre o modulo de Excel Avancado - Tabelas
+                Dinamicas
+              </p>
+            </div>
+
+            <!-- Original Post Preview -->
+            <div class="original-post-preview">
+              <div class="original-post-preview__label">
+                Respondendo a esta publicação
+              </div>
+              <div class="original-post-preview__header">
+                <div class="original-post-preview__avatar">
+                  <img
+                    src="../../public/images/person_image/female2.jpg"
+                    alt="Ana Souza" />
+                </div>
+                <div class="original-post-preview__author-info">
+                  <span class="original-post-preview__author-name"
+                    >Ana Souza</span
+                  >
+                  <span class="original-post-preview__timestamp"
+                    >Seg, 16 Dez 2024, 12:45</span
+                  >
+                </div>
+              </div>
+              <div class="original-post-preview__content">
+                <p>
+                  Ola Carlos! Sobre a lentidao com bases grandes, existem
+                  algumas tecnicas que podem ajudar:
+                </p>
+                <p>
+                  1. Use o Power Query para limpar e transformar os dados antes
+                  de criar a tabela dinamica. Isso reduz significativamente o
+                  processamento.
+                </p>
+              </div>
+              <div class="original-post-preview__stats">
+                <span
+                  class="original-post-preview__stat original-post-preview__stat--liked">
+                  <span class="material-symbols-rounded">thumb_up</span>
+                  32
+                </span>
+                <span class="original-post-preview__stat">
+                  <span class="material-symbols-rounded">chat_bubble</span>
+                  5 respostas
+                </span>
+              </div>
+            </div>
+
+            <!-- Reply Form Card -->
+            <div class="reply-form-card">
+              <div class="reply-form-card__header">
+                <div class="reply-form-card__avatar">
+                  <img
+                    src="../../public/images/person_image/male-1.jpg"
+                    alt="Voce" />
+                </div>
+                <div class="reply-form-card__user-info">
+                  <div class="reply-form-card__user-name">Voce</div>
+                  <div class="reply-form-card__reply-to">
+                    Respondendo a <strong>Ana Souza</strong>
+                  </div>
+                </div>
+              </div>
+
+              <form>
+                <label class="form-label-custom">
+                  Mensagem <span class="required">*</span>
+                </label>
+                <div class="rich-editor">
+                  <div class="rich-editor__toolbar">
+                    <button
+                      type="button"
+                      class="rich-editor__btn"
+                      title="Negrito">
+                      <span class="material-symbols-rounded">format_bold</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="rich-editor__btn"
+                      title="Italico">
+                      <span class="material-symbols-rounded"
+                        >format_italic</span
+                      >
+                    </button>
+                    <div class="rich-editor__divider"></div>
+                    <button type="button" class="rich-editor__btn" title="Link">
+                      <span class="material-symbols-rounded">link</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="rich-editor__btn"
+                      title="Citacao">
+                      <span class="material-symbols-rounded">format_quote</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="rich-editor__btn"
+                      title="Codigo">
+                      <span class="material-symbols-rounded">code</span>
+                    </button>
+                    <div class="rich-editor__divider"></div>
+                    <button
+                      type="button"
+                      class="rich-editor__btn"
+                      title="Imagem">
+                      <span class="material-symbols-rounded">image</span>
+                    </button>
+                    <div class="rich-editor__divider"></div>
+                    <button
+                      type="button"
+                      class="rich-editor__btn"
+                      title="Lista">
+                      <span class="material-symbols-rounded"
+                        >format_list_bulleted</span
+                      >
+                    </button>
+                    <button
+                      type="button"
+                      class="rich-editor__btn"
+                      title="Lista Numerada">
+                      <span class="material-symbols-rounded"
+                        >format_list_numbered</span
+                      >
+                    </button>
+                  </div>
+                  <textarea
+                    class="rich-editor__textarea"
+                    placeholder="Digite aqui sua resposta para Ana Souza..."
+                    required></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <a href="forum-details.html" class="btn-publish">
+                    <span class="material-symbols-rounded">send</span>
+                    Publicar Resposta
+                  </a>
+                  <button type="button" onclick="goBack()" class="btn-back">
+                    Voltar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- // END Page Content -->
+
+      <!-- Footer -->
+      <div class="bg-white border-top-2 mt-auto">
+        <div class="container page__container page-section d-flex flex-column">
+          <p class="text-70 brand mb-24pt">
+            <img
+              class="brand-icon"
+              src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png"
+              width="120"
+              alt="VIDDIA" />
+          </p>
+          <p class="measure-lead-max text-50 small mr-8pt">
+            Somos uma Edtech especializada em educacao corporativa para os mais
+            diversos segmentos de negocio e setores da sociedade. Somos
+            parceiros estrategicos de organizacoes que desejam melhorar sua
+            capacidade de execucao e seus indicadores de negocio.
+          </p>
+          <p class="mb-8pt d-flex">
+            <a href="" class="text-70 text-underline mr-8pt small"
+              >Sobre a VIDDIA</a
+            >
+            <a href="" class="text-70 text-underline small">Termos de Uso</a>
+          </p>
+          <p class="text-50 small mt-n1 mb-0">
+            Copyright 2025 &copy; Todos os Direitos Reservados.
+          </p>
+        </div>
+      </div>
+
+      <!-- // END Footer -->
+    </div>
+    <!-- // END Header Layout -->
+
+    <!-- jQuery -->
+    <script src="../../public/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../../public/vendor/popper.min.js"></script>
+    <script src="../../public/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="../../public/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- DOM Factory -->
+    <script src="../../public/vendor/dom-factory.js"></script>
+
+    <!-- MDK -->
+    <script src="../../public/vendor/material-design-kit.js"></script>
+
+    <!-- App JS -->
+    <script src="../../public/js/app.js"></script>
+
+    <!-- Theme Toggle -->
+    <script src="../../public/js/theme-toggle.js"></script>
+
+    <!-- Preloader -->
+    <script src="../../public/js/preloader.js"></script>
+
+    <!-- Go Back Function -->
+    <script>
+      function goBack() {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = "forum-details.html";
+        }
+      }
+    </script>
+  </body>
+</html>
