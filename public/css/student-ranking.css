@@ -218,23 +218,24 @@
     border-bottom: 1px solid var(--border-theme-4);
 }
 
-.student-ranking-page .ranking-table th:nth-child(4),
-.student-ranking-page .ranking-table th:nth-child(5),
-.student-ranking-page .ranking-table th:nth-child(6) {
+/* Alinhamento baseado nas classes de coluna */
+.student-ranking-page .ranking-table .col-position {
+    text-align: left;
+}
+
+.student-ranking-page .ranking-table .col-student {
+    text-align: left;
+}
+
+.student-ranking-page .ranking-table .col-coins {
+    text-align: right;
+}
+
+.student-ranking-page .ranking-table .col-performance {
     text-align: center;
 }
 
-.student-ranking-page .ranking-table th:nth-child(3) {
-    text-align: right;
-}
-
-.student-ranking-page .ranking-table td:nth-child(3) {
-    text-align: right;
-}
-
-.student-ranking-page .ranking-table td:nth-child(4),
-.student-ranking-page .ranking-table td:nth-child(5),
-.student-ranking-page .ranking-table td:nth-child(6) {
+.student-ranking-page .ranking-table .col-medals {
     text-align: center;
 }
 

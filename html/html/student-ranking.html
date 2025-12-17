@@ -370,6 +370,7 @@
                     ];
 
                     const tableBody = document.getElementById('rankingTableBody');
+                    const tableHead = document.querySelector('.ranking-table thead tr');
                     const filterButtons = document.querySelectorAll('.ranking-filter');
                     const loadMoreButton = document.getElementById('loadMoreRanking');
                     const loadMoreWrapper = document.querySelector('.ranking-load-more');
@@ -384,6 +385,84 @@
                         bronze: 'ranking-medal--bronze',
                         platinum: 'ranking-medal--platinum'
                     };
+
+                    // Define a ordem das colunas para cada tipo de filtro
+                    const columnOrders = {
+                        coins: ['position', 'student', 'coins', 'performance', 'medals'],
+                        medals: ['position', 'student', 'medals', 'coins', 'performance'],
+                        performance: ['position', 'student', 'performance', 'coins', 'medals']
+                    };
+
+                    // Mapeia os nomes das colunas
+                    const columnHeaders = {
+                        position: 'Posição',
+                        student: 'Aluno',
+                        coins: 'Moedas',
+                        performance: 'Aproveitamento',
+                        medals: 'Medalhas'
+                    };
+
+                    function updateTableHeaders() {
+                        const order = columnOrders[currentSort.key];
+                        tableHead.innerHTML = order.map(col => `<th scope="col" class="col-${col}">${columnHeaders[col]}</th>`).join('');
+                    }
+
+                    function getColumnHTML(columnType, student, index) {
+                        const medalsCount = student.medals.length;
+                        const medalsLabel = medalsCount === 0
+                            ? 'Sem medalhas no momento'
+                            : `${medalsCount} ${medalsCount === 1 ? 'medalha' : 'medalhas'}`;
+
+                        switch (columnType) {
+                            case 'position':
+                                return `
+                                    <td data-label="Posição" class="col-position">
+                                        <span class="ranking-position">${index + 1}º</span>
+                                    </td>
+                                `;
+                            case 'student':
+                                return `
+                                    <td data-label="Aluno" class="col-student">
+                                        <div class="ranking-student">
+                                            <img class="ranking-avatar" src="${student.avatar}" alt="${student.name}">
+                                            <div class="ranking-student__info">
+                                                <strong>${student.name}</strong>
+                                                <span>${student.track}</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                `;
+                            case 'coins':
+                                return `
+                                    <td data-label="Moedas" class="col-coins">
+                                        <div class="ranking-value ranking-value--numeric">
+                                            <span class="material-symbols-rounded ranking-value__icon ranking-value__icon--coins" aria-hidden="true">monetization_on</span>
+                                            <span class="ranking-cell ranking-cell--numeric">${numberFormatter.format(student.coins)}</span>
+                                        </div>
+                                    </td>
+                                `;
+                            case 'performance':
+                                return `
+                                    <td data-label="Aproveitamento" class="col-performance">
+                                        <div class="ranking-value ranking-value--center">
+                                            <span class="material-symbols-rounded ranking-value__icon ranking-value__icon--performance" aria-hidden="true">finance_mode</span>
+                                            <span class="ranking-cell ranking-cell--center">${student.performance.toFixed(1)}%</span>
+                                        </div>
+                                    </td>
+                                `;
+                            case 'medals':
+                                return `
+                                    <td data-label="Medalhas" class="col-medals">
+                                        <div class="ranking-value ranking-value--center">
+                                            <span class="material-symbols-rounded ranking-value__icon ranking-value__icon--medals" aria-hidden="true">workspace_premium</span>
+                                            <span class="ranking-cell ranking-cell--center" aria-label="${medalsLabel}">${medalsCount}</span>
+                                        </div>
+                                    </td>
+                                `;
+                            default:
+                                return '';
+                        }
+                    }
 
                     function updateControls() {
                         filterButtons.forEach((button) => {
@@ -440,48 +519,14 @@
                         });
 
                         const visibleData = sorted.slice(0, visibleCount);
+                        const order = columnOrders[currentSort.key];
 
                         const rows = visibleData.map((student, index) => {
                             const positionClass = index < 3 ? `ranking-row--top-${index + 1}` : '';
-                            const medalsCount = student.medals.length;
-                            const medalsLabel = medalsCount === 0
-                                ? 'Sem medalhas no momento'
-                                : `${medalsCount} ${medalsCount === 1 ? 'medalha' : 'medalhas'}`;
 
-                            return `
-                                <tr class="ranking-row ${positionClass}">
-                                    <td data-label="Posição">
-                                        <span class="ranking-position">${index + 1}º</span>
-                                    </td>
-                                    <td data-label="Aluno">
-                                        <div class="ranking-student">
-                                            <img class="ranking-avatar" src="${student.avatar}" alt="${student.name}">
-                                            <div class="ranking-student__info">
-                                                <strong>${student.name}</strong>
-                                                <span>${student.track}</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-label="Moedas">
-                                        <div class="ranking-value ranking-value--numeric">
-                                            <span class="material-symbols-rounded ranking-value__icon ranking-value__icon--coins" aria-hidden="true">monetization_on</span>
-                                            <span class="ranking-cell ranking-cell--numeric">${numberFormatter.format(student.coins)}</span>
-                                        </div>
-                                    </td>
-                                    <td data-label="Aproveitamento">
-                                        <div class="ranking-value ranking-value--center">
-                                            <span class="material-symbols-rounded ranking-value__icon ranking-value__icon--performance" aria-hidden="true">finance_mode</span>
-                                            <span class="ranking-cell ranking-cell--center">${student.performance.toFixed(1)}%</span>
-                                        </div>
-                                    </td>
-                                    <td data-label="Medalhas">
-                                        <div class="ranking-value ranking-value--center">
-                                            <span class="material-symbols-rounded ranking-value__icon ranking-value__icon--medals" aria-hidden="true">workspace_premium</span>
-                                            <span class="ranking-cell ranking-cell--center" aria-label="${medalsLabel}">${medalsCount}</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                            `;
+                            const columns = order.map(columnType => getColumnHTML(columnType, student, index)).join('');
+
+                            return `<tr class="ranking-row ${positionClass}">${columns}</tr>`;
                         }).join('');
 
                         tableBody.innerHTML = rows;
@@ -497,6 +542,7 @@
                                 currentSort = { key: sortKey, direction: 'desc' };
                             }
                             updateControls();
+                            updateTableHeaders();
                             renderRanking();
                         });
                     });
@@ -509,6 +555,7 @@
                     }
 
                     updateControls();
+                    updateTableHeaders();
                     renderRanking();
                 });
             </script>
