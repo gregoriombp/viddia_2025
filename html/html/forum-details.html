@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr" class="dark-mode">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>VIDDIA - Topico do Forum</title>
+    <link
+      rel="icon"
+      href="../../public/images/Favicon/FAVICON_VIDDIA-128.png"
+      type="image/x-icon" />
+
+    <meta name="robots" content="noindex" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Preloader -->
+    <link
+      type="text/css"
+      href="../../public/vendor/spinkit.css"
+      rel="stylesheet" />
+
+    <!-- Perfect Scrollbar -->
+    <link
+      type="text/css"
+      href="../../public/vendor/perfect-scrollbar.css"
+      rel="stylesheet" />
+
+    <!-- Material Design Icons -->
+    <link
+      type="text/css"
+      href="../../public/css/material-icons.css"
+      rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link
+      type="text/css"
+      href="../../public/css/fontawesome.css"
+      rel="stylesheet" />
+
+    <!-- Preloader -->
+    <link
+      type="text/css"
+      href="../../public/css/preloader.css"
+      rel="stylesheet" />
+
+    <!-- App CSS -->
+    <link type="text/css" href="../../public/css/app.css" rel="stylesheet" />
+
+    <!-- Dark Mode CSS -->
+    <link type="text/css" href="../../public/css/dark.css" rel="stylesheet" />
+
+    <!-- Responsive CSS -->
+    <link
+      type="text/css"
+      href="../../public/css/responsive.css"
+      rel="stylesheet" />
+
+    <style>
+      /* Theme Toggle Switch Styles */
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 24px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.3s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.3s;
+      }
+
+      input:checked + .slider {
+        background-color: #2196f3;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(20px);
+      }
+
+      .slider.round {
+        border-radius: 24px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
+      }
+
+      #theme-toggle-item:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      html.dark-mode #theme-toggle-item:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      /* Forum Details Page Styles */
+      .forum-details-page {
+        min-height: calc(100vh - 200px);
+        padding: 32pt 0;
+      }
+
+      .forum-details-layout {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 32px;
+      }
+
+      .forum-details-main {
+        min-width: 0;
+      }
+
+      .forum-details-sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+      }
+
+      /* Topic Header */
+      .topic-header {
+        margin-bottom: 24pt;
+      }
+
+      .topic-header__back {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 14px;
+        text-decoration: none;
+        margin-bottom: 16pt;
+        transition: color 0.2s ease;
+      }
+
+      .topic-header__back:hover {
+        color: #2196f3;
+        text-decoration: none;
+      }
+
+      .topic-header__title {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 1.75rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 8pt;
+        color: #1a1a1a;
+      }
+
+      .topic-header__meta {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .topic-header__tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 12px;
+        background: rgba(33, 150, 243, 0.1);
+        color: #1976d2;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      .topic-header__stats {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .topic-header__stat {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .topic-header__stat .material-symbols-rounded {
+        font-size: 18px;
+      }
+
+      /* Discussion Posts */
+      .discussion-post {
+        background: #fff;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 16px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+
+      .discussion-post--original {
+        border-left: 4px solid #2196f3;
+      }
+
+      .discussion-post__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+
+      .discussion-post__author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .discussion-post__avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .discussion-post__avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .discussion-post__author-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .discussion-post__author-name {
+        font-weight: 600;
+        font-size: 15px;
+        color: #1a1a1a;
+      }
+
+      .discussion-post__author-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+        color: #2196f3;
+        font-weight: 500;
+      }
+
+      .discussion-post__timestamp {
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .discussion-post__content {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #333;
+        margin-bottom: 16px;
+      }
+
+      .discussion-post__content p {
+        margin-bottom: 12px;
+      }
+
+      .discussion-post__content p:last-child {
+        margin-bottom: 0;
+      }
+
+      .discussion-post__actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .discussion-post__action {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        border: none;
+        background: transparent;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+      }
+
+      .discussion-post__action:hover {
+        background: rgba(0, 0, 0, 0.05);
+        color: #1a1a1a;
+      }
+
+      .discussion-post__action--liked {
+        color: #2196f3;
+      }
+
+      .discussion-post__action .material-symbols-rounded {
+        font-size: 18px;
+      }
+
+      /* Reply Form */
+      .reply-form {
+        background: #fff;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 24px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+
+      .reply-form__header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .reply-form__avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .reply-form__avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .reply-form__label {
+        font-weight: 500;
+        color: #1a1a1a;
+      }
+
+      .reply-form__textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        font-size: 14px;
+        resize: vertical;
+        margin-bottom: 16px;
+        font-family: inherit;
+      }
+
+      .reply-form__textarea:focus {
+        outline: none;
+        border-color: #2196f3;
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+      }
+
+      .reply-form__actions {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .btn-reply {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background: #2196f3;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .btn-reply:hover {
+        background: #1976d2;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+      }
+
+      /* Replies Section */
+      .replies-section {
+        margin-top: 32px;
+      }
+
+      .replies-section__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .replies-section__title {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: rgba(0, 0, 0, 0.5);
+        margin: 0;
+      }
+
+      .replies-section__count {
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      /* Threaded/Hierarchical Replies */
+      .reply-thread {
+        position: relative;
+      }
+
+      .reply-thread__children {
+        margin-left: 32px;
+        padding-left: 24px;
+        border-left: 2px solid rgba(0, 0, 0, 0.08);
+        position: relative;
+      }
+
+      .reply-thread__children::before {
+        content: "";
+        position: absolute;
+        left: -2px;
+        top: 0;
+        width: 2px;
+        height: 24px;
+        background: linear-gradient(to bottom, rgba(33, 150, 243, 0.3), rgba(0, 0, 0, 0.08));
+      }
+
+      .reply-thread__children .discussion-post {
+        position: relative;
+      }
+
+      .reply-thread__children .discussion-post::before {
+        content: "";
+        position: absolute;
+        left: -24px;
+        top: 32px;
+        width: 20px;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.08);
+      }
+
+      /* Second level nesting */
+      .reply-thread__children .reply-thread__children {
+        margin-left: 24px;
+        padding-left: 20px;
+      }
+
+      /* Third level nesting */
+      .reply-thread__children .reply-thread__children .reply-thread__children {
+        margin-left: 20px;
+        padding-left: 16px;
+      }
+
+      /* Reply indicator */
+      .reply-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.5);
+        margin-bottom: 8px;
+      }
+
+      .reply-indicator .material-symbols-rounded {
+        font-size: 16px;
+      }
+
+      /* Dark mode for threaded replies */
+      html.dark-mode .reply-thread__children {
+        border-left-color: rgba(255, 255, 255, 0.08);
+      }
+
+      html.dark-mode .reply-thread__children::before {
+        background: linear-gradient(to bottom, rgba(33, 150, 243, 0.4), rgba(255, 255, 255, 0.08));
+      }
+
+      html.dark-mode .reply-thread__children .discussion-post::before {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      html.dark-mode .reply-indicator {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Sidebar */
+      .sidebar-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        margin-bottom: 24px;
+      }
+
+      .sidebar-card__header {
+        padding: 16px 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .sidebar-card__title {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: rgba(0, 0, 0, 0.5);
+        margin: 0;
+      }
+
+      .sidebar-card__body {
+        padding: 16px;
+      }
+
+      /* Related Video */
+      .related-video {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s ease;
+      }
+
+      .related-video:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .related-video:hover .related-video__thumb {
+        transform: scale(1.02);
+      }
+
+      .related-video__thumb {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 12px;
+        transition: transform 0.2s ease;
+      }
+
+      .related-video__thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .related-video__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 48px;
+        height: 48px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        transition: all 0.2s ease;
+      }
+
+      .related-video:hover .related-video__play {
+        background: #2196f3;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      .related-video__duration {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 500;
+      }
+
+      .related-video__title {
+        font-weight: 600;
+        font-size: 14px;
+        color: #1a1a1a;
+        margin-bottom: 4px;
+      }
+
+      .related-video__description {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.6);
+        line-height: 1.5;
+      }
+
+      /* New Question Button */
+      .btn-new-question {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 14px 20px;
+        background: #2196f3;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+      }
+
+      .btn-new-question:hover {
+        background: #1976d2;
+        color: #fff;
+        text-decoration: none;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+      }
+
+      /* Dark Mode */
+      html.dark-mode .topic-header__back {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      html.dark-mode .topic-header__back:hover {
+        color: #64b5f6;
+      }
+
+      html.dark-mode .topic-header__title {
+        color: #fff;
+      }
+
+      html.dark-mode .topic-header__tag {
+        background: rgba(33, 150, 243, 0.15);
+        color: #64b5f6;
+      }
+
+      html.dark-mode .topic-header__stats {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      html.dark-mode .discussion-post {
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      html.dark-mode .discussion-post__author-name {
+        color: #fff;
+      }
+
+      html.dark-mode .discussion-post__author-badge {
+        color: #64b5f6;
+      }
+
+      html.dark-mode .discussion-post__timestamp {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      html.dark-mode .discussion-post__content {
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      html.dark-mode .discussion-post__actions {
+        border-top-color: rgba(255, 255, 255, 0.06);
+      }
+
+      html.dark-mode .discussion-post__action {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      html.dark-mode .discussion-post__action:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+      }
+
+      html.dark-mode .discussion-post__action--liked {
+        color: #64b5f6;
+      }
+
+      html.dark-mode .reply-form {
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      html.dark-mode .reply-form__label {
+        color: #fff;
+      }
+
+      html.dark-mode .reply-form__textarea {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+
+      html.dark-mode .reply-form__textarea::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      html.dark-mode .reply-form__textarea:focus {
+        border-color: #2196f3;
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+      }
+
+      html.dark-mode .replies-section__title {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      html.dark-mode .replies-section__count {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      html.dark-mode .sidebar-card {
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      html.dark-mode .sidebar-card__header {
+        border-bottom-color: rgba(255, 255, 255, 0.06);
+      }
+
+      html.dark-mode .sidebar-card__title {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      html.dark-mode .related-video__title {
+        color: #fff;
+      }
+
+      html.dark-mode .related-video__description {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .forum-details-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .forum-details-sidebar {
+          position: static;
+          order: -1;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .topic-header__title {
+          font-size: 1.35rem;
+        }
+
+        .discussion-post {
+          padding: 16px;
+        }
+
+        .discussion-post__header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+
+        .discussion-post__actions {
+          flex-wrap: wrap;
+        }
+
+        /* Reduce nesting on mobile */
+        .reply-thread__children {
+          margin-left: 16px;
+          padding-left: 12px;
+        }
+
+        .reply-thread__children .reply-thread__children {
+          margin-left: 12px;
+          padding-left: 10px;
+        }
+
+        .reply-thread__children .reply-thread__children .reply-thread__children {
+          margin-left: 8px;
+          padding-left: 8px;
+        }
+
+        .reply-thread__children .discussion-post::before {
+          left: -12px;
+          width: 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="layout-sticky-subnav layout-default">
+    <div class="preloader">
+      <div class="sk-chase">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+      </div>
+    </div>
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+      <!-- Header -->
+      <div id="header" class="" data-effects="" data-fixed data-condenses>
+        <div class="mdk-header__content">
+          <div
+            class="navbar navbar-expand navbar-light bg-white border-bottom"
+            id="default-navbar"
+            data-primary>
+            <!-- Company Logo -->
+            <a href="index.html" class="navbar-brand mr-16pt">
+              <img
+                src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png"
+                alt="Company Logo"
+                class="navbar-brand-icon mr-0 mr-lg-8pt"
+                width="150" />
+            </a>
+
+            <!-- User Profile Menu -->
+            <ul class="nav navbar-nav ml-auto mr-0">
+              <li class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link d-flex align-items-center dropdown-toggle"
+                  data-toggle="dropdown">
+                  <span class="avatar avatar-sm avatar-online mr-8pt">
+                    <img
+                      src="../../public/images/person_image/male-1.jpg"
+                      alt="user"
+                      class="avatar-img rounded-circle" />
+                  </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a href="index.html" class="dropdown-item">Inicio</a>
+                  <a href="student-dashboard.html" class="dropdown-item"
+                    >Dashboard</a
+                  >
+                  <a href="student-modify-profile.html" class="dropdown-item"
+                    >Preferencias</a
+                  >
+                  <div class="dropdown-divider"></div>
+
+                  <!-- Theme Toggle -->
+                  <div
+                    class="dropdown-item d-flex align-items-center justify-content-between"
+                    style="cursor: pointer"
+                    id="theme-toggle-item">
+                    <div class="d-flex align-items-center">
+                      <span
+                        class="material-symbols-rounded mr-2"
+                        id="theme-icon"
+                        >dark_mode</span
+                      >
+                      <span id="theme-label">Modo Escuro</span>
+                    </div>
+                    <label class="switch mb-0" style="margin-left: 16px">
+                      <input
+                        type="checkbox"
+                        id="theme-toggle-checkbox"
+                        checked />
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+
+                  <div class="dropdown-divider"></div>
+                  <a href="login.html" class="dropdown-item">Logout</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- // END Header -->
+
+      <!-- Page Content -->
+      <div class="page-section forum-details-page">
+        <div class="container page__container">
+          <div class="forum-details-layout">
+            <!-- Main Content -->
+            <div class="forum-details-main">
+              <!-- Topic Header -->
+              <div class="topic-header">
+                <a href="forum.html" class="topic-header__back">
+                  <span class="material-symbols-rounded">arrow_back</span>
+                  Voltar ao Forum
+                </a>
+                <h1 class="topic-header__title">
+                  Duvidas sobre o modulo de Excel Avancado - Tabelas Dinamicas
+                </h1>
+                <div class="topic-header__meta">
+                  <span class="topic-header__tag">Excel</span>
+                  <div class="topic-header__stats">
+                    <span class="topic-header__stat">
+                      <span class="material-symbols-rounded">chat_bubble</span>
+                      87 respostas
+                    </span>
+                    <span class="topic-header__stat">
+                      <span class="material-symbols-rounded">visibility</span>
+                      342 visualizacoes
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Original Post -->
+              <div class="discussion-post discussion-post--original">
+                <div class="discussion-post__header">
+                  <div class="discussion-post__author">
+                    <div class="discussion-post__avatar">
+                      <img
+                        src="../../public/images/person_image/male3.jpg"
+                        alt="Carlos Silva" />
+                    </div>
+                    <div class="discussion-post__author-info">
+                      <span class="discussion-post__author-name"
+                        >Carlos Silva</span
+                      >
+                      <span class="discussion-post__author-badge">
+                        <span
+                          class="material-symbols-rounded"
+                          style="font-size: 14px"
+                          >school</span
+                        >
+                        Aluno
+                      </span>
+                    </div>
+                  </div>
+                  <span class="discussion-post__timestamp"
+                    >Seg, 16 Dez 2024, 11:15</span
+                  >
+                </div>
+                <div class="discussion-post__content">
+                  <p>
+                    Ola pessoal! Estou com algumas duvidas sobre o modulo de
+                    Excel Avancado, especificamente na parte de Tabelas
+                    Dinamicas.
+                  </p>
+                  <p>
+                    Quando tento criar uma tabela dinamica a partir de uma base
+                    de dados grande (mais de 50.000 linhas), o Excel fica muito
+                    lento e as vezes trava. Alguem sabe se existe alguma
+                    configuracao ou tecnica para otimizar esse processo?
+                  </p>
+                  <p>
+                    Alem disso, gostaria de entender melhor como usar os campos
+                    calculados dentro das tabelas dinamicas. No video da aula
+                    (28:34) o instrutor menciona sobre isso rapidamente, mas nao
+                    consegui aplicar na pratica.
+                  </p>
+                  <p>Agradeco qualquer ajuda!</p>
+                </div>
+                <div class="discussion-post__actions">
+                  <button class="discussion-post__action">
+                    <span class="material-symbols-rounded">reply</span>
+                    Responder
+                  </button>
+                  <button
+                    class="discussion-post__action discussion-post__action--liked">
+                    <span class="material-symbols-rounded">thumb_up</span>
+                    130
+                  </button>
+                  <button class="discussion-post__action">
+                    <span class="material-symbols-rounded">thumb_down</span>
+                    2
+                  </button>
+                </div>
+              </div>
+
+              <!-- Reply Form -->
+              <div class="reply-form">
+                <div class="reply-form__header">
+                  <div class="reply-form__avatar">
+                    <img
+                      src="../../public/images/person_image/male-1.jpg"
+                      alt="Voce" />
+                  </div>
+                  <span class="reply-form__label">Sua resposta</span>
+                </div>
+                <textarea
+                  class="reply-form__textarea"
+                  placeholder="Compartilhe sua experiencia ou ajude a resolver esta duvida..."></textarea>
+                <div class="reply-form__actions">
+                  <button class="btn-reply">
+                    <span class="material-symbols-rounded">send</span>
+                    Enviar Resposta
+                  </button>
+                </div>
+              </div>
+
+              <!-- Replies Section -->
+              <div class="replies-section">
+                <div class="replies-section__header">
+                  <h2 class="replies-section__title">Respostas</h2>
+                  <span class="replies-section__count">87 respostas</span>
+                </div>
+
+                <!-- Thread 1: Ana's reply with Pedro's sub-reply -->
+                <div class="reply-thread">
+                  <div class="discussion-post">
+                    <div class="discussion-post__header">
+                      <div class="discussion-post__author">
+                        <div class="discussion-post__avatar">
+                          <img
+                            src="../../public/images/person_image/female2.jpg"
+                            alt="Ana Souza" />
+                        </div>
+                        <div class="discussion-post__author-info">
+                          <span class="discussion-post__author-name"
+                            >Ana Souza</span
+                          >
+                          <span class="discussion-post__author-badge">
+                            <span
+                              class="material-symbols-rounded"
+                              style="font-size: 14px"
+                              >verified</span
+                            >
+                            Top Contributor
+                          </span>
+                        </div>
+                      </div>
+                      <span class="discussion-post__timestamp"
+                        >Seg, 16 Dez 2024, 12:45</span
+                      >
+                    </div>
+                    <div class="discussion-post__content">
+                      <p>
+                        Ola Carlos! Sobre a lentidao com bases grandes, existem
+                        algumas tecnicas que podem ajudar:
+                      </p>
+                      <p>
+                        1. Use o Power Query para limpar e transformar os dados
+                        antes de criar a tabela dinamica. Isso reduz
+                        significativamente o processamento.
+                      </p>
+                      <p>
+                        2. Desative a atualizacao automatica da tabela e atualize
+                        manualmente quando necessario.
+                      </p>
+                      <p>
+                        3. Se possivel, trabalhe com um subconjunto dos dados para
+                        analises exploratorias.
+                      </p>
+                    </div>
+                    <div class="discussion-post__actions">
+                      <button class="discussion-post__action">
+                        <span class="material-symbols-rounded">reply</span>
+                        Responder
+                      </button>
+                      <button
+                        class="discussion-post__action discussion-post__action--liked">
+                        <span class="material-symbols-rounded">thumb_up</span>
+                        32
+                      </button>
+                      <button class="discussion-post__action">
+                        <span class="material-symbols-rounded">thumb_down</span>
+                        0
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Sub-reply to Ana -->
+                  <div class="reply-thread__children">
+                    <div class="reply-thread">
+                      <div class="discussion-post">
+                        <div class="reply-indicator">
+                          <span class="material-symbols-rounded">subdirectory_arrow_right</span>
+                          Em resposta a Ana Souza
+                        </div>
+                        <div class="discussion-post__header">
+                          <div class="discussion-post__author">
+                            <div class="discussion-post__avatar">
+                              <img
+                                src="../../public/images/person_image/male9.jpg"
+                                alt="Pedro Santos" />
+                            </div>
+                            <div class="discussion-post__author-info">
+                              <span class="discussion-post__author-name"
+                                >Pedro Santos</span
+                              >
+                              <span class="discussion-post__author-badge">
+                                <span
+                                  class="material-symbols-rounded"
+                                  style="font-size: 14px"
+                                  >school</span
+                                >
+                                Aluno
+                              </span>
+                            </div>
+                          </div>
+                          <span class="discussion-post__timestamp"
+                            >Seg, 16 Dez 2024, 14:22</span
+                          >
+                        </div>
+                        <div class="discussion-post__content">
+                          <p>
+                            Complementando a resposta da Ana: para campos calculados,
+                            voce precisa ir em Analise de Tabela Dinamica > Campos,
+                            Itens e Conjuntos > Campo Calculado.
+                          </p>
+                          <p>
+                            La voce pode criar formulas personalizadas usando os
+                            campos existentes. Por exemplo, se voce tem "Vendas" e
+                            "Custos", pode criar um campo "Margem" com a formula
+                            =Vendas-Custos.
+                          </p>
+                        </div>
+                        <div class="discussion-post__actions">
+                          <button class="discussion-post__action">
+                            <span class="material-symbols-rounded">reply</span>
+                            Responder
+                          </button>
+                          <button class="discussion-post__action">
+                            <span class="material-symbols-rounded">thumb_up</span>
+                            18
+                          </button>
+                          <button class="discussion-post__action">
+                            <span class="material-symbols-rounded">thumb_down</span>
+                            0
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Sub-sub-reply to Pedro -->
+                      <div class="reply-thread__children">
+                        <div class="discussion-post">
+                          <div class="reply-indicator">
+                            <span class="material-symbols-rounded">subdirectory_arrow_right</span>
+                            Em resposta a Pedro Santos
+                          </div>
+                          <div class="discussion-post__header">
+                            <div class="discussion-post__author">
+                              <div class="discussion-post__avatar">
+                                <img
+                                  src="../../public/images/person_image/male3.jpg"
+                                  alt="Carlos Silva" />
+                              </div>
+                              <div class="discussion-post__author-info">
+                                <span class="discussion-post__author-name"
+                                  >Carlos Silva</span
+                                >
+                                <span class="discussion-post__author-badge">
+                                  <span
+                                    class="material-symbols-rounded"
+                                    style="font-size: 14px"
+                                    >school</span
+                                  >
+                                  Autor
+                                </span>
+                              </div>
+                            </div>
+                            <span class="discussion-post__timestamp"
+                              >Seg, 16 Dez 2024, 14:45</span
+                            >
+                          </div>
+                          <div class="discussion-post__content">
+                            <p>
+                              Perfeito, Pedro! Era exatamente isso que eu precisava.
+                              Consegui criar o campo calculado seguindo seu passo a passo.
+                              Muito obrigado!
+                            </p>
+                          </div>
+                          <div class="discussion-post__actions">
+                            <button class="discussion-post__action">
+                              <span class="material-symbols-rounded">reply</span>
+                              Responder
+                            </button>
+                            <button class="discussion-post__action">
+                              <span class="material-symbols-rounded">thumb_up</span>
+                              5
+                            </button>
+                            <button class="discussion-post__action">
+                              <span class="material-symbols-rounded">thumb_down</span>
+                              0
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Thread 2: Maria's direct reply -->
+                <div class="reply-thread">
+                  <div class="discussion-post">
+                    <div class="discussion-post__header">
+                      <div class="discussion-post__author">
+                        <div class="discussion-post__avatar">
+                          <img
+                            src="../../public/images/person_image/female3.jpg"
+                            alt="Maria Oliveira" />
+                        </div>
+                        <div class="discussion-post__author-info">
+                          <span class="discussion-post__author-name"
+                            >Maria Oliveira</span
+                          >
+                          <span class="discussion-post__author-badge">
+                            <span
+                              class="material-symbols-rounded"
+                              style="font-size: 14px"
+                              >school</span
+                            >
+                            Aluno
+                          </span>
+                        </div>
+                      </div>
+                      <span class="discussion-post__timestamp"
+                        >Seg, 16 Dez 2024, 15:08</span
+                      >
+                    </div>
+                    <div class="discussion-post__content">
+                      <p>
+                        Tive o mesmo problema! O que me ajudou foi converter a
+                        base de dados para uma Tabela (Ctrl+T) antes de criar a
+                        tabela dinamica. Isso melhora a performance e ainda
+                        facilita a atualizacao quando novos dados sao adicionados.
+                      </p>
+                    </div>
+                    <div class="discussion-post__actions">
+                      <button class="discussion-post__action">
+                        <span class="material-symbols-rounded">reply</span>
+                        Responder
+                      </button>
+                      <button class="discussion-post__action">
+                        <span class="material-symbols-rounded">thumb_up</span>
+                        14
+                      </button>
+                      <button class="discussion-post__action">
+                        <span class="material-symbols-rounded">thumb_down</span>
+                        1
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Thread 3: Fernando's question with Ana's sub-reply -->
+                <div class="reply-thread">
+                  <div class="discussion-post">
+                    <div class="discussion-post__header">
+                      <div class="discussion-post__author">
+                        <div class="discussion-post__avatar">
+                          <img
+                            src="../../public/images/person_image/male10.jpg"
+                            alt="Fernando Costa" />
+                        </div>
+                        <div class="discussion-post__author-info">
+                          <span class="discussion-post__author-name"
+                            >Fernando Costa</span
+                          >
+                          <span class="discussion-post__author-badge">
+                            <span
+                              class="material-symbols-rounded"
+                              style="font-size: 14px"
+                              >school</span
+                            >
+                            Aluno
+                          </span>
+                        </div>
+                      </div>
+                      <span class="discussion-post__timestamp"
+                        >Seg, 16 Dez 2024, 16:30</span
+                      >
+                    </div>
+                    <div class="discussion-post__content">
+                      <p>
+                        Excelentes dicas! Aproveitando o topico, alguem conseguiu
+                        fazer segmentacao de dados (slicers) funcionarem bem com
+                        multiplas tabelas dinamicas? Estou tentando criar um
+                        dashboard mas os filtros nao estao sincronizando
+                        corretamente.
+                      </p>
+                    </div>
+                    <div class="discussion-post__actions">
+                      <button class="discussion-post__action">
+                        <span class="material-symbols-rounded">reply</span>
+                        Responder
+                      </button>
+                      <button class="discussion-post__action">
+                        <span class="material-symbols-rounded">thumb_up</span>
+                        8
+                      </button>
+                      <button class="discussion-post__action">
+                        <span class="material-symbols-rounded">thumb_down</span>
+                        0
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Sub-reply to Fernando -->
+                  <div class="reply-thread__children">
+                    <div class="discussion-post">
+                      <div class="reply-indicator">
+                        <span class="material-symbols-rounded">subdirectory_arrow_right</span>
+                        Em resposta a Fernando Costa
+                      </div>
+                      <div class="discussion-post__header">
+                        <div class="discussion-post__author">
+                          <div class="discussion-post__avatar">
+                            <img
+                              src="../../public/images/person_image/female2.jpg"
+                              alt="Ana Souza" />
+                          </div>
+                          <div class="discussion-post__author-info">
+                            <span class="discussion-post__author-name"
+                              >Ana Souza</span
+                            >
+                            <span class="discussion-post__author-badge">
+                              <span
+                                class="material-symbols-rounded"
+                                style="font-size: 14px"
+                                >verified</span
+                              >
+                              Top Contributor
+                            </span>
+                          </div>
+                        </div>
+                        <span class="discussion-post__timestamp"
+                          >Seg, 16 Dez 2024, 17:15</span
+                        >
+                      </div>
+                      <div class="discussion-post__content">
+                        <p>
+                          Fernando, para sincronizar slicers com multiplas tabelas
+                          dinamicas, voce precisa clicar com o botao direito no
+                          slicer, ir em "Conexoes de Relatorio" e marcar todas as
+                          tabelas dinamicas que deseja controlar.
+                        </p>
+                        <p>
+                          Lembre-se que todas as tabelas precisam estar baseadas na
+                          mesma fonte de dados para isso funcionar corretamente!
+                        </p>
+                      </div>
+                      <div class="discussion-post__actions">
+                        <button class="discussion-post__action">
+                          <span class="material-symbols-rounded">reply</span>
+                          Responder
+                        </button>
+                        <button class="discussion-post__action">
+                          <span class="material-symbols-rounded">thumb_up</span>
+                          22
+                        </button>
+                        <button class="discussion-post__action">
+                          <span class="material-symbols-rounded">thumb_down</span>
+                          0
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Sub-sub-reply to Ana (Fernando's follow-up) -->
+                    <div class="reply-thread__children">
+                      <div class="discussion-post">
+                        <div class="reply-indicator">
+                          <span class="material-symbols-rounded">subdirectory_arrow_right</span>
+                          Em resposta a Ana Souza
+                        </div>
+                        <div class="discussion-post__header">
+                          <div class="discussion-post__author">
+                            <div class="discussion-post__avatar">
+                              <img
+                                src="../../public/images/person_image/male10.jpg"
+                                alt="Fernando Costa" />
+                            </div>
+                            <div class="discussion-post__author-info">
+                              <span class="discussion-post__author-name"
+                                >Fernando Costa</span
+                              >
+                              <span class="discussion-post__author-badge">
+                                <span
+                                  class="material-symbols-rounded"
+                                  style="font-size: 14px"
+                                  >school</span
+                                >
+                                Aluno
+                              </span>
+                            </div>
+                          </div>
+                          <span class="discussion-post__timestamp"
+                            >Seg, 16 Dez 2024, 17:32</span
+                          >
+                        </div>
+                        <div class="discussion-post__content">
+                          <p>
+                            Funcionou perfeitamente, Ana! Era exatamente isso que estava
+                            faltando. O dashboard agora sincroniza todos os filtros
+                            corretamente. Obrigado pela ajuda!
+                          </p>
+                        </div>
+                        <div class="discussion-post__actions">
+                          <button class="discussion-post__action">
+                            <span class="material-symbols-rounded">reply</span>
+                            Responder
+                          </button>
+                          <button class="discussion-post__action">
+                            <span class="material-symbols-rounded">thumb_up</span>
+                            6
+                          </button>
+                          <button class="discussion-post__action">
+                            <span class="material-symbols-rounded">thumb_down</span>
+                            0
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="forum-details-sidebar">
+              <!-- New Question Button -->
+              <a href="forum-ask.html" class="btn-new-question mb-24pt">
+                <span class="material-symbols-rounded">add</span>
+                Criar Nova Pergunta
+              </a>
+
+              <!-- Related Video -->
+              <div class="sidebar-card">
+                <div class="sidebar-card__header">
+                  <h3 class="sidebar-card__title">Aula Relacionada</h3>
+                </div>
+                <div class="sidebar-card__body">
+                  <a href="student-take-lesson.html" class="related-video">
+                    <div class="related-video__thumb">
+                      <img
+                        src="../../public/images/Course thumbnails/course_16_9-thumb_12.jpg"
+                        alt="Excel Avancado" />
+                      <div class="related-video__play">
+                        <span class="material-symbols-rounded">play_arrow</span>
+                      </div>
+                      <span class="related-video__duration">28:34</span>
+                    </div>
+                    <h4 class="related-video__title">
+                      LinkedIn para Empresas B2B
+                    </h4>
+                    <p class="related-video__description">
+                      Os participantes deste forum estao discutindo sobre esta
+                      aula. Assista para entender melhor o contexto.
+                    </p>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Topic Stats -->
+              <div class="sidebar-card">
+                <div class="sidebar-card__header">
+                  <h3 class="sidebar-card__title">Informacoes do Topico</h3>
+                </div>
+                <div class="sidebar-card__body">
+                  <div class="d-flex justify-content-between mb-12pt">
+                    <span class="text-muted">Criado em</span>
+                    <span>16 Dez 2024</span>
+                  </div>
+                  <div class="d-flex justify-content-between mb-12pt">
+                    <span class="text-muted">Ultima resposta</span>
+                    <span>Hoje, 17:15</span>
+                  </div>
+                  <div class="d-flex justify-content-between mb-12pt">
+                    <span class="text-muted">Participantes</span>
+                    <span>24 pessoas</span>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="text-muted">Respostas</span>
+                    <span>87</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <!-- // END Page Content -->
+
+      <!-- Footer -->
+      <div class="bg-white border-top-2 mt-auto">
+        <div class="container page__container page-section d-flex flex-column">
+          <p class="text-70 brand mb-24pt">
+            <img
+              class="brand-icon"
+              src="../../public/images/logos/VIDDIA_LOGO-5-300x66.png"
+              width="120"
+              alt="VIDDIA" />
+          </p>
+          <p class="measure-lead-max text-50 small mr-8pt">
+            Somos uma Edtech especializada em educacao corporativa para os mais
+            diversos segmentos de negocio e setores da sociedade. Somos
+            parceiros estrategicos de organizacoes que desejam melhorar sua
+            capacidade de execucao e seus indicadores de negocio.
+          </p>
+          <p class="mb-8pt d-flex">
+            <a href="" class="text-70 text-underline mr-8pt small"
+              >Sobre a VIDDIA</a
+            >
+            <a href="" class="text-70 text-underline small">Termos de Uso</a>
+          </p>
+          <p class="text-50 small mt-n1 mb-0">
+            Copyright 2025 &copy; Todos os Direitos Reservados.
+          </p>
+        </div>
+      </div>
+
+      <!-- // END Footer -->
+    </div>
+    <!-- // END Header Layout -->
+
+    <!-- jQuery -->
+    <script src="../../public/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../../public/vendor/popper.min.js"></script>
+    <script src="../../public/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="../../public/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- DOM Factory -->
+    <script src="../../public/vendor/dom-factory.js"></script>
+
+    <!-- MDK -->
+    <script src="../../public/vendor/material-design-kit.js"></script>
+
+    <!-- App JS -->
+    <script src="../../public/js/app.js"></script>
+
+    <!-- Theme Toggle -->
+    <script src="../../public/js/theme-toggle.js"></script>
+
+    <!-- Preloader -->
+    <script src="../../public/js/preloader.js"></script>
+  </body>
+</html>
