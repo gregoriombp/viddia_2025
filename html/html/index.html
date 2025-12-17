@@ -977,7 +977,7 @@
                       alt="Miniatura do curso Interfaces dinâmicas com Vue 3" />
 
                     <a
-                      href="student-course-preview.html"
+                      href="student-path.html"
                       class="course-card__enroll-overlay">
                       <span class="material-icons mb-2" style="font-size: 32px"
                         >school</span
@@ -1015,7 +1015,7 @@
                       src="../../public/images/Course thumbnails/course_16_9-thumb_15.jpg"
                       alt="Miniatura do curso Typescript para back-end" />
                     <a
-                      href="student-course-preview.html"
+                      href="student-path.html"
                       class="course-card__enroll-overlay">
                       <span class="material-icons mb-2" style="font-size: 32px"
                         >school</span
@@ -1053,7 +1053,7 @@
                       src="../../public/images/Course thumbnails/course_16_9-thumb_16.jpg"
                       alt="Miniatura do curso Fundamentos de Kubernetes" />
                     <a
-                      href="student-course-preview.html"
+                      href="student-path.html"
                       class="course-card__enroll-overlay">
                       <span class="material-icons mb-2" style="font-size: 32px"
                         >school</span
@@ -1090,7 +1090,7 @@
                       src="../../public/images/Course thumbnails/course_16_9-thumb_17.jpg"
                       alt="Miniatura do curso Performance front-end extrema" />
                     <a
-                      href="student-course-preview.html"
+                      href="student-path.html"
                       class="course-card__enroll-overlay">
                       <span class="material-icons mb-2" style="font-size: 32px"
                         >school</span
@@ -1129,7 +1129,7 @@
                       src="../../public/images/Course thumbnails/course_16_9-thumb_18.jpg"
                       alt="Miniatura do curso UX Writing para interfaces" />
                     <a
-                      href="student-course-preview.html"
+                      href="student-path.html"
                       class="course-card__enroll-overlay">
                       <span class="material-icons mb-2" style="font-size: 32px"
                         >school</span
@@ -1216,6 +1216,38 @@
 
     <!-- // END Drawer -->
 
+    <!-- Enrollment Success Modal -->
+    <div id="enrollmentModal" class="enrollment-modal">
+      <div class="enrollment-modal__overlay"></div>
+      <div class="enrollment-modal__content">
+        <div class="enrollment-modal__animation">
+          <div class="enrollment-modal__checkmark-circle">
+            <svg class="enrollment-modal__checkmark" viewBox="0 0 52 52">
+              <circle
+                class="enrollment-modal__checkmark-circle-path"
+                cx="26"
+                cy="26"
+                r="25"
+                fill="none" />
+              <path
+                class="enrollment-modal__checkmark-check"
+                fill="none"
+                d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="enrollment-modal__title">
+          Matrícula realizada com sucesso!
+        </h2>
+        <p class="enrollment-modal__message">
+          Você já está matriculado. Redirecionando para o curso...
+        </p>
+        <div class="enrollment-modal__loader">
+          <div class="enrollment-modal__spinner"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- jQuery -->
     <script src="../../public/vendor/jquery.min.js"></script>
 
@@ -1263,6 +1295,41 @@
             );
           }
         );
+      })();
+    </script>
+
+    <!-- Enrollment Modal Script -->
+    <script>
+      (function () {
+        "use strict";
+
+        // Get all enroll buttons
+        var enrollButtons = document.querySelectorAll(
+          ".course-card__enroll-overlay"
+        );
+        var modal = document.getElementById("enrollmentModal");
+
+        if (!enrollButtons.length || !modal) {
+          return;
+        }
+
+        // Add click event to each enroll button
+        enrollButtons.forEach(function (button) {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Get the target URL (could be customized per course)
+            var targetUrl = button.getAttribute("href");
+
+            // Show the modal
+            modal.classList.add("active");
+
+            // Redirect after 3 seconds (3000ms)
+            setTimeout(function () {
+              window.location.href = targetUrl;
+            }, 3000);
+          });
+        });
       })();
     </script>
 
