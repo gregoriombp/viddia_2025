@@ -45312,3 +45312,113 @@ html.dark-mode .lesson-layout__breadcrumbs a {
         padding: 32px 20px;
     }
 }
+
+/* ========================================
+   Background Color Overlay System
+   ======================================== */
+
+/* Base class - Apply color overlay to grayscale backgrounds */
+.bg-color-overlay {}
+
+.bg-color-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.4), rgba(156, 39, 176, 0.9));
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure child content appears above the overlay */
+.bg-color-overlay>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Color Variations - Customize these gradients as needed */
+
+/* Blue to Purple (default) */
+.bg-overlay-blue-purple::before {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.5), rgba(156, 39, 176, 0.9));
+}
+
+/* Teal to Green */
+.bg-overlay-teal-green::before {
+    background: linear-gradient(135deg, rgba(0, 150, 136, 0.5), rgba(76, 175, 80, 0.9));
+}
+
+/* Orange to Pink */
+.bg-overlay-orange-pink::before {
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.5), rgba(233, 30, 99, 0.9));
+}
+
+/* Red to Orange */
+.bg-overlay-red-orange::before {
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.5), rgba(255, 152, 0, 0.9));
+}
+
+/* Purple to Pink */
+.bg-overlay-purple-pink::before {
+    background: linear-gradient(135deg, rgba(103, 58, 183, 0.5), rgba(233, 30, 99, 0.9));
+}
+
+/* Blue to Cyan */
+.bg-overlay-blue-cyan::before {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.5), rgba(0, 188, 212, 0.9));
+}
+
+/* Green to Yellow */
+.bg-overlay-green-yellow::before {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(255, 235, 59, 0.5));
+}
+
+/* Indigo to Blue */
+.bg-overlay-indigo-blue::before {
+    background: linear-gradient(135deg, rgba(63, 81, 181, 0.9), rgba(33, 150, 243, 0.5));
+}
+
+/* Custom - Single Color Overlays */
+.bg-overlay-blue::before {
+    background: rgba(33, 150, 243, 1.0);
+}
+
+.bg-overlay-purple::before {
+    background: rgba(156, 39, 176, 0.9);
+}
+
+.bg-overlay-green::before {
+    background: rgba(76, 175, 80, 0.9);
+}
+
+.bg-overlay-orange::before {
+    background: rgba(255, 152, 0, 0.4);
+}
+
+.bg-overlay-red::before {
+    background: rgba(244, 67, 54, 0.9);
+}
+
+.bg-overlay-teal::before {
+    background: rgba(0, 150, 136, 0.9);
+}
+
+/* Alternative Blend Modes */
+.bg-overlay-soft-light::before {
+    mix-blend-mode: soft-light;
+}
+
+.bg-overlay-overlay::before {
+    mix-blend-mode: overlay;
+}
+
+.bg-overlay-multiply::before {
+    mix-blend-mode: multiply;
+}
+
+.bg-overlay-screen::before {
+    mix-blend-mode: screen;
+}

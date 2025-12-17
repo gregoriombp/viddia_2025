@@ -940,7 +940,7 @@
 
             <div class="form-group">
               <label class="form-label" for="dateOfBirth">
-                Data de Nascimento
+                Data de Nascimento <span style="color: #999; font-weight: 400;">(opcional)</span>
               </label>
               <input
                 type="date"
@@ -953,7 +953,7 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label"> Escolha seu Avatar </label>
+              <label class="form-label"> Escolha seu Avatar <span style="color: #999; font-weight: 400;">(opcional)</span></label>
 
               <!-- Avatar Carousel -->
               <div class="avatar-selection-container">
@@ -1524,27 +1524,20 @@
             }
             showStep("EmailSent");
           } else if (currentStep === 3) {
-            // Validate all fields
+            // Validate only required fields (nome completo é obrigatório)
             let isValid = true;
 
             const fullName = fullNameInput.value.trim();
             const dateOfBirth = dateOfBirthInput.value;
 
+            // Only name is required
             if (!fullName) {
               showError("fullName", "nameError");
               isValid = false;
             }
 
-            if (!dateOfBirth) {
-              showError("dateOfBirth", "dobError");
-              isValid = false;
-            }
-
-            // Check if either avatar or custom photo is selected
-            if (!formData.avatarId && !customPhotoFile) {
-              document.getElementById("avatarError").classList.add("show");
-              isValid = false;
-            }
+            // Date of birth is now optional - no validation
+            // Avatar is now optional - no validation
 
             if (!isValid) {
               return;
@@ -1552,7 +1545,7 @@
 
             // Save data
             formData.fullName = fullName;
-            formData.dateOfBirth = dateOfBirth;
+            formData.dateOfBirth = dateOfBirth || null;
 
             // If custom photo was uploaded, convert to base64 for storage
             if (customPhotoFile) {
@@ -1596,6 +1589,14 @@
         function displaySuccess() {
           const successDetails = document.getElementById("successDetails");
 
+          // Build optional fields
+          let dateInfo = "";
+          if (formData.dateOfBirth) {
+            dateInfo = `<p><strong>Data de Nascimento:</strong> ${new Date(
+              formData.dateOfBirth
+            ).toLocaleDateString("pt-BR")}</p>`;
+          }
+
           let avatarInfo = "";
           if (formData.customPhoto) {
             avatarInfo = `
@@ -1604,16 +1605,14 @@
                 <img src="${formData.customPhoto}" alt="Custom Photo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #2196f3;" />
               </div>
             `;
-          } else {
+          } else if (formData.avatarId) {
             avatarInfo = `<p><strong>Avatar ID:</strong> ${formData.avatarId}</p>`;
           }
 
           successDetails.innerHTML = `
             <p><strong>Email:</strong> ${formData.email}</p>
             <p><strong>Nome:</strong> ${formData.fullName}</p>
-            <p><strong>Data de Nascimento:</strong> ${new Date(
-              formData.dateOfBirth
-            ).toLocaleDateString("pt-BR")}</p>
+            ${dateInfo}
             ${avatarInfo}
           `;
 

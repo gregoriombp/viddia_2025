@@ -460,16 +460,16 @@
 
         <div class="mdk-box js-mdk-box mb-0 py-112pt" data-effects="parallax-background blend-background">
             <div class="mdk-box__bg-dark">
-                <div class="mdk-box__bg-front"
+                <div class="mdk-box__bg-front bg-overlay-soft-light bg-color-overlay bg-overlay-blue"
                     style="background-image: url(../../public/images/hero/hero-dashboard.jpg);">
                 </div>
             </div>
             <div class="mdk-box__content justify-content-center">
                 <div class="hero container page__container text-center w-75">
-                    <div class="page-section ">
+                    <div class="page-section "  style="z-index: 4 !important;">
 
                         <div
-                            class="container page__container d-flex flex-column flex-md-row align-items-center justify-content-center text-center">
+                            class="container page__container d-flex flex-column flex-md-row align-items-center justify-content-center text-center" >
                             <div class="flex d-flex flex-column align-items-center">
                                 <h2 class="text-white mb-0"
                                     style="font-size: 3rem; font-family: 'Inter Tight', sans-serif; font-weight: 600;">
@@ -549,9 +549,9 @@
                                         <form>
                                             <div class="form-row">
                                                 <div class="col-12 col-md-6 mb-3">
-                                                    <label class="form-label" for="firstName">Nome</label>
+                                                    <label class="form-label" for="firstName">Nome <span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" id="firstName"
-                                                        placeholder="Seu nome" value="Gregório">
+                                                        placeholder="Seu nome" value="Gregório" required>
                                                 </div>
                                                 <div class="col-12 col-md-6 mb-3">
                                                     <label class="form-label" for="lastName">Sobrenome</label>
@@ -561,9 +561,9 @@
                                             </div>
 
                                             <div class="form-group mb-3">
-                                                <label class="form-label" for="email">Email</label>
+                                                <label class="form-label" for="email">Email <span class="text-danger">*</span></label>
                                                 <input type="email" class="form-control" id="email"
-                                                    placeholder="seuemail@exemplo.com" value="gregorio@viddia.com.br">
+                                                    placeholder="seuemail@exemplo.com" value="gregorio@viddia.com.br" required>
                                             </div>
 
                                             <div class="form-row">
