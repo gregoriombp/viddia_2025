@@ -500,7 +500,6 @@
     --color-static-547: rgba(63, 81, 181, .2);
     --color-static-548: #2ecc71;
     --color-static-549: rgba(46, 204, 113, .35);
-    --color-static-55: rgba(11, 18, 45, 0.45);
     --color-static-550: rgba(255, 255, 255, .6);
     --color-static-551: #17212f;
     --color-static-552: #425466;
@@ -12701,7 +12700,7 @@ a.close.disabled {
     z-index: 1060;
     display: block;
     max-width: 304px;
-    font-family: "Inter", Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-family: "Space Grotesk", Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;

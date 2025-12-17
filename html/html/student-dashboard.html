@@ -233,6 +233,9 @@
                             </div>
 
                             <div class="col-auto d-flex flex-column flex-md-row align-items-center">
+                                <a href="student-ranking.html" class="btn btn-white btn-rounded mb-2 mb-md-0 mr-md-3">
+                                    <span class="material-symbols-rounded pr-2">leaderboard</span>Ranking
+                                </a>
                                 <a href="student-modify-profile.html" class="btn btn-white btn-rounded mb-2 mb-md-0 mr-md-3">
                                     <span class="material-icons pr-2">settings</span>Preferências
                                 </a>
@@ -323,11 +326,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                     
+
                                     </div>
-                                       <div class="sd-medals-card__footer">
-                                            <a href="#" class="sd-medals-card__link" id="openMedalsModal">Ver todas as medalhas</a>
-                                        </div>
                                     <div class="sd-medals-particles">
                                         <span class="sd-medals-particle"></span>
                                         <span class="sd-medals-particle"></span>
@@ -729,44 +729,53 @@
                         </div>
                         <div class="dashboard-sidebar">
                             <div class="dashboard-card card border-0">
-                                <div class="row d-flex align-items-center">
-                                    <h4 class="mb-0 pl-2 pb-16pt">Notificações</h4>
-                                </div>
-                                <div class="sd-overall-card ">
-                                    <div class="sd-overall-courses">
-                                        <div class="sd-overall-course sd-notification">
-                                            <span class="material-symbols-rounded sd-notification__icon">emoji_events</span>
-                                            <div class="sd-overall-course__info">
-                                                <strong>Você ganhou uma medalha</strong>
-                                                <span>Desempenho acima de 70% no conteúdo 3 do Curso Marketing Empresarial</span>
-                                                <small class="text-muted">32 minutos atrás</small>
+                                <div class="dashboard-medals">
+                                    <div class="dashboard-section-header">
+                                        <div class="row d-flex align-items-center">
+
+                                            <h4 class="mb-0 ml-2"
+                                                style="letter-spacing: -.02em; font-family: 'Inter Tight', sans-serif;">
+                                                Medalhas</h4>
+                                        </div>
+
+                                    </div>
+                                    <div class="sd-medals-count-grid">
+                                        <div class="sd-medal-count-item sd-medal-count-item--bronze">
+                                            <div class="sd-medal-count-item__visual">
+                                                                 <img src="../../public/images/medals/1x/copper-medal.png"
+                                                     alt="Medalha Bronze"
+                                                     class="sd-medal-count-item__image">
+                                                <div class="sd-medal-count-item__badge">8</div>
+                                            </div>
+                                            <div class="sd-medal-count-item__info">
+                                                <strong>Bronze</strong>
+                                                <small>8 medalhas</small>
                                             </div>
                                         </div>
-                                        <div class="sd-overall-course sd-notification">
-                                            <span class="material-symbols-rounded sd-notification__icon">military_tech</span>
-                                            <div class="sd-overall-course__info">
-                                                <strong>Curso concluído</strong>
-                                                <span>Você concluiu o Curso Gerenciamento de Projetos em menos de 7 dias</span>
-                                                <small class="text-muted">4 horas atrás</small>
+                                        <div class="sd-medal-count-item sd-medal-count-item--silver">
+                                            <div class="sd-medal-count-item__visual">
+                                             <img src="../../public/images/medals/1x/silver-medal.png"
+                                                     alt="Medalha Prata"
+                                                     class="sd-medal-count-item__image">
+                                                <div class="sd-medal-count-item__badge">5</div>
+                                            </div>
+                                            <div class="sd-medal-count-item__info">
+                                                <strong>Prata</strong>
+                                                <small>5 medalhas</small>
                                             </div>
                                         </div>
-                                        <div class="sd-overall-course sd-notification">
-                                            <span class="material-symbols-rounded sd-notification__icon">paid</span>
-                                            <div class="sd-overall-course__info">
-                                                <strong>+250 moedas conquistadas</strong>
-                                                <span>Missão diária concluída: assistir 3 aulas seguidas</span>
-                                                <small class="text-muted">6 horas atrás</small>
+                                        <div class="sd-medal-count-item sd-medal-count-item--gold">
+                                            <div class="sd-medal-count-item__visual">
+                                                <img src="../../public/images/medals/1x/golden-medal.png"
+                                                     alt="Medalha Ouro"
+                                                     class="sd-medal-count-item__image">
+                                                <div class="sd-medal-count-item__badge">2</div>
+                                            </div>
+                                            <div class="sd-medal-count-item__info">
+                                                <strong>Ouro</strong>
+                                                <small>2 medalhas</small>
                                             </div>
                                         </div>
-                                        <div class="sd-overall-course sd-notification">
-                                            <span class="material-symbols-rounded sd-notification__icon">quiz</span>
-                                            <div class="sd-overall-course__info">
-                                                <strong>Nota Alta!</strong>
-                                                <span>Você acertou 85% do quiz UX Layout do Módulo 5 do curso Figma UX/UI Concepts</span>
-                                                <small class="text-muted">Ontem</small>
-                                            </div>
-                                        </div>
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -844,57 +853,6 @@
                         
                                         </li>
                                     </ul>
-                                </div>
-                            </div>
-                            <div class="dashboard-card card border-0">
-                                <div class="dashboard-medals">
-                                    <div class="dashboard-section-header">
-                                        <div class="row d-flex align-items-center">
-
-                                            <h4 class="mb-0 ml-2"
-                                                style="letter-spacing: -.02em; font-family: 'Inter Tight', sans-serif;">
-                                                Medalhas</h4>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="sd-medals-count-grid">
-                                        <div class="sd-medal-count-item sd-medal-count-item--bronze">
-                                            <div class="sd-medal-count-item__visual">
-                                                                 <img src="../../public/images/medals/1x/copper-medal.png"
-                                                     alt="Medalha Bronze"
-                                                     class="sd-medal-count-item__image">
-                                                <div class="sd-medal-count-item__badge">8</div>
-                                            </div>
-                                            <div class="sd-medal-count-item__info">
-                                                <strong>Bronze</strong>
-                                                <small>8 medalhas</small>
-                                            </div>
-                                        </div>
-                                        <div class="sd-medal-count-item sd-medal-count-item--silver">
-                                            <div class="sd-medal-count-item__visual">
-                                             <img src="../../public/images/medals/1x/silver-medal.png"
-                                                     alt="Medalha Prata"
-                                                     class="sd-medal-count-item__image">
-                                                <div class="sd-medal-count-item__badge">5</div>
-                                            </div>
-                                            <div class="sd-medal-count-item__info">
-                                                <strong>Prata</strong>
-                                                <small>5 medalhas</small>
-                                            </div>
-                                        </div>
-                                        <div class="sd-medal-count-item sd-medal-count-item--gold">
-                                            <div class="sd-medal-count-item__visual">
-                                                <img src="../../public/images/medals/1x/golden-medal.png"
-                                                     alt="Medalha Ouro"
-                                                     class="sd-medal-count-item__image">
-                                                <div class="sd-medal-count-item__badge">2</div>
-                                            </div>
-                                            <div class="sd-medal-count-item__info">
-                                                <strong>Ouro</strong>
-                                                <small>2 medalhas</small>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
