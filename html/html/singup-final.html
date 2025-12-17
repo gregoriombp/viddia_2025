@@ -1623,10 +1623,11 @@
           // No auto-redirect needed
         }
 
-        // Initialize
-        showStep(1);
-        // Auto-focus first input
-        emailInput.focus();
+        // Initialize - Start at Step 3 (user already verified email)
+        // Simulate that user came from email verification
+        currentStep = 3;
+        formData.email = "usuario@empresa.com"; // Email example
+        showStep(3);
 
         updateCarousel(); // Initialize carousel navigation buttons
       })();

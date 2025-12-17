@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark-mode">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>VIDDIA - Verificação de E-mail</title>
+
+    <link
+      rel="icon"
+      href="../../public/images/Favicon/FAVICON_VIDDIA-128.png"
+      type="image/x-icon" />
+
+    <meta name="robots" content="noindex" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+      rel="stylesheet" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: #00050d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .verification-container {
+        background: rgba(25, 25, 28, 0.98);
+        backdrop-filter: blur(30px);
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 500px;
+        padding: 50px 40px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        animation: fadeIn 0.6s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .logo {
+        margin-bottom: 40px;
+      }
+
+      .logo img {
+        height: 36px;
+      }
+
+      .status-icon {
+        font-size: 80px;
+        margin-bottom: 24px;
+      }
+
+      .status-icon.loading {
+        color: #2196f3;
+        animation: spin 1s linear infinite;
+      }
+
+      .status-icon.success {
+        color: #4caf50;
+        animation: scaleIn 0.5s ease;
+      }
+
+      .status-icon.error {
+        color: #f44336;
+        animation: scaleIn 0.5s ease;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      h1 {
+        font-size: 1.85rem;
+        font-weight: 600;
+        font-family: "Inter Tight", sans-serif;
+        color: #fff;
+        margin-bottom: 16px;
+      }
+
+      p {
+        color: #aaa;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 32px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 36px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        font-family: "Inter", sans-serif;
+        text-decoration: none;
+        background: linear-gradient(135deg, #2196f3, #1976d2);
+        color: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn:hover {
+        background: linear-gradient(135deg, #1976d2, #1565c0);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="verification-container">
+      <div class="logo">
+        <img
+          src="../../public/images/logos/1x/VIDDIA Logo White.png"
+          alt="VIDDIA" />
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingState">
+        <div class="status-icon loading">
+          <span class="material-symbols-rounded" style="font-size: 80px">
+            hourglass_empty
+          </span>
+        </div>
+        <h1>Verificando seu e-mail...</h1>
+        <p>Aguarde um momento enquanto confirmamos sua identidade.</p>
+      </div>
+
+      <!-- Success State -->
+      <div id="successState" class="hidden">
+        <div class="status-icon success">
+          <span class="material-symbols-rounded" style="font-size: 80px">
+            check_circle
+          </span>
+        </div>
+        <h1>E-mail verificado com sucesso!</h1>
+        <p>
+          Sua conta foi verificada. Redirecionando para completar seu
+          cadastro...
+        </p>
+      </div>
+
+      <!-- Error State -->
+      <div id="errorState" class="hidden">
+        <div class="status-icon error">
+          <span class="material-symbols-rounded" style="font-size: 80px">
+            error
+          </span>
+        </div>
+        <h1>Link inválido ou expirado</h1>
+        <p id="errorMessage">
+          O link de verificação é inválido ou já expirou. Por favor, solicite
+          um novo link.
+        </p>
+        <a href="singup.html" class="btn">Voltar para o Cadastro</a>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // Get token from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get("token");
+        const email = urlParams.get("email");
+
+        const loadingState = document.getElementById("loadingState");
+        const successState = document.getElementById("successState");
+        const errorState = document.getElementById("errorState");
+        const errorMessage = document.getElementById("errorMessage");
+
+        // Verify token
+        async function verifyToken() {
+          if (!token || !email) {
+            showError("Link de verificação inválido. Parâmetros ausentes.");
+            return;
+          }
+
+          try {
+            // Call API to verify email
+            const response = await fetch('/api/verify-email.php', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ token, email })
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data.valid) {
+              showSuccess();
+              // Redirect to signup step 3 after 2 seconds
+              setTimeout(() => {
+                // Store verified email in sessionStorage
+                sessionStorage.setItem("verifiedEmail", email);
+                sessionStorage.setItem("emailVerified", "true");
+                window.location.href = `singup.html?step=3&email=${encodeURIComponent(
+                  email
+                )}`;
+              }, 2000);
+            } else {
+              showError(data.error || "O token de verificação é inválido ou já foi usado.");
+            }
+          } catch (error) {
+            console.error("Verification error:", error);
+            showError(
+              "Erro ao verificar o e-mail. Por favor, tente novamente mais tarde."
+            );
+          }
+        }
+
+        function showSuccess() {
+          loadingState.classList.add("hidden");
+          errorState.classList.add("hidden");
+          successState.classList.remove("hidden");
+        }
+
+        function showError(message) {
+          loadingState.classList.add("hidden");
+          successState.classList.add("hidden");
+          errorMessage.textContent = message;
+          errorState.classList.remove("hidden");
+        }
+
+        // Start verification when page loads
+        verifyToken();
+      })();
+    </script>
+  </body>
+</html>
