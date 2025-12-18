@@ -408,6 +408,13 @@
         border-bottom: 2px solid rgba(0, 0, 0, 0.06);
       }
 
+      /* Keep the search compact when placed inside the section header */
+      .forum-section-header .forum-search {
+        flex: none;
+        min-width: 220px;
+        max-width: 320px;
+      }
+
       .forum-section-title {
         font-family: "Inter Tight", sans-serif;
         font-size: 14px;
@@ -416,6 +423,17 @@
         letter-spacing: 0.05em;
         color: rgba(0, 0, 0, 0.5);
         margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .forum-section-header .forum-search {
+          max-width: none;
+          width: 100%;
+        }
+        .forum-section-header .btn-new-question {
+          width: 100%;
+          justify-content: center;
+        }
       }
 
       .forum-filters {
@@ -431,20 +449,28 @@
       .forum-filter-btn {
         display: inline-flex;
         align-items: center;
-        gap: 4px;
-        padding: 8px 12px;
-        background: transparent;
+        gap: 6px;
+        padding: 12px 16px;
+        background: #fff;
         border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 6px;
-        font-size: 13px;
+        border-radius: 8px;
+        font-size: 14px;
         color: rgba(0, 0, 0, 0.7);
         cursor: pointer;
         transition: all 0.2s ease;
+        height: 44px;
+        box-sizing: border-box;
       }
 
       .forum-filter-btn:hover {
         border-color: rgba(0, 0, 0, 0.2);
         background: rgba(0, 0, 0, 0.02);
+      }
+
+      /* Ajuste para o input de pesquisa ter a mesma altura */
+      .forum-section-header .forum-search__input {
+        height: 44px;
+        box-sizing: border-box;
       }
 
       /* Dark Mode Overrides */
@@ -536,13 +562,36 @@
       }
 
       html.dark-mode .forum-filter-btn {
+        background: rgba(255, 255, 255, 0.05);
         border-color: rgba(255, 255, 255, 0.1);
         color: rgba(255, 255, 255, 0.7);
       }
 
       html.dark-mode .forum-filter-btn:hover {
         border-color: rgba(255, 255, 255, 0.2);
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      /* Dark Mode - Dropdown Menus do Forum */
+      html.dark-mode .forum-filters .dropdown-menu {
+        background-color: #161a26;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      }
+
+      html.dark-mode .forum-filters .dropdown-item {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      html.dark-mode .forum-filters .dropdown-item:hover,
+      html.dark-mode .forum-filters .dropdown-item:focus {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+      }
+
+      html.dark-mode .forum-filters .dropdown-item.active {
+        background-color: rgba(33, 150, 243, 0.15);
+        color: #64b5f6;
       }
 
       html.dark-mode .forum-header__title {
@@ -698,20 +747,32 @@
                   </li>
 
                   <li class="breadcrumb-item active">
-                    <a href="index.html">Forum</a>
+                    <a href="forum.html">Forum</a>
                   </li>
                 </ol>
               </div>
             </div>
-
-            <!-- Search and New Question -->
           </div>
 
           <!-- Topics Section -->
           <div class="page-section pt-0">
             <div class="forum-section-header">
               <h2 class="forum-section-title">Topicos Recentes</h2>
+
               <div class="forum-filters">
+                <!-- Search placed here so it appears to the left of the 'Todos os Topicos' menu -->
+                <div class="forum-search" style="max-width: 320px">
+                  <span class="material-symbols-rounded forum-search__icon"
+                    >search</span
+                  >
+                  <input
+                    type="text"
+                    id="forum-search-input"
+                    class="forum-search__input"
+                    placeholder="Buscar tópicos, tags ou autores..."
+                    aria-label="Buscar tópicos" />
+                </div>
+
                 <div class="dropdown">
                   <button
                     class="forum-filter-btn dropdown-toggle"
@@ -727,6 +788,7 @@
                     <a href="#" class="dropdown-item">Sem Resposta</a>
                   </div>
                 </div>
+
                 <div class="dropdown">
                   <button
                     class="forum-filter-btn dropdown-toggle"
@@ -740,6 +802,10 @@
                     <a href="#" class="dropdown-item">Mais Respondidos</a>
                   </div>
                 </div>
+                <a href="forum-new.html" class="btn-new-question">
+                  <span class="material-symbols-rounded">add</span>
+                  Novo Tópico
+                </a>
               </div>
             </div>
 
@@ -889,6 +955,18 @@
                 </div>
               </a>
 
+              <div
+                class="forum-no-results"
+                id="forum-no-results"
+                style="
+                  display: none;
+                  padding: 24px;
+                  text-align: center;
+                  color: rgba(0, 0, 0, 0.6);
+                ">
+                Nenhum tópico encontrado.
+              </div>
+
               <!-- Pagination -->
               <div class="forum-pagination">
                 <button class="forum-pagination__btn" disabled>
@@ -968,5 +1046,52 @@
 
     <!-- Preloader -->
     <script src="../../public/js/preloader.js"></script>
+
+    <!-- Forum Search Script -->
+    <script>
+      (function () {
+        const input = document.getElementById("forum-search-input");
+        const list = document.querySelectorAll(".forum-topic-item");
+        const noResults = document.getElementById("forum-no-results");
+
+        if (!input) return;
+
+        function normalize(str) {
+          return (str || "").toLowerCase();
+        }
+
+        function filter() {
+          const q = normalize(input.value.trim());
+          let visibleCount = 0;
+          list.forEach((item) => {
+            const title = normalize(
+              item.querySelector(".forum-topic-item__title")?.textContent
+            );
+            const meta = normalize(
+              item.querySelector(".forum-topic-item__meta")?.textContent
+            );
+            const tag = normalize(
+              item.querySelector(".forum-topic-item__tag")?.textContent
+            );
+            const match =
+              q === "" ||
+              title.includes(q) ||
+              meta.includes(q) ||
+              tag.includes(q);
+            item.style.display = match ? "" : "none";
+            if (match) visibleCount++;
+          });
+          noResults.style.display = visibleCount === 0 ? "" : "none";
+        }
+
+        input.addEventListener("input", filter);
+        input.addEventListener("keyup", function (e) {
+          if (e.key === "Escape") {
+            input.value = "";
+            filter();
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
