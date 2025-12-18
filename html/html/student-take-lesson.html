@@ -107,6 +107,51 @@
     html.dark-mode #theme-toggle-item:hover {
       background-color: rgba(255, 255, 255, 0.05);
     }
+
+    /* Breadcrumb styles */
+    .lesson-breadcrumb a:hover {
+      color: rgba(255,255,255,0.8) !important;
+    }
+    html.light-mode .lesson-breadcrumb,
+    html.light-mode .lesson-breadcrumb a,
+    html.light-mode .lesson-breadcrumb span {
+      color: rgba(0,0,0,0.5) !important;
+    }
+    html.light-mode .lesson-breadcrumb a:hover {
+      color: rgba(0,0,0,0.7) !important;
+    }
+
+    /* Back button styles */
+    .lesson-layout__sidebar > a.btn-link:hover {
+      color: rgba(255,255,255,0.9) !important;
+    }
+    html.light-mode .lesson-layout__sidebar > a.btn-link {
+      color: rgba(0,0,0,0.5) !important;
+    }
+    html.light-mode .lesson-layout__sidebar > a.btn-link:hover {
+      color: rgba(0,0,0,0.8) !important;
+    }
+
+    /* Forum link button styles */
+    .forum-link-btn:hover {
+      background: rgba(33, 150, 243, 0.25) !important;
+      color: #90caf9 !important;
+      border-color: rgba(33, 150, 243, 0.5) !important;
+      transform: translateY(-1px);
+    }
+    html.light-mode .forum-link-btn {
+      background: rgba(33, 150, 243, 0.1) !important;
+      color: #1976d2 !important;
+      border-color: rgba(33, 150, 243, 0.3) !important;
+    }
+    html.light-mode .forum-link-btn:hover {
+      background: rgba(33, 150, 243, 0.2) !important;
+      color: #1565c0 !important;
+      border-color: rgba(33, 150, 243, 0.5) !important;
+    }
+    html.light-mode #lesson-comments > div:last-child {
+      border-top-color: rgba(0,0,0,0.1) !important;
+    }
   </style>
 </head>
 
@@ -194,10 +239,17 @@
 
         <div class="lesson-layout__grid">
           <aside class="lesson-layout__sidebar mb-32pt mb-lg-0">
+            <!-- Back Button -->
+            
             <div class="lesson-structure-card card" id="lessonStagesAccordion">
+              <a href="student-path.html" class=" flex d-flex align-items-start pl-4 btn-link mb-2 " style="color: rgba(255,255,255,0.6); font-size: 13px; text-decoration: none;">
+              <span class="material-icons mr-4pt" style="font-size: 18px;">arrow_back</span>
+              Voltar ao curso
+            </a>
               <div class="module-stage stage-completed">
                 <button class="module-stage__header" type="button" data-toggle="collapse" data-target="#stage-1-lessons"
                   aria-expanded="false" aria-controls="stage-1-lessons">
+                  
                   <div class="module-stage__info">
                     <div class="module-stage__meta">Módulo 1</div>
                     <div class="module-stage__title">
@@ -555,7 +607,18 @@
               </div>
 
               <div class="lesson-player__body">
-               
+
+                <!-- Breadcrumb Navigation -->
+                <nav class="lesson-breadcrumb mb-8pt" style="font-size: 12px; color: rgba(255,255,255,0.5);">
+                  <a href="student-path.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Marketing Empresarial Aplicado</a>
+                  <span class="mx-4pt" style="opacity: 0.5;">/</span>
+                   <a href="#" style="color: rgba(255,255,255,0.5); text-decoration: none;">Aula 2: Marketing Empresarial Aplicado</a>
+                  <span style="color: rgba(255,255,255,0.6);">Módulo 3</span>
+                  <span class="mx-4pt" style="opacity: 0.5;">/</span>
+                    <a href="student-take-lesson.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Aula 2: Marketing Empresarial Aplicado</a>
+
+                </nav>
+
                 <div class="d-flex flex-wrap align-items-center mb-2">
                   <h2 class="lesson-title mb-0 mr-16pt">LinkedIn para Empresas B2B</h2>
                   <div class="lesson-duration d-flex align-items-center">
@@ -653,6 +716,32 @@
                           </div>
                         </div>
                       </div>
+                        <div class="lesson-comment">
+                        <div class="lesson-comment__avatar">
+                          <span class="avatar avatar-sm">
+                            <img src="../../public/images/person_image/female1.jpg" alt="Emily"
+                              class="avatar-img rounded-circle" />
+                          </span>
+                        </div>
+                        <div class="lesson-comment__body">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <span class="lesson-comment__name">Emily Carter</span>
+                            <span class="lesson-comment__meta">há 2 dias</span>
+                          </div>
+                          <div class="lesson-comment__text">
+                            Experimente publicar 3-4 vezes por semana, focando em
+                            conteúdo de valor como estudos de caso e insights do setor.
+                            Engajamento é mais importante que volume!
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Forum Link Button -->
+                        <div class="mt-24pt pt-16pt" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                        <a href="forum.html" class="btn btn-outline-primary d-flex align-items-center justify-content-end" style="font-size: 14px; font-weight: 500; width: fit-content; margin-left: auto;">
+                          <span class="material-icons mr-8pt" style="font-size: 20px;">forum</span>
+                          Ver todos os comentários no Fórum
+                        </a>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="lesson-downloads" role="tabpanel"
                       aria-labelledby="lesson-downloads-tab">
