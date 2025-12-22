@@ -1060,38 +1060,88 @@
 
           <!-- Main Navigation -->
 
-          <!-- User Profile Menu -->
-          <ul class="nav navbar-nav ml-auto mr-0">
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
-                <span class="avatar avatar-sm avatar-online mr-8pt">
-                  <img src="../../public/images/person_image/male-1.jpg" alt="user" class="avatar-img rounded-circle" />
-                </span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a href="index.html" class="dropdown-item">Início</a>
-                <a href="student-dashboard.html" class="dropdown-item">Dashboard</a>
+      <!-- User Profile Menu -->
+            <ul class="nav navbar-nav ml-auto mr-0">
+              <li class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link d-flex align-items-center dropdown-toggle"
+                  data-toggle="dropdown">
+                  <span class="avatar avatar-sm avatar-online mr-8pt">
+                    <img
+                      src="../../public/images/person_image/male-1.jpg"
+                      alt="user"
+                      class="avatar-img rounded-circle" />
+                  </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a
+                    href="index.html"
+                    class="dropdown-item d-flex align-items-center">
+                    <span class="material-symbols-rounded mr-2">home</span>
+                    Início
+                  </a>
+                  <a
+                    href="student-dashboard.html"
+                    class="dropdown-item d-flex align-items-center">
+                    <span class="material-symbols-rounded mr-2">dashboard</span>
+                    Dashboard
+                  </a>
+                  <a
+                    href="student-ranking.html"
+                    class="dropdown-item d-flex align-items-center">
+                    <span class="material-symbols-rounded mr-2"
+                      >leaderboard</span
+                    >
+                    Ranking
+                  </a>
+                  <a
+                    href="forum.html"
+                    class="dropdown-item d-flex align-items-center">
+                    <span class="material-symbols-rounded mr-2">forum</span>
+                    Forum
+                  </a>
+                  <a
+                    href="student-modify-profile.html"
+                    class="dropdown-item d-flex align-items-center">
+                    <span class="material-symbols-rounded mr-2">settings</span>
+                    Preferências
+                  </a>
 
-                <a href="student-modify-profile.html" class="dropdown-item">Preferências</a>
-                <div class="dropdown-divider"></div>
+                  <div class="dropdown-divider"></div>
 
-                <!-- Theme Toggle -->
-                <div class="dropdown-item d-flex align-items-center justify-content-between" style="cursor: pointer;" id="theme-toggle-item">
-                  <div class="d-flex align-items-center">
-                    <span class="material-symbols-rounded mr-2" id="theme-icon">dark_mode</span>
-                    <span id="theme-label">Modo Escuro</span>
+                  <!-- Theme Toggle -->
+                  <div
+                    class="dropdown-item d-flex align-items-center justify-content-between"
+                    style="cursor: pointer"
+                    id="theme-toggle-item">
+                    <div class="d-flex align-items-center">
+                      <span
+                        class="material-symbols-rounded mr-2"
+                        id="theme-icon"
+                        >dark_mode</span
+                      >
+                      <span id="theme-label">Modo Escuro</span>
+                    </div>
+                    <label class="switch mb-0" style="margin-left: 16px">
+                      <input
+                        type="checkbox"
+                        id="theme-toggle-checkbox"
+                        checked />
+                      <span class="slider round"></span>
+                    </label>
                   </div>
-                  <label class="switch mb-0" style="margin-left: 16px;">
-                    <input type="checkbox" id="theme-toggle-checkbox" checked>
-                    <span class="slider round"></span>
-                  </label>
-                </div>
 
-                <div class="dropdown-divider"></div>
-                <a href="login.html" class="dropdown-item">Logout</a>
-              </div>
-            </li>
-          </ul>
+                  <div class="dropdown-divider"></div>
+                  <a
+                    href="login.html"
+                    class="dropdown-item d-flex align-items-center">
+                    <span class="material-symbols-rounded mr-2">logout</span>
+                    Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
         </div>
       </div>
     </div>
